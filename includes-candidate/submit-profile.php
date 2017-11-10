@@ -40,23 +40,23 @@
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Last Name<small>(required)</small></label>
-                                                    <input name="u_lname" required type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_lname" required type="text" class="form-control" placeholder="Last Name">
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>First Name<small>(required)</small></label>
-                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="First Name">
                                                 </div>
                                                 <div class="form-group">
-                                                    <labeL>Email<small>(required)</small></label>
-                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Super villa ...">
+                                                    <labeL>Email address<small>(required)</small></label>
+                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Email address">
                                                 </div>
                                                 <div class="form-group">
-                                                    <labeL>Mobile Number<small>(required)</small></label>
-                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Super villa ...">
+                                                    <labeL>Mobile number<small>(required)</small></label>
+                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Mobile number">
                                                 </div>
                                                    <div class="form-group">
-                                                    <labeL>Telephone Number</label>
-                                                    <input name="up_telephone"  type="text" class="form-control" placeholder="Super villa ...">
+                                                    <labeL>Telephone number</label>
+                                                    <input name="up_telephone"  type="text" class="form-control" placeholder="Telephone number">
                                                 </div>
                                                 <label>Nationality <small>(required)</small></label>
                                                         <select id="lunchBegins" name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
@@ -81,17 +81,23 @@
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Age<small>(required)</small></label>
-                                                    <input name="up_age" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="up_age" type="text" class="form-control" placeholder="Age">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Marital Status<small>(required)</small></label>
                                                     <input name="up_maritalstatus" type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                 <div class="form-group">
-                                                    <labeL>Children<small>(required)</small></label>
-                                                    <input name="up_children" type="text" class="form-control" placeholder="Super villa ...">
-                                                    <br>
-                                                    <labeL>Spoken Language<small>(required)</small></label>
+                                                    <label>Location <small>(required)</small></label>
+                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                            <option selected disabled value="" >Select Country</option>
+                                                            <option  value="Philippines">Philippines</option>
+                                                            <option  value="China">China</option>
+                                                            <option  value="India">India</option>
+                                                            <option  value="Indonesia">Indonesia</option>
+                                                            <option  value="Thailand">Thailand</option>
+                                                           
+                                                        </select>
                                                 </div>
                                                     <div class="col-sm-4">
                                                     <div class="form-group">
