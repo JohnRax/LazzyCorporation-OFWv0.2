@@ -25,18 +25,13 @@
                       
 
                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.php?source=property-forsale" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">HELPERS</a>
+                            <a href="index.php?source=findhelpers" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">HELPERS</a>
                       </li>
 
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                             <a href="index.php?source=property-forrent" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">EMPLOYER</a>
+                             <a href="index.php?source=findemployer" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">EMPLOYER</a>
                       </li>
-                   
-                    
-                      
-                        
-                        
-
+                                                                      
                         
                     </ul>
                 </div><!-- /.navbar-collapse -->

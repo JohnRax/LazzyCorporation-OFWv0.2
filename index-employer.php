@@ -1,8 +1,6 @@
 <?php include "includes-employer/header.php" ?>
 <?php include "includes-employer/navigation.php" ?>
-
-<?php 
-    
+<?php    
     if (isset($_GET['source'])) {
         
         $source=$_GET['source'];
@@ -23,10 +21,6 @@
         break;
     } 
 ?>
-
-
-
-
 <?php include "includes-employer/footer.php" ?>
      
       

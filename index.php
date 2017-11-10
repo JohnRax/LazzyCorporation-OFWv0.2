@@ -1,6 +1,5 @@
 <?php include "includes/header.php" ?>
 <?php include "includes/navigation.php" ?>
-
 <?php 
     
     if (isset($_GET['source'])) {
@@ -15,32 +14,21 @@
     switch ($source) 
     {
        
-        case 'property-forsale':
-             include "includes/property-main.php"; 
+        case 'findhelpers':
+             include "includes/Search-candidate.php"; 
             break;
-        case 'property-forrent':
-             include "includes/property-main.php"; 
-            break;
-
-        case 'property-page':
-             include "includes/property-page.php"; 
+        case 'findemployer':
+             include "includes/search-job.php"; 
             break;
         case 'loginandregister':
              include "includes/login-register.php"; 
-            break;
-        case 'propertyadvertise':
-             include "includes/propertyadvertise.php"; 
-            break;
+            break;     
         default:
             include "includes/homepage.php";
           
         break;
     } 
 ?>
-
-
-
-
 <?php include "includes/footer.php" ?>
      
       
