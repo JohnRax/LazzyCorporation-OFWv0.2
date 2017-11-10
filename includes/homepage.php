@@ -5,9 +5,10 @@
                        <h2>Best Search Engine To Find A Best Helpers</h2>
                                         
                       <br>
-                        <div class="button">
-                          <button class="navbar-btn nav-button wow bounceInRight login" >&nbsp;&nbsp;FIND HELPERS&nbsp;&nbsp;</button>
-                           <button class="navbar-btn nav-button wow bounceInRight login" >FIND EMPLOYERS</button>
+                         <div class="button">
+                          <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND HELPERS</button>
+                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">FIND EMPLOYERS</button>
+                      
                         </div>
                   
             </div>
