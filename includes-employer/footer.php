@@ -149,7 +149,9 @@
         <script src="assets/js/price-range.js"></script>
         <script type="text/javascript" src="assets/js/lightslider.min.js"></script>
         <script src="assets/js/main.js"></script>
-
+        <script src="assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/wizard.js"></script>
         <script>
             $(document).ready(function () {
 

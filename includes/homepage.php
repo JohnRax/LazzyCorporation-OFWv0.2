@@ -8,9 +8,7 @@
                          <div class="button">
                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND HELPERS</button>
                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">FIND EMPLOYERS</button>
-                      
-                        </div>
-                  
+                    </div>
             </div>
         </div>
 </div>
@@ -261,17 +259,17 @@
                     </div>
         <div class="container">
             <div class="row ">
-                        <div class="col-md-9 clear"> 
-                                <div id="list-type" class="proerty-th-list">
+                        <div class="col-md-12 clear"> 
+                                <div id="list-type" class="property-th">
                                    
-                                    <div class="col-sm-6 col-md-4 p0">
+                                    <div id="list-type" class="proerty-th">                                                   
+                                   <div class="col-sm-6 col-md-3 p0">
                                             <div class="box-two proerty-item">
                                                 <div class="item-thumb">
-                                                    <a href="property-1.html" ><img src="assets/img/jobphoto/1.jpg"></a>
+                                                    <a href="property-1.html"><img src="assets/img/jobphoto/1.jpg"></a>
                                                 </div>
-
                                                      <div class="item-entry overflow">
-                                                        <h5><a href="index.php?source=property-page" >looking for domestic helper</a></h5>
+                                                        <h5><a href="index.php?source=property-page">looking for domestic helper</a></h5>
                                                         <div class="dot-hr"></div>
                                                         
                                                         <span class="pull-left"><b>Employer Type : </b>Direct Employer </span>
@@ -280,8 +278,6 @@
                                                         <br>
                                                         <h7><b>Job Category:</b> Driver </h7>
                                                         <br>
-
-                                                     
                                                         <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
                                                         <br>
                                                         <br>
@@ -292,16 +288,15 @@
 
 
                                             </div>
-                                        </div>   
+                                        </div>  
 
-                                            <div class="col-sm-6 col-md-4 p0">
+                                         <div class="col-sm-6 col-md-3 p0">
                                             <div class="box-two proerty-item">
                                                 <div class="item-thumb">
-                                                    <a href="property-1.html" ><img src="assets/img/jobphoto/2.jpg"></a>
+                                                    <a href="property-1.html"><img src="assets/img/jobphoto/3.jpg"></a>
                                                 </div>
-
                                                      <div class="item-entry overflow">
-                                                        <h5><a href="index.php?source=property-page" >looking for domestic helper</a></h5>
+                                                        <h5><a href="index.php?source=property-page">looking for domestic helper</a></h5>
                                                         <div class="dot-hr"></div>
                                                         
                                                         <span class="pull-left"><b>Employer Type : </b>Direct Employer </span>
@@ -310,8 +305,6 @@
                                                         <br>
                                                         <h7><b>Job Category:</b> Driver </h7>
                                                         <br>
-
-                                                     
                                                         <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
                                                         <br>
                                                         <br>
@@ -322,16 +315,14 @@
 
 
                                             </div>
-                                        </div> 
-
-                                    <div class="col-sm-6 col-md-4 p0">
+                                        </div>  
+                                         <div class="col-sm-6 col-md-3 p0">
                                             <div class="box-two proerty-item">
                                                 <div class="item-thumb">
-                                                    <a href="property-1.html" ><img src="assets/img/jobphoto/3.jpg"></a>
+                                                    <a href="property-1.html"><img src="assets/img/jobphoto/2.jpg"></a>
                                                 </div>
-
                                                      <div class="item-entry overflow">
-                                                        <h5><a href="index.php?source=property-page" >looking for domestic helper</a></h5>
+                                                        <h5><a href="index.php?source=property-page">looking for domestic helper</a></h5>
                                                         <div class="dot-hr"></div>
                                                         
                                                         <span class="pull-left"><b>Employer Type : </b>Direct Employer </span>
@@ -340,8 +331,6 @@
                                                         <br>
                                                         <h7><b>Job Category:</b> Driver </h7>
                                                         <br>
-
-                                                     
                                                         <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
                                                         <br>
                                                         <br>
@@ -352,11 +341,34 @@
 
 
                                             </div>
-                                        </div> 
+                                        </div>  
+                                           <div class="col-sm-6 col-md-3 p0">
+                                            <div class="box-two proerty-item">
+                                                <div class="item-thumb">
+                                                    <a href="property-1.html"><img src="assets/img/jobphoto/2.jpg"></a>
+                                                </div>
+                                                     <div class="item-entry overflow">
+                                                        <h5><a href="index.php?source=property-page">looking for domestic helper</a></h5>
+                                                        <div class="dot-hr"></div>
+                                                        
+                                                        <span class="pull-left"><b>Employer Type : </b>Direct Employer </span>
+                                                        <br>
+                                                        <h7><b>Location:</b> Philippines</h7>
+                                                        <br>
+                                                        <h7><b>Job Category:</b> Driver </h7>
+                                                        <br>
+                                                        <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
+                                                        <br>
+                                                        <br>
+                                                        <div class="span9 btn-block no-padding">
+                                                            <button class="btn btn-large btn-block btn-primary full-width" type="button">View Full Post</button>
+                                                        </div>
+                                                    </div>
 
 
-
-                                        
+                                            </div>
+                                        </div>                         
+                                    </div>     
                                 </div>
                             </div>
                </div>

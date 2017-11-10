@@ -10,10 +10,8 @@
     {
         $source="";
     }
-
     switch ($source) 
-    {
-       
+    {     
         case 'findhelpers':
              include "includes/Search-candidate.php"; 
             break;
@@ -23,9 +21,11 @@
         case 'loginandregister':
              include "includes/login-register.php"; 
             break;     
+        case 'candidateprofile':
+             include "includes/candidate-page.php"; 
+            break;     
         default:
             include "includes/homepage.php";
-          
         break;
     } 
 ?>

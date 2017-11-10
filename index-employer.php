@@ -13,7 +13,13 @@
     switch ($source) 
     {
        
-        case 'property-forsale':
+        case 'searchhelper':
+             include "includes-employer/homepage.php"; 
+            break; 
+        case 'postjob':
+             include "includes-employer/post-job.php"; 
+            break; 
+       case 'listpostjobs':
              include "includes-employer/property-main.php"; 
             break; 
         default:

@@ -19,21 +19,19 @@
                      
                     <ul class="main-nav nav navbar-nav navbar-right">                   
                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.php?source=property-forsale" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">SEARCH/FIND JOB</a>
+                            <a href="index-candidate.php?source=searchfindjob" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">SEARCH/FIND JOB</a>
                       </li>
                
                    
                         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
                             <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">JOHNRAY <b class="caret"></b></a>
                             <ul class="dropdown-menu navbar-nav">
+                               
                                 <li>
-                                    <a href="index-2.html">CANDIDATE DASHBOARD</a>
+                                    <a href="index-candidate.php?source=editupdateprofile">EDIT/UPDATE PROFILE</a>
                                 </li>
                                 <li>
-                                    <a href="index-3.html">EDIT/UPDATE PROFILE</a>
-                                </li>
-                                <li>
-                                    <a href="index-4.html">LOG OUT</a>
+                                    <a href="index.php">LOG OUT</a>
                                 </li>                          
                             </ul>
                         </li>

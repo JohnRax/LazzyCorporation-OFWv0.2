@@ -19,25 +19,23 @@
                      
                     <ul class="main-nav nav navbar-nav navbar-right">                   
                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.php?source=property-forsale" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">FIND HELPERS</a>
+                            <a href="index-employer.php?source=searchhelper" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">FIND HELPERS</a>
                       </li>
 
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                             <a href="index.php?source=property-forrent" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">POST JOB</a>
+                             <a href="index-employer.php?source=postjob" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">POST JOB</a>
                       </li>
                    
                    
                         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">JOHNRAY <b class="caret"></b></a>
+                            <a href="index-employer.php?source=editupdateprofile" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">JOHNRAY <b class="caret"></b></a>
                             <ul class="dropdown-menu navbar-nav">
+                            
                                 <li>
-                                    <a href="index-2.html">CANDIDATE DASHBOARD</a>
+                                    <a href="index-employer.php?source=listpostjobs">POST JOBS</a>
                                 </li>
                                 <li>
-                                    <a href="index-3.html">EDIT/UPDATE PROFILE</a>
-                                </li>
-                                <li>
-                                    <a href="index-4.html">LOG OUT</a>
+                                    <a href="index.php">LOG OUT</a>
                                 </li>                          
                             </ul>
                         </li>
