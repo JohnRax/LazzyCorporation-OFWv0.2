@@ -1,13 +1,30 @@
-<?php 
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
+<?php
 
-	$conn = new mysqli($servername, $username, $password);
+	$db['db_host']='localhost';
+	$db['db_user']='root';
+	$db['db_pass']='';
+	$db['db_name']='lazycorporation-ofwdatabase';
 
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	} 
-	echo "Connected successfully";
+	foreach ($db as $key => $value) {
+		
+		define(strtoupper($key),$value);
+	}
 
- ?>
+
+	
+	try {
+		$connection = mysqli_connect(null,DB_USER,DB_PASS,DB_NAME,0,"/cloudsql/lazzyworks-185201:asia-northeast1:lazzyworksdb");
+		if($connection)
+		{
+			
+		}
+		else
+		{
+			echo "Not Connected";
+		}
+	}
+	catch(Exception $e)
+	{
+		echo mysqli_connect_error();
+	}
+?>

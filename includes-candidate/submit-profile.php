@@ -31,65 +31,65 @@
                                             <div class="col-sm-6">
 
                                                 <h3>Personal Information</h3>
-                                                <label>Resume Category</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>Driver</option>
-                                                            <option>Helper</option>
-                                                            <option>Casablanca</option>
-                                                            <option>Tokyo</option>
-                                                            <option>Marraekch</option>
-                                                            <option>kyoto , shibua</option>
+                                                <label>Resume Category<small>(required)</small></label>
+                                                        <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                             <option selected disabled value="" >Select Resume Category</option>
+                                                            <option value="Driver">Driver</option>
+                                                            <option value="Helper">Helper</option>
+                                                            
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Last Name<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_lname" required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>First Name<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Email<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile Number<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                    <div class="form-group">
-                                                    <labeL>Telephone Number<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <labeL>Telephone Number</label>
+                                                    <input name="up_telephone"  type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
-                                                 <label>Nationality</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>Filipino</option>
-                                                            <option>Chinese</option>
-                                                            <option>Hongkongese</option>
-                                                            <option>Indian</option>
-                                                            <option>Indonesian</option>
-                                                            <option>Sri Lankan</option>
-                                                              <option>Thai</option>
+                                                <label>Nationality <small>(required)</small></label>
+                                                        <select id="lunchBegins" name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                            <option selected disabled value="" >Select your Nationality</option>
+                                                            <option value="Filipino">Filipino</option>
+                                                            <option value="Chinese">Chinese</option>
+                                                            <option value="Hongkongese">Hongkongese</option>
+                                                            <option value="Indian">Indian</option>
+                                                            <option value="Indonesian">Indonesian</option>
+                                                            <option value="Sri Lankan">Sri Lankan</option>
+                                                            <option value="Thai">Thai</option>
                                                         </select>
-                                                  <label>Location</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>Philippines</option>
-                                                            <option>China</option>
-                                                            <option>India</option>
-                                                            <option>Indonesia</option>
-                                                            <option>Thailand</option>
+                                                <label>Location <small>(required)</small></label>
+                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                            <option selected disabled value="" >Select Country</option>
+                                                            <option  value="Philippines">Philippines</option>
+                                                            <option  value="China">China</option>
+                                                            <option  value="India">India</option>
+                                                            <option  value="Indonesia">Indonesia</option>
+                                                            <option  value="Thailand">Thailand</option>
                                                            
                                                         </select>
-                                                           <div class="form-group">
+                                                <div class="form-group">
                                                     <labeL>Age<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="up_age" type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
-                                                   <div class="form-group">
+                                                <div class="form-group">
                                                     <labeL>Marital Status<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="up_maritalstatus" type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
-                                                  <div class="form-group">
+                                                <div class="form-group">
                                                     <labeL>Children<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="up_children" type="text" class="form-control" placeholder="Super villa ...">
                                                     <br>
                                                     <labeL>Spoken Language<small>(required)</small></label>
                                                 </div>
@@ -97,7 +97,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Arabic
+                                                                <input name="up_languages" type="checkbox"> Arabic
                                                             </label>
                                                         </div>
                                                     </div>
@@ -106,7 +106,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Cantonese
+                                                                <input name="up_languages" type="checkbox"> Cantonese
                                                             </label>
                                                         </div>
                                                     </div>
@@ -115,7 +115,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> English
+                                                                <input name="up_languages" type="checkbox"> English
                                                             </label>
                                                         </div>
                                                     </div>
@@ -124,7 +124,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Filipino
+                                                                <input name="up_languages" type="checkbox"> Filipino
                                                             </label>
                                                         </div>
                                                     </div>
@@ -133,7 +133,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Japanese
+                                                                <input name="up_languages" type="checkbox"> Japanese
                                                             </label>
                                                         </div>
                                                     </div>
@@ -142,7 +142,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Mandarin
+                                                                <input name="up_languages" type="checkbox"> Mandarin
                                                             </label>
                                                         </div>
                                                     </div>
@@ -159,31 +159,32 @@
                                          <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                         <label>Where Do You Want To Work</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>Philippines</option>
-                                                            <option>China</option>
-                                                            <option>India</option>
-                                                            <option>Indonesia</option>
-                                                            <option>Thailand</option>
-                                                           
+                                                        <select name="upi_preferedworklocation" id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                            <option selected disabled value="">Select Country </option>
+                                                            <option value="Philippines">Philippines</option>
+                                                            <option value="China">China</option>
+                                                            <option value="India">India</option>
+                                                            <option value="Indonesia">Indonesia</option>
+                                                            <option value="Thailand">Thailand</option>
                                                         </select>
                                                 </div>
                                                 </div>
                                                  <div class="col-sm-12"> 
                                                    <div class="col-sm-12"> 
                                                 <label>Years Of Experience</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>0</option>
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
-                                                            <option>6</option>
-                                                            <option>7</option>
-                                                            <option>8</option>
-                                                            <option>9</option>
-                                                            <option>10</option>
+                                                        <select id="lunchBegins" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                            <option selected disabled value="">Select</option>
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
                                                 </select>
                                                 </div>
                                                 </div>
@@ -191,22 +192,22 @@
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-                                                        <label>Resume Content :</label>
-                                                        <textarea name="discrition" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
+                                                        <label>Experience Summary :</label>
+                                                        <textarea name="upi_expsummary" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
                                                     </div> 
                                                 </div> 
                                             </div>
 
                                                                              
                                             <div class="col-sm-12 padding-top-15">
-                                            <label>My Skills and Experience :</label>
+                                            <label>My Skills and Experience : :<small> Maximum of 4 Cooking skills</small> </label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
                                                     
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Baby Care
+                                                                <input name="upi_skillsexp" type="checkbox"> Baby Care
                                                             </label>
                                                         </div>
                                                     </div>
@@ -215,7 +216,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Child Care
+                                                                <input name="upi_skillsexp" type="checkbox"> Child Care
                                                             </label>
                                                         </div>
                                                     </div>
@@ -224,7 +225,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Cooking
+                                                                <input name="upi_skillsexp" type="checkbox"> Cooking
                                                             </label>
                                                         </div>
                                                     </div>
@@ -233,7 +234,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Elder Care
+                                                                <input name="upi_skillsexp" type="checkbox"> Elder Care
                                                             </label>
                                                         </div>
                                                     </div>
@@ -244,7 +245,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Housekeeping
+                                                                <input name="upi_skillsexp" type="checkbox"> Housekeeping
                                                             </label>
                                                         </div>
                                                     </div>
@@ -253,7 +254,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Pet Care
+                                                                <input name="upi_skillsexp" type="checkbox"> Pet Care
                                                             </label>
                                                         </div>
                                                     </div>
@@ -262,7 +263,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Professional Driver
+                                                                <input name="upi_skillsexp" type="checkbox"> Professional Driver
                                                             </label>
                                                         </div>
                                                     </div>
@@ -271,7 +272,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Teen Care
+                                                                <input name="upi_skillsexp" type="checkbox"> Teen Care
                                                             </label>
                                                         </div>
                                                     </div>
@@ -279,14 +280,14 @@
                                             </div>
 
                                              <div class="col-sm-12 padding-top-15">
-                                            <label>My Cooking Skills :</label>
+                                            <label>My Cooking Skills :<small> Maximum of 4 Cooking skills</small> </label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
                                                     
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> American
+                                                                <input name="upi_cookingskills" type="checkbox"> American
                                                             </label>
                                                         </div>
                                                     </div>
@@ -295,7 +296,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Arabic
+                                                                <input name="upi_cookingskills" type="checkbox"> Arabic
                                                             </label>
                                                         </div>
                                                     </div>
@@ -304,7 +305,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Chinese
+                                                                <input name="upi_cookingskills" type="checkbox"> Chinese
                                                             </label>
                                                         </div>
                                                     </div>
@@ -313,7 +314,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> French
+                                                                <input name="upi_cookingskills" type="checkbox"> French
                                                             </label>
                                                         </div>
                                                     </div>
@@ -324,7 +325,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> German
+                                                                <input name="upi_cookingskills" type="checkbox"> German
                                                             </label>
                                                         </div>
                                                     </div>
@@ -333,7 +334,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Indian
+                                                                <input name="upi_cookingskills" type="checkbox"> Indian
                                                             </label>
                                                         </div>
                                                     </div>
@@ -342,7 +343,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Italian
+                                                                <input name="upi_cookingskills" type="checkbox"> Italian
                                                             </label>
                                                         </div>
                                                     </div>
@@ -351,7 +352,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Japanese
+                                                                <input name="upi_cookingskills" type="checkbox"> Japanese
                                                             </label>
                                                         </div>
                                                     </div>
@@ -360,7 +361,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Thai
+                                                                <input name="upi_cookingskills" type="checkbox"> Thai
                                                             </label>
                                                         </div>
                                                     </div>
@@ -369,7 +370,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Vegetarian
+                                                                <input name="upi_cookingskills" type="checkbox"> Vegetarian
                                                             </label>
                                                         </div>
                                                     </div>
@@ -378,21 +379,21 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Western
+                                                                <input name="upi_cookingskills" type="checkbox"> Western
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                              <div class="col-sm-12 padding-top-15">
-                                            <label>My Other Skills :</label>
+                                            <label>My Other Skills : <small> Maximum of 4 Other skills</small> </label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
                                                     
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Baking
+                                                                <input name="upi_otherskills" type="checkbox"> Baking
                                                             </label>
                                                         </div>
                                                     </div>
@@ -401,7 +402,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Car Wash
+                                                                <input name="upi_otherskills" type="checkbox"> Car Wash
                                                             </label>
                                                         </div>
                                                     </div>
@@ -410,7 +411,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Computer
+                                                                <input name="upi_otherskills" type="checkbox"> Computer
                                                             </label>
                                                         </div>
                                                     </div>
@@ -419,7 +420,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Driving
+                                                                <input name="upi_otherskills" type="checkbox"> Driving
                                                             </label>
                                                         </div>
                                                     </div>
@@ -430,7 +431,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> First Aid Certificate
+                                                                <input name="upi_otherskills" type="checkbox"> First Aid Certificate
                                                             </label>
                                                         </div>
                                                     </div>
@@ -439,7 +440,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Gardening
+                                                                <input name="upi_otherskills" type="checkbox"> Gardening
                                                             </label>
                                                         </div>
                                                     </div>
@@ -448,7 +449,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Handyman
+                                                                <input name="upi_otherskills" type="checkbox"> Handyman
                                                             </label>
                                                         </div>
                                                     </div>
@@ -457,7 +458,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Housework
+                                                                <input name="upi_otherskills" type="checkbox"> Housework
                                                             </label>
                                                         </div>
                                                     </div>
@@ -466,7 +467,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Sewing
+                                                                <input  name="upi_otherskills" type="checkbox"> Sewing
                                                             </label>
                                                         </div>
                                                     </div>
@@ -475,7 +476,7 @@
                                                     <div class="form-group">
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox"> Tutoring
+                                                                <input  name="upi_otherskills" type="checkbox"> Tutoring
                                                             </label>
                                                         </div>
                                                     </div>
@@ -497,7 +498,7 @@
                                           <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>1. Would you agreee to do extra work?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_1" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -508,7 +509,7 @@
                                           <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>2. If your employer asked you to work on your holiday and willing to pay as compensation, are you willing to do so?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_2" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -519,7 +520,7 @@
                                              <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>3. Are you willing to work for a family without your own servant room?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_3" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -530,7 +531,7 @@
                                              <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>4. Are you willing to take care of children no matter how many the family has?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_4" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -541,7 +542,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>5. Living with elderly person?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_5" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -552,7 +553,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>6. Are you willing to take care of disabled elderly?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_6" class="form-group">
                                                             <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -563,7 +564,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>7. Do you got experience to take care of dogs or pets?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_7" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -574,7 +575,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>8. Have you suffered from health problems in your nervous system, eyes, feet, legs or any other parts of your body?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_8" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -585,7 +586,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>9. Can you drive?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_9" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -596,7 +597,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>10. Do you smoke?</strong></label>
-                                                           <select class="form-group">
+                                                           <select name="uq_10" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -648,7 +649,7 @@
                                         <input type='button' class='btn btn-previous btn-default' name='previous' value='Previous' />
                                     </div>
                                     <div class="clearfix"></div>                                            
-                                </div>	
+                                </div>  
                             </form>
                         </div>
                         <!-- End submit form -->
