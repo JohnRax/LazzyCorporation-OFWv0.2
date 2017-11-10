@@ -31,63 +31,63 @@
                                             <div class="col-sm-6">
 
                                                 <h3>Personal Information</h3>
-                                                <label>Resume Category</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>Driver</option>
-                                                            <option>Helper</option>
-                                                            <option>Casablanca</option>
-                                                            <option>Tokyo</option>
-                                                            <option>Marraekch</option>
-                                                            <option>kyoto , shibua</option>
+                                                <label>Resume Category<small>(required)</small></label>
+                                                        <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                             <option selected disabled value="" >Select Resume Category</option>
+                                                            <option value="Driver">Driver</option>
+                                                            <option value="Helper">Helper</option>
+                                                            
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Last Name<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_lname" required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>First Name<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Email<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile Number<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                    <div class="form-group">
-                                                    <labeL>Telephone Number<small>(required)</small></label>
-                                                    <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
+                                                    <labeL>Telephone Number</label>
+                                                    <input name="up_telephone"  type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
-                                                 <label>Nationality</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>Filipino</option>
-                                                            <option>Chinese</option>
-                                                            <option>Hongkongese</option>
-                                                            <option>Indian</option>
-                                                            <option>Indonesian</option>
-                                                            <option>Sri Lankan</option>
-                                                              <option>Thai</option>
+                                                <label>Nationality <small>(required)</small></label>
+                                                        <select id="lunchBegins" name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                            <option selected disabled value="" >Select your Nationality</option>
+                                                            <option value="Filipino">Filipino</option>
+                                                            <option value="Chinese">Chinese</option>
+                                                            <option value="Hongkongese">Hongkongese</option>
+                                                            <option value="Indian">Indian</option>
+                                                            <option value="Indonesian">Indonesian</option>
+                                                            <option value="Sri Lankan">Sri Lankan</option>
+                                                            <option value="Thai">Thai</option>
                                                         </select>
-                                                  <label>Location</label>
-                                                        <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option>Philippines</option>
-                                                            <option>China</option>
-                                                            <option>India</option>
-                                                            <option>Indonesia</option>
-                                                            <option>Thailand</option>
+                                                <label>Location <small>(required)</small></label>
+                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                            <option selected disabled value="" >Select Country</option>
+                                                            <option  value="Philippines">Philippines</option>
+                                                            <option  value="China">China</option>
+                                                            <option  value="India">India</option>
+                                                            <option  value="Indonesia">Indonesia</option>
+                                                            <option  value="Thailand">Thailand</option>
                                                            
                                                         </select>
-                                                           <div class="form-group">
+                                                <div class="form-group">
                                                     <labeL>Age<small>(required)</small></label>
                                                     <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
-                                                   <div class="form-group">
+                                                <div class="form-group">
                                                     <labeL>Marital Status<small>(required)</small></label>
                                                     <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
-                                                  <div class="form-group">
+                                                <div class="form-group">
                                                     <labeL>Children<small>(required)</small></label>
                                                     <input name="propertyname" type="text" class="form-control" placeholder="Super villa ...">
                                                     <br>
@@ -648,7 +648,7 @@
                                         <input type='button' class='btn btn-previous btn-default' name='previous' value='Previous' />
                                     </div>
                                     <div class="clearfix"></div>                                            
-                                </div>	
+                                </div>  
                             </form>
                         </div>
                         <!-- End submit form -->
