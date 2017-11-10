@@ -99,6 +99,10 @@
                                                            
                                                         </select>
                                                 </div>
+                                                
+                                            <div class="col-sm-12 padding-top-15">
+                                                <label>Languages Spoken<small>(required)</small></label>
+                                            </div>
                                                     <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <div class="checkbox">
@@ -154,9 +158,11 @@
                                                     </div>
                                                 </div> 
 
+
                                             </div>
                                         </div>
                                     </div>
+
                                     <!--  End step 1 -->
 
                                     <div class="tab-pane" id="step2">
