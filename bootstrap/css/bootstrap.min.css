@@ -6,6 +6,11 @@
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+.head{
+
+	    width: 20%;
+	    text-align: center;
+}
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
