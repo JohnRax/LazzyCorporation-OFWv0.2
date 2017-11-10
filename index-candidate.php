@@ -18,8 +18,13 @@
         case 'submitprofile':
              include "includes-candidate/submit-profile.php"; 
             break;
-     
-    
+        case 'editupdateprofile':
+            include "includes-candidate/submit-profile.php"; 
+               break;
+        case 'searchfindjob':
+               include "includes-candidate/homepage.php"; 
+               break;
+        
         default:
              include "includes-candidate/homepage.php"; 
         break;
