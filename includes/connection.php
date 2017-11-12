@@ -1,30 +1,22 @@
 <?php
-
-	$db['db_host']='localhost';
-	$db['db_user']='root';
-	$db['db_pass']='';
-	$db['db_name']='lazycorporation-ofwdatabase';
-
-	foreach ($db as $key => $value) {
-		
-		define(strtoupper($key),$value);
-	}
-
-
 	
-	try {
-		$connection = mysqli_connect(null,DB_USER,DB_PASS,DB_NAME,0,"/cloudsql/lazzyworks-185201:asia-northeast1:lazzyworksdb");
-		if($connection)
-		{
-			
-		}
-		else
-		{
-			echo "Not Connected";
-		}
-	}
-	catch(Exception $e)
+	session_start();
+	$host = 'localhost';
+	$user = 'root';
+	$password = '';
+	$dbname='lazycorporation-ofwdatabase';
+	try 
 	{
-		echo mysqli_connect_error();
+	    $dsn = 'mysql:host='.$host.';dbname='.$dbname;
+	    $connection = new PDO($dsn,$user,$password);
+	    $connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+	} 
+	catch (PDOException $e) 
+	{
+	    echo 'Connection failed: '.$e->getMessage();
 	}
+
+	include_once 'class/class.user.php';
+	$user = new User($connection);
+
 ?>

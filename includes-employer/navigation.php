@@ -35,7 +35,7 @@
                                     <a href="index-employer.php?source=listpostjobs">POST JOBS</a>
                                 </li>
                                 <li>
-                                    <a href="index.php">LOG OUT</a>
+                                    <a href="index-employer.php?source=logout">LOG OUT</a>
                                 </li>                          
                             </ul>
                         </li>

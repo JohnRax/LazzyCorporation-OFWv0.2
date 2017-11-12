@@ -149,7 +149,7 @@
                     </div>
 
                     <div class="col-md-12 clear"> 
-                        <div id="list-type" class="proerty-th-list">                                                   
+                        <div id="list-type" class="proerty-th">                                                   
                                    <div class="col-sm-6 col-md-4 p0">
                                             <div class="box-two proerty-item">
                                                 <div class="item-thumb">

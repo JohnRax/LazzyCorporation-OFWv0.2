@@ -1,5 +1,7 @@
 <br><br><br><br>
         <!-- property area -->
+<!-- Trigger the modal with a button -->
+
         <div class="properties-area recent-property" style="background-color: #FFF;">
             <div class="container">  
                 <div class="row">
@@ -171,7 +173,7 @@
                     </div>
 
                     <div class="col-md-12 clear"> 
-                        <div id="list-type" class="proerty-th-list">
+                        <div id="list-type" class="proerty-th">
                            
                             <div class="col-sm-6 col-md-4 p0">
                                     <div class="box-two proerty-item">
@@ -197,9 +199,8 @@
                                                 <br>
                                                 <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
                                                 <br>
-                                                <div class="span9 btn-block no-padding">
-                                                    <button class="btn btn-large btn-block btn-primary full-width" type="button">View Full Profile</button>
-                                                </div>
+                                                <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
+
                                             </div>
 
 
@@ -230,9 +231,7 @@
                                                 <br>
                                                 <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
                                                 <br>
-                                                <div class="span9 btn-block no-padding">
-                                                    <button class="btn btn-large btn-block btn-primary full-width" type="button">View Full Profile</button>
-                                                </div>
+                                                <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
                                             </div>
 
 
@@ -261,9 +260,7 @@
                                                 <br>
                                                 <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
                                                 <br>
-                                                <div class="span9 btn-block no-padding">
-                                                    <button class="btn btn-large btn-block btn-primary full-width" type="button">View Full Profile</button>
-                                                </div>
+                                                 <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
                                             </div>
 
 
@@ -292,9 +289,7 @@
                                                 <br>
                                                 <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
                                                 <br>
-                                                <div class="span9 btn-block no-padding">
-                                                    <button class="btn btn-large btn-block btn-primary full-width" type="button">View Full Profile</button>
-                                                </div>
+                                               <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
                                             </div>
 
 
@@ -322,4 +317,3 @@
             </div>
         </div>
 
-        

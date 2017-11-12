@@ -17,7 +17,7 @@
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     
                       <div class="button navbar-right">
-                          <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('index.php?source=loginandregister')" data-wow-delay="0.30s">LOGIN </button>
+                          <button class="navbar-btn nav-button wow bounceInRight login"  onclick="location.href='index.php?source=loginandregister'" data-wow-delay="0.30s">LOGIN </button>
                           
                       </div>
                    

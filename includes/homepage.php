@@ -242,7 +242,9 @@
                                 <div class="more-entry overflow">
                                     <h5><a href="property-1.html">CAN'T FIND HELPERS? ? </a></h5>
                                     <h5 class="tree-sub-ttl">Show all Helpers</h5>
-                                    <button class="btn border-btn more-black" value="All properties">All Helpers</button>
+                                    <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Helpers</button>
+
+                                
                                 </div>
                             </div>
                         </div>
@@ -386,47 +388,37 @@
                 <div class="row">
                     <div class="col-md-12 col-xs-12 percent-blocks m-main" data-waypoint-scroll="true">
                         <div class="row">
-                            <div class="col-sm-3 col-xs-6">
+                            <div class="col-sm-4 col-xs-6">
                                 <div class="count-item">
                                     <div class="count-item-circle">
                                         <span class="pe-7s-users"></span>
                                     </div>
                                     <div class="chart" data-percent="5000">
                                         <h2 class="percent" id="counter">0</h2>
-                                        <h5>HAPPY CUSTOMER </h5>
+                                        <h5>SUBMITTED PROFILE </h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3 col-xs-6">
-                                <div class="count-item">
-                                    <div class="count-item-circle">
-                                        <span class="pe-7s-home"></span>
-                                    </div>
-                                    <div class="chart" data-percent="12000">
-                                        <h2 class="percent" id="counter1">0</h2>
-                                        <h5>Properties in stock</h5>
-                                    </div>
-                                </div> 
-                            </div> 
-                            <div class="col-sm-3 col-xs-6">
+                           
+                            <div class="col-sm-4 col-xs-6">
                                 <div class="count-item">
                                     <div class="count-item-circle">
                                         <span class="pe-7s-flag"></span>
                                     </div>
                                     <div class="chart" data-percent="120">
                                         <h2 class="percent" id="counter2">0</h2>
-                                        <h5>City registered </h5>
+                                        <h5>POST JOBS </h5>
                                     </div>
                                 </div> 
                             </div> 
-                            <div class="col-sm-3 col-xs-6">
+                            <div class="col-sm-4 col-xs-6">
                                 <div class="count-item">
                                     <div class="count-item-circle">
                                         <span class="pe-7s-graph2"></span>
                                     </div>
                                     <div class="chart" data-percent="5000">
                                         <h2 class="percent"  id="counter3">5000</h2>
-                                        <h5>DEALER BRANCHES</h5>
+                                        <h5>HELPERS ABROAD</h5>
                                     </div>
                                 </div> 
 
