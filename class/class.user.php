@@ -60,6 +60,23 @@ class User
 		{
 			echo $e->getMessage();
 		}
+
+	}
+	public function post_profile_personal_information($category,$lastname,$firstname,$email,$mobile,$telephone,$nationality,$location,$languages)
+	{
+
+	}
+	public function post_profile_professional_information($preferedlocation,$yearsexp,$expsummary,$skills,$cookingskills,$otherskills,$availability)
+	{
+
+	}
+	public function post_profile_supplementary_question($ans1,$ans2,$ans3,$ans4,$ans5,$ans6,$ans7,$ans8,$ans9,$ans10)
+	{
+
+	}
+	public function view_jobs()
+	{
+
 	}
 	public function is_loggedin()
 	{
@@ -80,14 +97,7 @@ class User
         unset($_SESSION['user_type']);
         return true;
 	}
-	public function post_profile()
-	{
-
-	}
-	public function view_jobs()
-	{
-
-	}
+	
 
 }
 

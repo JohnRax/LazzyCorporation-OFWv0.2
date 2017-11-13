@@ -19,18 +19,15 @@
 
                                     <div class="tab-pane" id="step1">
                                         <div class="row p-b-15  ">
-                                            
-                                            <div class="col-sm-4 col-sm-offset-1">
-                                                <div class="picture-container">
+                                            <div class="col-sm-12">
+                                            <div class="picture-container">
                                                     <div class="picture">
                                                         <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title=""/>
                                                         <input type="file" id="wizard-picture">
                                                     </div> 
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6">
 
-                                                <h3>Personal Information</h3>
+                                               <h3 class="info-text"> Personal Information </h3>
                                                 <label>Resume Category<small>(required)</small></label>
                                                         <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                              <option selected disabled value="" >Select Resume Category</option>
