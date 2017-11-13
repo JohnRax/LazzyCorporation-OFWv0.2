@@ -37,7 +37,7 @@
             include "includes-candidate/submit-profile.php"; 
                break;
         case 'searchfindjob':
-               include "includes-candidate/homepage.php"; 
+               include "includes-candidate/search-job.php"; 
                break;
          case 'logout':
                include "includes-candidate/logout.php"; 
