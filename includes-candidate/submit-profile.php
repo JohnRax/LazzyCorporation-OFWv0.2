@@ -76,7 +76,7 @@
         $q9=$_POST['uq_9'];
         $q10=$_POST['uq_10'];
         $user->post_profile_supplementary_question($id,$q1,$q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10);
-        //Supplementary Questions
+        // Supplementary Questions
         
 
 
@@ -107,7 +107,7 @@
                                             <div class="picture-container">
                                                     <div class="picture">
                                                         <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title=""/>
-                                                        <input type="file" required="" title="Please select you photo" id="wizard-picture" name="up_picture">
+                                                        <input type="file" required=""  select you photo" id="wizard-picture" name="up_picture">
                                                     </div> 
                                                 </div>
 
@@ -195,12 +195,12 @@
                                                     </div>
                                                      <div class="form-group">
                                                      <labeL>Highest Education Attainment *</label>
-                                                        <select name="up_education" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your ">
+                                                        <select name="up_education" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your highest educational ttainment ">
                                                             
                                                             <option  value="Elementary">Elementary</option>
                                                             <option  value="High School">High School</option>
-                                                            <option  value="Married">College</option>
-                                                            <option  value="Married">College</option>
+                                                            <option  value="College">College</option>
+                                                           
                                                            
                                                         </select>
                                                     </div>
