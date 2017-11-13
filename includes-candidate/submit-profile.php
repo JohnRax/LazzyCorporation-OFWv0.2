@@ -29,35 +29,35 @@
 
                                                <h3 class="info-text"> Personal Information </h3>
                                                 <label>Resume Category *</label>
-                                                        <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                             <option selected disabled value="" >Select Resume Category</option>
-                                                            <option value="Driver">Driver</option>
-                                                            <option value="Helper">Helper</option>
-                                                            
-                                                        </select>
+                                                    <select required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your resume category" >
+                                                        
+                                                        <option value="Driver">Driver</option>
+                                                        <option value="Helper">Helper</option>
+                                                        
+                                                    </select>
                                                 <div class="form-group">
                                                     <labeL>Last Name *</label>
-                                                    <input name="u_lname" required type="text" class="form-control" placeholder="Last Name">
+                                                    <input name="u_lname" required type="text" class="form-control" placeholder="Last Name" title="Please input your Last name">
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>First Name *</label>
-                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="First Name">
+                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="First Name" title="Please input your First name">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Email address *</label>
-                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Email address">
+                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Email address" title="Please input your email address">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile number *</label>
-                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Mobile number">
+                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
                                                 </div>
                                                    <div class="form-group">
-                                                    <labeL>Telephone number</label>
+                                                    <labeL>Telephone number <small><i>Optional</i></small> </label>
                                                     <input name="up_telephone"  type="text" class="form-control" placeholder="Telephone number">
                                                 </div>
                                                 <label>Nationality  *</label>
-                                                        <select id="lunchBegins" name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option selected disabled value="" >Select your Nationality</option>
+                                                        <select name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your nationality">
+                                                            
                                                             <option value="Filipino">Filipino</option>
                                                             <option value="Chinese">Chinese</option>
                                                             <option value="Hongkongese">Hongkongese</option>
@@ -67,7 +67,7 @@
                                                             <option value="Thai">Thai</option>
                                                         </select>
                                                 <label>Location  *</label>
-                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                        <select class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your location">
                                                             <option selected disabled value="" >Select Country</option>
                                                             <option  value="Philippines">Philippines</option>
                                                             <option  value="China">China</option>
@@ -78,21 +78,17 @@
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Age *</label>
-                                                    <input name="up_age" type="text" class="form-control" placeholder="Age">
+                                                    <input name="up_age" type="text" class="form-control" required placeholder="Age" title="Please input your age">
                                                 </div>
+                                            
                                                 <div class="form-group">
-                                                    <labeL>Marital Status *</label>
-                                                    <input name="up_maritalstatus" type="text" class="form-control" placeholder="Super villa ...">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Location  *</label>
-                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option selected disabled value="" >Select Country</option>
-                                                            <option  value="Philippines">Philippines</option>
-                                                            <option  value="China">China</option>
-                                                            <option  value="India">India</option>
-                                                            <option  value="Indonesia">Indonesia</option>
-                                                            <option  value="Thailand">Thailand</option>
+                                                     <labeL>Marital Status *</label>
+                                                        <select name="up_maritalstatus" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your marital status">
+                                                            
+                                                            <option  value="Single">Single</option>
+                                                            <option  value="Married">Married</option>
+                                                            <option  value="Divorced">Divorced</option>
+                                                            <option  value="Widowed">Widowed</option>
                                                            
                                                         </select>
                                                 </div>
