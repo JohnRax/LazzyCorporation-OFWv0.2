@@ -3,7 +3,12 @@
         <div class="properties-area recent-property" style="background-color: #FFF;">
             <div class="container">  
                 <div class="row">
-                     
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                        <!-- /.feature title -->
+                        <h2>Recent Submit Resume</h2>
+                        <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p><br><br>
+                    </div>
+                </div>
                 <div class="col-md-3 p0 padding-top-40">
                     <div class="blog-asside-right pr0">
                         <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
