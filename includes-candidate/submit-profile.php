@@ -185,7 +185,7 @@
                                                 </div>
                                                    <div class="form-group">
                                                      <labeL>Religion *</label>
-                                                        <select name="up_religion" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your marital status">
+                                                        <select name="up_religion" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your Relegion">
                                                             
                                                             <option  value="Single">Catholic</option>
                                                             <option  value="Married">Muslim</option>
