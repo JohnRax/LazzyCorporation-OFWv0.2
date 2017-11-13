@@ -540,7 +540,7 @@
                                             <div class="col-sm-12">
                                                 <div class="">
                                                     <p>
-                                                        <label><strong>Terms and Conditions</strong></label>
+                                                    <label><strong>Terms and Conditions</strong></label>
                                                         By accessing or using  GARO ESTATE services, such as 
                                                         posting your property advertisement with your personal 
                                                         information on our website you agree to the
