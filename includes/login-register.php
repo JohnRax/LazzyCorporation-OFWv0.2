@@ -6,6 +6,7 @@
 
         $type=trim($_POST['u_type']);
         $email=trim($_POST['u_email']);
+        $mobile=trim($_POST['u_mobile']);
         $password=trim($_POST['u_password']);
         $lastname=trim($_POST['u_lname']);
         $firstname=trim($_POST['u_fname']);
@@ -19,14 +20,26 @@
             $check_email=$check_stmt->fetch(PDO::FETCH_ASSOC);
             if($check_email['u_email']==$email)
             {
-                $error="Sorry Email Address is already registered ";
+                $error="Sorry Email Address is already registered";
+
             }
             else
             {
-                if($user->register($type,$email,$password,$lastname,$firstname,$gender))
-                {
-                    $user->redirect('index.php?source=loginandregister&joined');
-                }
+                 $check_query="SELECT * FROM user WHERE u_mobile=:mobile";
+                 $check_stmt=$connection->prepare($check_query);
+                 $check_stmt->execute(['mobile'=>$mobile]);
+                 $check_mobile=$check_stmt->fetch(PDO::FETCH_ASSOC);
+                 if ($check_mobile['u_mobile']==$mobile) 
+                 {
+                     $error="Sorry Phone Number is already registered";
+                 }
+                 else
+                 {
+                     if($user->register($type,$email,$mobile,$password,$lastname,$firstname,$gender))
+                     {
+                        $user->redirect('index.php?source=loginandregister&joined');
+                     }
+                 }
             }
 
         }
@@ -177,7 +190,9 @@
                                         </div>
                                         <label for="name">Email *</label>
                                         <input type="text" required class="form-control" name="u_email" placeholder="User Name">
-        
+                                        
+                                        <label for="name">Phone Number *</label>
+                                        <input type="text" required class="form-control" name="u_mobile" placeholder="User Name">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password *</label>
