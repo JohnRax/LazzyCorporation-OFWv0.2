@@ -1,13 +1,64 @@
 <br><br>
+ <?php 
+
+    require_once 'includes/connection.php';
+    if (isset($_POST['finish']))
+    {
+        //personal Info
+        $id=$_SESSION['user_session'];
+        $category=$_POST['up_category'];
+        $email=$_POST['up_email'];
+        $mobile=$_POST['up_mobile'];
+        $telephone=$_POST['up_telephone'];
+        $nationality=$_POST['up_nationality'];
+        $address=$_POST['up_address'];
+        $age=$_POST['up_age'];
+        $religion="Catholic";
+        $marital=$_POST['up_maritalstatus'];
+        $languages=$_POST['up_languages'];
+        $picture=$_FILES['up_picture']['name'];
+        $picture_temp=$_FILES['up_picture']['tmp_name'];
+        move_uploaded_file($picture_temp, "assets/img/profilepicture/{$picture}");
+        $user->post_profile_personal_information($id,$picture_temp,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$languages);
+
+
+        //Propessional Info
+        $preferedworklocation=$_POST['upi_preferedworklocation'];
+        $yearsofexp=$_POST['upi_yearsofexp'];
+        $expsummary=$_POST['upi_expsummary'];
+        $skillsexp=$_POST['upi_skillsexp'];
+        $cookingskills=$_POST['upi_cookingskills'];
+        $otherskills=$_POST['upi_otherskills'];
+        $availability=$_POST['upi_availability'];
+        $user->post_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skillsexp,$cookingskills,$otherskills,$availability);
+
+
+        //Supplementary Questions
+        $q1=$_POST['uq_1'];
+        $q2=$_POST['uq_2'];
+        $q3=$_POST['uq_3'];
+        $q4=$_POST['uq_4'];
+        $q5=$_POST['uq_5'];
+        $q6=$_POST['uq_6'];
+        $q7=$_POST['uq_7'];
+        $q8=$_POST['uq_8'];
+        $q9=$_POST['uq_9'];
+        $q10=$_POST['uq_10'];
+        $user->post_profile_supplementary_question($id,$q1,$q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10);
+
+
+    }
+   
+  ?>
+
  <div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
             <div class="container">
                 <div class="clearfix" > 
                     <div class="wizard-container"> 
 
                         <div class="wizard-card ct-wizard-orange" id="wizardProperty">
-                            <form action="" method="">                        
+                            <form action="" method="post"  enctype="multipart/form-data">                        
                              
-
                                 <ul>
                                     <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
                                     <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
@@ -23,13 +74,13 @@
                                             <div class="picture-container">
                                                     <div class="picture">
                                                         <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title=""/>
-                                                        <input type="file" id="wizard-picture">
+                                                        <input type="file" id="wizard-picture" name="up_picture">
                                                     </div> 
                                                 </div>
 
                                                <h3 class="info-text"> Personal Information </h3>
                                                 <label>Resume Category<small>(required)</small></label>
-                                                        <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                        <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city" name="up_category">
                                                              <option selected disabled value="" >Select Resume Category</option>
                                                             <option value="Driver">Driver</option>
                                                             <option value="Helper">Helper</option>
@@ -45,7 +96,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Email address<small>(required)</small></label>
-                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Email address">
+                                                    <input name="up_email"  required type="text" class="form-control" placeholder="Email address">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile number<small>(required)</small></label>
@@ -67,7 +118,7 @@
                                                             <option value="Thai">Thai</option>
                                                         </select>
                                                 <label>Location <small>(required)</small></label>
-                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                        <select id="lunchBegins" name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option selected disabled value="" >Select Country</option>
                                                             <option  value="Philippines">Philippines</option>
                                                             <option  value="China">China</option>
@@ -84,18 +135,7 @@
                                                     <labeL>Marital Status<small>(required)</small></label>
                                                     <input name="up_maritalstatus" type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Location <small>(required)</small></label>
-                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option selected disabled value="" >Select Country</option>
-                                                            <option  value="Philippines">Philippines</option>
-                                                            <option  value="China">China</option>
-                                                            <option  value="India">India</option>
-                                                            <option  value="Indonesia">Indonesia</option>
-                                                            <option  value="Thailand">Thailand</option>
-                                                           
-                                                        </select>
-                                                </div>
+                                             
                                                 
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Languages Spoken<small>(required)</small></label>
@@ -493,7 +533,7 @@
                                             </div>
                                                   <div class="col-sm-12"> 
                                                      <labeL>Availability<small>(required)</small></label>
-                                                    <input name="propertyname" type="date" class="form-control" placeholder="Super villa ...">
+                                                    <input name="upi_availability" type="date" class="form-control" placeholder="Super villa ...">
                                                    
                                                 </div>
                                             <br>
@@ -651,7 +691,7 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
-                                        <input type='button' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
+                                        <input type='submit' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
                                     </div>
 
                                     <div class="pull-left">

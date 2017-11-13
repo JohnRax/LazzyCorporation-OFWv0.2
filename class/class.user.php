@@ -62,16 +62,82 @@ class User
 		}
 
 	}
-	public function post_profile_personal_information($category,$lastname,$firstname,$email,$mobile,$telephone,$nationality,$location,$languages)
+	public function post_profile_personal_information($id,$picture,$category,$email,$location,$mobile,$telephone,$nationality,$religion,$age,$marital,$languages)
 	{
+		try
+		{
+			$insert_personal_query="INSERT INTO user_personal_information (u_id,up_picture,up_category,up_email,up_address,up_mobile,up_telephone,up_nationality,up_religion,up_age,up_maritalstatus,up_languages,up_status) 
+			VALUES(:id,:picture,:category,:email,:address,:mobile,:telehpone,:nationality,:religion,:age,:marital,:languages,:status)";
+			$insert_personal_stmt=$this->connection->prepare($insert_personal_query);
+			$insert_personal_stmt->execute(['id'=>$id,
+											'picture'=>$picture,
+											'category'=>$category,
+											'email'=>$email,
+											'address'=>$location,
+											'mobile'=>$mobile,
+											'telehpone'=>$telephone,
+											'nationality'=>$nationality,
+											'religion'=>$religion,
+											'age'=>$age,
+											'marital'=>$marital,
+											'languages'=>$languages,
+											'status'=>'Unapproved']);
+			return $insert_personal_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
 
 	}
-	public function post_profile_professional_information($preferedlocation,$yearsexp,$expsummary,$skills,$cookingskills,$otherskills,$availability)
+	public function post_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skills,$cookingskills,$otherskills,$availability)
 	{
+		try
+		{
+			$insert_professional_query="INSERT INTO user_professional_information(u_id,upi_preferedworklocation,upi_yearsofexp,upi_expsummary,upi_cookingskills,upi_skillsexp,upi_otherskills,upi_availability,upi_status)
+			VALUES(:id,:preferedworklocation,:yearsofexp,:expsummary,:cookingskills,:skills,:otherskills,:availability,:status)";
+			$insert_professional_stmt=$this->connection->prepare($insert_professional_query);
+			$insert_professional_stmt->execute(['id'=>$id,
+												'preferedworklocation'=>$preferedworklocation,
+												'yearsofexp'=>$yearsofexp,
+												'expsummary'=>$expsummary,
+												'skills'=>$skills,
+												'cookingskills'=>$cookingskills,
+												'otherskills'=>$otherskills,
+												'availability'=>$availability,
+												'status'=>'Unapproved']);
+			return $insert_professional_stmt;
 
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
 	}
-	public function post_profile_supplementary_question($ans1,$ans2,$ans3,$ans4,$ans5,$ans6,$ans7,$ans8,$ans9,$ans10)
+	public function post_profile_supplementary_question($id,$ans1,$ans2,$ans3,$ans4,$ans5,$ans6,$ans7,$ans8,$ans9,$ans10)
 	{
+		try
+		{
+			$insert_question_query="INSERT INTO user_question(u_id,uq_1,uq_2,uq_3,uq_4,uq_5,uq_6,uq_7,uq_8,uq_9,uq_10)
+			VALUES(:id,:q1,:q2,:q3,:q4,:q5,:q6,:q7,:q8,:q9,:q10)";
+			$insert_question_stmt=$this->connection->prepare($insert_question_query);
+			$insert_question_stmt->execute(['id'=>$id,
+											'q1'=>$ans1,
+											'q2'=>$ans2,
+											'q3'=>$ans3,
+											'q4'=>$ans4,
+											'q5'=>$ans5,
+											'q6'=>$ans6,
+											'q7'=>$ans7,
+											'q8'=>$ans8,
+											'q9'=>$ans9,
+											'q10'=>$ans10]);
+			return $insert_question_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
 
 	}
 	public function view_jobs()
