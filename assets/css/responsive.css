@@ -665,7 +665,7 @@
     }
     .page-title h2 {
         font-size: 20px;
-        margin-top: -50px;
+        margin-top: -40px;
     }
     .page-title h5 {
         font-size: 12px;
@@ -838,7 +838,7 @@
 @media (max-width:480px){
 
     .page-title {
-        padding-top: 10px;
+        padding-top: 400px;
        
     }
     .search-btn
