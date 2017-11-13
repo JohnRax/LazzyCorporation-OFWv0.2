@@ -35,10 +35,6 @@
                                                         <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option>Driver</option>
                                                             <option>Helper</option>
-                                                            <option>Casablanca</option>
-                                                            <option>Tokyo</option>
-                                                            <option>Marraekch</option>
-                                                            <option>kyoto , shibua</option>
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Last Name<small>(required)</small></label>
