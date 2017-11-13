@@ -180,8 +180,8 @@
 
                              
                                      <div class="form-group">
-                                         <label for="Lastname">Account Type *</label>
-                                            <select id="usertype" class="form-control" name="u_type">
+                                         <label  for="Lastname">Account Type *</label>
+                                            <select required id="usertype" class="form-control" name="u_type">
                                                 <option class="form-control" selected disabled value="">Select Account Type</option>
                                                  <option class="form-control" value="candidate">Candidate</option>   
                                                  <option class="form-control" value="employer">Employer</option>
@@ -189,7 +189,7 @@
                                             </select>
                                         </div>
                                         <label for="name">Email *</label>
-                                        <input type="text" required class="form-control" name="u_email" placeholder="User Name">
+                                        <input type="email" required class="form-control" name="u_email" placeholder="User Name">
                                         
                                         <label for="name">Phone Number *</label>
                                         <input type="text" required class="form-control" name="u_mobile" placeholder="User Name">
@@ -209,8 +209,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="Gender">Gender *</label>
-                                         <select id="gender" class="form-control" name="u_gender">
-                                                <option class="form-control" selected disabled value="disabled">Select Gender</option>
+                                         <select id="gender" required="" class="form-control" name="u_gender">
+                                                <option class="form-control" selected disabled value="">Select Gender</option>
                                                 <option class="form-control" value="male">Male</option>
                                                 <option class="form-control" value="female">Female</option>
                                          </select>

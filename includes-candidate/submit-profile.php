@@ -29,7 +29,7 @@
 
                                                <h3 class="info-text"> Personal Information </h3>
                                                 <label>Resume Category *</label>
-                                                    <select required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your resume category" >
+                                                    <select required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your resume category" name="up_category" >
                                                         
                                                         <option value="Driver">Driver</option>
                                                         <option value="Helper">Helper</option>
@@ -67,7 +67,7 @@
                                                             <option value="Thai">Thai</option>
                                                         </select>
                                                 <label>Location  *</label>
-                                                        <select class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your location">
+                                                        <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your location">
                                                             <option selected disabled value="" >Select Country</option>
                                                             <option  value="Philippines">Philippines</option>
                                                             <option  value="China">China</option>
@@ -504,7 +504,6 @@
 
                                     <div class="tab-pane" id="step3">                                        
                                         <h3 class="info-text">Supplementary Questions</h3>
-                                            
                                           <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>1. Would you agreee to do extra work?</strong></label>
@@ -516,6 +515,7 @@
                                                      </p>
                                                     
                                         </div> 
+
                                           <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>2. If your employer asked you to work on your holiday and willing to pay as compensation, are you willing to do so?</strong></label>
