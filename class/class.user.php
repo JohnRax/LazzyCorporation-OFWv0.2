@@ -114,6 +114,7 @@ class User
 		{
 			echo $e->getMessage();
 		}
+
 	}
 	public function post_profile_supplementary_question($id,$ans1,$ans2,$ans3,$ans4,$ans5,$ans6,$ans7,$ans8,$ans9,$ans10)
 	{
@@ -141,7 +142,7 @@ class User
 		}
 
 	}
-	public function view_jobs()
+	public function post_jobs()
 	{
 
 	}
