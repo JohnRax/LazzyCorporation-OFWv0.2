@@ -30,7 +30,7 @@
                                             </div>
                                             <div class="col-sm-6">
 
-                                                <h3>Personal Information</h3>
+                                                <h3><strong>Personal Information</strong></h3>
                                                 <label>Resume Category</label>
                                                         <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Resume Category">
                                                             <option>Driver</option>
