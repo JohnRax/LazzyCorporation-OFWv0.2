@@ -36,7 +36,7 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Baby Care</label>
+                                                    <label> <input type="checkbox" checked> Baby Care</label>
                                                 </div> 
                                             </div>
 
@@ -52,12 +52,12 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Elder Care</label>
+                                                    <label> <input type="checkbox" checked> Elder Care</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Teen Care </label>
+                                                    <label> <input type="checkbox" checked> Teen Care </label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -82,7 +82,7 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input type="checkbox" checked>Driver</label>
+                                                    <label>  <input type="checkbox" checked> Driver</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
