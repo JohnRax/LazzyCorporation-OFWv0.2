@@ -11,6 +11,7 @@
                                 <ul>
                                     <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
                                     <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
+                                    <li><a href="#step3" data-toggle="tab">Step 3 </a></li>
                                     
                                 </ul>
 
@@ -20,26 +21,21 @@
                                         <div class="row p-b-15  ">
 
                                        
-                                                <div class="picture-container">
-                                                    <div class="picture">
-                                                        <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title=""/>
-                                                        <input type="file" id="wizard-picture">
-                                                    </div> 
-                                                </div>
+                                               
                                             <div class="col-sm-12">
                                                 <h3 class="info-text"> <strong>Job Information</strong></h3>
                                                 <div class="form-group">
                                                     <labeL>Job Title *</label>
-                                                    <input name="j_jobtitle" type="text" required class="form-control" placeholder="Job Title">
+                                                    <input name="j_jobtitle" type="text" required class="form-control" placeholder="Select Job Title" title="Please input job title">
                                                 </div>
                                                 <label> Employer Type  *</label>
-                                                        <select id="lunchBegins" name="j_employertype" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
+                                                        <select  name="j_employertype" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select employer type">
                                                             <option value="Direct Employer">Direct Employer</option>
                                                             <option value="Agency">Agency</option>
                                                         </select>
                                                 
                                                 <label>Job Region *</label>
-                                                        <select id="lunchBegins" name="j_country" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
+                                                        <select  name="j_country" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job location">
                                                                 <option value="Hong Kong">
                                                                     Hong Kong
                                                                 </option>
@@ -64,20 +60,20 @@
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>City *</label>
-                                                    <input name="j_districtlocation"  type="text" required class="form-control" placeholder="City">
+                                                    <input name="j_districtlocation" type="text" required title="Select city" class="form-control" placeholder="City">
                                                 </div>
                                                 <div class="form-group">
-                                                    <labeL>Contact Number<small>(required)</small></label>
-                                                    <input name="propertyname" type="number" required class="form-control" placeholder="Contact">
+                                                    <labeL>Contact Number *</label>
+                                                    <input name="j_contact" type="number" title="Please input contact number" required class="form-control" placeholder="Contact">
                                                 </div>
                                                    
                                                  <label>Job Type *</label>
-                                                        <select id="lunchBegins" name="j_type" required  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
+                                                        <select  name="j_type" required  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job type">
                                                             <option value="Full Time">Full Time</option>
                                                             <option value="Part Time">Part Time</option>
                                                         </select>
                                                   <label>Job Category *</label>
-                                                        <select id="lunchBegins" required  name="j_category" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
+                                                        <select  required  name="j_category" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job category">
                                                             <option  value="Domestic Helper">
                                                                 Domestic Helper
                                                             </option>
@@ -98,11 +94,11 @@
                                                             </option>
                                                         </select>
                                                      <div class="form-group">
-                                                                <label>Job Description *</label>
-                                                                <textarea name="j_description" required maxlength="250" minlength="70" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
+                                                        <label>Job Description *</label>
+                                                        <textarea name="j_description" required title="Please enter at least 50 characters." maxlength="250" minlength="50" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
                                                     </div>
-                                                    <label>Nationality *</label>
-                                                        <select id="lunchBegins" required  name="j_workingstatus" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Working Status">
+                                                    <label>Prefered Working Status *</label>
+                                                        <select  required  name="j_workingstatus" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select working status">
                                                             <option  value="Break Contract">
                                                                 Break Contract
                                                             </option>
@@ -126,7 +122,7 @@
 
                                                     <h3>Family Status</h3>
                                                     <label>Nationality *</label>
-                                                        <select id="lunchBegins" required  name="j_nationality" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Nationality">
+                                                        <select required  name="j_nationality" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select nationality">
                                                                  <option value="American Family">
                                                                     American Family
                                                                 </option>
@@ -201,14 +197,50 @@
                                                                 </option>
                                                         </select>
                                                     <label>Family Type *</label>
-                                                        <select id="lunchBegins" required  name="j_familytype" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
-                                                            <option>Philippines</option>
-                                                            <option>China</option>
-                                                            <option>India</option>
-                                                            <option>Indonesia</option>
-                                                            <option>Thailand</option>
-                                                        </select> 
-
+                                                        <select class="selectpicker" data-live-search="true" data-live-search-style="begins" name="j_familytype" required="" title="Select family type">
+                                                            <option value="Couple">
+                                                                Couple
+                                                            </option>
+                                                            <option value="Couple + 1 kid">
+                                                                Couple + 1 kid
+                                                            </option>
+                                                            <option value="Couple + 2 kids">
+                                                                Couple + 2 kids
+                                                            </option>
+                                                            <option value="Couple + 3 kids">
+                                                                Couple + 3 kids
+                                                            </option>
+                                                            <option value="Couple + 4 kids">
+                                                                Couple + 4 kids
+                                                            </option>
+                                                            <option value="Couple + 5 kids">
+                                                                Couple + 5 kids
+                                                            </option>
+                                                            <option value="Couple + Parents">
+                                                                Couple + Parents
+                                                            </option>
+                                                            <option value="Couple with Parents">
+                                                                Couple with Parents
+                                                            </option>
+                                                            <option value="Large Family (&gt; 6)">
+                                                                Large Family (&gt; 6)
+                                                            </option>
+                                                            <option value="Large Family (&gt;6)">
+                                                                Large Family (&gt;6)
+                                                            </option>
+                                                            <option value="Other">
+                                                                Other
+                                                            </option>
+                                                            <option value="Single">
+                                                                Single
+                                                            </option>
+                                                            <option value="Single + 1 kid">
+                                                                Single + 1 kid
+                                                            </option>
+                                                            <option value="Single + 2 kids">
+                                                                Single + 2 kids
+                                                            </option>
+                                                        </select>
                                             </div>
                                         </div>
                                     </div>
@@ -368,23 +400,52 @@
                                                 </div>
                                             </div><br>
                                             <div class="form-group">
-                                                <label>Application Email  *</label> <input class="form-control" name="j_email" placeholder="Application Email" required type="email">
+                                                <label>Application Email  *</label> 
+                                                <input class="form-control" required="" title="Please input application email" name="j_email" placeholder="Application Email"  type="email">
+                                            </div>  
+                                            <div class="form-group">
+                                                <label>Monthly Salary  *</label> 
+                                                <input class="form-control" required="" title="Please input montly salary" name="j_monthlysalary" placeholder="e.g. PHP 25,000"  type="type">
                                             </div>
                                             <div class="form-group">
-                                                <label>Monthly Salary  *</label> <input class="form-control" name="j_monthlysalary" placeholder="Application Email" required type="type">
+                                                <label> Start Date  *</label>
+                                                 <input class="form-control" required="" title="Please input starting date" name="j_startdate"  type="date">
                                             </div>
                                             <div class="form-group">
-                                                <label> Start Date  *</label> <input class="form-control" name="j_startdate" placeholder="Application Email" required type="date">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Logo <small> (Optional)</small></label> <input class="form-control" name="j_logo" required type="file">
+                                                <label>Logo <small> <i>(Optional)</i></small></label>
+                                                <input class="form-control" name="j_logo" required type="file">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End step 2 -->
 
+                                    <div class="tab-pane" id="step3">                                        
+                                        <h4 class="info-text"> Finished and submit </h4>
+                                        <div class="row">  
+                                            <div class="col-sm-12">
+                                                <div class="">
+                                                    <p>
+                                                        <label><strong>Terms and Conditions</strong></label>
+                                                        By accessing or using  GARO ESTATE services, such as 
+                                                        posting your property advertisement with your personal 
+                                                        information on our website you agree to the
+                                                        collection, use and disclosure of your personal information 
+                                                        in the legal proper manner
+                                                    </p>
 
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" /> <strong>Accept termes and conditions.</strong>
+                                                        </label>
+                                                    </div> 
+
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                
+                                    <!--  End step 4 -->
 
                                 <div class="wizard-footer">
                                     <div class="pull-right">
