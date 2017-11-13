@@ -29,8 +29,8 @@
 
                                                <h3 class="info-text"> Personal Information </h3>
                                                 <label>Resume Category *</label>
-                                                        <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                             <option selected disabled value="" >Select Resume Category</option>
+                                                        <select id="lunchBegins" name="up_category" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Resume Category">
+                                                        
                                                             <option value="Driver">Driver</option>
                                                             <option value="Helper">Helper</option>
                                                             
@@ -80,13 +80,20 @@
                                                     <labeL>Age *</label>
                                                     <input name="up_age" type="text" class="form-control" placeholder="Age">
                                                 </div>
-                                                <div class="form-group">
-                                                    <labeL>Marital Status *</label>
-                                                    <input name="up_maritalstatus" type="text" class="form-control" placeholder="Super villa ...">
+                                                 <div class="form-group">
+                                                    <label>Marital Status  *</label>
+                                                        <select id="lunchBegins" name="up_maritalstatus" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select">
+                                                           
+                                                            <option  value="Single">Single</option>
+                                                            <option  value="Married">Married</option>
+                                                            <option  value="Divorced">Divorced</option>
+                                                            <option  value="Widowed">Widowed</option>
+                                                           
+                                                        </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Location  *</label>
-                                                        <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                        <select id="lunchBegins" name="up_location" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option selected disabled value="" >Select Country</option>
                                                             <option  value="Philippines">Philippines</option>
                                                             <option  value="China">China</option>
@@ -167,8 +174,8 @@
                                         <h3 class="info-text"> Professional Information </h3>
                                          <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
-                                                        <label>Where Do You Want To Work</label>
-                                                        <select name="upi_preferedworklocation" id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                        <label>Where Do You Want To Work *</label>
+                                                        <select name="upi_preferedworklocation" required id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option selected disabled value="">Select Country </option>
                                                             <option value="Philippines">Philippines</option>
                                                             <option value="China">China</option>
@@ -180,8 +187,8 @@
                                                 </div>
                                                  <div class="col-sm-12"> 
                                                    <div class="col-sm-12"> 
-                                                <label>Years Of Experience</label>
-                                                        <select id="lunchBegins" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                <label>Years Of Experience *</label>
+                                                        <select required id="lunchBegins" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option selected disabled value="">Select</option>
                                                             <option value="0">0</option>
                                                             <option value="1">1</option>
@@ -201,19 +208,19 @@
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-                                                        <label>Experience Summary :</label>
-                                                        <textarea name="upi_expsummary" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
+                                                        <label>Experience Summary *</label>
+                                                        <textarea required name="upi_expsummary" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
                                                     </div> 
                                                 </div> 
                                             </div>
 
                                                                              
                                             <div class="col-sm-12 padding-top-15">
-                                            <label>My Skills and Experience : :<small> Maximum of 4 Cooking skills</small> </label>
+                                            <label>My Skills and Experience *<small> Maximum of 4 </small> </label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
-                                                    
+                                                        
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input name="upi_skillsexp" type="checkbox"> Baby Care
@@ -289,7 +296,7 @@
                                             </div>
 
                                              <div class="col-sm-12 padding-top-15">
-                                            <label>My Cooking Skills :<small> Maximum of 4 Cooking skills</small> </label>
+                                            <label>My Cooking Skills :<small> Maximum of 4 </small> </label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
@@ -395,7 +402,7 @@
                                                 </div>
                                             </div>
                                              <div class="col-sm-12 padding-top-15">
-                                            <label>My Other Skills : <small> Maximum of 4 Other skills</small> </label>
+                                            <label>My Other Skills <small> Maximum of 4 </small> </label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
@@ -493,8 +500,22 @@
                                             </div>
                                                   <div class="col-sm-12"> 
                                                      <labeL>Availability *</label>
-                                                    <input name="propertyname" type="date" class="form-control" placeholder="Super villa ...">
+                                                    <input name="upi_availability" type="date" class="form-control" >
                                                    
+                                                </div>
+                                                <div class="col-sm-12"> 
+                                                        <label>Working Status</label>
+                                                        <select name="upi_workingstatus" id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
+                                                            
+                                                            <option value="Break Contract">Break Contract</option>
+                                                            <option value="Ex-overseas">Ex-overseas</option>
+                                                            <option value="India">Finished Contract</option>
+                                                            <option value="Termination Due To Relocation/Financial">Termination Due To Relocation/Financial</option>
+                                                            <option value="Termination For Other Reasons">Termination For Other Reasons</option>
+                                                            <option value="Transfer">Transfer</option>
+                                                            <option value="Unemployed">Unemployed</option>
+                                                           
+                                                        </select>
                                                 </div>
                                             <br>
                                         </div>
@@ -507,7 +528,7 @@
                                           <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>1. Would you agreee to do extra work?</strong></label>
-                                                           <select name="uq_1" class="form-group">
+                                                           <select name="uq_1" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -518,7 +539,7 @@
                                           <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>2. If your employer asked you to work on your holiday and willing to pay as compensation, are you willing to do so?</strong></label>
-                                                           <select name="uq_2" class="form-group">
+                                                           <select name="uq_2" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -529,7 +550,7 @@
                                              <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>3. Are you willing to work for a family without your own servant room?</strong></label>
-                                                           <select name="uq_3" class="form-group">
+                                                           <select name="uq_3" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -540,7 +561,7 @@
                                              <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>4. Are you willing to take care of children no matter how many the family has?</strong></label>
-                                                           <select name="uq_4" class="form-group">
+                                                           <select name="uq_4" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -551,7 +572,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>5. Living with elderly person?</strong></label>
-                                                           <select name="uq_5" class="form-group">
+                                                           <select name="uq_5" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -562,7 +583,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>6. Are you willing to take care of disabled elderly?</strong></label>
-                                                           <select name="uq_6" class="form-group">
+                                                           <select name="uq_6" class="form-group" required>
                                                             <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -573,7 +594,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>7. Do you got experience to take care of dogs or pets?</strong></label>
-                                                           <select name="uq_7" class="form-group">
+                                                           <select name="uq_7" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -584,7 +605,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>8. Have you suffered from health problems in your nervous system, eyes, feet, legs or any other parts of your body?</strong></label>
-                                                           <select name="uq_8" class="form-group">
+                                                           <select name="uq_8" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -595,7 +616,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>9. Can you drive?</strong></label>
-                                                           <select name="uq_9" class="form-group">
+                                                           <select name="uq_9" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
@@ -606,7 +627,7 @@
                                             <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>10. Do you smoke?</strong></label>
-                                                           <select name="uq_10" class="form-group">
+                                                           <select name="uq_10" class="form-group" required>
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
