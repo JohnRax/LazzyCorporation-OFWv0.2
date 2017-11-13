@@ -495,7 +495,9 @@ input[type="search"]::-webkit-search-decoration {
 .form-control.error{
     color: #FF3B30;
     border-color: #FF3B30;
+    border: 2px solid red;
 }
+
 /*           Labels & Progress-bar              */
 .label{
     padding: 0.2em 0.6em 0.2em;
