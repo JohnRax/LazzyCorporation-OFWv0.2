@@ -813,11 +813,13 @@
 @media (max-width: 1168px){
 
     .page-title {
-        padding-top: 200px;
+        padding-top: 10px;
        
     }
 
 }
+
+
 @media (max-width: 966px){
 
     .page-title {
@@ -828,7 +830,7 @@
 @media (max-width:764px){
 
     .page-title {
-        padding-top: 300px;
+        padding-top: 10px;
        
     }
 
@@ -836,7 +838,7 @@
 @media (max-width:480px){
 
     .page-title {
-        padding-top: 700px;
+        padding-top: 10px;
        
     }
     .search-btn
