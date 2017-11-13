@@ -4,7 +4,17 @@
     require_once 'includes/connection.php';
     if (isset($_POST['finish']))
     {
+
         //personal Info
+
+        if( isset($_POST['up_languages']) && !empty($_POST['up_languages']) ) 
+        { 
+            $languages = implode(', ', $_POST['up_languages']);
+        }
+        else
+        {
+            $languages="none";        
+        }
         $id=$_SESSION['user_session'];
         $category=$_POST['up_category'];
         $email=$_POST['up_email'];
@@ -13,27 +23,48 @@
         $nationality=$_POST['up_nationality'];
         $address=$_POST['up_address'];
         $age=$_POST['up_age'];
-        $religion="Catholic";
+        $religion=$_POST['up_religion'];
+        $education=$_POST['up_education'];
         $marital=$_POST['up_maritalstatus'];
-        $languages=$_POST['up_languages'];
         $picture=$_FILES['up_picture']['name'];
         $picture_temp=$_FILES['up_picture']['tmp_name'];
         move_uploaded_file($picture_temp, "assets/img/profilepicture/{$picture}");
-        $user->post_profile_personal_information($id,$picture_temp,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$languages);
+        $user->post_profile_personal_information($id,$picture_temp,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
 
 
         //Propessional Info
+
+        if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
+        { 
+            $skillsexp = implode(', ', $_POST['upi_skillsexp']);
+        }
+        else
+        {
+            $skillsexp="none";        
+        }
+
+        if( isset($_POST['upi_cookingskills']) && !empty($_POST['upi_cookingskills']) ) 
+        { 
+            $cookingskills = implode(', ', $_POST['upi_cookingskills']);
+        }
+        else
+        {
+            $cookingskills="none";        
+        }
+        if( isset($_POST['upi_otherskills']) && !empty($_POST['upi_otherskills']) ) 
+        { 
+            $otherskills = implode(', ', $_POST['upi_otherskills']);
+        }
+        else
+        {
+            $otherskills="none";        
+        }
         $preferedworklocation=$_POST['upi_preferedworklocation'];
         $yearsofexp=$_POST['upi_yearsofexp'];
         $expsummary=$_POST['upi_expsummary'];
-        $skillsexp=$_POST['upi_skillsexp'];
-        $cookingskills=$_POST['upi_cookingskills'];
-        $otherskills=$_POST['upi_otherskills'];
         $availability=$_POST['upi_availability'];
         $user->post_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skillsexp,$cookingskills,$otherskills,$availability);
 
-
-        //Supplementary Questions
         $q1=$_POST['uq_1'];
         $q2=$_POST['uq_2'];
         $q3=$_POST['uq_3'];
@@ -45,6 +76,8 @@
         $q9=$_POST['uq_9'];
         $q10=$_POST['uq_10'];
         $user->post_profile_supplementary_question($id,$q1,$q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10);
+        //Supplementary Questions
+        
 
 
     }
@@ -79,15 +112,7 @@
                                                 </div>
 
                                                <h3 class="info-text"> Personal Information </h3>
-<<<<<<< HEAD
-                                                <label>Resume Category<small>(required)</small></label>
-                                                        <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city" name="up_category">
-                                                             <option selected disabled value="" >Select Resume Category</option>
-                                                            <option value="Driver">Driver</option>
-                                                            <option value="Helper">Helper</option>
-                                                            
-                                                        </select>
-=======
+
                                                 <label>Resume Category *</label>
                                                     <select required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your resume category" name="up_category" >
                                                         
@@ -95,7 +120,7 @@
                                                         <option value="Helper">Helper</option>
                                                         
                                                     </select>
->>>>>>> d010bf181ed71e26e3bedd6ae8fe7ae950fdf322
+
                                                 <div class="form-group">
                                                     <labeL>Last Name *</label>
                                                     <input name="u_lname" required type="text" class="form-control" placeholder="Last Name" title="Please input your Last name">
@@ -105,13 +130,10 @@
                                                     <input name="u_firstname" required type="text" class="form-control" placeholder="First Name" title="Please input your First name">
                                                 </div>
                                                 <div class="form-group">
-<<<<<<< HEAD
-                                                    <labeL>Email address<small>(required)</small></label>
-                                                    <input name="up_email"  required type="text" class="form-control" placeholder="Email address">
-=======
+
                                                     <labeL>Email address *</label>
-                                                    <input name="u_email"  required type="text" class="form-control" placeholder="Email address" title="Please input your email address">
->>>>>>> d010bf181ed71e26e3bedd6ae8fe7ae950fdf322
+                                                    <input name="up_email"  required type="text" class="form-control" placeholder="Email address" title="Please input your email address">
+
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile number *</label>
@@ -132,13 +154,10 @@
                                                             <option value="Sri Lankan">Sri Lankan</option>
                                                             <option value="Thai">Thai</option>
                                                         </select>
-<<<<<<< HEAD
-                                                <label>Location <small>(required)</small></label>
-                                                        <select id="lunchBegins" name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
-=======
+
                                                 <label>Location  *</label>
                                                         <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your location">
->>>>>>> d010bf181ed71e26e3bedd6ae8fe7ae950fdf322
+
                                                             <option selected disabled value="" >Select Country</option>
                                                             <option  value="Philippines">Philippines</option>
                                                             <option  value="China">China</option>
@@ -151,9 +170,7 @@
                                                     <labeL>Age *</label>
                                                     <input name="up_age" type="text" class="form-control" required placeholder="Age" title="Please input your age">
                                                 </div>
-<<<<<<< HEAD
-                                             
-=======
+
                                             
                                                 <div class="form-group">
                                                      <labeL>Marital Status *</label>
@@ -166,65 +183,56 @@
                                                            
                                                         </select>
                                                 </div>
->>>>>>> d010bf181ed71e26e3bedd6ae8fe7ae950fdf322
+                                                   <div class="form-group">
+                                                     <labeL>Religion *</label>
+                                                        <select name="up_religion" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your marital status">
+                                                            
+                                                            <option  value="Single">Catholic</option>
+                                                            <option  value="Married">Muslim</option>
+                                                           
+                                                           
+                                                        </select>
+                                                    </div>
+                                                     <div class="form-group">
+                                                     <labeL>Highest Education Attainment *</label>
+                                                        <select name="up_education" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your marital status">
+                                                            
+                                                            <option  value="Single">Elementary</option>
+                                                            <option  value="Married">High School</option>
+                                                            <option  value="Married">College</option>
+                                                           
+                                                        </select>
+                                                    </div>
+
                                                 
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Languages Spoken *</label>
                                             </div>
-                                                    <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="up_languages" type="checkbox"> Arabic
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                  <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="up_languages" type="checkbox"> Cantonese
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                  <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="up_languages" type="checkbox"> English
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                     <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="up_languages" type="checkbox"> Filipino
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                  <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="up_languages" type="checkbox"> Japanese
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                  <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="up_languages" type="checkbox"> Mandarin
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
+                                                  
+
+                                                  <ul class="job-manager-term-checklist job-manager-term-checklist-candidate_languages">
+                                                        <li class="popular-category" id='candidate_language-145'><label class="selectit">
+
+                                                        <input  name="up_languages[]" type="checkbox" value="Arabic"> Arabic</label></li>
+                                                        <li class="popular-category" id='candidate_language-140'><label class="selectit">
+
+                                                        <input  name="up_languages[]" type="checkbox" value="Cantonese"> Cantonese</label></li>
+                                                        <li class="popular-category" id='candidate_language-139'><label class="selectit">
+
+                                                        <input  name="up_languages[]" type="checkbox" value="English"> English</label></li>
+                                                        <li class="popular-category" id='candidate_language-144'><label class="selectit">
+
+                                                        <input  name="up_languages[]" type="checkbox" value="Filipino"> Filipino</label></li>
+                                                        <li class="popular-category" id='candidate_language-142'><label class="selectit">
+
+                                                        <input  name="up_languages[]" type="checkbox" value="Japanese"> Japanese</label></li>
+                                                        <li class="popular-category" id='candidate_language-141'><label class="selectit">
+
+                                                        <input name="up_languages[]" type="checkbox" value="Mandarin"> Mandarin</label></li>
+                                                        <li id='candidate_language-143'><label class="selectit">
+
+                                                        <input name="up_languages[]" type="checkbox" value="Thai"> Thai</label></li>
+                                                    </ul>
 
 
                                             </div>
@@ -286,295 +294,54 @@
                                                                              
                                             <div class="col-sm-12 padding-top-15">
                                             <label>My Skills and Experience <small><i>Maximum of 4</i></small></label>
-                                                    <br>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                    
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Baby Care
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Child Care
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>                                                 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Cooking
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>                                                 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Elder Care
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                            <div class="col-sm-12 padding-bottom-15">
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Housekeeping
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Pet Care
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Professional Driver
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_skillsexp" type="checkbox"> Teen Care
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                 
+                                                <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements2">
+                                                <li class="popular-category" id='helper_requirement2-107'><label class="selectit"><input id="in-helper_requirement2-107" name="upi_skillsexp[]" type="checkbox" value=" Baby Care"> Baby Care</label></li>
+                                                <li class="popular-category" id='helper_requirement2-236'><label class="selectit"><input id="in-helper_requirement2-236" name="upi_skillsexp[]" type="checkbox" value="Child Care"> Child Care</label></li>
+                                                <li class="popular-category" id='helper_requirement2-237'><label class="selectit"><input id="in-helper_requirement2-237" name="upi_skillsexp[]" type="checkbox" value="Cooking"> Cooking</label></li>
+                                                <li class="popular-category" id='helper_requirement2-110'><label class="selectit"><input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care</label></li>
+                                                <li class="popular-category" id='helper_requirement2-113'><label class="selectit"><input id="in-helper_requirement2-113" name="upi_skillsexp[]" type="checkbox" value="Housekeeping"> Housekeeping</label></li>
+                                                <li class="popular-category" id='helper_requirement2-112'><label class="selectit"><input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care</label></li>
+                                                <li class="popular-category" id='helper_requirement2-111'><label class="selectit"><input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver"> Professional Driver</label></li>
+                                                <li class="popular-category" id='helper_requirement2-109'><label class="selectit"><input id="in-helper_requirement2-109" nname="upi_skillsexp[]" type="checkbox" value="Teen Care"> Teen Care</label></li>
+                                                 </ul>
                                             </div>
 
                                              <div class="col-sm-12 padding-top-15">
                                             <label>My Cooking Skills <small><i>Maximum of 4</i></small> </label>
-                                                    <br>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                    
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> American
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Arabic
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>                                                 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Chinese
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>                                                 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> French
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                            <div class="col-sm-12 padding-bottom-15">
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> German
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Indian
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Italian
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Japanese
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                  <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Thai
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                  <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Vegetarian
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                  <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_cookingskills" type="checkbox"> Western
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                   <ul class="job-manager-term-checklist job-manager-term-checklist-cooking_requirements2">
+                                                    <li class="popular-category" id='cooking_requirement2-193'><label class="selectit"><input id="in-cooking_requirement2-193" name="upi_cookingskills[]" type="checkbox" value="American"> American</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-114'><label class="selectit"><input id="in-cooking_requirement2-114" name="upi_cookingskills[]" type="checkbox" value="Arabic"> Arabic</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-115'><label class="selectit"><input id="in-cooking_requirement2-115" name="upi_cookingskills[]" type="checkbox" value="Chinese"> Chinese</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-191'><label class="selectit"><input id="in-cooking_requirement2-191" name="upi_cookingskills[]" type="checkbox" value="French"> French</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-116'><label class="selectit"><input id="in-cooking_requirement2-116" name="upi_cookingskills[]" type="checkbox" value="Indian"> Indian</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-192'><label class="selectit"><input id="in-cooking_requirement2-192" name="upi_cookingskills[]" type="checkbox" value="Italian"> Italian</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-119'><label class="selectit"><input id="in-cooking_requirement2-119" name="upi_cookingskills[]" type="checkbox" value="Japanese"> Japanese</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-235'><label class="selectit"><input id="in-cooking_requirement2-235" name="upi_cookingskills[]" type="checkbox" value="Thai"> Thai</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-117'><label class="selectit"><input id="in-cooking_requirement2-117" name="upi_cookingskills[]" type="checkbox" value="Vegeterian"> Vegeterian</label></li>
+                                                    <li class="popular-category" id='cooking_requirement2-118'><label class="selectit"><input id="in-cooking_requirement2-118" name="upi_cookingskills[]" type="checkbox" value="Western"> Western</label></li>
+                                        </ul> 
                                             </div>
                                              <div class="col-sm-12 padding-top-15">
                                             <label>My Other Skills <small><i>Maximum of 4</i></small></label>
-                                                    <br>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                    
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> Baking
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> Car Wash
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>                                                 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> Computer
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>                                                 
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> Driving
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                            <div class="col-sm-12 padding-bottom-15">
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> First Aid Certificate
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> Gardening
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> Handyman
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input name="upi_otherskills" type="checkbox"> Housework
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                  <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input  name="upi_otherskills" type="checkbox"> Sewing
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                  <div class="col-sm-3">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input  name="upi_otherskills" type="checkbox"> Tutoring
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> 
+                                                  <ul class="job-manager-term-checklist job-manager-term-checklist-other_skills2">
+                                            <li class="popular-category" id='other_skill2-232'><label class="selectit"><input id="in-other_skill2-232" name="upi_otherskills[]" type="checkbox" value="Baking"> Baking</label></li>
+                                            <li class="popular-category" id='other_skill2-126'><label class="selectit"><input id="in-other_skill2-126" name="upi_otherskills[]" type="checkbox" value="Car Wash"> Car Wash</label></li>
+                                            <li class="popular-category" id='other_skill2-123'><label class="selectit"><input id="in-other_skill2-123" name="upi_otherskills[]" type="checkbox" value="Computer"> Computer</label></li>
+                                            <li class="popular-category" id='other_skill2-124'><label class="selectit"><input id="in-other_skill2-124" name="upi_otherskills[]" type="checkbox" value="Driving"> Driving</label></li>
+                                            <li class="popular-category" id='other_skill2-190'><label class="selectit"><input id="in-other_skill2-190" name="upi_otherskills[]" type="checkbox" value="First Aid Certificate"> First Aid Certificate</label></li>
+                                            <li class="popular-category" id='other_skill2-120'><label class="selectit"><input id="in-other_skill2-120" name="upi_otherskills[]" type="checkbox" value="Gardening"> Gardening</label></li>
+                                            <li class="popular-category" id='other_skill2-122'><label class="selectit"><input id="in-other_skill2-122" name="upi_otherskills[]" type="checkbox" value="Handyman"> Handyman</label></li>
+                                            <li class="popular-category" id='other_skill2-125'><label class="selectit"><input id="in-other_skill2-125" name="upi_otherskills[]" type="checkbox" value="Housework"> Housework</label></li>
+                                            <li class="popular-category" id='other_skill2-121'><label class="selectit"><input id="in-other_skill2-121" name="upi_otherskills[]" type="checkbox" value="Sewing"> Sewing</label></li>
+                                            <li class="popular-category" id='other_skill2-238'><label class="selectit"><input id="in-other_skill2-238" name="upi_otherskills[]" type="checkbox" value="Tutoring"> Tutoring</label></li>
+                                        </ul>
                                             </div>
                                                   <div class="col-sm-12"> 
-<<<<<<< HEAD
-                                                     <labeL>Availability<small>(required)</small></label>
-                                                    <input name="upi_availability" type="date" class="form-control" placeholder="Super villa ...">
-=======
+
                                                      <labeL>Start Date *</label>
                                                     <input name="upi_availability" required="" type="date" class="form-control" placeholder="" title="Please input your start date">
->>>>>>> d010bf181ed71e26e3bedd6ae8fe7ae950fdf322
+
                                                    
                                                 </div>
                                             <br>

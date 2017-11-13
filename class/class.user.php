@@ -62,12 +62,12 @@ class User
 		}
 
 	}
-	public function post_profile_personal_information($id,$picture,$category,$email,$location,$mobile,$telephone,$nationality,$religion,$age,$marital,$languages)
+	public function post_profile_personal_information($id,$picture,$category,$email,$location,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages)
 	{
 		try
 		{
-			$insert_personal_query="INSERT INTO user_personal_information (u_id,up_picture,up_category,up_email,up_address,up_mobile,up_telephone,up_nationality,up_religion,up_age,up_maritalstatus,up_languages,up_status) 
-			VALUES(:id,:picture,:category,:email,:address,:mobile,:telehpone,:nationality,:religion,:age,:marital,:languages,:status)";
+			$insert_personal_query="INSERT INTO user_personal_information (u_id,up_picture,up_category,up_email,up_address,up_mobile,up_telephone,up_nationality,up_religion,up_age,up_maritalstatus,up_education,up_languages,up_status) 
+			VALUES(:id,:picture,:category,:email,:address,:mobile,:telehpone,:nationality,:religion,:age,:marital,:education,:languages,:status)";
 			$insert_personal_stmt=$this->connection->prepare($insert_personal_query);
 			$insert_personal_stmt->execute(['id'=>$id,
 											'picture'=>$picture,
@@ -80,6 +80,7 @@ class User
 											'religion'=>$religion,
 											'age'=>$age,
 											'marital'=>$marital,
+											'education'=>$education,
 											'languages'=>$languages,
 											'status'=>'Unapproved']);
 			return $insert_personal_stmt;
