@@ -214,7 +214,6 @@
         font-size: 12px;
     }
     .tab-content ul li {
-        height: 235px;
         margin-bottom: 20px;
         width: 219px;
     }
@@ -666,7 +665,7 @@
     }
     .page-title h2 {
         font-size: 20px;
-        margin-top: -50px;
+        margin-top: -40px;
     }
     .page-title h5 {
         font-size: 12px;
@@ -814,11 +813,13 @@
 @media (max-width: 1168px){
 
     .page-title {
-        padding-top: 200px;
+        padding-top: 10px;
        
     }
 
 }
+
+
 @media (max-width: 966px){
 
     .page-title {
@@ -829,7 +830,7 @@
 @media (max-width:764px){
 
     .page-title {
-        padding-top: 300px;
+        padding-top: 10px;
        
     }
 
@@ -837,7 +838,7 @@
 @media (max-width:480px){
 
     .page-title {
-        padding-top: 700px;
+        padding-top: 400px;
        
     }
     .search-btn

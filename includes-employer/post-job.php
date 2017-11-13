@@ -18,29 +18,27 @@
 
                                     <div class="tab-pane" id="step1">
                                         <div class="row p-b-15  ">
-                                            
-                                            <div class="col-sm-4 col-sm-offset-1">
+
+                                       
                                                 <div class="picture-container">
                                                     <div class="picture">
                                                         <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title=""/>
                                                         <input type="file" id="wizard-picture">
                                                     </div> 
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6">
-
-                                                <h3>Job Information</h3>
+                                            <div class="col-sm-12">
+                                                <h3 class="info-text"> <strong>Job Information</strong></h3>
                                                 <div class="form-group">
-                                                    <labeL>Job Title<small> (required)</small></label>
+                                                    <labeL>Job Title *</label>
                                                     <input name="j_jobtitle" type="text" required class="form-control" placeholder="Job Title">
                                                 </div>
-                                                <label> Employer Type <small> (required)</small></label>
+                                                <label> Employer Type  *</label>
                                                         <select id="lunchBegins" name="j_employertype" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
                                                             <option value="Direct Employer">Direct Employer</option>
                                                             <option value="Agency">Agency</option>
                                                         </select>
                                                 
-                                                <label>Job Region<small> (required)</small></label>
+                                                <label>Job Region *</label>
                                                         <select id="lunchBegins" name="j_country" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
                                                                 <option value="Hong Kong">
                                                                     Hong Kong
@@ -65,7 +63,7 @@
                                                                 </option>
                                                         </select>
                                                 <div class="form-group">
-                                                    <labeL>City<small> (required)</small></label>
+                                                    <labeL>City *</label>
                                                     <input name="j_districtlocation"  type="text" required class="form-control" placeholder="City">
                                                 </div>
                                                 <div class="form-group">
@@ -73,12 +71,12 @@
                                                     <input name="propertyname" type="number" required class="form-control" placeholder="Contact">
                                                 </div>
                                                    
-                                                 <label>Job Type<small> (required)</small></label>
+                                                 <label>Job Type *</label>
                                                         <select id="lunchBegins" name="j_type" required  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
                                                             <option value="Full Time">Full Time</option>
                                                             <option value="Part Time">Part Time</option>
                                                         </select>
-                                                  <label>Job Category<small> (required)</small></label>
+                                                  <label>Job Category *</label>
                                                         <select id="lunchBegins" required  name="j_category" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
                                                             <option  value="Domestic Helper">
                                                                 Domestic Helper
@@ -100,10 +98,10 @@
                                                             </option>
                                                         </select>
                                                      <div class="form-group">
-                                                                <label>Job Description<small> (required)</small></label>
+                                                                <label>Job Description *</label>
                                                                 <textarea name="j_description" required maxlength="250" minlength="70" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
                                                     </div>
-                                                    <label>Nationality<small> (required)</small></label>
+                                                    <label>Nationality *</label>
                                                         <select id="lunchBegins" required  name="j_workingstatus" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Working Status">
                                                             <option  value="Break Contract">
                                                                 Break Contract
@@ -127,7 +125,7 @@
                                                         </select>
 
                                                     <h3>Family Status</h3>
-                                                    <label>Nationality<small> (required)</small></label>
+                                                    <label>Nationality *</label>
                                                         <select id="lunchBegins" required  name="j_nationality" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Nationality">
                                                                  <option value="American Family">
                                                                     American Family
@@ -202,7 +200,7 @@
                                                                     Western Family
                                                                 </option>
                                                         </select>
-                                                    <label>Family Type<small> (required)</small></label>
+                                                    <label>Family Type *</label>
                                                         <select id="lunchBegins" required  name="j_familytype" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select">
                                                             <option>Philippines</option>
                                                             <option>China</option>
@@ -370,13 +368,13 @@
                                                 </div>
                                             </div><br>
                                             <div class="form-group">
-                                                <label>Application Email <small> (required)</small></label> <input class="form-control" name="j_email" placeholder="Application Email" required type="email">
+                                                <label>Application Email  *</label> <input class="form-control" name="j_email" placeholder="Application Email" required type="email">
                                             </div>
                                             <div class="form-group">
-                                                <label>Monthly Salary <small> (required)</small></label> <input class="form-control" name="j_monthlysalary" placeholder="Application Email" required type="type">
+                                                <label>Monthly Salary  *</label> <input class="form-control" name="j_monthlysalary" placeholder="Application Email" required type="type">
                                             </div>
                                             <div class="form-group">
-                                                <label> Start Date <small> (required)</small></label> <input class="form-control" name="j_startdate" placeholder="Application Email" required type="date">
+                                                <label> Start Date  *</label> <input class="form-control" name="j_startdate" placeholder="Application Email" required type="date">
                                             </div>
                                             <div class="form-group">
                                                 <label>Logo <small> (Optional)</small></label> <input class="form-control" name="j_logo" required type="file">
