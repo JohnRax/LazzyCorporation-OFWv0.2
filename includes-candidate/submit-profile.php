@@ -28,7 +28,7 @@
                                                 </div>
 
                                                <h3 class="info-text"> Personal Information </h3>
-                                                <label>Resume Category<small>(required)</small></label>
+                                                <label>Resume Category *</label>
                                                         <select id="lunchBegins" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                              <option selected disabled value="" >Select Resume Category</option>
                                                             <option value="Driver">Driver</option>
@@ -36,26 +36,26 @@
                                                             
                                                         </select>
                                                 <div class="form-group">
-                                                    <labeL>Last Name<small>(required)</small></label>
+                                                    <labeL>Last Name *</label>
                                                     <input name="u_lname" required type="text" class="form-control" placeholder="Last Name">
                                                 </div>
                                                    <div class="form-group">
-                                                    <labeL>First Name<small>(required)</small></label>
+                                                    <labeL>First Name *</label>
                                                     <input name="u_firstname" required type="text" class="form-control" placeholder="First Name">
                                                 </div>
                                                 <div class="form-group">
-                                                    <labeL>Email address<small>(required)</small></label>
+                                                    <labeL>Email address *</label>
                                                     <input name="u_email"  required type="text" class="form-control" placeholder="Email address">
                                                 </div>
                                                 <div class="form-group">
-                                                    <labeL>Mobile number<small>(required)</small></label>
+                                                    <labeL>Mobile number *</label>
                                                     <input name="up_mobile"  required type="text" class="form-control" placeholder="Mobile number">
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>Telephone number</label>
                                                     <input name="up_telephone"  type="text" class="form-control" placeholder="Telephone number">
                                                 </div>
-                                                <label>Nationality <small>(required)</small></label>
+                                                <label>Nationality  *</label>
                                                         <select id="lunchBegins" name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option selected disabled value="" >Select your Nationality</option>
                                                             <option value="Filipino">Filipino</option>
@@ -66,7 +66,7 @@
                                                             <option value="Sri Lankan">Sri Lankan</option>
                                                             <option value="Thai">Thai</option>
                                                         </select>
-                                                <label>Location <small>(required)</small></label>
+                                                <label>Location  *</label>
                                                         <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option selected disabled value="" >Select Country</option>
                                                             <option  value="Philippines">Philippines</option>
@@ -77,15 +77,15 @@
                                                            
                                                         </select>
                                                 <div class="form-group">
-                                                    <labeL>Age<small>(required)</small></label>
+                                                    <labeL>Age *</label>
                                                     <input name="up_age" type="text" class="form-control" placeholder="Age">
                                                 </div>
                                                 <div class="form-group">
-                                                    <labeL>Marital Status<small>(required)</small></label>
+                                                    <labeL>Marital Status *</label>
                                                     <input name="up_maritalstatus" type="text" class="form-control" placeholder="Super villa ...">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Location <small>(required)</small></label>
+                                                    <label>Location  *</label>
                                                         <select id="lunchBegins" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                             <option selected disabled value="" >Select Country</option>
                                                             <option  value="Philippines">Philippines</option>
@@ -98,7 +98,7 @@
                                                 </div>
                                                 
                                             <div class="col-sm-12 padding-top-15">
-                                                <label>Languages Spoken<small>(required)</small></label>
+                                                <label>Languages Spoken *</label>
                                             </div>
                                                     <div class="col-sm-4">
                                                     <div class="form-group">
@@ -492,7 +492,7 @@
                                                 </div> 
                                             </div>
                                                   <div class="col-sm-12"> 
-                                                     <labeL>Availability<small>(required)</small></label>
+                                                     <labeL>Availability *</label>
                                                     <input name="propertyname" type="date" class="form-control" placeholder="Super villa ...">
                                                    
                                                 </div>

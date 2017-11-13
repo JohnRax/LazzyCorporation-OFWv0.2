@@ -189,10 +189,7 @@ label{
     z-index: 3;
 }
 .wizard-card{
-padding: 10px 0px; 
-border: 1px solid #eee;
-    transition: all 0.2s;
-    -webkit-transition: all 0.2s;
+
 }
 .wizard-card .picture-container{
     position: relative;
