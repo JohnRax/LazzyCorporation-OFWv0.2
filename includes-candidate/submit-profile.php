@@ -163,9 +163,9 @@
                                         <h3 class="info-text"> Professional Information </h3>
                                          <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
-                                                        <label>Where Do You Want To Work</label>
-                                                        <select name="upi_preferedworklocation" id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option selected disabled value="">Select Country </option>
+                                                        <label>Where Do You Want To Work *</label>
+                                                        <select name="upi_preferedworklocation" required="" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your prefered location">
+                                                            
                                                             <option value="Philippines">Philippines</option>
                                                             <option value="China">China</option>
                                                             <option value="India">India</option>
@@ -176,9 +176,9 @@
                                                 </div>
                                                  <div class="col-sm-12"> 
                                                    <div class="col-sm-12"> 
-                                                <label>Years Of Experience</label>
-                                                        <select id="lunchBegins" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                            <option selected disabled value="">Select</option>
+                                                <label>Years Of Experience *</label>
+                                                        <select required="" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Please select your years of experience">
+                                                          
                                                             <option value="0">0</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -190,6 +190,11 @@
                                                             <option value="8">8</option>
                                                             <option value="9">9</option>
                                                             <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
                                                 </select>
                                                 </div>
                                                 </div>
@@ -197,15 +202,15 @@
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-                                                        <label>Experience Summary :</label>
-                                                        <textarea name="upi_expsummary" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
+                                                        <label>Experience Summary </label>
+                                                        <textarea name="upi_expsummary" minlength="30"  required class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw" title="Please enter at least 30 characters." placeholder="Explain your working experience" ></textarea>
                                                     </div> 
                                                 </div> 
                                             </div>
 
                                                                              
                                             <div class="col-sm-12 padding-top-15">
-                                            <label>My Skills and Experience : :<small> Maximum of 4 Cooking skills</small> </label>
+                                            <label>My Skills and Experience <small><i>Maximum of 4</i></small></label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
@@ -285,7 +290,7 @@
                                             </div>
 
                                              <div class="col-sm-12 padding-top-15">
-                                            <label>My Cooking Skills :<small> Maximum of 4 Cooking skills</small> </label>
+                                            <label>My Cooking Skills <small><i>Maximum of 4</i></small> </label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
@@ -391,7 +396,7 @@
                                                 </div>
                                             </div>
                                              <div class="col-sm-12 padding-top-15">
-                                            <label>My Other Skills : <small> Maximum of 4 Other skills</small> </label>
+                                            <label>My Other Skills <small><i>Maximum of 4</i></small></label>
                                                     <br>
                                                 <div class="col-sm-3">
                                                     <div class="form-group">
@@ -488,8 +493,8 @@
                                                 </div> 
                                             </div>
                                                   <div class="col-sm-12"> 
-                                                     <labeL>Availability *</label>
-                                                    <input name="propertyname" type="date" class="form-control" placeholder="Super villa ...">
+                                                     <labeL>Start Date *</label>
+                                                    <input name="upi_availability" required="" type="date" class="form-control" placeholder="" title="Please input your start date">
                                                    
                                                 </div>
                                             <br>
@@ -499,11 +504,11 @@
 
                                     <div class="tab-pane" id="step3">                                        
                                         <h3 class="info-text">Supplementary Questions</h3>
-
+                                            
                                           <div class="col-sm-12">
                                                      <p>
                                                         <label><strong>1. Would you agreee to do extra work?</strong></label>
-                                                           <select name="uq_1" class="form-group">
+                                                           <select required name="uq_1"  title="Please answer this question">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>
                                                              <option value="No">No</option>
