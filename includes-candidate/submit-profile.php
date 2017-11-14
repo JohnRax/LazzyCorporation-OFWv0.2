@@ -167,12 +167,24 @@
                                                 <label>Location  *</label>
                                                         <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Select your location">
 
-                                                            <option selected disabled value="" >Select Country</option>
-                                                            <option  value="Philippines">Philippines</option>
-                                                            <option  value="China">China</option>
-                                                            <option  value="India">India</option>
-                                                            <option  value="Indonesia">Indonesia</option>
-                                                            <option  value="Thailand">Thailand</option>
+                                                                 <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
+                                                                <option value="Hong Kong">
+                                                                    Hong Kong
+                                                                </option>
+                                                                <option value="Saudi Arabia">
+                                                                    Saudi Arabia
+                                                                </option>
+                                                                <option value="United Arab Emirates">
+                                                                    United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
+                                                                </option>       
                                                            
                                                         </select>
                                                 <div class="form-group">

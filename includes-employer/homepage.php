@@ -25,23 +25,37 @@
                                         <div class="row">
                                             <div class="col-xs-6">
 
-                                                <select id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
-
-                                                    <option>Hongkong</option>
-                                                    <option>Indonesia</option>
-                                                    <option>Philippines</option>
-                                                    <option>Japan</option>
-                                                  
+                                               <select  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Location" name="up_address" >
+                                                    <option value="Philippines">
+                                                        Philippines
+                                                    </option>
+                                                    <option value="Hong Kong">
+                                                        Hong Kong
+                                                    </option>
+                                                    <option value="Saudi Arabia">
+                                                        Saudi Arabia
+                                                    </option>
+                                                    <option value="United Arab Emirates">
+                                                        United Arab Emirates
+                                                    </option>
+                                                    <option value="Qatar">
+                                                        Qatar
+                                                    </option>
+                                                    <option value="Taiwan">
+                                                        Taiwan
+                                                    </option>                                             
                                                 </select>
                                             </div>
                                             <div class="col-xs-6">
 
-                                                <select id="basic" class="form-control">
-                                                    <option>Gender</option>
-                                                    <option>Male </option>
-                                                    <option>Female</option>
-                                                    <option>Others</option>
-
+                                               <select  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Gender" name="u_gender" >
+                                                    <option value="male">
+                                                                    Male
+                                                                </option>
+                                                                <option value="female">
+                                                                    Female
+                                                                </option>                                             
+                                                </select>
                                                 </select>
                                             </div>
                                         </div>
@@ -49,9 +63,9 @@
                                       <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <label for="price-range">Age range</label>
-                                                <input type="text" class="span2" value="" data-slider-min="0" 
-                                                       data-slider-max="600" data-slider-step="5" 
+                                                <label for="price-range">Age</label>
+                                                <input type="text" class="span2" value="" name="up_age" data-slider-min="18" 
+                                                       data-slider-max="60" data-slider-step="5" 
                                                        data-slider-value="[0,450]" id="price-range" ><br />
                                                 <b class="pull-left color">18</b> 
                                                 <b class="pull-right color">50</b>                                                
@@ -59,66 +73,55 @@
                                                                                      
                                         </div>
                                     </fieldset>  
+
                                     <fieldset class="padding-5">
+                                         <label>Main Duties</label>
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Baby Care</label>
-                                                </div> 
+                                                    <label> <input name="upi_skillsexp[]" type="checkbox"> Baby Care</label>
                                             </div>
 
                                             <div class="col-xs-6">
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox"> Child Care</label>
-                                                </div>
-                                            </div>                                            
+                                                <label> <input name="upi_skillsexp[]" type="checkbox"> Child Care</label>
+                                            </div> 
+
                                         </div>
                                     </fieldset>
 
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Elder Care</label>
-                                                </div>
-                                            </div>  
+                                                <label> <input  name="upi_skillsexp[]" type="checkbox"> Elder Care</label>
+                                            </div>
                                             <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Teen Care </label>
-                                                </div>
+                                                <label>  <input  name="upi_skillsexp[]" type="checkbox"> Pet Care </label>
+                                            </div>    
+                                           
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="padding-5">
+                                        <div class="row">
+                                            <div class="col-xs-6"> 
+                                                <label> <input name="upi_skillsexp[]" type="checkbox"> Groceries</label>
+                                            </div> 
+                                             <div class="col-xs-6"> 
+                                                <label> <input name="upi_skillsexp[]" type="checkbox"> Housekeeping</label>
                                             </div>  
+                                               
+                                               
                                         </div>
                                     </fieldset>
 
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"> Cooking </label>
-                                                </div>
-                                            </div>  
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox"> Housekeeping</label>
-                                                </div>
-                                            </div>  
+                                                    <label>  <input name="upi_skillsexp[]" type="checkbox"> Professional Driver</label>
+                                            </div>
+                                           
                                         </div>
                                     </fieldset>
+                                    <fieldset >
 
-                                    <fieldset class="padding-5">
-                                        <div class="row">
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label>  <input type="checkbox" checked>Driver</label>
-                                                </div>
-                                            </div>  
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label>  <input type="checkbox"> Pet Care </label>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    </fieldset>
 
 
 
