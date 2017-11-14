@@ -77,7 +77,7 @@
                                 <ul>
                                     <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
                                     <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
-                                    <li><a href="#step3" data-toggle="tab">Step 3 </a></li>
+                                    <li><a href="#step3" data-toggle="tab">Finish </a></li>
                                     
                                 </ul>
 

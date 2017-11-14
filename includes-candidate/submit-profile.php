@@ -1,4 +1,13 @@
 <br><br>
+<script>
+    function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode < 48 || charCode > 57)
+        return false;
+    return true;    
+}
+</script>
+
  <?php 
 
     require_once 'includes/connection.php';
@@ -137,11 +146,11 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile number *</label>
-                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
+                                                    <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>Telephone number <small><i>Optional</i></small> </label>
-                                                    <input name="up_telephone"  type="text" class="form-control" placeholder="Telephone number">
+                                                    <input name="up_telephone" onkeypress="return isNumberKey(event)" type="text" class="form-control" placeholder="Telephone number">
                                                 </div>
                                                 <label>Nationality  *</label>
                                                         <select name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your nationality">
