@@ -102,26 +102,23 @@
                                                 
                                                 <label>Job Region *</label>
                                                         <select  name="j_country" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job location">
+                                                                <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
                                                                 <option value="Hong Kong">
                                                                     Hong Kong
-                                                                </option>
-                                                                <option value="Macau">
-                                                                    Macau
-                                                                </option>
-                                                                <option value="Qatar">
-                                                                    Qatar
                                                                 </option>
                                                                 <option value="Saudi Arabia">
                                                                     Saudi Arabia
                                                                 </option>
-                                                                <option value="Singapore">
-                                                                    Singapore
-                                                                </option>
-                                                                <option value="State of Kuwait">
-                                                                    State of Kuwait
-                                                                </option>
                                                                 <option value="United Arab Emirates">
                                                                     United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
                                                                 </option>
                                                         </select>
                                                 <div class="form-group">
