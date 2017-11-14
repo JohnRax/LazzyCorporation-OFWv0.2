@@ -24,7 +24,7 @@
                
                    
                         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">JOHNRAY <b class="caret"></b></a>
+                            <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MY ACCOUNT <b class="caret"></b></a>
                             <ul class="dropdown-menu navbar-nav">
                                
                                 <li>

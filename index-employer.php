@@ -37,7 +37,10 @@
              include "includes-employer/post-job.php"; 
             break; 
        case 'listpostjobs':
-             include "includes-employer/property-main.php"; 
+             include "includes-employer/list-jobs.php"; 
+            break; 
+      case 'editjob':
+             include "includes-employer/edit-job.php"; 
             break; 
         case 'logout':
             include "includes-employer/logout.php";

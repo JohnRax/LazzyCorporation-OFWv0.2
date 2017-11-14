@@ -93,45 +93,7 @@ class User
 		}
 
 	}
-	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
-	{
-		 try
-			{
-				$insert_jobpost_query="INSERT INTO job_description(u_id,j_jobtitle,j_employertype,j_country,j_districtlocation,j_type,j_category,j_description,j_workingstatus,j_requiredlanguages,j_contact,j_mainduties,j_cookingskill,j_applicationemail,j_nationality,j_familytype,j_startdate,j_monthlysalary,j_logo,j_status)
-				VALUES(:id,:jobtitle,:employertype,:country,:districtlocation,:type,:category,:description,:workingstatus,:requiredlanguages,:contact,:mainduties,:cookingskill,:applicationemail,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
-
-				$insert_jobpost_stmt=$this->connection->prepare($insert_jobpost_query);
-				$insert_jobpost_stmt->execute(['id'=>$id,
-													'jobtitle'=>$jobtitle,
-													'employertype'=>$employertype,
-													'country'=>$country,
-													'districtlocation'=>$districtlocation,
-													'type'=>$type,
-													'category'=>$category,
-													'description'=>$description,
-													'workingstatus'=>$workingstatus,
-													'requiredlanguages'=>$requiredlanguages,
-													'contact'=>$contact,
-													'mainduties'=>$mainduties,
-													'cookingskill'=>$cookingskill,
-													'applicationemail'=>$applicationemail,
-													'nationality'=>$nationality,
-													'familytype'=>$familytype,
-													'startdate'=>$startdate,
-													'monthlysalary'=>$monthlysalary,
-													'logo'=>$logo,
-													'status'=>'Unapproved']);
 	
-				return $insert_jobpost_stmt;
-	  
-			}
-			catch(PDOException $e)
-			{
-				echo $e->getMessage();
-			}
-
-	}
-
 	public function post_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skills,$cookingskills,$otherskills,$availability)
 	{
 		try
@@ -183,7 +145,60 @@ class User
 		}
 
 	}
+	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
+	{
+		 try
+			{
+				$insert_jobpost_query="INSERT INTO job_description(u_id,j_jobtitle,j_employertype,j_country,j_districtlocation,j_type,j_category,j_description,j_workingstatus,j_requiredlanguages,j_contact,j_mainduties,j_cookingskill,j_applicationemail,j_nationality,j_familytype,j_startdate,j_monthlysalary,j_logo,j_status)
+				VALUES(:id,:jobtitle,:employertype,:country,:districtlocation,:type,:category,:description,:workingstatus,:requiredlanguages,:contact,:mainduties,:cookingskill,:applicationemail,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
 
+				$insert_jobpost_stmt=$this->connection->prepare($insert_jobpost_query);
+				$insert_jobpost_stmt->execute(['id'=>$id,
+													'jobtitle'=>$jobtitle,
+													'employertype'=>$employertype,
+													'country'=>$country,
+													'districtlocation'=>$districtlocation,
+													'type'=>$type,
+													'category'=>$category,
+													'description'=>$description,
+													'workingstatus'=>$workingstatus,
+													'requiredlanguages'=>$requiredlanguages,
+													'contact'=>$contact,
+													'mainduties'=>$mainduties,
+													'cookingskill'=>$cookingskill,
+													'applicationemail'=>$applicationemail,
+													'nationality'=>$nationality,
+													'familytype'=>$familytype,
+													'startdate'=>$startdate,
+													'monthlysalary'=>$monthlysalary,
+													'logo'=>$logo,
+													'status'=>'Unapproved']);
+	
+				return $insert_jobpost_stmt;
+	  
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+
+	}
+	public function delete_job($j_id)
+	{
+		try
+		{
+			$delete_job_query="DELETE FROM job_description WHERE j_id=:id";
+			$delete_job_stmt=$this->connection->prepare($delete_job_query);
+			$delete_job_stmt->execute(['id'=>$j_id]);
+
+			return $delete_job_stmt;
+
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}
 	public function is_loggedin()
 	{
 		if(isset($_SESSION['user_session']))

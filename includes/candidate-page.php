@@ -41,6 +41,41 @@
             <div id="status">&nbsp;</div>
         </div>
         
+        <?php 
+                $host = 'localhost';
+                $user = 'root';
+                $password = '';
+                $dbname='lazycorporation-ofwdatabase';
+                try 
+                {
+                    $dsn = 'mysql:host='.$host.';dbname='.$dbname;
+                    $connection = new PDO($dsn,$user,$password);
+                    $connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+                } 
+                catch (PDOException $e) 
+                {
+                    echo 'Connection failed: '.$e->getMessage();
+                }
+
+            if (isset($_GET['id'])) 
+            {
+                
+                $show_profile_query="SELECT * 
+                                     FROM
+                                    user_details AS a 
+                                    JOIN user_personal_information AS b 
+                                    ON b.u_id = a.u_id 
+                                    JOIN user_professional_information AS c 
+                                    ON a.u_id = c.u_id 
+                                    JOIN user_question AS e
+                                    where a.u_id=:id";
+                $show_profile_stmt=$connection->prepare($show_profile_query);
+                $show_profile_stmt->execute(['id'=>$_GET['id']]);
+                $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
+
+                
+            
+         ?>
 
          
         <!--End top header -->
@@ -76,8 +111,8 @@
                                                 <div class="col-xs-4"></div>
                                                  <div class="col-xs-4">
                                                     <a href="">
-                                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../assets/img/client-face1.png" class="img-circle">
-                                                     </a><h3>&nbsp;&nbsp;&nbsp;&nbsp; John Ray Legaspi</h3>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../assets/img/profilepicture/<?php echo $result['up_picture']; ?>" class="img-circle">
+                                                     </a><h3>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $result['u_fname']." ".$result['u_lname'];?></h3>
                                                      </div>
                                                 <div class="col-xs-4"></div>
                                                 </div>
@@ -100,52 +135,52 @@
                                 <ul class="additional-details-list clearfix">
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">AGE</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">21</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_age']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Expertise</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Driver,Helper</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['upi_skillsexp']; ?></span>
                                     </li>
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Location Now</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Philippines</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_address']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Nationality</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Filipino</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_nationality']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Religion</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Catholic</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_religion']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Highest Education</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">College</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_education']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Marital Status</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Single</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_maritalstatus']; ?></span>
                                     </li> 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Gender</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Female</span>
-                                    </li> 
-                                        <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Number Of Children</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">0</span>
-                                    </li> 
-                                         </li> 
-                                        <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Status</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Ex-Overseas</span>
-                                    </li> 
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['u_gender']; ?></span>
+                                    </li>  
+                                        
                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Contact Number</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">+6323123123</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Mobile Number</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_mobile']; ?></span>
+                                    </li> 
+                                     <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Telephone Number</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_telephone']; ?></span>
+                                    </li> 
+                                     <li>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Email</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_email']; ?></span>
                                     </li> 
 
 
@@ -161,38 +196,21 @@
 
                                 <h4 class="s-property-title">Languges</h4>                            
                                 <ul>
-                                    <li>Cantonese</li>   
-                                    <li>English</li>
-                                    <li>Filipino</li>
-                                    <li>Arabic</li>
-                                    <li>Japanese</li>
-                                    <li>Mandarin</li>
+                                   <?php echo $result['up_languages']; ?>
                                 </ul>
 
                           
                                 <h4 class="s-property-title">Skills</h4>                            
                                 <ul>
-                                    <li>Baby Care</li>   
-                                    <li>Child Care</li>
-                                    <li>Elder Care</li>
-                                    <li>Teen Care</li>
-                                    <li>Japanese</li>
-                                    <li>Cooking</li>
-                                    <li>Housekeeping</li>
-                                    <li>Professional Driver</li>
-                                   
+                                
+                                    <?php echo $result['upi_skillsexp']; ?>
                                 </ul>
 
                             
 
                                 <h4 class="s-property-title">Cooking Skills</h4>                            
                                 <ul>
-                                  
-                                    <li>American</li>
-                                    <li>Arabic</li>
-                                    <li>Chinese</li>
-                                    <li>Vegetarian</li>
-                                    <li>Thai</li>
+                                   <?php echo $result['upi_cookingskills']; ?>
                                 </ul>
 
                             </div>
@@ -202,7 +220,7 @@
                                 <div class="section">
                                 <h4 class="s-property-title">Description</h4>
                                 <div class="s-property-content">
-                                    <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultriciesNulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultriciesNulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies</p>
+                                    <p> <?php echo $result['upi_expsummary']; ?></p>
                                 </div>
                             </div>
 
@@ -240,74 +258,7 @@
 
                                 </ul>
                             </div>  
-                             <div class="section additional-details">
-
-                                <h4 class="s-property-title">Experience 2</h4>
-
-                                <ul class="additional-details-list clearfix">
-                                    <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2017-2-3</span>
-                                    </li>
-                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">End Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2017-2-3</span>
-                                    </li>
-                                    <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Place</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Hong Kong</span>
-                                    </li>
-                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Family Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Couple</span>
-                                    </li>
-                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Reference</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Cooking</span>
-                                    </li>
-                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Notes</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Good</span>
-                                    </li>
-                                 
-                                    
-
-                                </ul>
-                            </div>
-                             <div class="section additional-details">
-
-                                <h4 class="s-property-title">Experience 3</h4>
-
-                                <ul class="additional-details-list clearfix">
-                                    <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2017-2-3</span>
-                                    </li>
-                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">End Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2017-2-3</span>
-                                    </li>
-                                    <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Place</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Hong Kong</span>
-                                    </li>
-                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Family Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Couple</span>
-                                    </li>
-                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Reference</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Cooking</span>
-                                    </li>
-                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Notes</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Good</span>
-                                    </li>
-                                 
-                                    
-
-                                </ul>
-                            </div>
+                             
                              <div class="section additional-details">
 
                                 <h4 class="s-property-title">Suplementary Questions</h4>
@@ -315,42 +266,42 @@
                                 <ul class="additional-details-list clearfix">
                                     <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Would you agreee to do extra work?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">Yes</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"> <?php echo $result['uq_1']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">If your employer asked you to work on your holiday and willing to pay as compensation, are you willing to do so?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">No</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_2']; ?></span>
                                     </li>
                                     <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Are you willing to work for a family without your own servant room?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">Yes</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_3']; ?></span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Are you willing to take care of children no matter how many the family has?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">Yes</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_4']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Living with elderly person?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">No</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_5']; ?></span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title"> Are you willing to take care of disabled elderly?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">No</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_6']; ?></span>
                                            <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Do you got experience to take care of dogs or pets?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">No</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_7']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Have you suffered from health problems in your nervous system, eyes, feet, legs or any other parts of your body?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">Yes</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_8']; ?></span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Can you drive?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">Yes</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_9']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title"> Do you smoke?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry">Yes</span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_10']; ?></span>
                                     </li>
                                  
                                     
@@ -383,7 +334,7 @@
             </div>
         </div>
 
-
+        <?php } ?>
 
         <script src="../assets/js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="../assets/js/jquery-1.10.2.min.js"></script>

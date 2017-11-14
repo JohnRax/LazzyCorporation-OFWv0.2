@@ -163,10 +163,10 @@
                                                 echo " <div class='col-sm-6 col-md-3 p0'>
                                                  <div class='box-two proerty-item'>
                                                    <div class='item-thumb'>
-                                                        <a href='index.php?source=jobpage&id=".$result['j_id']."'><img src='assets/img/profilepicture/".$result['j_logo']."'></a>
+                                                       <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
                                                              <div class='item-entry overflow'>
-                                                                <h5><a href='index.php?source=jobpage&id=".$result['j_id']."'>".$result['j_jobtitle']."</a></h5>
+                                                                <h4>".$result['j_jobtitle']."</h4>
                                                                 <div class='dot-hr'></div>
                                                                 
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
@@ -179,14 +179,15 @@
                                                                 <br>
                                                                 <br>
                                                                 <div class='span9 btn-block no-padding'>
-                                                                    <button class='btn btn-large btn-block btn-primary full-width'  onclick='location.href='index.php?source=jobpage&id=".$result['j_id']."'  type='button'>View Full Post</button>
-                                                                </div>
-                                                            </div>
+                                                                   ";?>
+                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                                            onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
+                                                                >View Full Post</button>
                                                         </div>
-                                                     </div>  ";
-
-                                                }
-                                             ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                <?php } ?>
 
 
 
