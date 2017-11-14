@@ -6,7 +6,31 @@
         return false;
     return true;    
 }
+
 </script>
+
+    <script type='text/javascript' src='/JavaScriptSpellCheck/include.js' ></script>
+        <script type='text/javascript'>$Spelling.SpellCheckAsYouType('myfield')</script>
+
+
+    
+
+    <script type='text/javascript'>
+    CharacterCount = function(TextArea,FieldToCount){
+    var myField = document.getElementById(TextArea);
+    var myLabel = document.getElementById(FieldToCount); 
+    if(!myField || !myLabel){return false}; // catches errors
+    var MaxChars =  myField.maxLengh;
+    if(!MaxChars){MaxChars =  myField.getAttribute('maxlength') ; };    if(!MaxChars){return false};
+    var remainingChars =   MaxChars - myField.value.length
+    myLabel.innerHTML = remainingChars+" Characters remaining"
+    }
+
+    setInterval(function(){CharacterCount('myfield','CharCountLabel1')},);
+    </script>
+
+
+
 
  <?php 
 
@@ -309,15 +333,20 @@
                                                 </select>
                                                 </div>
                                                 </div>
+
+                                              
                                        
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-                                                        <label>Experience Summary<small><i>Minimum of 30 characters, Maximum of 250 chracters.</i></small> </label>
-                                                        <textarea name="upi_expsummary" minlength="30" maxlength="250" required class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw" title="Please enter at least 30 characters." placeholder="Explain your working experience" ></textarea>
+                                                        <label>Experience Summary </label> 
+                                                            <textarea class="form-control" id="myfield" maxlength='250' name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
+                                                                <i><small><div id='CharCountLabel1'></div></small></i>
                                                     </div> 
                                                 </div> 
                                             </div>
+
+                                           
 
                                                                              
                                             <div class="col-sm-12 padding-top-15">
