@@ -1,4 +1,61 @@
 <br><br>
+<?php 
+
+    require_once 'includes/connection.php';
+    if (isset($_POST['finish']))
+    {
+
+        //job Info
+
+        if( isset($_POST['j_mainduties']) && !empty($_POST['j_mainduties']) ) 
+        { 
+            $mainduties = implode(', ', $_POST['j_mainduties']);
+        }
+        else
+        {
+            $mainduties="none";        
+        }
+
+        if( isset($_POST['j_cookingskill']) && !empty($_POST['j_cookingskill']) ) 
+        { 
+            $cookingskill = implode(', ', $_POST['j_cookingskill']);
+        }
+        else
+        {
+            $cookingskill="none";        
+        }
+        if( isset($_POST['j_requiredlanguages']) && !empty($_POST['j_requiredlanguages']) ) 
+        { 
+            $requiredlanguages = implode(', ', $_POST['j_requiredlanguages']);
+        }
+        else
+        {
+            $requiredlanguages="none";        
+        }
+        $id=$_SESSION['user_session'];
+        $jobtitle=$_POST['j_jobtitle'];
+        $employertype=$_POST['j_employertype'];
+        $country=$_POST['j_country'];
+        $districtlocation=$_POST['j_districtlocation'];
+        $type=$_POST['j_type'];
+        $category=$_POST['j_category'];
+        $description=$_POST['j_description'];
+        $workingstatus=$_POST['j_workingstatus'];
+        $contact=$_POST['j_contact'];
+        $applicationemail=$_POST['j_applicationemail'];
+        $nationality=$_POST['j_nationality'];
+        $familytype=$_POST['j_familytype'];
+        $startdate=$_POST['j_startdate'];
+        $monthlysalary=$_POST['j_monthlysalary'];
+        $logo=$_FILES['j_logo']['name'];
+        $logo_temp=$_FILES['j_logo']['tmp_name'];
+        move_uploaded_file($logo_temp, "assets/img/profilepicture/{$joblogo}");
+        $user->post_jobs($id,$logo_temp,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary);
+
+
+    }
+   
+  ?>
  <div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
             <div class="container">
                 <div class="clearfix" > 
@@ -253,150 +310,111 @@
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Main Duties <small></small></label><br>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_mainduties" type="checkbox"> Baby Care</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                        
+                                                            <label><input name="j_mainduties[]" type="checkbox"> Baby Care</label>
+                                                       
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_mainduties" type="checkbox"> Child Care</label>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                            <label><input name="j_mainduties[]" type="checkbox"> Child Care</label>
+                                                      
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_mainduties" type="checkbox"> Elder Care</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_mainduties[]" type="checkbox"> Elder Care</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_mainduties" type="checkbox"> Groceries</label>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                            <label><input name="j_mainduties[]" type="checkbox"> Groceries</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_mainduties" type="checkbox">  Housekeeping</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_mainduties[]" type="checkbox">  Housekeeping</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_mainduties" type="checkbox">  Professional Driver</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_mainduties[]" type="checkbox">  Professional Driver</label>
+                                                       
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_mainduties" type="checkbox"> Pet Care</label>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                            <label><input name="j_mainduties[]" type="checkbox"> Pet Care</label>
+                                                       
                                                 </div>
                                             </div><br>
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Cooking Skills<small></small></label><br>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_cookingskill" type="checkbox">  Arabic</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_cookingskill[]" type="checkbox">  Arabic</label>
+                                                     
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_cookingskill" type="checkbox">  Chineses</label>
-                                                        </div>
-                                                    </div>
+                                                  
+                                                            <label><input name="j_cookingskill[]" type="checkbox">  Chineses</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_cookingskill" type="checkbox"> Indian</label>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                            <label><input name="j_cookingskill[]" type="checkbox"> Indian</label>
+                                                       
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_cookingskill" type="checkbox"> Japanese</label>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                            <label><input name="j_cookingskill[]" type="checkbox"> Japanese</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_cookingskill" type="checkbox"> Vegetarian</label>
-                                                        </div>
-                                                    </div>
+                                                  
+                                                            <label><input name="j_cookingskill[]" type="checkbox"> Vegetarian</label>
+                                                       
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_cookingskill" type="checkbox"> Western</label>
-                                                        </div>
-                                                    </div>
+                                                 
+                                                            <label><input name="j_cookingskill[]" type="checkbox"> Western</label>
+                                                      
                                                 </div>
                                             </div><br>
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Required Languages<small></small></label><br>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_requiredlanguages" type="checkbox"> English</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_requiredlanguages[]" type="checkbox"> English</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_requiredlanguages" type="checkbox"> Filipino</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_requiredlanguages[]" type="checkbox"> Filipino</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_requiredlanguages" type="checkbox"> Cantonese</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_requiredlanguages[]" type="checkbox"> Cantonese</label>
+                                                       
                                                 </div>
                                                <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_requiredlanguages" type="checkbox">  Mandarin</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Mandarin</label>
+                                                      
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_requiredlanguages" type="checkbox">  Indonesian</label>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Indonesian</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_requiredlanguages" type="checkbox">  Japanese</label>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Japanese</label>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <label><input name="j_requiredlanguages" type="checkbox">  Thai</label>
-                                                        </div>
-                                                    </div>
+                                                   
+                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Thai</label>
+                                                        
                                                 </div>
                                             </div><br>
                                             <div class="form-group">
@@ -426,16 +444,12 @@
                                                 <div class="">
                                                     <p>
                                                         <label><strong>Terms and Conditions</strong></label>
-                                                        By accessing or using  GARO ESTATE services, such as 
-                                                        posting your property advertisement with your personal 
-                                                        information on our website you agree to the
-                                                        collection, use and disclosure of your personal information 
-                                                        in the legal proper manner
+                                                        By accessing or using LAZZY WORKS services, such as posting your personal information on our website you agree to the collection, use and disclosure of your personal information in the legal proper manner.
                                                     </p>
 
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input type="checkbox" /> <strong>Accept termes and conditions.</strong>
+                                                            <input type="checkbox" /> <strong>Accept terms and conditions.</strong>
                                                         </label>
                                                     </div> 
 
@@ -450,7 +464,8 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
-                                        <input type='button' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
+                                        <input type='submit' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
+                                         
                                     </div>
 
                                     <div class="pull-left">
