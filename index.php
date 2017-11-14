@@ -34,10 +34,7 @@
             break;
         case 'loginandregister':
              include "includes/login-register.php"; 
-            break;     
-        case 'candidateprofile':
-             include "includes/candidate-page.php"; 
-            break;     
+            break;         
         default:
             include "includes/homepage.php";
         break;

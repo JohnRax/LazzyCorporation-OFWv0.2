@@ -175,8 +175,8 @@
                     <div class="col-md-12 clear"> 
                         <div id="list-type" class="proerty-th">
                            
-                           
-                                 <?php 
+                                 
+                    <?php 
 
                     require_once 'includes/connection.php';
                     $show_profile_query="SELECT
@@ -196,7 +196,7 @@
                                                JOIN user_personal_information AS b 
                                                 ON b.u_id = a.u_id 
                                                JOIN user_professional_information AS c 
-                                                ON a.u_id = c.u_id where b.up_status=:status limit 7";
+                                                ON a.u_id = c.u_id where b.up_status=:status";
                     $show_profile_stmt=$connection->prepare($show_profile_query);
                     $show_profile_stmt->execute(['status'=>'Approved']);
                     while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
@@ -204,16 +204,17 @@
                         echo " <div class='col-sm-6 col-md-3 p0'>
                                     <div class='box-two proerty-item'>
                                         <div class='item-thumb'>
-                                            <a href='index.php?source=candidateprofile&id=".$result['u_id']."' ><img src='assets/img/profilepicture/".$result['up_picture']."'></a>
+                                           <img src='assets/img/profilepicture/".$result['up_picture']."'>
                                         </div>
                                         <div class='item-entry overflow'>
-                                            <h5><a href='index.php?source=candidateprofile&id=".$result['u_id']."' >".$result['u_fname']." ".$result['u_lname']."</a></h5>
+                                            <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
                                             <div class='dot-hr'></div>
                                             
                                             <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
                                             <br>
-                                            <h7><b>Location:</b>".$result['up_address']."</h7> 
+                                            <h7><b>Location:</b>".$result['up_address']."</h7>
                                             <br>
+                                           
                                             <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
                                             <br>
                                             <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
@@ -225,16 +226,18 @@
                                             <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
                                             <br>
                                             <div class='span9 btn-block no-padding'>
-                                                <button class='btn btn-large btn-block btn-primary full-width' onclick='location.href='index.php?source=candidateprofile&id=".$result['u_id']."' type='button'>View Full Profile</button>
+                                        ";?>
+                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                            onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
+                                                    >View Full Profile</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>";
-                    }
-                    ?>
+                                </div>
+                    <?php } ?>
                                  
                               
-
+ 
                                     </div>
                                 </div> 
                         </div>

@@ -339,14 +339,11 @@
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-<<<<<<< HEAD
-                                                        <label>Experience Summary </label>
-                                                        <textarea name="upi_expsummary" minlength="30"  required class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw" title="Please enter at least 30 characters." placeholder="Explain your working experience" ></textarea>
-=======
+
                                                         <label>Experience Summary </label> 
                                                             <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>
->>>>>>> ebe2e66c725f275a8ea43feea3d38fa0e67d2ae7
+
                                                     </div> 
                                                 </div> 
                                             </div>

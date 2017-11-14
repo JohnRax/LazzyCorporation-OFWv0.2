@@ -31,7 +31,7 @@
     {
        
         case 'searchhelper':
-             include "includes-employer/homepage.php"; 
+             include "includes-employer/search-candidate.php"; 
             break; 
         case 'postjob':
              include "includes-employer/post-job.php"; 
