@@ -9,6 +9,124 @@
                         <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+                <div class="col-md-3 p0 padding-top-40">
+                    <div class="blog-asside-right pr0">
+                        <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Smart search</h3>
+                            </div>
+                            <div class="panel-body search-widget">
+                                <form action="" class=" form-inline"> 
+                                    <fieldset>
+                                     
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+
+                                               <select  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Location" name="up_address" >
+                                                    <option value="Philippines">
+                                                        Philippines
+                                                    </option>
+                                                    <option value="Hong Kong">
+                                                        Hong Kong
+                                                    </option>
+                                                    <option value="Saudi Arabia">
+                                                        Saudi Arabia
+                                                    </option>
+                                                    <option value="United Arab Emirates">
+                                                        United Arab Emirates
+                                                    </option>
+                                                    <option value="Qatar">
+                                                        Qatar
+                                                    </option>
+                                                    <option value="Taiwan">
+                                                        Taiwan
+                                                    </option>                                             
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6">
+
+                                               <select  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Gender" name="u_gender" >
+                                                    <option value="male">
+                                                                    Male
+                                                                </option>
+                                                                <option value="female">
+                                                                    Female
+                                                                </option>                                             
+                                                </select>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                      <fieldset class="padding-5">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <label for="price-range">Age</label>
+                                                <input type="text" class="span2" value="" name="up_age" data-slider-min="18" 
+                                                       data-slider-max="60" data-slider-step="5" 
+                                                       data-slider-value="[0,450]" id="price-range" ><br />
+                                                <b class="pull-left color">18</b> 
+                                                <b class="pull-right color">50</b>                                                
+                                            </div>
+                                                                                     
+                                        </div>
+                                    </fieldset>  
+
+                                    <fieldset class="padding-5">
+                                         <label>Main Duties</label>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                    <label> <input name="upi_skillsexp[]" type="checkbox"> Baby Care</label>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <label> <input name="upi_skillsexp[]" type="checkbox"> Child Care</label>
+                                            </div> 
+
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="padding-5">
+                                        <div class="row">
+                                            <div class="col-xs-6"> 
+                                                <label> <input  name="upi_skillsexp[]" type="checkbox"> Elder Care</label>
+                                            </div>
+                                            <div class="col-xs-6"> 
+                                                <label>  <input  name="upi_skillsexp[]" type="checkbox"> Pet Care </label>
+                                            </div>    
+                                           
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="padding-5">
+                                        <div class="row">
+                                            <div class="col-xs-6"> 
+                                                <label> <input name="upi_skillsexp[]" type="checkbox"> Groceries</label>
+                                            </div> 
+                                             <div class="col-xs-6"> 
+                                                <label> <input name="upi_skillsexp[]" type="checkbox"> Housekeeping</label>
+                                            </div>  
+                                               
+                                               
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="padding-5">
+                                        <div class="row">
+                                            <div class="col-xs-6"> 
+                                                    <label>  <input name="upi_skillsexp[]" type="checkbox"> Professional Driver</label>
+                                            </div>
+                                           
+                                        </div>
+                                    </fieldset>
+                                    <fieldset >
+
+
+
+>>>>>>> ebe2e66c725f275a8ea43feea3d38fa0e67d2ae7
 
                 <div class="row">
                     <div class="proerty-th">

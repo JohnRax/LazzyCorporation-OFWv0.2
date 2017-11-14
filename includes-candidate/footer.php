@@ -10,10 +10,10 @@
                                 <h4>About us </h4>
                                 <div class="footer-title-line"></div>
 
-                                <img src="assets/img/footer-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
+                                <img src="assets\img\250x88.png" alt="" class="wow pulse" data-wow-delay="1s">
                                 <p>Lorem ipsum dolor cum necessitatibus su quisquam molestias. Vel unde, blanditiis.</p>
                                 <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> 9999 your adress her</li>
+                                    <li><i class="pe-7s-map-marker strong"> </i> 9999 your address here</li>
                                     <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>
                                     <li><i class="pe-7s-call strong"> </i> +1 999 999 9999</li>
                                 </ul>
@@ -24,12 +24,12 @@
                                 <h4>Quick links </h4>
                                 <div class="footer-title-line"></div>
                                 <ul class="footer-menu">
-                                    <li><a href="properties.html">Properties</a>  </li> 
-                                    <li><a href="#">Services</a>  </li> 
-                                    <li><a href="submit-property.html">Submit property </a></li> 
+                                    <li><a href="index-candidate.php?source=searchfindjob">Find Job</a>  </li> 
+                                    <li><a href="index-candidate.php?source=editupdateprofile">Update Profile</a>  </li>  
                                     <li><a href="contact.html">Contact us</a></li> 
-                                    <li><a href="faq.html">fqa</a>  </li> 
-                                    <li><a href="faq.html">Terms </a>  </li> 
+                                    <li><a href="index-candidate.php?source=logout">LOGOUT</a></li>
+                                    <!-- <li><a href="faq.html">fqa</a>  </li>  -->
+                                    <!-- <li><a href="faq.html">Terms </a>  </li>  -->
                                 </ul>
                             </div>
                         </div>

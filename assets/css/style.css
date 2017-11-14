@@ -572,7 +572,7 @@ label small{
     display: block;
     font-size: 13px;
     line-height: 1.42857;
-    color: #ADADAD;
+    color: #000000;
     background-color: #FFF;
     background-image: none;
     border: 1px solid #EAE9E9;
@@ -1242,6 +1242,7 @@ Asside widgets CSS
     line-height: 1.1;
     margin-bottom: 0;
     padding-bottom: 10px;
+    font-weight: bold;
 }
 .panel.sidebar-menu .panel-heading .btn.btn-danger {
     color: #fff;
@@ -2579,7 +2580,7 @@ blog
 */ 
 .blog-asside-right{
     padding-right: 15px;
-padding-left: 15px;
+padding-left: 1px;
 padding-top: 15px;
 padding-bottom: 15px;
 }

@@ -21,13 +21,26 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-
-                                                <select id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
-
-                                                    <option>Hongkong</option>
-                                                    <option>Indonesia</option>
-                                                    <option>Philippines</option>
-                                                    <option>Japan</option>                                                 
+                                                <label>Job Location</label>
+                                                <select required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Job Location" name="j_country" >
+                                                    <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
+                                                                <option value="Hong Kong">
+                                                                    Hong Kong
+                                                                </option>
+                                                                <option value="Saudi Arabia">
+                                                                    Saudi Arabia
+                                                                </option>
+                                                                <option value="United Arab Emirates">
+                                                                    United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
+                                                                </option>                                             
                                                 </select>
                                             </div>
                                    
@@ -35,68 +48,51 @@
                                     </fieldset>
                                    
                                     <fieldset class="padding-5">
+                                         <label>Main Duties</label>
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox" checked> Baby Care</label>
-                                                </div> 
+                                                    <label> <input name="j_mainduties[]" type="checkbox"> Baby Care</label>
                                             </div>
 
                                             <div class="col-xs-6">
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox"> Child Care</label>
-                                                </div>
-                                            </div>                                            
+                                                <label> <input name="j_mainduties[]" type="checkbox"> Child Care</label>
+                                            </div> 
+
                                         </div>
                                     </fieldset>
 
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox" checked> Elder Care</label>
-                                                </div>
-                                            </div>  
+                                                <label> <input  name="j_mainduties[]" type="checkbox"> Elder Care</label>
+                                            </div>
                                             <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox" checked> Teen Care </label>
-                                                </div>
+                                                <label>  <input  name="j_mainduties[]" type="checkbox"> Pet Care </label>
+                                            </div>    
+                                           
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="padding-5">
+                                        <div class="row">
+                                            <div class="col-xs-6"> 
+                                                <label> <input name="j_mainduties[]" type="checkbox"> Groceries</label>
+                                            </div> 
+                                             <div class="col-xs-6"> 
+                                                <label> <input name="j_mainduties[]" type="checkbox"> Housekeeping</label>
                                             </div>  
+                                               
+                                               
                                         </div>
                                     </fieldset>
 
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"> Cooking </label>
-                                                </div>
-                                            </div>  
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox"> Housekeeping</label>
-                                                </div>
-                                            </div>  
+                                                    <label>  <input name="j_mainduties[]" type="checkbox"> Professional Driver</label>
+                                            </div>
+                                           
                                         </div>
                                     </fieldset>
-
-                                    <fieldset class="padding-5">
-                                        <div class="row">
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label>  <input type="checkbox" checked> Driver</label>
-                                                </div>
-                                            </div>  
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label>  <input type="checkbox"> Pet Care </label>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    </fieldset>
-
-
-
                                     <fieldset >
                                         <div class="row">
                                             <div class="col-xs-12">  

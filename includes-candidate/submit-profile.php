@@ -1,4 +1,37 @@
 <br><br>
+<script>
+    function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode < 48 || charCode > 57)
+        return false;
+    return true;    
+}
+
+</script>
+
+    <script type='text/javascript' src='/JavaScriptSpellCheck/include.js' ></script>
+        <script type='text/javascript'>$Spelling.SpellCheckAsYouType('myfield')</script>
+
+
+    
+
+    <script type='text/javascript'>
+    CharacterCount = function(TextArea,FieldToCount){
+    var myField = document.getElementById(TextArea);
+    var myLabel = document.getElementById(FieldToCount); 
+    if(!myField || !myLabel){return false}; // catches errors
+    var MaxChars =  myField.maxLengh;
+    if(!MaxChars){MaxChars =  myField.getAttribute('maxlength') ; };    if(!MaxChars){return false};
+    var remainingChars =   MaxChars - myField.value.length
+    myLabel.innerHTML = remainingChars+" Characters remaining"
+    }
+
+    setInterval(function(){CharacterCount('myfield','CharCountLabel1')},);
+    </script>
+
+
+
+
  <?php 
 
     require_once 'includes/connection.php';
@@ -141,11 +174,11 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile number *</label>
-                                                    <input name="up_mobile"  required type="text" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
+                                                    <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>Telephone number <small><i>Optional</i></small> </label>
-                                                    <input name="up_telephone"  type="text" class="form-control" placeholder="Telephone number">
+                                                    <input name="up_telephone" onkeypress="return isNumberKey(event)" type="text" class="form-control" placeholder="Telephone number">
                                                 </div>
                                                 <label>Nationality  *</label>
                                                         <select name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your nationality">
@@ -162,17 +195,32 @@
                                                 <label>Location  *</label>
                                                         <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your location">
 
-                                                            <option selected disabled value="" >Select Country</option>
-                                                            <option  value="Philippines">Philippines</option>
-                                                            <option  value="China">China</option>
-                                                            <option  value="India">India</option>
-                                                            <option  value="Indonesia">Indonesia</option>
-                                                            <option  value="Thailand">Thailand</option>
+                                                                 <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
+                                                                <option value="Hong Kong">
+                                                                    Hong Kong
+                                                                </option>
+                                                                <option value="China">
+                                                                    China
+                                                                </option>
+                                                                <option value="Saudi Arabia">
+                                                                    Saudi Arabia
+                                                                </option>
+                                                                <option value="United Arab Emirates">
+                                                                    United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
+                                                                </option>       
                                                            
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Age *</label>
-                                                    <input name="up_age" type="text" class="form-control" required placeholder="Age" title="Please input your age">
+                                                    <input name="up_age" onkeypress="return isNumberKey(event)" type="text" class="form-control" maxlength="3" required placeholder="Age" title="Please input your age">
                                                 </div>
 
                                             
@@ -285,15 +333,25 @@
                                                 </select>
                                                 </div>
                                                 </div>
+
+                                              
                                        
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
+<<<<<<< HEAD
                                                         <label>Experience Summary </label>
                                                         <textarea name="upi_expsummary" minlength="30"  required class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw" title="Please enter at least 30 characters." placeholder="Explain your working experience" ></textarea>
+=======
+                                                        <label>Experience Summary </label> 
+                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
+                                                                <i><small><div id='CharCountLabel1'></div></small></i>
+>>>>>>> ebe2e66c725f275a8ea43feea3d38fa0e67d2ae7
                                                     </div> 
                                                 </div> 
                                             </div>
+
+                                           
 
                                                                              
                                             <div class="col-sm-12 padding-top-15">

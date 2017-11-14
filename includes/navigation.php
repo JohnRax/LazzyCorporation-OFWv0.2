@@ -25,7 +25,7 @@
                       
 
                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.php?source=findhelpers" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">HELPERS</a>
+                            <a href="index.php?source=findhelpers" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">CANDIDATE</a>
                       </li>
 
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">

@@ -1,4 +1,13 @@
 <br><br>
+<script>
+    function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode < 48 || charCode > 57)
+        return false;
+    return true;    
+}
+</script>
+
 <?php 
 
     require_once 'includes/connection.php';
@@ -74,7 +83,7 @@
                                 <ul>
                                     <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
                                     <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
-                                    <li><a href="#step3" data-toggle="tab">Step 3 </a></li>
+                                    <li><a href="#step3" data-toggle="tab">Finish </a></li>
                                     
                                 </ul>
 
@@ -105,26 +114,23 @@
                                                 
                                                 <label>Job Region *</label>
                                                         <select  name="j_country" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job location">
+                                                                <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
                                                                 <option value="Hong Kong">
                                                                     Hong Kong
-                                                                </option>
-                                                                <option value="Macau">
-                                                                    Macau
-                                                                </option>
-                                                                <option value="Qatar">
-                                                                    Qatar
                                                                 </option>
                                                                 <option value="Saudi Arabia">
                                                                     Saudi Arabia
                                                                 </option>
-                                                                <option value="Singapore">
-                                                                    Singapore
-                                                                </option>
-                                                                <option value="State of Kuwait">
-                                                                    State of Kuwait
-                                                                </option>
                                                                 <option value="United Arab Emirates">
                                                                     United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
                                                                 </option>
                                                         </select>
                                                 <div class="form-group">
@@ -133,7 +139,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Contact Number *</label>
-                                                    <input name="j_contact" type="number" title="Please input contact number" required class="form-control" placeholder="Contact">
+                                                    <input name="j_contact" type="text"  onkeypress="return isNumberKey(event)" title="Please input contact number" required class="form-control" placeholder="Contact">
                                                 </div>
                                                    
                                                  <label>Job Type *</label>
