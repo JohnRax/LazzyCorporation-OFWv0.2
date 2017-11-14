@@ -1,4 +1,4 @@
-
+g176
 .text-primary, .text-primary:hover{
     color: #1D62F0;
 }
@@ -174,7 +174,11 @@
 /*      Here the code for the wizard           */
 
 label{
-    font-weight: 400;
+  /*  font-weight: 400;*/
+
+}
+select{
+    font-weight: bold;
 }
 
 .image-container{

@@ -1,4 +1,12 @@
 <br><br><br>
+<script>
+    function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode < 48 || charCode > 57)
+        return false;
+    return true;    
+}
+</script>
  <?php  
     require_once 'connection.php';  
     if(isset($_POST['btn-register']))
@@ -191,8 +199,8 @@
                                         <label for="name">Email *</label>
                                         <input type="email" required class="form-control" name="u_email" placeholder="User Name">
                                         
-                                        <label for="name">Phone Number *</label>
-                                        <input type="text" required class="form-control" name="u_mobile" placeholder="User Name">
+                                        <label for="name">Phone Number * </label>
+                                        <input type="text" onkeypress="return isNumberKey(event)" required class="form-control" name="u_mobile" placeholder="User Name">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password *</label>
