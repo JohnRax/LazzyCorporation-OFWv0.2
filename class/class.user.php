@@ -199,6 +199,58 @@ class User
 			echo $e->getMessage();
 		}
 	}
+	public function update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
+	{
+		try
+		{
+				$update_jobpost_query="UPDATE job_description SET j_jobtitle=:jobtitle,
+																j_employertype=:employertype,
+																j_country=:country,
+																j_districtlocation=:districtlocation,
+																j_type=:type,
+																j_category=:category,
+																j_description=:description,
+																j_workingstatus=:workingstatus,
+																j_requiredlanguages=:requiredlanguages,
+																j_contact=:contact,
+																j_mainduties=:mainduties,
+																j_cookingskill=:cookingskill,
+																j_applicationemail=:applicationemail,
+																j_nationality=:nationality,
+																j_familytype=:familytype,
+																j_startdate=:startdate,
+																j_monthlysalary=:monthlysalary,
+																j_logo=:logo,
+																j_status=:status
+															WHERE j_id=:id";
+				$update_jobpost_stmt=$this->connection->prepare($update_jobpost_query);
+				$update_jobpost_stmt->execute(['id'=>$id,
+															'jobtitle'=>$jobtitle,
+															'employertype'=>$employertype,
+															'country'=>$country,
+															'districtlocation'=>$districtlocation,
+															'type'=>$type,
+															'category'=>$category,
+															'description'=>$description,
+															'workingstatus'=>$workingstatus,
+															'requiredlanguages'=>$requiredlanguages,
+															'contact'=>$contact,
+															'mainduties'=>$mainduties,
+															'cookingskill'=>$cookingskill,
+															'applicationemail'=>$applicationemail,
+															'nationality'=>$nationality,
+															'familytype'=>$familytype,
+															'startdate'=>$startdate,
+															'monthlysalary'=>$monthlysalary,
+															'logo'=>$logo,
+															'status'=>'Unapproved']);
+				return $update_jobpost_stmt;
+		}catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+				
+	}
 	public function is_loggedin()
 	{
 		if(isset($_SESSION['user_session']))

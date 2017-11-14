@@ -18,7 +18,7 @@
 
         if( isset($_POST['j_mainduties']) && !empty($_POST['j_mainduties']) ) 
         { 
-            $mainduties = implode(', ', $_POST['j_mainduties']);
+            $mainduties = implode(',', $_POST['j_mainduties']);
         }
         else
         {
@@ -27,7 +27,7 @@
 
         if( isset($_POST['j_cookingskill']) && !empty($_POST['j_cookingskill']) ) 
         { 
-            $cookingskill = implode(', ', $_POST['j_cookingskill']);
+            $cookingskill = implode(',', $_POST['j_cookingskill']);
         }
         else
         {
@@ -35,7 +35,7 @@
         }
         if( isset($_POST['j_requiredlanguages']) && !empty($_POST['j_requiredlanguages']) ) 
         { 
-            $requiredlanguages = implode(', ', $_POST['j_requiredlanguages']);
+            $requiredlanguages = implode(',', $_POST['j_requiredlanguages']);
         }
         else
         {

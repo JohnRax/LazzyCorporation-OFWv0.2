@@ -42,7 +42,7 @@
 
         if( isset($_POST['up_languages']) && !empty($_POST['up_languages']) ) 
         { 
-            $languages = implode(', ', $_POST['up_languages']);
+            $languages = implode(',', $_POST['up_languages']);
         }
         else
         {
@@ -69,7 +69,7 @@
 
         if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
         { 
-            $skillsexp = implode(', ', $_POST['upi_skillsexp']);
+            $skillsexp = implode(',', $_POST['upi_skillsexp']);
         }
         else
         {
@@ -78,7 +78,7 @@
 
         if( isset($_POST['upi_cookingskills']) && !empty($_POST['upi_cookingskills']) ) 
         { 
-            $cookingskills = implode(', ', $_POST['upi_cookingskills']);
+            $cookingskills = implode(',', $_POST['upi_cookingskills']);
         }
         else
         {
@@ -86,7 +86,7 @@
         }
         if( isset($_POST['upi_otherskills']) && !empty($_POST['upi_otherskills']) ) 
         { 
-            $otherskills = implode(', ', $_POST['upi_otherskills']);
+            $otherskills = implode(',', $_POST['upi_otherskills']);
         }
         else
         {

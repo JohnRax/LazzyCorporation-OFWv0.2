@@ -11,6 +11,67 @@
 <?php 
 
     require_once 'includes/connection.php';
+    if(isset($_POST['finish']))
+    {
+         if( isset($_POST['j_mainduties']) && !empty($_POST['j_mainduties']) ) 
+        { 
+            $mainduties = implode(',', $_POST['j_mainduties']);
+        }
+        else
+        {
+            $mainduties="none";        
+        }
+
+        if( isset($_POST['j_cookingskill']) && !empty($_POST['j_cookingskill']) ) 
+        { 
+            $cookingskill = implode(',', $_POST['j_cookingskill']);
+        }
+        else
+        {
+            $cookingskill="none";        
+        }
+        if( isset($_POST['j_requiredlanguages']) && !empty($_POST['j_requiredlanguages']) ) 
+        { 
+            $requiredlanguages = implode(',', $_POST['j_requiredlanguages']);
+        }
+        else
+        {
+            $requiredlanguages="none";        
+        }
+        $id=$_GET['id'];
+        $jobtitle=$_POST['j_jobtitle'];
+        $employertype=$_POST['j_employertype'];
+        $country=$_POST['j_country'];
+        $districtlocation=$_POST['j_districtlocation'];
+        $type=$_POST['j_type'];
+        $category=$_POST['j_category'];
+        $description=$_POST['j_description'];
+        $workingstatus=$_POST['j_workingstatus'];
+        $contact=$_POST['j_contact'];
+        $applicationemail=$_POST['j_email'];
+        $nationality=$_POST['j_nationality'];
+        $familytype=$_POST['j_familytype'];
+        $startdate=$_POST['j_startdate'];
+        $monthlysalary=$_POST['j_monthlysalary'];
+        $logo=$_FILES['j_logo']['name'];
+        $logo_temp=$_FILES['j_logo']['tmp_name'];
+        move_uploaded_file($logo_temp, "assets/img/profilepicture/{$logo}");
+        if(empty($_logo))
+        {
+            $check_logo_query="SELECT * FROM job_description WHERE j_id=:id";
+            $check_logo_stmt=$connection->prepare($check_logo_query);
+            $check_logo_stmt->execute(['id'=>$_GET['id']]);
+            $result=$check_logo_stmt->fetch(PDO::FETCH_ASSOC);
+            $logo=$result['j_logo'];
+        }
+        if($user->update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        {
+           
+            echo"<script>
+                    alert('Complete! Your Job Post is Updated. Thank you');
+                </script>";
+        }   
+    }
     if(isset($_GET['id']))
     {
         $show_job_query="SELECT * FROM job_description WHERE j_id=:id";
@@ -48,7 +109,7 @@
                                                    <div class="picture-container">
                                                     <div class="picture">
                                                         <img src="assets/img/profilepicture/<?php echo $result['j_logo'] ?>" class="picture-src" id="wizardPicturePreview" title=""/>
-                                                        <input type="file" id="wizard-picture" name="j_logo">
+                                                        <input type="file" id="wizard-picture" name="j_logo" >
                                                     </div> 
                                                 </div>
                                                 <div class="form-group">
@@ -338,7 +399,7 @@
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Required Languages<small></small></label><br>
                                                   <?php 
-                                                      $array_languages = explode(',', $result['j_cookingskill']);
+                                                      $array_languages = explode(',', $result['j_requiredlanguages']);
                                                    
                                                 ?>
                                                <ul class="job-manager-term-checklist job-manager-term-checklist-candidate_languages2" required >
@@ -358,27 +419,27 @@
                                                     <input id="in-candidate_language2-154" name="j_requiredlanguages[]" type="checkbox" value="Japanese"  <?php  if(in_array('Japanese', $array_languages))echo "checked"; ?>> Japanese
                                                </div>
                                                <div class="col-sm-3">
-                                                    <input id="in-candidate_language2-150" name="j_requiredlanguages[]" type="checkbox" value="Mandarin"  <?php  if(in_array('Mandarin', $array_cookingskills))echo "checked"; ?>> Mandarin
+                                                    <input id="in-candidate_language2-150" name="j_requiredlanguages[]" type="checkbox" value="Mandarin"  <?php  if(in_array('Mandarin', $array_languages))echo "checked"; ?>> Mandarin
                                                </div>
                                                <div class="col-sm-3">
-                                                    <input id="in-candidate_language2-168" name="j_requiredlanguages[]" type="checkbox" value="Modern Arabic"  <?php  if(in_array('Modern Arabic', $array_cookingskills))echo "checked"; ?>> Modern Arabic
+                                                    <input id="in-candidate_language2-168" name="j_requiredlanguages[]" type="checkbox" value="Modern Arabic"  <?php  if(in_array('Modern Arabic', $array_languages))echo "checked"; ?>> Modern Arabic
                                                </div>
                                                <div class="col-sm-3">
-                                                    <input id="in-candidate_language2-151" name="j_requiredlanguages[]" type="checkbox" value="Thai"  <?php  if(in_array('Thai', $array_cookingskills))echo "checked"; ?>> Thai
+                                                    <input id="in-candidate_language2-151" name="j_requiredlanguages[]" type="checkbox" value="Thai"  <?php  if(in_array('Thai', $array_languages))echo "checked"; ?>> Thai
                                                </div>
                                         </ul>
                                             </div><br>
                                             <div class="form-group">
                                                 <label>Application Email  *</label> 
-                                                <input class="form-control" required="" title="Please input application email" name="j_email" placeholder="Application Email"  type="email">
+                                                <input class="form-control" required="" title="Please input application email" name="j_email" placeholder="Application Email"  type="email" value="<?php echo $result['j_applicationemail'] ?>">
                                             </div>  
                                             <div class="form-group">
                                                 <label>Monthly Salary  *</label> 
-                                                <input class="form-control" required="" title="Please input montly salary" name="j_monthlysalary" placeholder="e.g. PHP 25,000"  type="type">
+                                                <input class="form-control" required="" title="Please input montly salary" name="j_monthlysalary" placeholder="e.g. PHP 25,000"  type="type" value="<?php echo $result['j_monthlysalary'] ?>">
                                             </div>
                                             <div class="form-group">
                                                 <label> Start Date  *</label>
-                                                 <input class="form-control" required="" title="Please input starting date" name="j_startdate"  type="date">
+                                                 <input class="form-control" required="" title="Please input starting date" name="j_startdate"  type="date" value="<?php echo $result['j_startdate'] ?>">
                                             </div>
                               
                                         </div>
@@ -412,7 +473,7 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
-                                        <input type='submit' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
+                                        <input type='submit' class='btn btn-finish btn-primary ' name='finish' value='Update' />
                                          
                                     </div>
 
