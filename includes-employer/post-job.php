@@ -1,4 +1,13 @@
 <br><br>
+<script>
+    function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode < 48 || charCode > 57)
+        return false;
+    return true;    
+}
+</script>
+
 <?php 
 
     require_once 'includes/connection.php';
@@ -121,7 +130,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Contact Number *</label>
-                                                    <input name="j_contact" type="number" title="Please input contact number" required class="form-control" placeholder="Contact">
+                                                    <input name="j_contact" type="text"  onkeypress="return isNumberKey(event)" title="Please input contact number" required class="form-control" placeholder="Contact">
                                                 </div>
                                                    
                                                  <label>Job Type *</label>
