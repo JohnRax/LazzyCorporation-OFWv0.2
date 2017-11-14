@@ -177,7 +177,7 @@
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>Age *</label>
-                                                    <input name="up_age" type="text" class="form-control" required placeholder="Age" title="Please input your age">
+                                                    <input name="up_age" onkeypress="return isNumberKey(event)" type="text" class="form-control" maxlength="3" required placeholder="Age" title="Please input your age">
                                                 </div>
 
                                             
