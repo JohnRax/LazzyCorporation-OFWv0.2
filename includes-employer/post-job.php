@@ -328,38 +328,82 @@
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Main Duties <small></small></label><br>
                                                 <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements">
-                                                <li class="popular-category" id='helper_requirement-57'><label class="selectit"><input id="in-helper_requirement-57" name="j_mainduties[]" type="checkbox" value="Baby Care"> Baby Care</label></li>
-                                                <li class="popular-category" id='helper_requirement-56'><label class="selectit"><input id="in-helper_requirement-56" name="j_mainduties[]" type="checkbox" value="Child Care"> Child Care</label></li>
-                                                <li class="popular-category" id='helper_requirement-54'><label class="selectit"><input id="in-helper_requirement-54" name="j_mainduties[]" type="checkbox" value="Elder Care"> Elder Care</label></li>
-                                                <li class="popular-category" id='helper_requirement-180'><label class="selectit"><input id="in-helper_requirement-180" name="j_mainduties[]" type="checkbox" value="Groceries"> Groceries</label></li>
-                                                <li class="popular-category" id='helper_requirement-79'><label class="selectit"><input id="in-helper_requirement-79" name="j_mainduties[]" type="checkbox" value="Housekeeping"> Housekeeping</label></li>
-                                                <li class="popular-category" id='helper_requirement-53'><label class="selectit"><input id="in-helper_requirement-53" name="j_mainduties[]" type="checkbox" value="Pet Care"> Pet Care</label></li>
-                                                <li class="popular-category" id='helper_requirement-91'><label class="selectit"><input id="in-helper_requirement-91" name="j_mainduties[]" type="checkbox" value="Professional Driver"> Professional Driver</label></li>
-                                                <li class="popular-category" id='helper_requirement-55'><label class="selectit"><input id="in-helper_requirement-55" name="j_mainduties[]" type="checkbox" value="Teen Care"> Teen Care</label></li>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-57" name="j_mainduties[]" type="checkbox" value="Baby Care"> Baby Care
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-56" name="j_mainduties[]" type="checkbox" value="Child Care"> Child Care
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-54" name="j_mainduties[]" type="checkbox" value="Elder Care"> Elder Care
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-180" name="j_mainduties[]" type="checkbox" value="Groceries"> Groceries
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-79" name="j_mainduties[]" type="checkbox" value="Housekeeping"> Housekeeping
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-53" name="j_mainduties[]" type="checkbox" value="Pet Care"> Pet Care
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-91" name="j_mainduties[]" type="checkbox" value="Professional Driver"> Professional Driver
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-55" name="j_mainduties[]" type="checkbox" value="Teen Care"> Teen Care
+                                                </div>
                                         </ul>
                                             </div><br>
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Cooking Skills<small></small></label><br>
                                                 <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements">
-                                            <li class="popular-category" id='helper_requirement-57'><label class="selectit"><input id="in-helper_requirement-57" name="j_cookingskills[]" type="checkbox" value="Arabic"> Arabic</label></li>
-                                            <li class="popular-category" id='helper_requirement-56'><label class="selectit"><input id="in-helper_requirement-56" name="j_cookingskills[]" type="checkbox" value="Chinese"> Chinese</label></li>
-                                            <li class="popular-category" id='helper_requirement-54'><label class="selectit"><input id="in-helper_requirement-54" name="j_cookingskills[]" type="checkbox" value="Indian"> Indian</label></li>
-                                            <li class="popular-category" id='helper_requirement-180'><label class="selectit"><input id="in-helper_requirement-180" name="j_cookingskills[]" type="checkbox" value="Japanese"> Japanese</label></li>
-                                            <li class="popular-category" id='helper_requirement-79'><label class="selectit"><input id="in-helper_requirement-79" name="j_cookingskills[]" type="checkbox" value="Vegetarian"> Vegetarian</label></li>
-                                            <li class="popular-category" id='helper_requirement-91'><label class="selectit"><input id="in-helper_requirement-91" name="j_cookingskills[]" type="checkbox" value="Western"> Western</label></li>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-57" name="j_cookingskills[]" type="checkbox" value="Arabic"> Arabic
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-56" name="j_cookingskills[]" type="checkbox" value="Chinese"> Chinese
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-54" name="j_cookingskills[]" type="checkbox" value="Indian"> Indian
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-180" name="j_cookingskills[]" type="checkbox" value="Japanese"> Japanese
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-79" name="j_cookingskills[]" type="checkbox" value="Vegetarian"> Vegetarian
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-91" name="j_cookingskills[]" type="checkbox" value="Western"> Western
+                                                </div>
                                         </ul>
                                             </div><br>
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Required Languages<small></small></label><br>
                                                <ul class="job-manager-term-checklist job-manager-term-checklist-candidate_languages2" required >
-                                            <li class="popular-category" id='candidate_language2-149'><label class="selectit"><input id="in-candidate_language2-149"  name="j_requiredlanguages[]" type="checkbox" value="Cantonese"> Cantonese</label></li>
-                                            <li class="popular-category" id='candidate_language2-148'><label class="selectit"><input id="in-candidate_language2-148" name="j_requiredlanguages[]" type="checkbox" value="English"> English</label></li>
-                                            <li class="popular-category" id='candidate_language2-152'><label class="selectit"><input id="in-candidate_language2-152" name="j_requiredlanguages[]" type="checkbox" value="Filipino"> Filipino</label></li>
-                                            <li class="popular-category" id='candidate_language2-153'><label class="selectit"><input id="in-candidate_language2-153" name="j_requiredlanguages[]" type="checkbox" value="Indonesian"> Indonesian</label></li>
-                                            <li id='candidate_language2-154'><label class="selectit"><input id="in-candidate_language2-154"                          name="j_requiredlanguages[]" type="checkbox" value="Japanese"> Japanese</label></li>
-                                            <li class="popular-category" id='candidate_language2-150'><label class="selectit"><input id="in-candidate_language2-150" name="j_requiredlanguages[]" type="checkbox" value="Mandarin"> Mandarin</label></li>
-                                            <li id='candidate_language2-168'><label class="selectit"><input id="in-candidate_language2-168"                          name="j_requiredlanguages[]" type="checkbox" value="Modern Arabic"> Modern Arabic</label></li>
-                                            <li id='candidate_language2-151'><label class="selectit"><input id="in-candidate_language2-151"                          name="j_requiredlanguages[]" type="checkbox" value="Thai"> Thai</label></li>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-149"  name="j_requiredlanguages[]" type="checkbox" value="Cantonese"> Cantonese
+                                               </div>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-148" name="j_requiredlanguages[]" type="checkbox" value="English"> English
+                                               </div>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-152" name="j_requiredlanguages[]" type="checkbox" value="Filipino"> Filipino
+                                               </div>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-153" name="j_requiredlanguages[]" type="checkbox" value="Indonesian"> Indonesian
+                                               </div>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-154" name="j_requiredlanguages[]" type="checkbox" value="Japanese"> Japanese
+                                               </div>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-150" name="j_requiredlanguages[]" type="checkbox" value="Mandarin"> Mandarin
+                                               </div>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-168" name="j_requiredlanguages[]" type="checkbox" value="Modern Arabic"> Modern Arabic
+                                               </div>
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-151" name="j_requiredlanguages[]" type="checkbox" value="Thai"> Thai
+                                               </div>
                                         </ul>
                                             </div><br>
                                             <div class="form-group">
