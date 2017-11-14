@@ -101,11 +101,11 @@
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label for="email">Phone number/Email Address *</label>
-                                    <input type="text" class="form-control" id="u_email" name="u_email">
+                                    <input type="text" required class="form-control" id="u_email" name="u_email" placeholder="Phone number/Email Address">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password *</label>
-                                    <input type="password" class="form-control" name="u_password">
+                                    <input type="password" required class="form-control" name="u_password" placeholder="******">
                                 </div>
                                 <div class="text-center">
                                      <button type="submit" name="btn-login" class="btn btn-block btn-primary">
@@ -197,10 +197,10 @@
                                             </select>
                                         </div>
                                         <label for="name">Email *</label>
-                                        <input type="email" required class="form-control" name="u_email" placeholder="User Name">
+                                        <input type="email" required class="form-control" name="u_email" placeholder="Email Address">
                                         
                                         <label for="name">Phone Number * </label>
-                                        <input type="text" onkeypress="return isNumberKey(event)" required class="form-control" name="u_mobile" placeholder="User Name">
+                                        <input type="text" onkeypress="return isNumberKey(event)" required class="form-control" name="u_mobile" placeholder="Phone Number">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password *</label>
