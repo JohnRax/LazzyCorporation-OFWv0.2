@@ -175,123 +175,65 @@
                     <div class="col-md-12 clear"> 
                         <div id="list-type" class="proerty-th">
                            
-                            <div class="col-sm-6 col-md-4 p0">
-                                    <div class="box-two proerty-item">
-                                        <div class="item-thumb">
-                                            <a href="property-1.html" ><img src="assets/img/profilepicture/1.jpg"></a>
+                           
+                                 <?php 
+
+                    require_once 'includes/connection.php';
+                    $show_profile_query="SELECT
+                                              a.u_id, 
+                                              a.u_fname,
+                                              a.u_lname,
+                                              b.up_age,
+                                              b.up_picture,
+                                              b.up_address,
+                                              b.up_nationality,
+                                              b.up_category,
+                                              b.up_address,
+                                              c.upi_skillsexp,
+                                              c.upi_yearsofexp
+                                            FROM
+                                              user_details AS a 
+                                               JOIN user_personal_information AS b 
+                                                ON b.u_id = a.u_id 
+                                               JOIN user_professional_information AS c 
+                                                ON a.u_id = c.u_id where b.up_status=:status limit 7";
+                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                    $show_profile_stmt->execute(['status'=>'Approved']);
+                    while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
+                    {
+                        echo " <div class='col-sm-6 col-md-3 p0'>
+                                    <div class='box-two proerty-item'>
+                                        <div class='item-thumb'>
+                                            <a href='index.php?source=candidateprofile&id=".$result['u_id']."' ><img src='assets/img/profilepicture/".$result['up_picture']."'></a>
                                         </div>
-
-                                             <div class="item-entry overflow">
-                                                <h5><a href="index.php?source=property-page" >John Ray Legaspi</a></h5>
-                                                <div class="dot-hr"></div>
-                                                
-                                                <span class="pull-left"><b>Age : </b>20 </span>
-                                                <br>
-                                                <h7><b>Location:</b> Philippines</h7>
-                                                <br>
-                                                <h7><b>Nationality:</b> Filipino</h7>
-                                                <br>
-                                                <h7><b>Years Of Experience:</b> 5 years</h7>
-                                                <br>
-                                                <h7><b>Job Expertises:</b></h7>
-                                                
-                                                <h7>Care of Elderly, Cleaning, Cooking, Ironing</h7>
-                                                <br>
-                                                <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
-                                                <br>
-                                                <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
-
+                                        <div class='item-entry overflow'>
+                                            <h5><a href='index.php?source=candidateprofile&id=".$result['u_id']."' >".$result['u_fname']." ".$result['u_lname']."</a></h5>
+                                            <div class='dot-hr'></div>
+                                            
+                                            <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
+                                            <br>
+                                            <h7><b>Location:</b>".$result['up_address']."</h7> 
+                                            <br>
+                                            <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
+                                            <br>
+                                            <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
+                                            <br>
+                                            <h7><b>Job Expertises:</b></h7>
+                                            <br>
+                                            <h7>".$result['upi_skillsexp']."</h7>
+                                            <br>
+                                            <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
+                                            <br>
+                                            <div class='span9 btn-block no-padding'>
+                                                <button class='btn btn-large btn-block btn-primary full-width' onclick='location.href='index.php?source=candidateprofile&id=".$result['u_id']."' type='button'>View Full Profile</button>
                                             </div>
-
-
+                                        </div>
                                     </div>
-                                </div> 
-
-                                  <div class="col-sm-6 col-md-4 p0">
-                                    <div class="box-two proerty-item">
-                                        <div class="item-thumb">
-                                            <a href="property-1.html" ><img src="assets/img/profilepicture/2.jpg"></a>
-                                        </div>
-
-                                             <div class="item-entry overflow">
-                                                <h5><a href="index.php?source=property-page" >John Ray Legaspi</a></h5>
-                                                <div class="dot-hr"></div>
-                                                
-                                                <span class="pull-left"><b>Age : </b>20 </span>
-                                                <br>
-                                                <h7><b>Location:</b> Philippines</h7>
-                                                <br>
-                                                <h7><b>Nationality:</b> Filipino</h7>
-                                                <br>
-                                                <h7><b>Years Of Experience:</b> 5 years</h7>
-                                                <br>
-                                                <h7><b>Job Expertises:</b></h7>
-                                                
-                                                <h7>Care of Elderly, Cleaning, Cooking, Ironing</h7>
-                                                <br>
-                                                <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
-                                                <br>
-                                                <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
-                                            </div>
-
-
-                                    </div>
-                                </div>    <div class="col-sm-6 col-md-4 p0">
-                                    <div class="box-two proerty-item">
-                                        <div class="item-thumb">
-                                            <a href="property-1.html" ><img src="assets/img/profilepicture/3.jpg"></a>
-                                        </div>
-
-                                             <div class="item-entry overflow">
-                                                <h5><a href="index.php?source=property-page" >John Ray Legaspi</a></h5>
-                                                <div class="dot-hr"></div>
-                                                
-                                                <span class="pull-left"><b>Age : </b>20 </span>
-                                                <br>
-                                                <h7><b>Location:</b> Philippines</h7>
-                                                <br>
-                                                <h7><b>Nationality:</b> Filipino</h7>
-                                                <br>
-                                                <h7><b>Years Of Experience:</b> 5 years</h7>
-                                                <br>
-                                                <h7><b>Job Expertises:</b></h7>
-                                                
-                                                <h7>Care of Elderly, Cleaning, Cooking, Ironing</h7>
-                                                <br>
-                                                <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
-                                                <br>
-                                                 <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
-                                            </div>
-
-
-                                    </div>
-                                </div>    <div class="col-sm-6 col-md-4 p0">
-                                    <div class="box-two proerty-item">
-                                        <div class="item-thumb">
-                                            <a href="property-1.html" ><img src="assets/img/profilepicture/4.jpg"></a>
-                                        </div>
-
-                                             <div class="item-entry overflow">
-                                                <h5><a href="index.php?source=property-page" >John Ray Legaspi</a></h5>
-                                                <div class="dot-hr"></div>
-                                                
-                                                <span class="pull-left"><b>Age : </b>20 </span>
-                                                <br>
-                                                <h7><b>Location:</b> Philippines</h7>
-                                                <br>
-                                                <h7><b>Nationality:</b> Filipino</h7>
-                                                <br>
-                                                <h7><b>Years Of Experience:</b> 5 years</h7>
-                                                <br>
-                                                <h7><b>Job Expertises:</b></h7>
-                                                
-                                                <h7>Care of Elderly, Cleaning, Cooking, Ironing</h7>
-                                                <br>
-                                                <span class="pull-left"><b>Posted:</b> 20 Minutes Ago</span>
-                                                <br>
-                                               <button class="btn btn-large btn-block btn-primary full-width" type="button" class="btn btn-info btn-lg"  onclick="window.open(this.href='includes/candidate-page.php')">View Full Profile</button>
-                                            </div>
-
+                                </div>";
+                    }
+                    ?>
+                                 
+                              
 
                                     </div>
                                 </div> 

@@ -42,15 +42,21 @@
         $description=$_POST['j_description'];
         $workingstatus=$_POST['j_workingstatus'];
         $contact=$_POST['j_contact'];
-        $applicationemail=$_POST['j_applicationemail'];
+        $applicationemail=$_POST['j_email'];
         $nationality=$_POST['j_nationality'];
         $familytype=$_POST['j_familytype'];
         $startdate=$_POST['j_startdate'];
         $monthlysalary=$_POST['j_monthlysalary'];
         $logo=$_FILES['j_logo']['name'];
         $logo_temp=$_FILES['j_logo']['tmp_name'];
-        move_uploaded_file($logo_temp, "assets/img/profilepicture/{$joblogo}");
-        $user->post_jobs($id,$logo_temp,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary);
+        move_uploaded_file($logo_temp, "assets/img/profilepicture/{$logo}");
+        if($user->post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        {
+           
+            echo"<script>
+                    alert('Complete! Your Job Post is under approval. Thank you');
+                </script>";
+        }   
 
 
     }
@@ -62,7 +68,7 @@
                     <div class="wizard-container"> 
 
                         <div class="wizard-card ct-wizard-orange" id="wizardProperty">
-                            <form action="" method="">                        
+                            <form action="" method="post" enctype="multipart/form-data">                        
                              
 
                                 <ul>
@@ -81,6 +87,12 @@
                                                
                                             <div class="col-sm-12">
                                                 <h3 class="info-text"> <strong>Job Information</strong></h3>
+                                                   <div class="picture-container">
+                                                    <div class="picture">
+                                                        <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title=""/>
+                                                        <input type="file" id="wizard-picture" name="j_logo">
+                                                    </div> 
+                                                </div>
                                                 <div class="form-group">
                                                     <labeL>Job Title *</label>
                                                     <input name="j_jobtitle" type="text" required class="form-control" placeholder="Select Job Title" title="Please input job title">
@@ -309,113 +321,40 @@
                                             <h3 class="info-text">Professional Information</h3>
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Main Duties <small></small></label><br>
-                                                <div class="col-sm-4">
-                                                    
-                                                        
-                                                            <label><input name="j_mainduties[]" type="checkbox"> Baby Care</label>
-                                                       
-                                                </div>
-                                                <div class="col-sm-4">
-                                                   
-                                                            <label><input name="j_mainduties[]" type="checkbox"> Child Care</label>
-                                                      
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_mainduties[]" type="checkbox"> Elder Care</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                   
-                                                            <label><input name="j_mainduties[]" type="checkbox"> Groceries</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_mainduties[]" type="checkbox">  Housekeeping</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_mainduties[]" type="checkbox">  Professional Driver</label>
-                                                       
-                                                </div>
-                                                <div class="col-sm-4">
-                                                   
-                                                            <label><input name="j_mainduties[]" type="checkbox"> Pet Care</label>
-                                                       
-                                                </div>
+                                                <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements">
+                                                <li class="popular-category" id='helper_requirement-57'><label class="selectit"><input id="in-helper_requirement-57" name="j_mainduties[]" type="checkbox" value="Baby Care"> Baby Care</label></li>
+                                                <li class="popular-category" id='helper_requirement-56'><label class="selectit"><input id="in-helper_requirement-56" name="j_mainduties[]" type="checkbox" value="Child Care"> Child Care</label></li>
+                                                <li class="popular-category" id='helper_requirement-54'><label class="selectit"><input id="in-helper_requirement-54" name="j_mainduties[]" type="checkbox" value="Elder Care"> Elder Care</label></li>
+                                                <li class="popular-category" id='helper_requirement-180'><label class="selectit"><input id="in-helper_requirement-180" name="j_mainduties[]" type="checkbox" value="Groceries"> Groceries</label></li>
+                                                <li class="popular-category" id='helper_requirement-79'><label class="selectit"><input id="in-helper_requirement-79" name="j_mainduties[]" type="checkbox" value="Housekeeping"> Housekeeping</label></li>
+                                                <li class="popular-category" id='helper_requirement-53'><label class="selectit"><input id="in-helper_requirement-53" name="j_mainduties[]" type="checkbox" value="Pet Care"> Pet Care</label></li>
+                                                <li class="popular-category" id='helper_requirement-91'><label class="selectit"><input id="in-helper_requirement-91" name="j_mainduties[]" type="checkbox" value="Professional Driver"> Professional Driver</label></li>
+                                                <li class="popular-category" id='helper_requirement-55'><label class="selectit"><input id="in-helper_requirement-55" name="j_mainduties[]" type="checkbox" value="Teen Care"> Teen Care</label></li>
+                                        </ul>
                                             </div><br>
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Cooking Skills<small></small></label><br>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_cookingskill[]" type="checkbox">  Arabic</label>
-                                                     
-                                                </div>
-                                                <div class="col-sm-4">
-                                                  
-                                                            <label><input name="j_cookingskill[]" type="checkbox">  Chineses</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                   
-                                                            <label><input name="j_cookingskill[]" type="checkbox"> Indian</label>
-                                                       
-                                                </div>
-                                                <div class="col-sm-4">
-                                                   
-                                                            <label><input name="j_cookingskill[]" type="checkbox"> Japanese</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                  
-                                                            <label><input name="j_cookingskill[]" type="checkbox"> Vegetarian</label>
-                                                       
-                                                </div>
-                                                <div class="col-sm-4">
-                                                 
-                                                            <label><input name="j_cookingskill[]" type="checkbox"> Western</label>
-                                                      
-                                                </div>
+                                                <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements">
+                                            <li class="popular-category" id='helper_requirement-57'><label class="selectit"><input id="in-helper_requirement-57" name="j_cookingskills[]" type="checkbox" value="Arabic"> Arabic</label></li>
+                                            <li class="popular-category" id='helper_requirement-56'><label class="selectit"><input id="in-helper_requirement-56" name="j_cookingskills[]" type="checkbox" value="Chinese"> Chinese</label></li>
+                                            <li class="popular-category" id='helper_requirement-54'><label class="selectit"><input id="in-helper_requirement-54" name="j_cookingskills[]" type="checkbox" value="Indian"> Indian</label></li>
+                                            <li class="popular-category" id='helper_requirement-180'><label class="selectit"><input id="in-helper_requirement-180" name="j_cookingskills[]" type="checkbox" value="Japanese"> Japanese</label></li>
+                                            <li class="popular-category" id='helper_requirement-79'><label class="selectit"><input id="in-helper_requirement-79" name="j_cookingskills[]" type="checkbox" value="Vegetarian"> Vegetarian</label></li>
+                                            <li class="popular-category" id='helper_requirement-91'><label class="selectit"><input id="in-helper_requirement-91" name="j_cookingskills[]" type="checkbox" value="Western"> Western</label></li>
+                                        </ul>
                                             </div><br>
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Required Languages<small></small></label><br>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_requiredlanguages[]" type="checkbox"> English</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_requiredlanguages[]" type="checkbox"> Filipino</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_requiredlanguages[]" type="checkbox"> Cantonese</label>
-                                                       
-                                                </div>
-                                               <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Mandarin</label>
-                                                      
-                                                </div>
-                                                <div class="col-sm-4">
-                                                   
-                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Indonesian</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    
-                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Japanese</label>
-                                                        
-                                                </div>
-                                                <div class="col-sm-4">
-                                                   
-                                                            <label><input name="j_requiredlanguages[]" type="checkbox">  Thai</label>
-                                                        
-                                                </div>
+                                               <ul class="job-manager-term-checklist job-manager-term-checklist-candidate_languages2" required >
+                                            <li class="popular-category" id='candidate_language2-149'><label class="selectit"><input id="in-candidate_language2-149"  name="j_requiredlanguages[]" type="checkbox" value="Cantonese"> Cantonese</label></li>
+                                            <li class="popular-category" id='candidate_language2-148'><label class="selectit"><input id="in-candidate_language2-148" name="j_requiredlanguages[]" type="checkbox" value="English"> English</label></li>
+                                            <li class="popular-category" id='candidate_language2-152'><label class="selectit"><input id="in-candidate_language2-152" name="j_requiredlanguages[]" type="checkbox" value="Filipino"> Filipino</label></li>
+                                            <li class="popular-category" id='candidate_language2-153'><label class="selectit"><input id="in-candidate_language2-153" name="j_requiredlanguages[]" type="checkbox" value="Indonesian"> Indonesian</label></li>
+                                            <li id='candidate_language2-154'><label class="selectit"><input id="in-candidate_language2-154"                          name="j_requiredlanguages[]" type="checkbox" value="Japanese"> Japanese</label></li>
+                                            <li class="popular-category" id='candidate_language2-150'><label class="selectit"><input id="in-candidate_language2-150" name="j_requiredlanguages[]" type="checkbox" value="Mandarin"> Mandarin</label></li>
+                                            <li id='candidate_language2-168'><label class="selectit"><input id="in-candidate_language2-168"                          name="j_requiredlanguages[]" type="checkbox" value="Modern Arabic"> Modern Arabic</label></li>
+                                            <li id='candidate_language2-151'><label class="selectit"><input id="in-candidate_language2-151"                          name="j_requiredlanguages[]" type="checkbox" value="Thai"> Thai</label></li>
+                                        </ul>
                                             </div><br>
                                             <div class="form-group">
                                                 <label>Application Email  *</label> 
@@ -429,10 +368,7 @@
                                                 <label> Start Date  *</label>
                                                  <input class="form-control" required="" title="Please input starting date" name="j_startdate"  type="date">
                                             </div>
-                                            <div class="form-group">
-                                                <label>Logo <small> <i>(Optional)</i></small></label>
-                                                <input class="form-control" name="j_logo" required type="file">
-                                            </div>
+                              
                                         </div>
                                     </div>
                                     <!-- End step 2 -->
