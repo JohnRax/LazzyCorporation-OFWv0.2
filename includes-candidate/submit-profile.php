@@ -340,6 +340,10 @@
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
+<<<<<<< HEAD
+
+=======
+>>>>>>> dfdb883d49e9d7d0b6e572ae1c5a25695f836dae
                                                         <label>Experience Summary </label> 
                                                             <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>

@@ -55,10 +55,10 @@
                         echo " <div class='col-sm-6 col-md-3 p0'>
                                     <div class='box-two proerty-item'>
                                         <div class='item-thumb'>
-                                            <a href='index.php?source=candidateprofile&id=".$result['u_id']."' ><img src='assets/img/profilepicture/".$result['up_picture']."'></a>
+                                           <img src='assets/img/profilepicture/".$result['up_picture']."'>
                                         </div>
                                         <div class='item-entry overflow'>
-                                            <h5><a href='index.php?source=candidateprofile&id=".$result['u_id']."' >".$result['u_fname']." ".$result['u_lname']."</a></h5>
+                                            <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
                                             <div class='dot-hr'></div>
                                             
                                             <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
@@ -76,13 +76,16 @@
                                             <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
                                             <br>
                                             <div class='span9 btn-block no-padding'>
-                                                <button class='btn btn-large btn-block btn-primary full-width' onclick='location.href='index.php?source=candidateprofile&id=".$result['u_id']."' type='button'>View Full Profile</button>
+                                        ";?>
+                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                            onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
+                                                    >View Full Profile</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>";
-                    }
-                    ?>
+                                </div>
+                    <?php } ?>
+                    
 
                            
                         <div class="col-sm-6 col-md-3 p0">
