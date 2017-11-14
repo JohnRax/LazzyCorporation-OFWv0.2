@@ -197,6 +197,9 @@
                                                                 <option value="Hong Kong">
                                                                     Hong Kong
                                                                 </option>
+                                                                <option value="China">
+                                                                    China
+                                                                </option>
                                                                 <option value="Saudi Arabia">
                                                                     Saudi Arabia
                                                                 </option>
@@ -340,7 +343,7 @@
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
                                                         <label>Experience Summary </label> 
-                                                            <textarea class="form-control" id="myfield" maxlength='250' name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
+                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>
                                                     </div> 
                                                 </div> 
