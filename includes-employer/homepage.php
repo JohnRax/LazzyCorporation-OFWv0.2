@@ -9,8 +9,7 @@
                         <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
                     </div>
                 </div>
-<<<<<<< HEAD
-=======
+<!-- <<<<<<< HEAD ======= -->
                 <div class="col-md-3 p0 padding-top-40">
                     <div class="blog-asside-right pr0">
                         <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
@@ -19,9 +18,7 @@
                             </div>
                             <div class="panel-body search-widget">
                                 <form action="" class=" form-inline"> 
-                                    <fieldset>
-                                     
-                                    </fieldset>
+                                
 
                                     <fieldset>
                                         <div class="row">
@@ -122,11 +119,11 @@
                                            
                                         </div>
                                     </fieldset>
-                                    <fieldset >
+                                   
 
 
 
->>>>>>> ebe2e66c725f275a8ea43feea3d38fa0e67d2ae7
+<!-- >>>>>>> ebe2e66c725f275a8ea43feea3d38fa0e67d2ae7 -->
 
                 <div class="row">
                     <div class="proerty-th">
