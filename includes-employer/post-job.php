@@ -358,22 +358,22 @@
                                                 <label>Cooking Skills<small></small></label><br>
                                                 <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements">
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-57" name="j_cookingskills[]" type="checkbox" value="Arabic"> Arabic
+                                                    <input id="in-helper_requirement-57" name="j_cookingskill[]" type="checkbox" value="Arabic"> Arabic
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-56" name="j_cookingskills[]" type="checkbox" value="Chinese"> Chinese
+                                                    <input id="in-helper_requirement-56" name="j_cookingskill[]" type="checkbox" value="Chinese"> Chinese
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-54" name="j_cookingskills[]" type="checkbox" value="Indian"> Indian
+                                                    <input id="in-helper_requirement-54" name="j_cookingskill[]" type="checkbox" value="Indian"> Indian
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-180" name="j_cookingskills[]" type="checkbox" value="Japanese"> Japanese
+                                                    <input id="in-helper_requirement-180" name="j_cookingskill[]" type="checkbox" value="Japanese"> Japanese
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-79" name="j_cookingskills[]" type="checkbox" value="Vegetarian"> Vegetarian
+                                                    <input id="in-helper_requirement-79" name="j_cookingskill[]" type="checkbox" value="Vegetarian"> Vegetarian
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-91" name="j_cookingskills[]" type="checkbox" value="Western"> Western
+                                                    <input id="in-helper_requirement-91" name="j_cookingskill[]" type="checkbox" value="Western"> Western
                                                 </div>
                                         </ul>
                                             </div><br>

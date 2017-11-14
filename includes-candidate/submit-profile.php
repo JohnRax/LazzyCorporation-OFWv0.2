@@ -340,10 +340,8 @@
                                             <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-<<<<<<< HEAD
 
-=======
->>>>>>> dfdb883d49e9d7d0b6e572ae1c5a25695f836dae
+
                                                         <label>Experience Summary </label> 
                                                             <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>
@@ -599,16 +597,12 @@
                                                 <div class="">
                                                     <p>
                                                         <label><strong>Terms and Conditions</strong></label>
-                                                        By accessing or using  GARO ESTATE services, such as 
-                                                        posting your property advertisement with your personal 
-                                                        information on our website you agree to the
-                                                        collection, use and disclosure of your personal information 
-                                                        in the legal proper manner
+                                                        By accessing or using LAZZY WORKS services, such as posting your personal information on our website you agree to the collection, use and disclosure of your personal information in the legal proper manner.
                                                     </p>
 
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input type="checkbox" /> <strong>Accept termes and conditions.</strong>
+                                                            <input type="checkbox" /> <strong>Accept terms and conditions.</strong>
                                                         </label>
                                                     </div> 
 
