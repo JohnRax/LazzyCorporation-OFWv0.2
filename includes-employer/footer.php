@@ -5,7 +5,7 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-4 col-sm-6 wow fadeInRight animated">
+                        <div class="col-md-8 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
                                 <h4>About us </h4>
                                 <div class="footer-title-line"></div>
@@ -17,6 +17,15 @@
                                     <li><i class="pe-7s-call strong"> +1 999 999 9999</i> </li>
                                 </ul>
                             </div>
+                               <div class="social pull-right"> 
+                                    <ul>
+                                        <li><a class="wow fadeInUp animated" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://plus.google.com/" data-wow-delay="0.3s"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://instagram.com/" data-wow-delay="0.4s"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a class="wow fadeInUp animated" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-dribbble"></i></a></li>
+                                    </ul> 
+                                </div>
                         </div>
                         <div class="col-md-4 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
@@ -33,16 +42,9 @@
                                 </ul>
                             </div>
                         </div>
+                             
                         
-                         <div class="social pull-right"> 
-                                    <ul><br><br><br><br><br><br><br><br><br><br>
-                                        <li><a class="wow fadeInUp animated" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a class="wow fadeInUp animated" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a class="wow fadeInUp animated" href="https://plus.google.com/" data-wow-delay="0.3s"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a class="wow fadeInUp animated" href="https://instagram.com/" data-wow-delay="0.4s"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a class="wow fadeInUp animated" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-dribbble"></i></a></li>
-                                    </ul> 
-                                </div>
+                         
 
                     </div>
                 </div>

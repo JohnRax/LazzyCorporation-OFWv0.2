@@ -70,7 +70,7 @@ p {
     margin:0;
 }
 a {
-    color: #d27e04;
+    color: #33aabb;
     outline: 0;
     font-weight: bold;
     -webkit-transition: all .8s ease;
@@ -1241,7 +1241,7 @@ Asside widgets CSS
 .panel.sidebar-menu .panel-heading h4,
 .panel.sidebar-menu .panel-heading h5 {
     display: inline-block;
-    border-bottom: solid 3px #FDC600;
+    border-bottom: solid 3px #33aabb;
     line-height: 1.1;
     margin-bottom: 0;
     padding-bottom: 10px;
@@ -2416,8 +2416,8 @@ count-area
     padding: 2px 15px;
     text-transform: uppercase;
     margin: 0px;
-    border-left: 2px solid #FDC600;
-    border-right: 2px solid #FDC600;
+    border-left: 2px solid #33aabb;
+    border-right: 2px solid #33aabb;
     display: inline-block;
 }
 .boy-sale-area {
@@ -2557,7 +2557,7 @@ count-area
     letter-spacing: 0.5px;
 }
 .slider-selection { 
-    background: #FDC600;
+    background: #33aabb;
 }
 .search-form .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
     color: #FFF;
@@ -2915,7 +2915,7 @@ padding-top: 7px;
 .footer-title-line {
     width: 100px;
     height: 2px;
-    background: #FFA600;
+    background: #33aabb;
     margin: 0px 0px 33px;
     position: relative;
     top: -2px;
@@ -2953,7 +2953,7 @@ font-size: 13px;
     text-decoration: none;
 }
 .footer-menu li{
-  border-bottom: 1px solid rgba(255, 171, 0, 0.31);
+  border-bottom: 1px solid rgb(51, 170, 187);
 }
 
 .footer-copy span{
