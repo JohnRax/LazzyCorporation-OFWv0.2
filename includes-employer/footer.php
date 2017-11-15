@@ -53,7 +53,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="pull-left">
-                            <span><a href="http://www.KimaroTec.com">(C) KimaroTheme  , All rights reserved 2016 </a> </span> 
+                            <span><a href="http://www.KimaroTec.com">(C) Lazzy Technologies  , All rights reserved 2017 </a> </span> 
                         </div> 
                         <div class="bottom-menu pull-right"> 
                             <ul> 
