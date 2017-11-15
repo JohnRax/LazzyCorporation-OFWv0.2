@@ -359,7 +359,7 @@
                                                 <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements2">
 
                                                     <div class="col-sm-3">
-                                                        <input id="in-helper_requirement2-107" name="upi_skillsexp[]" type="checkbox" value=" Baby Care"> Baby Care
+                                                        <input id="in-helper_requirement2-107" name="upi_skillsexp[]" type="checkbox" value="Baby Care"> Baby Care
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <input id="in-helper_requirement2-236" name="upi_skillsexp[]" type="checkbox" value="Child Care"> Child Care

@@ -300,12 +300,6 @@
                                                             <option value="Large Family (&gt; 6)">
                                                                 Large Family (&gt; 6)
                                                             </option>
-                                                            <option value="Large Family (&gt;6)">
-                                                                Large Family (&gt;6)
-                                                            </option>
-                                                            <option value="Other">
-                                                                Other
-                                                            </option>
                                                             <option value="Single">
                                                                 Single
                                                             </option>
