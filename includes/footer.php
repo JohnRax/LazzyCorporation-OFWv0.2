@@ -7,21 +7,21 @@
 
                         <div class="col-md-4 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
-                                <h4>About us </h4>
+                                <h4><strong>About us </strong></h4>
                                 <div class="footer-title-line"></div>
 
                                 <img src="assets\img\250x88.png" alt="" class="wow pulse" data-wow-delay="1s">
-                                <p>Lorem ipsum dolor cum necessitatibus su quisquam molestias. Vel unde, blanditiis.</p>
+                                <p><strong>Lazzy Works</strong> is an innovative job and employee finder created by Lazzy Technologies that let customer choose their desired preferences like skills, age, health status, and location for a wide range of Employements in your selected country.</p>
                                 <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> 9999 your address here</li>
-                                    <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>
-                                    <li><i class="pe-7s-call strong"> </i> +1 999 999 9999</li>
+                                    <li><i class="pe-7s-map-marker strong">  9999 your address here</i></li>
+                                    <li><i class="pe-7s-mail strong"> support@lazzyworks.com</i></li>
+                                    <li><i class="pe-7s-call strong"> +1 999 999 9999</i> </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
-                                <h4>Quick links </h4>
+                                <h4><strong>Quick links </strong></h4>
                                 <div class="footer-title-line"></div>
                                 <ul class="footer-menu">
                                     <li><a href="index.php?source=findhelpers">Helpers</a>  </li> 
