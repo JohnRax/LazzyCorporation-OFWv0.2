@@ -5,12 +5,11 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-4 col-sm-6 wow fadeInRight animated">
+                        <div class="col-md-8 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
                                 <h4>About us </h4>
                                 <div class="footer-title-line"></div>
 
-                                <img src="assets\img\250x88.png" alt="" class="wow pulse" data-wow-delay="1s">
                                 <p><strong>Lazzy Works</strong> is an innovative job and employee finder created by Lazzy Technologies that let customer choose their desired preferences like skills, age, health status, and location for a wide range of Employements in your selected country.</p>
                                 <ul class="footer-adress">
                                     <li><i class="pe-7s-map-marker strong">  9999 your address here</i></li>
@@ -18,24 +17,8 @@
                                     <li><i class="pe-7s-call strong"> +1 999 999 9999</i> </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 wow fadeInRight animated">
-                            <div class="single-footer">
-                                <h4>Quick links </h4>
-                                <div class="footer-title-line"></div>
-                                <ul class="footer-menu">
-                                    <li><a href="index-candidate.php?source=searchfindjob">Find Job</a>  </li> 
-                                    <li><a href="index-candidate.php?source=editupdateprofile">Update Profile</a>  </li>  
-                                    <li><a href="contact.html">Contact us</a></li> 
-                                    <li><a href="index-candidate.php?source=logout">LOGOUT</a></li>
-                                    <!-- <li><a href="faq.html">fqa</a>  </li>  -->
-                                    <!-- <li><a href="faq.html">Terms </a>  </li>  -->
-                                </ul>
-                            </div>
-                        </div>
-                       
-                                <div class="social pull-right"> 
-                                    <ul><br><br><br><br><br><br><br><br><br><br>
+                               <div class="social pull-right"> 
+                                    <ul>
                                         <li><a class="wow fadeInUp animated" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
                                         <li><a class="wow fadeInUp animated" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
                                         <li><a class="wow fadeInUp animated" href="https://plus.google.com/" data-wow-delay="0.3s"><i class="fa fa-google-plus"></i></a></li>
@@ -43,6 +26,24 @@
                                         <li><a class="wow fadeInUp animated" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-dribbble"></i></a></li>
                                     </ul> 
                                 </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 wow fadeInRight animated">
+                            <div class="single-footer">
+                                <h4>Quick links </h4>
+                                <div class="footer-title-line"></div>
+                                <ul class="footer-menu">
+                                    <li><a href="index-employer.php?source=searchhelper">Find Candidate</a>  </li> 
+                                    <li><a href="index-employer.php?source=postjob">Post a Job</a>  </li>  
+                                    <li><a href="index-employer.php?source=listpostjobs">Dashboard</a>  </li>  
+                                    <li><a href="contact.html">Contact us</a></li> 
+                                    <li><a href="index-candidate.php?source=logout">LOGOUT</a></li>
+                                    <!-- <li><a href="faq.html">fqa</a>  </li>  -->
+                                    <!-- <li><a href="faq.html">Terms </a>  </li>  -->
+                                </ul>
+                            </div>
+                        </div>
+                             
+                        
                            
 
                     </div>
