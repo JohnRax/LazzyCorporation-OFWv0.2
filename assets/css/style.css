@@ -290,7 +290,7 @@ input[type="search"]::-webkit-search-decoration {
     font-weight: 600;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,.btn-primary:active:focus, .open > .dropdown-toggle.btn-primary {
-    color: #FDC600;
+    color: #fff;
     background-color: #33aabb;
     border-color: #176e93;
     font-weight: 600;
@@ -298,16 +298,15 @@ input[type="search"]::-webkit-search-decoration {
 .btn-default {
     border-radius: 1px;
     padding: 10px 20px;
-    border: 1px solid #FDC600;
-    color: #000;
-    background-color: #FDC600;
-    border-color: #F0F0F0;
+    border: 1.5px solid #33aabb;
+    color: #fff;
+    background-color: #176e93;
     font-weight: 600;
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
-    color: #000;
-    background-color: #FDC600;
-    border-color: #F0F0F0;
+    color: #fff;
+    background-color: #33aabb;
+    border: 1.5px solid #176e93;
     font-weight: 600;
 }
 .search-form {
@@ -914,12 +913,12 @@ position: fixed;
 }
 .ymm-sw .dropdown-menu li{
     clear: both;
-    height: 50px;
+    height: 30px;
 
 }
 .navbar-default .ymm-sw .navbar-nav a::after {
     bottom: 5px;
-    background-color: #fdc506;
+    background-color: #33aabb;
 }
 .yamm .ymm-sw  .dropdown-menu {
     left: auto;
@@ -2689,7 +2688,7 @@ padding-bottom: 15px;
     text-transform: uppercase;
     margin-bottom: 15px;
     background: transparent none repeat scroll 0% 0%;
-    border-bottom: 2px solid #FDC600;
+    border-bottom: 2px solid #176e93;
     font-size: 20px;
     line-height: 30px;
 }

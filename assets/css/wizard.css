@@ -1,4 +1,4 @@
-g176
+
 .text-primary, .text-primary:hover{
     color: #1D62F0;
 }
@@ -268,7 +268,7 @@ margin: 35px auto;
 .wizard-card .nav-pills > li a {
     border: 0 !important;
     text-transform: uppercase;
-    background-color: #999999;
+    background-color: #333;
     color: #FFFFFF !important;
     font-size: 12px;
 }
@@ -282,7 +282,7 @@ margin: 35px auto;
     background-color: #3472f7;
 }
 .wizard-card.ct-wizard-orange .nav-pills > li.active a{
-    background-color: #FDC600;
+    background-color: #33aabb;
 }
 .wizard-card.ct-wizard-red .nav-pills > li.active a{
     background-color: #ff3b30;

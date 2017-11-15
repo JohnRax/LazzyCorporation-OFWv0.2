@@ -108,9 +108,6 @@
 
                                     <div class="tab-pane" id="step1">
                                         <div class="row p-b-15  ">
-
-                                       
-                                               
                                             <div class="col-sm-12">
                                                 <h3 class="info-text"> <strong>Job Information</strong></h3>
                                                    <div class="picture-container">

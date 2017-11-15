@@ -3867,10 +3867,10 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	color: #777
 }
 .navbar-default .navbar-nav>li>a {
-	color: #fdc506
+	color: #fff
 }
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-	color: #fdc506;
+	color: #fff;
 	background-color: transparent
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
