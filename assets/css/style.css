@@ -296,6 +296,24 @@ input[type="search"]::-webkit-search-decoration {
     border-color: #176e93;
     font-weight: 600;
 }
+.btn-primary1 {
+    color: #FFF;
+    background-color: #176e93;
+    border-color: #33aabb;
+    border-radius: 1px;
+    padding: 10px 20px;
+    font-weight: 600;
+    position: absolute;
+    top: 570px;
+    left: 69px;
+    width: 150px;
+}
+.btn-primary1:hover, .btn-primary1:focus, .btn-primary1:active, .btn-primary1.active,.btn-primary1:active:focus, .open > .dropdown-toggle.btn-primary1 {
+    color: #fff;
+    background-color: #33aabb;
+    border-color: #176e93;
+    font-weight: 600;
+}
 .btn-default {
     border-radius: 1px;
     padding: 10px 20px;
@@ -1643,6 +1661,13 @@ padding: 0 0 0.5em;
     border-bottom: 1px dotted #CECBC7;
     margin-bottom: 10px;
 }
+.dot-hr1{
+        border-bottom: 1px dotted #CECBC7;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 350px;
+    width: 248px;
+}
 .slim-hr{
 
 }
@@ -1785,6 +1810,23 @@ proerty-th
 }
 .proerty-th .proerty-item  .item-entry{
     padding: 8px;
+    height: 370px;
+
+
+}
+.proerty-th .proerty-item  .item-entry1{
+    padding: 8px;
+    height: 350px;
+
+
+}
+.item-entry1 {
+    padding: 8px;
+   
+    position: absolute;
+    top: 350px;
+    left:10px;
+}
 
 }
 .properties-page .proerty-th .proerty-price{
