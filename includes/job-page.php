@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -42,6 +43,7 @@
         </div>
         
         <?php 
+        session_start();
                 $host = 'localhost';
                 $user = 'root';
                 $password = '';
@@ -104,10 +106,13 @@
                                                  <div class="col-xs-4">
                                                     <a href="">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../assets/img/profilepicture/<?php echo $result['j_logo']; ?>" class="img-circle">
-                                                     </a><h3>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $result['j_jobtitle'];?></h3>
+                                                     
                                                      </div>
                                                 <div class="col-xs-4"></div>
-                                                </div>
+                                                   <div class="col-xs-12">
+                                                       </a><h3>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $result['j_jobtitle'];?></h3>
+                                                   </div> 
+                                            </div>
                                             
                                 </div>
                                  <div class="clearfix">
@@ -119,6 +124,7 @@
                                             <i class="fa fa-print"></i> 
                                         </a>
                                     </div> 
+                                   
                                 </div>
                                   <div class="section additional-details">
 
@@ -226,7 +232,19 @@
 
                            
                              
-                         
+                                   <?php
+                                      if(isset($_SESSION['user_session'])) 
+                                         {
+                                              if(isset($_SESSION['user_type']))
+                                              {
+                                                if($_SESSION['user_type']=='candidate')
+                                                {
+                                                  echo "<button type='button' class='btn btn-large btn-block btn-primary full-width'
+                                                  >CLICK HERE TO APPLY</button>";
+                                                }
+                                              }
+                                         }
+                                    ?>
 
                                     </div>
                                 </div>

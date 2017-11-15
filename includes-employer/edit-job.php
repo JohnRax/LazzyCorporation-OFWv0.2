@@ -55,7 +55,8 @@
         $logo=$_FILES['j_logo']['name'];
         $logo_temp=$_FILES['j_logo']['tmp_name'];
         move_uploaded_file($logo_temp, "assets/img/profilepicture/{$logo}");
-        if(empty($_logo))
+        
+        if(empty($logo))
         {
             $check_logo_query="SELECT * FROM job_description WHERE j_id=:id";
             $check_logo_stmt=$connection->prepare($check_logo_query);
@@ -63,6 +64,7 @@
             $result=$check_logo_stmt->fetch(PDO::FETCH_ASSOC);
             $logo=$result['j_logo'];
         }
+
         if($user->update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            
@@ -446,7 +448,7 @@
                                     <!-- End step 2 -->
 
                                     <div class="tab-pane" id="step3">                                        
-                                        <h4 class="info-text"> Finished and submit </h4>
+                                        <h4 class="info-text"> Update and Submit </h4>
                                         <div class="row">  
                                             <div class="col-sm-12">
                                                 <div class="">
