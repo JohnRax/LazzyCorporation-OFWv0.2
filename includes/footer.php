@@ -10,7 +10,6 @@
                                 <h4><strong>About us </strong></h4>
                                 <div class="footer-title-line"></div>
 
-                                <img src="assets\img\250x88.png" alt="" class="wow pulse" data-wow-delay="1s">
                                 <p><strong>Lazzy Works</strong> is an innovative job and employee finder created by Lazzy Technologies that let customer choose their desired preferences like skills, age, health status, and location for a wide range of Employements in your selected country.</p>
                                 <ul class="footer-adress">
                                     <li><i class="pe-7s-map-marker strong">  9999 your address here</i></li>
