@@ -87,7 +87,7 @@
                                                      <br>                                                 
                                                   
                                                     <div class='dealer-action pull-left'> 
-                                                        <a href='index-employer.php?source=viewsubmitted&id=".$result['j_id']."'  data-toggle='modal' class='button'>View Submitted Profile </a>                   
+                                                         <a href='#'  data-toggle='modal' class='button'>View Submitted Profile </a>                   
                                                         <a href='index-employer.php?source=editjob&id=".$result['j_id']."' class='button'>Edit </a>
                                                         <a href='index-employer.php?source=listpostjobs&delete_id=".$result['j_id']."' class='button delete_user_car'>Delete</a>";
                                                     ?>

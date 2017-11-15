@@ -36,12 +36,15 @@
         case 'postjob':
              include "includes-employer/post-job.php"; 
             break; 
-       case 'listpostjobs':
+        case 'listpostjobs':
              include "includes-employer/list-jobs.php"; 
             break; 
-      case 'editjob':
+       case 'editjob':
              include "includes-employer/edit-job.php"; 
-            break; 
+            break;
+        case 'viewsubmitted':
+             include "includes-employer/view-submitted-profile.php"; 
+            break;  
         case 'logout':
             include "includes-employer/logout.php";
             break;
