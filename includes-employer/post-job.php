@@ -291,14 +291,14 @@
                                                             <option value="Couple + 5 kids">
                                                                 Couple + 5 kids
                                                             </option>
+                                                            <option value="Large Family (&gt; 6)">
+                                                                Large Family (&gt; 6)
+                                                            </option>
                                                             <option value="Couple + Parents">
                                                                 Couple + Parents
                                                             </option>
                                                             <option value="Couple with Parents">
                                                                 Couple with Parents
-                                                            </option>
-                                                            <option value="Large Family (&gt; 6)">
-                                                                Large Family (&gt; 6)
                                                             </option>
                                                             <option value="Single">
                                                                 Single
