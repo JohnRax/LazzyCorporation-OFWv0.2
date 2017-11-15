@@ -110,6 +110,7 @@
          
             echo"<script>
                     alert('Complete! Your profile is under approval. Thank you');
+                    location.href = 'index-candidate.php?source=editupdateprofile';
                 </script>";
         }
         //Supplementary Questions

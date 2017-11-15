@@ -30,11 +30,14 @@
     switch ($source) 
     {
        
-        case 'submitprofile':
-             include "includes-candidate/submit-profile.php"; 
-            break;
-        case 'editupdateprofile':
+        case 'update':
+            include "includes-candidate/edit-update.php"; 
+               break;
+        case 'addnew':
             include "includes-candidate/submit-profile.php"; 
+               break;
+        case 'editupdateprofile':
+            include "includes-candidate/checker.php"; 
                break;
         case 'searchfindjob':
                include "includes-candidate/search-job.php"; 
