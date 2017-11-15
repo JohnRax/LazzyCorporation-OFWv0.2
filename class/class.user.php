@@ -145,6 +145,119 @@ class User
 		}
 
 	}
+	
+
+	public function update_profile_personal_information($id,$picture,$category,$email,$location,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages)
+	{
+		try
+		{
+			$insert_personal_query="UPDATE user_personal_information SET up_picture=:picture,
+																		up_category=:category,
+																		up_email=:email,
+																		up_address=:address,
+																		up_mobile=:mobile,
+																		up_telephone=:telephone,
+																		up_nationality=:nationality,
+																		up_religion=:religion,
+																		up_age=:age,
+																		up_maritalstatus=:marital,
+																		up_education=:education,
+																		up_languages=:languages 
+																	WHERE u_id=:id";
+		    $insert_personal_stmt=$this->connection->prepare($insert_personal_query);
+			$insert_personal_stmt->execute(['id'=>$id,
+											'picture'=>$picture,
+											'category'=>$category,
+											'email'=>$email,
+											'address'=>$location,
+											'mobile'=>$mobile,
+											'telephone'=>$telephone,
+											'nationality'=>$nationality,
+											'religion'=>$religion,
+											'age'=>$age,
+											'marital'=>$marital,
+											'education'=>$education,
+											'languages'=>$languages]);
+			return $insert_personal_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+	}
+ 	public function update_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skills,$cookingskills,$otherskills,$availability)
+ 	{
+ 		try
+		{
+			$insert_professional_query="UPDATE user_professional_information SET upi_preferedworklocation=:preferedworklocation,
+																				upi_yearsofexp=:yearsofexp,
+																				upi_expsummary=:expsummary,
+																				upi_cookingskills=:cookingskills,
+																				upi_skillsexp=:skills,
+																				upi_otherskills=:otherskills,
+																				upi_availability=:availability
+																			  WHERE u_id=:id"
+																			 ;
+
+
+		
+			$insert_professional_stmt=$this->connection->prepare($insert_professional_query);
+			$insert_professional_stmt->execute(['id'=>$id,
+												'preferedworklocation'=>$preferedworklocation,
+												'yearsofexp'=>$yearsofexp,
+												'expsummary'=>$expsummary,
+												'skills'=>$skills,
+												'cookingskills'=>$cookingskills,
+												'otherskills'=>$otherskills,
+												'availability'=>$availability]);
+			return $insert_professional_stmt;
+
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+ 	}
+ 	public function update_profile_supplementary_question($id,$ans1,$ans2,$ans3,$ans4,$ans5,$ans6,$ans7,$ans8,$ans9,$ans10)
+ 	{
+ 		try
+		{
+			$insert_question_query="UPDATE user_question SET uq_1=:q1,
+															uq_2=:q2,
+															uq_3=:q3,
+															uq_4=:q4,
+															uq_5=:q5,
+															uq_6=:q6,
+															uq_7=:q7,
+															uq_8=:q8,
+															uq_9=:q9,
+															uq_10=:q10 
+															WHERE u_id=:id";
+			$insert_question_stmt=$this->connection->prepare($insert_question_query);
+			$insert_question_stmt->execute(['id'=>$id,
+											'q1'=>$ans1,
+											'q2'=>$ans2,
+											'q3'=>$ans3,
+											'q4'=>$ans4,
+											'q5'=>$ans5,
+											'q6'=>$ans6,
+											'q7'=>$ans7,
+											'q8'=>$ans8,
+											'q9'=>$ans9,
+											'q10'=>$ans10]);
+			return $insert_question_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+ 	}
+
+
+	
 	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
 	{
 		 try
@@ -242,14 +355,29 @@ class User
 															'familytype'=>$familytype,
 															'startdate'=>$startdate,
 															'monthlysalary'=>$monthlysalary,
-															'logo'=>$logo,
-															'status'=>'Unapproved']);
+															'logo'=>$logo]);
 				return $update_jobpost_stmt;
+
 		}catch(PDOException $e)
 		{
 			echo $e->getMessage();
 		}
 				
+	}
+	public function apply_job($id,$j_id)
+	{
+		try
+		{
+			$apply_job_query="INSERT INTO job_submitted(j_id,u_id) VALUES(:j_id,:u_id)";
+			$apply_job_stmt=$this->connection->prepare($apply_job_query);
+			$apply_job_stmt->execute(['j_id'=>$j_id,'u_id'=>$id]);
+			return $apply_job_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
 	}
 	public function is_loggedin()
 	{

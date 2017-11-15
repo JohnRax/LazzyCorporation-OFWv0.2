@@ -43,22 +43,47 @@
         </div>
         
         <?php 
-        session_start();
-                $host = 'localhost';
-                $user = 'root';
-                $password = '';
-                $dbname='lazycorporation-ofwdatabase';
-                try 
-                {
-                    $dsn = 'mysql:host='.$host.';dbname='.$dbname;
-                    $connection = new PDO($dsn,$user,$password);
-                    $connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-                } 
-                catch (PDOException $e) 
-                {
-                    echo 'Connection failed: '.$e->getMessage();
-                }
+            session_start();
+            $host = 'localhost';
+            $user = 'root';
+            $password = '';
+            $dbname='lazycorporation-ofwdatabase';
+            try 
+            {
+                $dsn = 'mysql:host='.$host.';dbname='.$dbname;
+                $connection = new PDO($dsn,$user,$password);
+                $connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+            } 
+            catch (PDOException $e) 
+            {
+                echo 'Connection failed: '.$e->getMessage();
+            }
+            include_once '../class/class.user.php';
+            $user = new User($connection);
 
+            if(isset($_GET['applied']))
+            {
+                if($user->apply_job($_GET['candidateid'],$_GET['id']))
+                {
+                      echo"<script>
+                            alert('Successfully Applied! Please Wait for the Employer Reply. Thank you');
+                            closeWindow();
+                            function closeWindow() {
+                                window.close();
+                            }
+                          </script>";
+                }
+            }
+            if(isset($_GET['denied']))
+            {
+                  echo"<script>
+                            alert('Please Register/Login to Apply for this Job. Thank you!');
+                             closeWindow();
+                            function closeWindow() {
+                                window.close();
+                            }
+                        </script>";
+            }
             if (isset($_GET['id'])) 
             {
                 
@@ -239,11 +264,19 @@
                                               {
                                                 if($_SESSION['user_type']=='candidate')
                                                 {
-                                                  echo "<button type='button' class='btn btn-large btn-block btn-primary full-width'
-                                                  >CLICK HERE TO APPLY</button>";
-                                                }
+                                                    ?>
+                                                  <button type="button" class="btn btn-large btn-block btn-primary full-width";
+                                                   onclick="location.href='job-page.php?id=<?php echo $_GET['id'] ?>&candidateid=<?php echo $_SESSION['user_session'] ?>&applied'">CLICK HERE TO APPLY</button>
+                                               <?php }
                                               }
                                          }
+                                         else
+                                         {
+                                            ?>
+                                            <button type='button' class='btn btn-large btn-block btn-primary full-width';
+                                                  onclick="location.href='job-page.php?id=<?php echo $_GET['id'] ?>&denied'">CLICK HERE TO APPLY</button>
+                                         <?php }
+                                         
                                     ?>
 
                                     </div>
