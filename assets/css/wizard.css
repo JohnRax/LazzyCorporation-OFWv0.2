@@ -289,7 +289,7 @@ margin: 35px auto;
 }
 
 .wizard-card .nav-pills > li > a:hover, .wizard-card .nav-pills > li > a:focus{
-    background-color: #999999;
+    background-color: #176e93;
     cursor: default;
 } 
 .wizard-card .btn{
