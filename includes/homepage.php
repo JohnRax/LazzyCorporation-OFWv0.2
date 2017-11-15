@@ -2,11 +2,12 @@
             <div class="slider-content">
                 <div class="row">
                                  
-                       <h2>Best Search Engine To Find A Best Helpers</h2>
-                                        
+                       <h2>World’s No. 1 Job hiring overseas!</h2> 
+                       <h5>Start your dream job here in overseas with highly secured and trusted Employers. Registration is free.
+</h5    >               
                       <br>
                          <div class="button">
-                          <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND HELPERS</button>
+                          <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">FIND EMPLOYERS</button>
                     </div>
             </div>
