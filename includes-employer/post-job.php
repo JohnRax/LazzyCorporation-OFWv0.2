@@ -7,6 +7,23 @@
     return true;    
 }
 </script>
+<script type='text/javascript' src='/JavaScriptSpellCheck/include.js' ></script>
+        
+        <script type='text/javascript'>$Spelling.SpellCheckAsYouType('myfield')</script>
+
+    <script type='text/javascript'>
+    CharacterCount = function(TextArea,FieldToCount){
+    var myField = document.getElementById(TextArea);
+    var myLabel = document.getElementById(FieldToCount); 
+    if(!myField || !myLabel){return false}; // catches errors
+    var MaxChars =  myField.maxLengh;
+    if(!MaxChars){MaxChars =  myField.getAttribute('maxlength') ; };    if(!MaxChars){return false};
+    var remainingChars =   MaxChars - myField.value.length
+    myLabel.innerHTML = remainingChars+" Characters remaining"
+    }
+
+    setInterval(function(){CharacterCount('myfield','CharCountLabel1')},);
+    </script>
 
 <?php 
 
@@ -168,10 +185,15 @@
                                                                 Marternity Specialist
                                                             </option>
                                                         </select>
-                                                     <div class="form-group">
+                                                     
+                                                    <div class="form-group">
                                                         <label>Job Description *</label>
-                                                        <textarea name="j_description" required title="Please enter at least 50 characters." maxlength="250" minlength="50" class="form-control" style="font-family: Arial;font-size: 12pt;width:100%;height:20vw"></textarea>
-                                                    </div>
+                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
+                                                                <i><small><div id='CharCountLabel1'></div></small></i>
+                                                    </div> 
+                                               
+
+                                                    
                                                     <label>Prefered Working Status *</label>
                                                         <select  required  name="j_workingstatus" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select working status">
                                                             <option  value="Break Contract">
@@ -291,14 +313,14 @@
                                                             <option value="Couple + 5 kids">
                                                                 Couple + 5 kids
                                                             </option>
+                                                            <option value="Large Family (&gt; 6)">
+                                                                Large Family (&gt; 6)
+                                                            </option>
                                                             <option value="Couple + Parents">
                                                                 Couple + Parents
                                                             </option>
                                                             <option value="Couple with Parents">
                                                                 Couple with Parents
-                                                            </option>
-                                                            <option value="Large Family (&gt; 6)">
-                                                                Large Family (&gt; 6)
                                                             </option>
                                                             <option value="Single">
                                                                 Single

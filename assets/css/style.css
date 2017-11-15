@@ -283,16 +283,16 @@ input[type="search"]::-webkit-search-decoration {
 }
 .btn-primary {
     color: #FFF;
-    background-color: #FDC600;
-    border-color: #FDC600;
+    background-color: #176e93;
+    border-color: #33aabb;
     border-radius: 1px;
     padding: 10px 20px;
     font-weight: 600;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,.btn-primary:active:focus, .open > .dropdown-toggle.btn-primary {
     color: #FDC600;
-    background-color: #313538;
-    border-color: #282829;
+    background-color: #33aabb;
+    border-color: #176e93;
     font-weight: 600;
 }
 .btn-default {

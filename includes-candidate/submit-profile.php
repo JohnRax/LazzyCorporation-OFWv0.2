@@ -10,10 +10,7 @@
 </script>
 
     <script type='text/javascript' src='/JavaScriptSpellCheck/include.js' ></script>
-        <script type='text/javascript'>$Spelling.SpellCheckAsYouType('myfield')</script>
-
-
-    
+    <script type='text/javascript'>$Spelling.SpellCheckAsYouType('myfield')</script>
 
     <script type='text/javascript'>
     CharacterCount = function(TextArea,FieldToCount){
@@ -141,7 +138,7 @@
                                     <div class="tab-pane" id="step1">
                                         <div class="row p-b-15  ">
                                             <div class="col-sm-12">
-                                            <div class="picture-container">
+                                                <div class="picture-container">
                                                     <div class="picture">
                                                         <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title=""/>
                                                         <input type="file" id="wizard-picture" name="up_picture">
@@ -297,7 +294,6 @@
                                     <div class="tab-pane" id="step2">
                                      <div class="row">
                                         <h3 class="info-text"> Professional Information </h3>
-                                         <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                         <label>Where Do You Want To Work *</label>
                                                         <select name="upi_preferedworklocation" required="" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your prefered location">
@@ -309,10 +305,9 @@
                                                             <option value="Thailand">Thailand</option>
                                                         </select>
                                                 </div>
-                                                </div>
-                                                 <div class="col-sm-12"> 
-                                                   <div class="col-sm-12"> 
-                                                <label>Years Of Experience *</label>
+                                                
+                                                    <div class="col-sm-12"> 
+                                                        <label>Years Of Experience *</label>
                                                         <select required="" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Please select your years of experience">
                                                           
                                                             <option value="0">0</option>
@@ -331,28 +326,15 @@
                                                             <option value="13">13</option>
                                                             <option value="14">14</option>
                                                             <option value="15">15</option>
-                                                </select>
+                                                        </select>
                                                 </div>
-                                                </div>
-
-                                              
-                                       
-                                            <div class="col-sm-12"> 
                                                 <div class="col-sm-12"> 
                                                     <div class="form-group">
-
-
                                                         <label>Experience Summary </label> 
                                                             <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>
-
                                                     </div> 
-                                                </div> 
-                                            </div>
-
-                                           
-
-                                                                             
+                                                </div>                            
                                             <div class="col-sm-12 padding-top-15">
                                             <label>My Skills and Experience <small><i>Maximum of 4</i></small></label>
                                                  
