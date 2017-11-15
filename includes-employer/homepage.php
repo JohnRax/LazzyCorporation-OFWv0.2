@@ -1,9 +1,9 @@
 <br><br><br><br>
         <!-- property area -->
-     <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+     <div id="homepage"  class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
                         <!-- /.feature title -->
                         <h2>Recent Submit Resume</h2>
                         <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>

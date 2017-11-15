@@ -101,7 +101,7 @@
         margin-top: 15px;
     }
     .navbar-brand img{
-        width: 110px;
+        width: 150px;
     }
     .navbar-default .navbar-nav > li > a {
         font-size: 13px;
@@ -433,7 +433,7 @@
         margin-top: 15px;
     }
     .navbar-brand img {
-        width: 110px;
+        width: 150px;
     }
     .navbar-default .navbar-nav > li > a {
         font-size: 13px;
@@ -840,6 +840,7 @@
         padding-top: 400px;
        
     }
+   
     .search-btn
     {
         margin-bottom: 15px;
