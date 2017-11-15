@@ -727,7 +727,7 @@ label small{
 position: fixed;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #fdc506;
+    color: #33aabb;
     background-color: transparent;
 }
 .navbar-nav > li > a {
@@ -748,7 +748,7 @@ position: fixed;
     width: 100%;
 }
 .navbar-default .navbar-nav > li > a::after {
-    background-color: #FDC600;
+    background-color: #33aabb;
     bottom: -24px;
     content: "";
     height: 5px;
@@ -787,7 +787,9 @@ position: fixed;
     transition: all 0.4s ease;
 }
 .nav-button.login{
-    background-color: #FDC600;
+    background-color: #176e93;
+    border: 1.5px solid  #33aabb;
+    color:#fff;
     margin-right: 5px;
     margin-top: 2px;
 }
@@ -813,7 +815,8 @@ position: fixed;
 
 }
 .nav-button:hover{
-    background-color: #FDC600;
+    background-color: #33aabb;
+    border:1.5px solid #176e93;
 
 }
 .navbar{
