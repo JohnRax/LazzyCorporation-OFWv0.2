@@ -11,7 +11,7 @@
                                 <h3 class="panel-title">Smart search</h3>
                             </div>
                             <div class="panel-body search-widget">
-                                <form action="" class=" form-inline"> 
+                                <form action="" method="post" class="form-inline"> 
                                     <fieldset>
                                      
                                     </fieldset>
@@ -19,10 +19,9 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-
-                                                <select id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
-
-                                                    <option>Hongkong</option>
+                                                <select name="country" id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
+                                                    <option class="form-control" selected disabled value="">Search By Location</option>
+                                                    <option>Hong kong</option>
                                                     <option>Indonesia</option>
                                                     <option>Philippines</option>
                                                     <option>Japan</option>                                                 
@@ -31,33 +30,45 @@
                                    
                                         </div>
                                     </fieldset>
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <select name="employertype" id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
+                                                    <option class="form-control" selected disabled value="">Search By Employer Type</option>
+                                                    <option>Agency</option>
+                                                    <option>Direct Employer</option>
+                                                                                       
+                                                </select>
+                                            </div>
                                    
+                                        </div>
+                                    </fieldset>
+                        
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Baby Care</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Baby Care">Baby Care</label>
                                                 </div> 
                                             </div>
 
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox"> Child Care</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Child Care"> Child Care</label>
                                                 </div>
                                             </div>                                            
                                         </div>
                                     </fieldset>
-
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Elder Care</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Elder Care">Elder Care</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Teen Care </label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Teen Care">Teen Care </label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -67,12 +78,12 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"> Cooking </label>
+                                                    <label><input name="skills[]" type="checkbox" value="Cooking"> Cooking </label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox"> Housekeeping</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Housekeeping"> Housekeeping</label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -82,12 +93,12 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input type="checkbox" checked>Driver</label>
+                                                    <label>  <input  name="skills[]" type="checkbox" value="Driver">Driver</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input type="checkbox"> Pet Care </label>
+                                                    <label>  <input  name="skills[]" type="checkbox" value="Pet Care"> Pet Care </label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -98,7 +109,7 @@
                                     <fieldset >
                                         <div class="row">
                                             <div class="col-xs-12">  
-                                                <input class="button btn largesearch-btn" value="Search" type="submit">
+                                                <input class="button btn largesearch-btn" value="Search" name ="search" type="submit">
                                             </div>  
                                         </div>
                                     </fieldset>                                     
@@ -125,21 +136,7 @@
                                 </li>
                             </ul><!--/ .sort-by-list-->
 
-                            <div class="items-per-page">
-                                <label for="items_per_page"><b>Jobs per page :</b></label>
-                                <div class="sel">
-                                    <select id="items_per_page" name="per_page">
-                                        <option value="3">3</option>
-                                        <option value="6">6</option>
-                                        <option value="9">9</option>
-                                        <option selected="selected" value="12">12</option>
-                                        <option value="15">15</option>
-                                        <option value="30">30</option>
-                                        <option value="45">45</option>
-                                        <option value="60">60</option>
-                                    </select>
-                                </div><!--/ .sel-->
-                            </div><!--/ .items-per-page-->
+                        
                         </div>
 
                         <div class="col-xs-2 layout-switcher">
@@ -152,9 +149,159 @@
                         <div id="list-type" class="proerty-th">                                                   
                                  
 
-                                         <?php 
+                                    <?php 
+                                        
+                                        if(isset($_POST['search']))
+                                        {
 
-                                         require_once 'includes/connection.php';
+                                              require_once 'includes/connection.php';
+                                              $show_job_query="SELECT * FROM job_description where j_status=:status";
+                                              $show_job_stmt=$connection->prepare($show_job_query);
+                                              $show_job_stmt->execute(['status'=>'Approved']);                        
+
+                                                $sample="true";
+
+                                              if(!empty($_POST['country']))
+                                              {
+                                                  
+                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country";
+                                                     $show_job_stmt=$connection->prepare($show_job_query);
+                                                     $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country']]);
+                                           
+                                              }
+                                              else if(!empty($_POST['employertype']))
+                                              {
+                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_employertype=:employertype";
+                                                     $show_job_stmt=$connection->prepare($show_job_query);
+                                                     $show_job_stmt->execute(['status'=>'Approved','employertype'=>$_POST['employertype']]);
+                                              }
+                                              else if(!empty($_POST['skills']))
+                                              {
+                                                        if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
+                                                        { 
+                                                            $skills = implode(',', $_POST['skills']);
+                                                        }
+                                                         
+                                                        
+                                                        $array_skills = explode(',',  $skills);
+                                                    
+                                                               
+                                                            $show_job_query="SELECT * FROM job_description";
+                                                            foreach($array_skills as $val)
+                                                            {
+                                                                $arr = "'%{$val}%'";
+                                                                $new_arr[] =" j_mainduties LIKE ".$arr;
+                                                            }
+
+                                                          $new_arr = implode(" OR ", $new_arr);
+                                                          $show_job_query.=" where ".$new_arr;
+                                                          $show_job_query.=" and j_status=:status";
+
+                                                         $show_job_stmt=$connection->prepare($show_job_query);
+                                                         $show_job_stmt->execute(['status'=>'Approved']);
+                                              } 
+                                              else if(!empty($_POST['skills'])  && !empty($_POST['employertype']))
+                                              {         
+                                                
+                                                  if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
+                                                    { 
+                                                        $skills = implode(',', $_POST['skills']);
+                                                    }
+                                                     
+                                                    
+                                                    $array_skills = explode(',',  $skills);
+                                                
+                                                           
+                                                    $show_job_query="SELECT * FROM job_description";
+                                                    foreach($array_skills as $val)
+                                                    {
+                                                        $arr = "'%{$val}%'";
+                                                        $new_arr[] =" j_mainduties LIKE ".$arr;
+                                                    }
+
+                                                      $new_arr = implode(" OR ", $new_arr);
+                                                      $show_job_query.=" where ".$new_arr;
+                                                      $show_job_query.=" and j_status=:status and j_employertype=:employertype";
+
+                                                     $show_job_stmt=$connection->prepare($show_job_query);
+                                                     $show_job_stmt->execute([ 'status'=>'Approved',
+                                                                                'employertype'=>$_POST['employertype'] ]);
+
+                                              }
+                                              else if(!empty($_POST['country']) && !empty($_POST['employertype']))
+                                              {
+
+                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype";
+                                                     $show_job_stmt=$connection->prepare($show_job_query);
+                                                     $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country'],'employertype'=>$_POST['employertype']]);
+                                              }
+                                              else if(!empty($_POST['country']) && !empty($_POST['skills']))
+                                              {
+
+                                                 if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
+                                                    { 
+                                                        $skills = implode(',', $_POST['skills']);
+                                                    }
+                                                     
+                                                    
+                                                    $array_skills = explode(',',  $skills);
+                                                
+                                                           
+                                                    $show_job_query="SELECT * FROM job_description";
+                                                    foreach($array_skills as $val)
+                                                    {
+                                                        $arr = "'%{$val}%'";
+                                                        $new_arr[] =" j_mainduties LIKE ".$arr;
+                                                    }
+
+                                                      $new_arr = implode(" OR ", $new_arr);
+                                                      $show_job_query.=" where ".$new_arr;
+                                                      $show_job_query.=" and j_status=:status and j_country=:country";
+
+                                                     $show_job_stmt=$connection->prepare($show_job_query);
+                                                     $show_job_stmt->execute([ 'status'=>'Approved',
+                                                                                'country'=>$_POST['country'] ]);
+
+                                              }
+
+                                           
+                                             
+                                               
+                                            while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
+                                                 {         
+                                                    echo " <div class='col-sm-6 col-md-3 p0'>
+                                                     <div class='box-two proerty-item'>
+                                                       <div class='item-thumb'>
+                                                           <img src='assets/img/profilepicture/".$result['j_logo']."'>
+                                                              </div>
+                                                                 <div class='item-entry overflow'>
+                                                                    <h4>".$result['j_jobtitle']."</h4>
+                                                                    <div class='dot-hr'></div>
+                                                                    
+                                                                    <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
+                                                                    <br>
+                                                                    <h7><b>Location:</b> ".$result['j_country']."</h7>
+                                                                    <br>
+                                                                    <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                                    <br>
+                                                                    <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                                    <br>
+                                                                    <br>
+                                                                    <div class='span9 btn-block no-padding'>
+                                                                       ";?>
+                                                                <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                                                onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
+                                                                    >View Full Post</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php } 
+                                            
+                                        }
+                                        else
+                                        {
+                                           
                                             $show_job_query="SELECT * FROM job_description where j_status=:status";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
@@ -187,9 +334,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                <?php } ?>
+                                        <?php } 
+                                        
+                                        }  
 
-
+                                    ?>                                     
+                                         
 
                                    
                         </div>
