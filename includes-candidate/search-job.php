@@ -155,7 +155,7 @@
                                         {
 
                                               require_once 'includes/connection.php';
-                                              $show_job_query="SELECT * FROM job_description where j_status=:status";
+                                              $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status";
                                               $show_job_stmt=$connection->prepare($show_job_query);
                                               $show_job_stmt->execute(['status'=>'Approved']);                        
 
@@ -192,7 +192,7 @@
                                               {
                                                      
                                                     
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country'],'employertype'=>$_POST['employertype']]);
                                               }
@@ -228,7 +228,7 @@
                                               {
                                                     
                                                     
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country']]);
                                            
@@ -236,7 +236,7 @@
                                               else if(!empty($_POST['employertype']))
                                               {
                                                 
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_employertype=:employertype";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_employertype=:employertype";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','employertype'=>$_POST['employertype']]);
                                               }
@@ -269,7 +269,7 @@
                                                
                                             while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                                  {         
-                                                    echo " <div class='col-sm-6 col-md-3 p0'>
+                                                    echo " <div class='col-sm-6 col-md-4 p0'>
                                                      <div class='box-two proerty-item'>
                                                        <div class='item-thumb'>
                                                            <img src='assets/img/profilepicture/".$result['j_logo']."'>
@@ -280,11 +280,11 @@
                                                                     
                                                                     <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                     <br>
-                                                                    <h7><b>Location:</b> ".$result['j_country']."</h7>
+                                                                    <h7><b>Location: </b> ".$result['j_country']."</h7>
                                                                     <br>
-                                                                    <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                                    <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                     <br>
-                                                                    <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                                    <span class='pull-left'><b>Posted: </b> ".$result['j_dateposted']."</span>
                                                                     <br>
                                                                     <br>
                                                                     <div class='span9 btn-block no-padding'>
@@ -302,12 +302,12 @@
                                         else
                                         {
                                            
-                                            $show_job_query="SELECT * FROM job_description where j_status=:status";
+                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
-                                                echo " <div class='col-sm-6 col-md-3 p0'>
+                                                echo " <div class='col-sm-6 col-md-4 p0'>
                                                  <div class='box-two proerty-item'>
                                                    <div class='item-thumb'>
                                                        <img src='assets/img/profilepicture/".$result['j_logo']."'>
@@ -318,11 +318,11 @@
                                                                 
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                 <br>
-                                                                <h7><b>Location:</b> ".$result['j_country']."</h7>
+                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
                                                                 <br>
-                                                                <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                 <br>
-                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                                <span class='pull-left'><b>Posted: </b> ".$result['j_dateposted']."</span>
                                                                 <br>
                                                                 <br>
                                                                 <div class='span9 btn-block no-padding'>
