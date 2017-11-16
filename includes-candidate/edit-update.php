@@ -253,8 +253,11 @@
                                                      <labeL>Religion *</label>
                                                         <select name="up_religion" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your religion">
                                                             
-                                                            <option  value="Single" <?php if($result['up_religion']=="Single")echo "selected"; ?>>Catholic</option>
-                                                            <option  value="Married" <?php if($result['up_religion']=="Married")echo "selected"; ?>>Muslim</option>
+                                                            <option  value="Roman Catholic" <?php if($result['up_religion']=="Roman Catholic")echo "selected"; ?>>Roman Catholic</option>
+                                                            <option  value="Muslim" <?php if($result['up_religion']=="Muslim")echo "selected"; ?>>Muslim</option>
+                                                            <option  value="Born Again Christian" <?php if($result['up_religion']=="Born Again Christian")echo "selected"; ?>>Born Again Christian</option>
+                                                            <option  value="Iglesia Ni Cristo" <?php if($result['up_religion']=="Iglesia Ni Cristo")echo "selected"; ?>>Iglesia Ni Cristo</option>
+                                                            <option  value="Baptist" <?php if($result['up_religion']=="Baptist")echo "selected"; ?>>Baptist</option>
                                                            
                                                            
                                                         </select>
