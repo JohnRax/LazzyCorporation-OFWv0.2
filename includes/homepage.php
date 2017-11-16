@@ -74,7 +74,7 @@
                                             <br>
                                             <h7>".$result['upi_skillsexp']."</h7>
                                             <br>
-                                            <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
+                                            
                                             <br>
                                             <div class='span9 btn-block no-padding'>
                                         ";?>
@@ -91,12 +91,10 @@
                            
                         <div class="col-sm-6 col-md-3 p0">
                             <div class="box-tree more-proerty text-center">
-                                <div class="item-tree-icon">
-                                    <i class="fa fa-th"></i>
-                                </div>
+                                <br><br> <br><br> <br><br> <br><br>
                                 <div class="more-entry overflow">
-                                    <h5><a href="property-1.html">CAN'T FIND HELPERS? ? </a></h5>
-                                    <h5 class="tree-sub-ttl">Show all Helpers</h5>
+                                    <h5><a >CAN'T FIND HELPERS? ? </a></h5>
+                                    
                                     <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Helpers</button>
 
                                 

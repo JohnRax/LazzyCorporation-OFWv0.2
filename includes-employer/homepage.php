@@ -6,7 +6,7 @@
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
                         <!-- /.feature title -->
                         <h2>Recent Submit Resume</h2>
-                        <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
+                        <p>List of Awesome Oversea Workers here at <strong>LAZZY WORKS</strong>. </p>
                     </div>
                 </div>
 
@@ -23,6 +23,7 @@
                                               b.up_age,
                                               b.up_picture,
                                               b.up_address,
+                                                DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                               b.up_nationality,
                                               b.up_category,
                                               b.up_address,
@@ -59,7 +60,7 @@
                                             <br>
                                             <h7>".$result['upi_skillsexp']."</h7>
                                             <br>
-                                            <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
+                                            <span class='pull-left'><b>Posted: </b>".$result['up_dateposted']."</span>
                                             <br>
                                             <div class='span9 btn-block no-padding'>
                                         ";?>
@@ -76,12 +77,10 @@
                            
                         <div class="col-sm-6 col-md-3 p0">
                             <div class="box-tree more-proerty text-center">
-                                <div class="item-tree-icon">
-                                    <i class="fa fa-th"></i>
-                                </div>
+                                <br><br> <br><br> <br><br> <br><br>
                                 <div class="more-entry overflow">
-                                    <h5><a href="property-1.html">CAN'T FIND HELPERS? ? </a></h5>
-                                    <h5 class="tree-sub-ttl">Show all Helpers</h5>
+                                    <h5><a">CAN'T FIND HELPERS? ? </a></h5>
+                                    
                                     <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Helpers</button>
 
                                 
