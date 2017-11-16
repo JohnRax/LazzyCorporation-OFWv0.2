@@ -278,7 +278,7 @@
                                                   <?php 
                                                       $array_languages = explode(',', $result['up_languages']);
                                                    
-                                                ?>
+                                                    ?>
                                                 <ul class="job-manager-term-checklist job-manager-term-checklist-candidate_languages">
                                                     <div class="col-sm-3">
                                                         <input  name="up_languages[]" type="checkbox" value="Arabic" <?php  if(in_array('Arabic', $array_languages))echo "checked"; ?>> Arabic
