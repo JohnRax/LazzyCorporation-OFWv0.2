@@ -304,7 +304,7 @@ input[type="search"]::-webkit-search-decoration {
     padding: 10px 20px;
     font-weight: 600;
     position: absolute;
-    top: 570px;
+    top: 480px;
     left: 69px;
     width: 150px;
 }
@@ -1651,10 +1651,15 @@ padding: 0 0 0.5em;
 }
 .box-two {
     background: #FFF none repeat scroll 0% 0%;
-
     border: 1px solid #E6E6E6;
     box-sizing: border-box;
-
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+.box-two2 {
+    background: #FFF none repeat scroll 0% 0%;
+    border: 1px solid #E6E6E6;
+    height:530px;
+    box-sizing: border-box;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 .dot-hr{
@@ -1662,11 +1667,11 @@ padding: 0 0 0.5em;
     margin-bottom: 10px;
 }
 .dot-hr1{
-        border-bottom: 1px dotted #CECBC7;
+    border-bottom: 1px dotted #CECBC7;
     margin-bottom: 10px;
     position: absolute;
     top: 350px;
-    width: 248px;
+    width: 264px;
 }
 .slim-hr{
 
@@ -1811,8 +1816,6 @@ proerty-th
 .proerty-th .proerty-item  .item-entry{
     padding: 8px;
     height: 370px;
-
-
 }
 .proerty-th .proerty-item  .item-entry1{
     padding: 8px;
