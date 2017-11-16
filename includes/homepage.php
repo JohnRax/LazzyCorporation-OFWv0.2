@@ -78,7 +78,7 @@
                                             <br>
                                             <div class='span9 btn-block no-padding'>
                                         ";?>
-                                            <button type="button" class='btn btn-large btn-block btn-primary1 full-width'
+                                            <button type="button" class='btn btn-large btn-block btn-primary full-width'
                                             onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
                                                     >View Full Profile</button>
                                             </div>
@@ -124,7 +124,7 @@
                                     <?php 
 
                                          require_once 'includes/connection.php';
-                                            $show_job_query="SELECT * FROM job_description where j_status=:status order by j_dateposted DESC  LIMIT 4";
+                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_dateposted DESC  LIMIT 4";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
@@ -149,7 +149,7 @@
                                                                 <br>
                                                                 <div class='span9 btn-block no-padding'>
                                                                   ";?>
-                                                            <button type="button" class="btn btn-large btn-block btn-primary1 full-width" 
+                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
                                                             onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
                                                                 >View Full Post</button>
                                                                 
