@@ -159,50 +159,9 @@
                                               $show_job_stmt=$connection->prepare($show_job_query);
                                               $show_job_stmt->execute(['status'=>'Approved']);                        
 
-                                                $sample="true";
-
-                                              if(!empty($_POST['country']))
-                                              {
-                                                  
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country";
-                                                     $show_job_stmt=$connection->prepare($show_job_query);
-                                                     $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country']]);
-                                           
-                                              }
-                                              else if(!empty($_POST['employertype']))
-                                              {
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_employertype=:employertype";
-                                                     $show_job_stmt=$connection->prepare($show_job_query);
-                                                     $show_job_stmt->execute(['status'=>'Approved','employertype'=>$_POST['employertype']]);
-                                              }
-                                              else if(!empty($_POST['skills']))
-                                              {
-                                                        if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
-                                                        { 
-                                                            $skills = implode(',', $_POST['skills']);
-                                                        }
-                                                         
-                                                        
-                                                        $array_skills = explode(',',  $skills);
-                                                    
-                                                               
-                                                            $show_job_query="SELECT * FROM job_description";
-                                                            foreach($array_skills as $val)
-                                                            {
-                                                                $arr = "'%{$val}%'";
-                                                                $new_arr[] =" j_mainduties LIKE ".$arr;
-                                                            }
-
-                                                          $new_arr = implode(" OR ", $new_arr);
-                                                          $show_job_query.=" where ".$new_arr;
-                                                          $show_job_query.=" and j_status=:status";
-
-                                                         $show_job_stmt=$connection->prepare($show_job_query);
-                                                         $show_job_stmt->execute(['status'=>'Approved']);
-                                              } 
-                                              else if(!empty($_POST['skills'])  && !empty($_POST['employertype']))
+                                              if(!empty($_POST['skills'])  && !empty($_POST['employertype']))
                                               {         
-                                                
+                                               
                                                   if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
                                                     { 
                                                         $skills = implode(',', $_POST['skills']);
@@ -230,14 +189,15 @@
                                               }
                                               else if(!empty($_POST['country']) && !empty($_POST['employertype']))
                                               {
-
+                                                     
+                                                    
                                                      $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country'],'employertype'=>$_POST['employertype']]);
                                               }
                                               else if(!empty($_POST['country']) && !empty($_POST['skills']))
                                               {
-
+                                                
                                                  if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
                                                     { 
                                                         $skills = implode(',', $_POST['skills']);
@@ -247,7 +207,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description";
+                                                    $show_job_query="SELECT * FROM job_description ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -263,9 +223,48 @@
                                                                                 'country'=>$_POST['country'] ]);
 
                                               }
-
+                                              else if(!empty($_POST['country']))
+                                              {
+                                                    
+                                                    
+                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country";
+                                                     $show_job_stmt=$connection->prepare($show_job_query);
+                                                     $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country']]);
                                            
-                                             
+                                              }
+                                              else if(!empty($_POST['employertype']))
+                                              {
+                                                
+                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_employertype=:employertype";
+                                                     $show_job_stmt=$connection->prepare($show_job_query);
+                                                     $show_job_stmt->execute(['status'=>'Approved','employertype'=>$_POST['employertype']]);
+                                              }
+                                              else if(!empty($_POST['skills']))
+                                              {
+
+                                                        if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
+                                                        { 
+                                                            $skills = implode(',', $_POST['skills']);
+                                                        }
+                                                         
+                                                        
+                                                        $array_skills = explode(',',  $skills);
+                                                    
+                                                               
+                                                            $show_job_query="SELECT * FROM job_description";
+                                                            foreach($array_skills as $val)
+                                                            {
+                                                                $arr = "'%{$val}%'";
+                                                                $new_arr[] =" j_mainduties LIKE ".$arr;
+                                                            }
+
+                                                          $new_arr = implode(" OR ", $new_arr);
+                                                          $show_job_query.=" where ".$new_arr;
+                                                          $show_job_query.=" and j_status=:status";
+
+                                                         $show_job_stmt=$connection->prepare($show_job_query);
+                                                         $show_job_stmt->execute(['status'=>'Approved']);
+                                              }                                            
                                                
                                             while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                                  {         

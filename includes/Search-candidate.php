@@ -21,7 +21,7 @@
                                 <h3 class="panel-title">Smart search</h3>
                             </div>
                             <div class="panel-body search-widget">
-                                <form action="" class=" form-inline"> 
+                                <form action="" method="post" class="form-inline"> 
                                     <fieldset>
                                      
                                     </fieldset>
@@ -31,6 +31,7 @@
                                             <div class="col-xs-12">
 
                                                 <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
+                                                                <option class="form-control" selected disabled value="">Search By Location</option>
                                                                 <option value="Philippines">
                                                                     Philippines
                                                                 </option>
@@ -60,10 +61,10 @@
                                         <div class="row">
                                             <div class="col-xs-6">
 
-                                                <select id="basic" class="form-control">
+                                                <select id="basic" class="form-control" name="gender">
                                                     <option class="form-control" selected disabled value="">Gender</option>
-                                                    <option class="form-control" value="male">Male</option>
-                                                    <option class="form-control" value="female">Female</option>
+                                                    <option class="form-control" value="male">male</option>
+                                                    <option class="form-control" value="female">female</option>
                                                 </select>
                                             </div>
                                         
@@ -71,7 +72,7 @@
                                         
                                             <div class="col-xs-6">
                                                 <div class="form-group">
-                                                    <input name="up_age" onkeypress="return isNumberKey(event)" type="text" class="form-control" maxlength="2" minlength="2" required placeholder="Age" title="Please input your age">
+                                                    <input name="up_age" onkeypress="return isNumberKey(event)" type="text" class="form-control" maxlength="2" minlength="2"  placeholder="Age" title="Please input your age">
                                                 </div>                                                
                                             </div>
                                                                                      
@@ -143,7 +144,7 @@
                                     <fieldset >
                                         <div class="row">
                                             <div class="col-xs-12">  
-                                                <input class="button btn largesearch-btn" value="Search" type="submit">
+                                                <input class="button btn largesearch-btn" value="Search" type="submit" name="search">
                                             </div>  
                                         </div>
                                     </fieldset>                                     
@@ -170,21 +171,7 @@
                                 </li>
                             </ul><!--/ .sort-by-list-->
 
-                            <div class="items-per-page">
-                                <label for="items_per_page"><b>Candidate per page :</b></label>
-                                <div class="sel">
-                                    <select id="items_per_page" name="per_page">
-                                        <option value="3">3</option>
-                                        <option value="6">6</option>
-                                        <option value="9">9</option>
-                                        <option selected="selected" value="12">12</option>
-                                        <option value="15">15</option>
-                                        <option value="30">30</option>
-                                        <option value="45">45</option>
-                                        <option value="60">60</option>
-                                    </select>
-                                </div><!--/ .sel-->
-                            </div><!--/ .items-per-page-->
+                           
                         </div>
 
                         <div class="col-xs-2 layout-switcher">
@@ -198,64 +185,477 @@
                            
                             <?php 
 
-                    require_once 'includes/connection.php';
-                    $show_profile_query="SELECT
-                                              a.u_id, 
-                                              a.u_fname,
-                                              a.u_lname,
-                                              b.up_age,
-                                              b.up_picture,
-                                              b.up_address,
-                                              b.up_nationality,
-                                              b.up_category,
-                                              b.up_address,
-                                              c.upi_skillsexp,
-                                              c.upi_yearsofexp
-                                            FROM
-                                              user_details AS a 
-                                               JOIN user_personal_information AS b 
-                                                ON b.u_id = a.u_id 
-                                               JOIN user_professional_information AS c 
-                                                ON a.u_id = c.u_id where b.up_status=:status";
-                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                    $show_profile_stmt->execute(['status'=>'Approved']);
-                    while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
-                    {
-                        echo " <div class='col-sm-6 col-md-3 p0'>
-                                    <div class='box-two proerty-item'>
-                                        <div class='item-thumb'>
-                                           <img src='assets/img/profilepicture/".$result['up_picture']."'>
-                                        </div>
-                                        <div class='item-entry overflow'>
-                                            <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
-                                            <div class='dot-hr'></div>
-                                            
-                                            <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
-                                            <br>
-                                            <h7><b>Location:</b>".$result['up_address']."</h7>
-                                            <br>
-                                           
-                                            <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
-                                            <br>
-                                            <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
-                                            <br>
-                                            <h7><b>Job Expertises:</b></h7>
-                                            <br>
-                                            <h7>".$result['upi_skillsexp']."</h7>
-                                            <br>
-                                            <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
-                                            <br>
-                                            <div class='span9 btn-block no-padding'>
-                                        ";?>
-                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
-                                            onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
-                                                    >View Full Profile</button>
+                            require_once 'includes/connection.php';
+                            if(isset($_POST['search']))
+                            {
+
+                                $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      b.up_picture,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status";
+                                $show_profile_stmt=$connection->prepare($show_profile_query);
+                                $show_profile_stmt->execute(['status'=>'Approved']);
+                              
+
+                                if(!empty($_POST['up_address']) && !empty($_POST['gender']))
+                                {
+
+                                    $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      a.u_gender,
+                                                      b.up_picture,
+                                                       b.up_dateposted,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_address=:address";
+                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                    $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender'],'address'=>$_POST['up_address']]);
+                                }
+                                else if(!empty($_POST['up_age']) && !empty($_POST['gender']))
+                                {
+                                      $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      a.u_gender,
+                                                       b.up_dateposted,
+                                                      b.up_picture,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_age=:age";
+                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                    $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender'],'age'=>$_POST['up_age']]);
+                                }
+                                else if(!empty($_POST['up_age']) && !empty($_POST['upi_skillsexp']))
+                                {
+                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
+                                    { 
+                                        $skills = implode(',', $_POST['upi_skillsexp']);
+                                    }
+                                                                                                 
+                                    $array_skills = explode(',',  $skills);
+
+                                   $show_profile_query="SELECT
+                                                          a.u_id, 
+                                                          a.u_fname,
+                                                          a.u_lname,
+                                                          b.up_age,
+                                                          a.u_gender,
+                                                           b.up_dateposted,
+                                                          b.up_picture,
+                                                          b.up_address,
+                                                          b.up_nationality,
+                                                          b.up_category,
+                                                          b.up_address,
+                                                          c.upi_skillsexp,
+                                                          c.upi_yearsofexp
+                                                        FROM
+                                                        user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id";
+                                                            
+                                                        foreach($array_skills as $val)
+                                                        {
+                                                            $arr = "'%{$val}%'";
+                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
+                                                        }
+
+                                                        $new_arr = implode(" OR ", $new_arr);
+                                                        $show_profile_query.=" where ".$new_arr;
+                                                        $show_profile_query.=" and b.up_status=:status and b.up_age=:age ";
+                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                        $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age']]);
+                                }
+                                else if(!empty($_POST['up_address']) && !empty($_POST['up_age']))
+                                {
+                                      $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      a.u_gender,
+                                                       b.up_dateposted,
+                                                      b.up_picture,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address and b.up_age=:age";
+                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                    $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address'],'age'=>$_POST['up_age']]);
+                                }
+                                else if(!empty($_POST['up_address']) && !empty($_POST['upi_skillsexp']))
+                                {
+                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
+                                    { 
+                                        $skills = implode(',', $_POST['upi_skillsexp']);
+                                    }
+                                                                                                 
+                                    $array_skills = explode(',',  $skills);
+                                    $show_profile_query="SELECT
+                                                          a.u_id, 
+                                                          a.u_fname,
+                                                          a.u_lname,
+                                                          b.up_age,
+                                                          a.u_gender,
+                                                          b.up_picture,
+                                                           b.up_dateposted,
+                                                          b.up_address,
+                                                          b.up_nationality,
+                                                          b.up_category,
+                                                          b.up_address,
+                                                          c.upi_skillsexp,
+                                                          c.upi_yearsofexp
+                                                        FROM
+                                                        user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id";
+                                                            
+                                                        foreach($array_skills as $val)
+                                                        {
+                                                            $arr = "'%{$val}%'";
+                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
+                                                        }
+
+                                                        $new_arr = implode(" OR ", $new_arr);
+                                                        $show_profile_query.=" where ".$new_arr;
+                                                        $show_profile_query.=" and b.up_status=:status and b.up_address=:address";
+                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                        $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address']]);
+                                }
+                                else if(!empty($_POST['gender']) && !empty($_POST['upi_skillsexp']))
+                                {
+                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
+                                    { 
+                                        $skills = implode(',', $_POST['upi_skillsexp']);
+                                    }
+                                                                                                 
+                                    $array_skills = explode(',',  $skills);
+
+                                   $show_profile_query="SELECT
+                                                          a.u_id, 
+                                                          a.u_fname,
+                                                          a.u_lname,
+                                                          b.up_age,
+                                                          a.u_gender,
+                                                           b.up_dateposted,
+                                                          b.up_picture,
+                                                          b.up_address,
+                                                          b.up_nationality,
+                                                          b.up_category,
+                                                          b.up_address,
+                                                          c.upi_skillsexp,
+                                                          c.upi_yearsofexp
+                                                        FROM
+                                                        user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id";
+                                                            
+                                                        foreach($array_skills as $val)
+                                                        {
+                                                            $arr = "'%{$val}%'";
+                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
+                                                        }
+
+                                                        $new_arr = implode(" OR ", $new_arr);
+                                                        $show_profile_query.=" where ".$new_arr;
+                                                        $show_profile_query.=" and b.up_status=:status and a.u_gender=:gender";
+                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                        $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender']]);
+
+                                }
+                                else if(!empty($_POST['up_address']) && !empty($_POST['up_age']))
+                                {
+                                    $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      a.u_gender,
+                                                       b.up_dateposted,
+                                                      b.up_picture,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age and b.up_address=:address";
+                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                    $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age'],'address'=>$_POST['up_address']]);
+                                }
+                                else if(!empty($_POST['up_address']))
+                                {
+                                    
+                                     $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      b.up_picture,
+                                                       b.up_dateposted,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address";
+                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                    $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address']]);
+                                }
+                                else if(!empty($_POST['gender']))
+                                {
+                                     $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      a.u_gender,
+                                                       b.up_dateposted,
+                                                      b.up_picture,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender";
+                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                    $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender']]);
+                                }
+                                else if(!empty($_POST['up_age']))
+                                {
+                                     $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      a.u_gender,
+                                                      b.up_picture,
+                                                       b.up_dateposted,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age";
+                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                    $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age']]);
+                                }
+                                else if(!empty($_POST['upi_skillsexp']))
+                                {
+                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
+                                    { 
+                                        $skills = implode(',', $_POST['upi_skillsexp']);
+                                    }
+                                                                                                 
+                                    $array_skills = explode(',',  $skills);
+
+                                   $show_profile_query="SELECT
+                                                          a.u_id, 
+                                                          a.u_fname,
+                                                          a.u_lname,
+                                                          b.up_age,
+                                                          a.u_gender,
+                                                          b.up_picture,
+                                                           b.up_dateposted,
+                                                          b.up_address,
+                                                          b.up_nationality,
+                                                          b.up_category,
+                                                          b.up_address,
+                                                          c.upi_skillsexp,
+                                                          c.upi_yearsofexp
+                                                        FROM
+                                                        user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id";
+                                                            
+                                                        foreach($array_skills as $val)
+                                                        {
+                                                            $arr = "'%{$val}%'";
+                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
+                                                        }
+
+                                                        $new_arr = implode(" OR ", $new_arr);
+                                                        $show_profile_query.=" where ".$new_arr;
+                                                        $show_profile_query.=" and b.up_status=:status";
+                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
+                                                        $show_profile_stmt->execute(['status'=>'Approved']);
+                                }
+                               
+
+                                 while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
+                                    {
+                                         echo " <div class='col-sm-6 col-md-3 p0'>
+                                            <div class='box-two proerty-item'>
+                                                <div class='item-thumb'>
+                                                   <img src='assets/img/profilepicture/".$result['up_picture']."'>
+                                                </div>
+                                                <div class='item-entry overflow'>
+                                                    <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
+                                                    <div class='dot-hr'></div>
+                                                    
+                                                    <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
+                                                    <br>
+                                                    <h7><b>Location:</b>".$result['up_address']."</h7>
+                                                    <br>
+                                                   
+                                                    <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
+                                                    <br>
+                                                    <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
+                                                    <br>
+                                                    <h7><b>Job Expertises:</b></h7>
+                                                    <br>
+                                                    <h7>".$result['upi_skillsexp']."</h7>
+                                                    <br>
+                                                    <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
+                                                    <br>
+                                                    <div class='span9 btn-block no-padding'>
+                                                ";?>
+                                                    <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                                    onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
+                                                            >View Full Profile</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                    <?php } ?>
-                              
+                                <?php } 
+                            }
+                            else
+                            {
+                            $show_profile_query="SELECT
+                                                      a.u_id, 
+                                                      a.u_fname,
+                                                      a.u_lname,
+                                                      b.up_age,
+                                                      b.up_picture,
+                                                      b.up_dateposted,
+                                                      b.up_address,
+                                                      b.up_nationality,
+                                                      b.up_category,
+                                                      b.up_address,
+                                                      c.upi_skillsexp,
+                                                      c.upi_yearsofexp
+                                                    FROM
+                                                      user_details AS a 
+                                                       JOIN user_personal_information AS b 
+                                                        ON b.u_id = a.u_id 
+                                                       JOIN user_professional_information AS c 
+                                                        ON a.u_id = c.u_id where b.up_status=:status";
+                            $show_profile_stmt=$connection->prepare($show_profile_query);
+                            $show_profile_stmt->execute(['status'=>'Approved']);
+                            while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
+                            {
+                                echo " <div class='col-sm-6 col-md-3 p0'>
+                                            <div class='box-two proerty-item'>
+                                                <div class='item-thumb'>
+                                                   <img src='assets/img/profilepicture/".$result['up_picture']."'>
+                                                </div>
+                                                <div class='item-entry overflow'>
+                                                    <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
+                                                    <div class='dot-hr'></div>
+                                                    
+                                                    <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
+                                                    <br>
+                                                    <h7><b>Location:</b>".$result['up_address']."</h7>
+                                                    <br>
+                                                   
+                                                    <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
+                                                    <br>
+                                                    <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
+                                                    <br>
+                                                    <h7><b>Job Expertises:</b></h7>
+                                                    <br>
+                                                    <h7>".$result['upi_skillsexp']."</h7>
+                                                    <br>
+                                                    <span class='pull-left'><b>Posted:</b>".$result['up_dateposted']."</span>
+                                                    <br>
+                                                    <div class='span9 btn-block no-padding'>
+                                                ";?>
+                                                    <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                                    onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
+                                                            >View Full Profile</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            <?php } 
+
+                            }?>
+                                      
 
                                     </div>
                                 </div> 
