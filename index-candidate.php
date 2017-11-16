@@ -42,6 +42,9 @@
         case 'searchfindjob':
                include "includes-candidate/search-job.php"; 
                break;
+        case 'appliedjobs':
+               include "includes-candidate/applied-jobs.php"; 
+               break;
          case 'logout':
                include "includes-candidate/logout.php"; 
                break;

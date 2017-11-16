@@ -31,6 +31,9 @@
                                     <a href="index-candidate.php?source=editupdateprofile">EDIT/UPDATE PROFILE</a>
                                 </li>
                                 <li>
+                                    <a href="index-candidate.php?source=appliedjobs">LIST OF APPLIED JOBS</a>
+                                </li>
+                                <li>
                                     <a href="index-candidate.php?source=logout">LOG OUT</a>
                                 </li>                          
                             </ul>
