@@ -559,7 +559,7 @@
 
                                  while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                                     {
-                                         echo " <div class='col-sm-6 col-md-3 p0'>
+                                         echo " <div class='col-sm-6 col-md-4 p0'>
                                             <div class='box-two proerty-item'>
                                                 <div class='item-thumb'>
                                                    <img src='assets/img/profilepicture/".$result['up_picture']."'>
@@ -619,7 +619,7 @@
                             $show_profile_stmt->execute(['status'=>'Approved']);
                             while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                             {
-                                echo " <div class='col-sm-6 col-md-3 p0'>
+                                echo " <div class='col-sm-6 col-md-4 p0'>
                                             <div class='box-two proerty-item'>
                                                 <div class='item-thumb'>
                                                    <img src='assets/img/profilepicture/".$result['up_picture']."'>

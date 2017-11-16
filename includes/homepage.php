@@ -94,7 +94,7 @@
                                 <br><br> <br><br> <br><br> <br><br>
                                 <div class="more-entry overflow">
                                     <h5><a >CAN'T FIND HELPERS? ? </a></h5>
-                                    <h5 class="tree-sub-ttl">Show all Helpers</h5>
+                                    
                                     <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Helpers</button>
 
                                 

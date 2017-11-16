@@ -195,7 +195,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       b.up_picture,
-                                                       b.up_dateposted,
+                                                       DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -223,7 +223,7 @@
                                                       a.u_gender,
                                                       b.up_picture,
                                                       b.up_address,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
@@ -247,7 +247,7 @@
                                                       b.up_age,
                                                       a.u_gender,
                                                       b.up_picture,
-                                                       b.up_dateposted,
+                                                       DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -279,7 +279,7 @@
                                                           b.up_age,
                                                           a.u_gender,
                                                           b.up_picture,
-                                                           b.up_dateposted,
+                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_address,
                                                           b.up_nationality,
                                                           b.up_category,
@@ -313,7 +313,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       a.u_gender,
-                                                       b.up_dateposted,
+                                                        DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_picture,
                                                       b.up_address,
                                                       b.up_nationality,
@@ -345,7 +345,7 @@
                                                           b.up_age,
                                                           a.u_gender,
                                                           b.up_picture,
-                                                           b.up_dateposted,
+                                                           DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_address,
                                                           b.up_nationality,
                                                           b.up_category,
@@ -386,7 +386,7 @@
                                                           a.u_lname,
                                                           b.up_age,
                                                           a.u_gender,
-                                                           b.up_dateposted,
+                                                         DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_picture,
                                                           b.up_address,
                                                           b.up_nationality,
@@ -423,7 +423,7 @@
                                                       b.up_age,
                                                       a.u_gender,
                                                       b.up_picture,
-                                                       b.up_dateposted,
+                                                        DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -449,7 +449,7 @@
                                                       b.up_age,
                                                       b.up_picture,
                                                       b.up_address,
-                                                       b.up_dateposted,
+                                                       DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
@@ -474,7 +474,7 @@
                                                       a.u_gender,
                                                       b.up_picture,
                                                       b.up_address,
-                                                       b.up_dateposted,
+                                                        DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
@@ -498,7 +498,7 @@
                                                       b.up_age,
                                                       a.u_gender,
                                                       b.up_picture,
-                                                     b.up_dateposted,
+                                                       DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -531,7 +531,7 @@
                                                           a.u_gender,
                                                           b.up_picture,
                                                           b.up_address,
-                                                          b.up_dateposted,
+                                                           DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_nationality,
                                                           b.up_category,
                                                           b.up_address,
@@ -560,7 +560,7 @@
 
                                  while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                                     {
-                                         echo " <div class='col-sm-6 col-md-3 p0'>
+                                         echo " <div class='col-sm-6 col-md-4 p0'>
                                             <div class='box-two proerty-item'>
                                                 <div class='item-thumb'>
                                                    <img src='assets/img/profilepicture/".$result['up_picture']."'>
@@ -571,18 +571,18 @@
                                                     
                                                     <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
                                                     <br>
-                                                    <h7><b>Location:</b>".$result['up_address']."</h7>
+                                                    <h7><b>Location: </b>".$result['up_address']."</h7>
                                                     <br>
                                                    
-                                                    <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
+                                                    <h7><b>Nationality: </b>".$result['up_nationality']."</h7>
                                                     <br>
-                                                    <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
+                                                    <h7><b>Years Of Experience: </b>".$result['upi_yearsofexp']."</h7>
                                                     <br>
-                                                    <h7><b>Job Expertises:</b></h7>
+                                                    <h7><b>Job Expertises: </b></h7>
                                                     <br>
                                                     <h7>".$result['upi_skillsexp']."</h7>
                                                     <br>
-                                                    <span class='pull-left'><b>Posted:</b>".$result['up_dateposted']."</span>
+                                                    <span class='pull-left'><b>Posted: </b>".$result['up_dateposted']."</span>
                                                     <br>
                                                     <div class='span9 btn-block no-padding'>
                                                 ";?>
@@ -604,7 +604,7 @@
                                                       b.up_age,
                                                       b.up_picture,
                                                       b.up_address,
-                                                      b.up_dateposted,
+                                                        DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
@@ -620,7 +620,7 @@
                             $show_profile_stmt->execute(['status'=>'Approved']);
                             while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                             {
-                                echo " <div class='col-sm-6 col-md-3 p0'>
+                                echo " <div class='col-sm-6 col-md-4 p0'>
                                             <div class='box-two proerty-item'>
                                                 <div class='item-thumb'>
                                                    <img src='assets/img/profilepicture/".$result['up_picture']."'>
@@ -631,18 +631,18 @@
                                                     
                                                     <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
                                                     <br>
-                                                    <h7><b>Location:</b>".$result['up_address']."</h7>
+                                                    <h7><b>Location: </b>".$result['up_address']."</h7>
                                                     <br>
                                                    
-                                                    <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
+                                                    <h7><b>Nationality: </b>".$result['up_nationality']."</h7>
                                                     <br>
-                                                    <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
+                                                    <h7><b>Years Of Experience: </b>".$result['upi_yearsofexp']."</h7>
                                                     <br>
-                                                    <h7><b>Job Expertises:</b></h7>
+                                                    <h7><b>Job Expertises: </b></h7>
                                                     <br>
                                                     <h7>".$result['upi_skillsexp']."</h7>
                                                     <br>
-                                                    <span class='pull-left'><b>Posted:</b>".$result['up_dateposted']."</span>
+                                                    <span class='pull-left'><b>Posted: </b>".$result['up_dateposted']."</span>
                                                     <br>
                                                     <div class='span9 btn-block no-padding'>
                                                 ";?>
