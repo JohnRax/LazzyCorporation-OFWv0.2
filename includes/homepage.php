@@ -109,7 +109,7 @@
         </div>
 
 
-                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
                         <!-- /.feature title -->
                         <h2>Recent Job Post</h2>
                         <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
@@ -174,7 +174,7 @@
         <div class="count-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
                         <!-- /.feature title -->
                         <h2>You can trust Us </h2> 
                     </div>
