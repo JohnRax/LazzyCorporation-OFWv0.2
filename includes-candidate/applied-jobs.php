@@ -60,44 +60,54 @@
                                                 </script>";
                                     }
                                 }
-                                $show_jobs_query="SELECT * FROM job_description WHERE u_id=:id";
-                                $show_jobs_stmt=$connection->prepare($show_jobs_query);
-                                $show_jobs_stmt->execute(['id'=>$_SESSION['user_session']]);
-                                while($result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC))
+
+
+                                $check_applied_query="SELECT * from job_submitted WHERE u_id=:id";
+                                $check_applied_stmt=$connection->prepare($check_applied_query);
+                                $check_applied_stmt->execute(['id'=>$_SESSION['user_session']]);
+                                while($result = $check_applied_stmt->fetch(PDO::FETCH_ASSOC))
                                 {
-                                   echo "<div class='col-md-4 p0'>
-                                        <div class='box-two proerty-item'>
-                                            <div class='item-thumb'>
-                                                <a href='index-employer.php?source=editjob&id=".$result['j_id']."' ><img src='assets/img/profilepicture/".$result['j_logo']."'></a>
-                                            </div>
 
-                                            <div class='item-entry overflow'>
-                                                <h4>".$result['j_jobtitle']."</h4>
-                                                <div class='dot-hr'></div>
 
-                                                     <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
-                                                     <br>
-                                                     <h7><b>Location:</b> ".$result['j_country']."</h7>
-                                                     <br>
-                                                     <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
-                                                     <br>
-                                                     <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
-                                                     <br> 
-                                                     <h7><b>Status:</b>".$result['j_status']."</h7>
-                                                     <br>                                                 
-                                                  
-                                                    <div class='dealer-action pull-left'> 
-                                                        <a href='index-employer.php?source=viewsubmitted&id=".$result['j_id']."'  data-toggle='modal' class='button'>View Submitted Profile </a>                   
-                                                        <a href='index-employer.php?source=editjob&id=".$result['j_id']."' class='button'>Edit </a>
-                                                        <a href='index-employer.php?source=listpostjobs&delete_id=".$result['j_id']."' class='button delete_user_car'>Delete</a>";
-                                                    ?>
-                                                        <a href='#' onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')" class='button'>View</a>
-                                                   
+                        
+                                    $show_jobs_query="SELECT * FROM job_description WHERE j_id=:id";
+                                    $show_jobs_stmt=$connection->prepare($show_jobs_query);
+                                    $show_jobs_stmt->execute(['id'=>$result['j_id']]);
+                                    while($result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC))
+                                    {
+                                       echo "<div class='col-md-4 p0'>
+                                            <div class='box-two proerty-item'>
+                                                <div class='item-thumb'>
+                                                    <a href='' ><img src='assets/img/profilepicture/".$result['j_logo']."'></a>
+                                                </div>
+
+                                                <div class='item-entry overflow'>
+                                                    <h4>".$result['j_jobtitle']."</h4>
+                                                    <div class='dot-hr'></div>
+
+                                                         <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
+                                                         <br>
+                                                         <h7><b>Location:</b> ".$result['j_country']."</h7>
+                                                         <br>
+                                                         <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                         <br>
+                                                         <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                         <br> 
+                                                         <h7><b>Status:</b>".$result['j_status']."</h7>
+                                                         <br>                                                 
+                                                      
+                                                        <div class='dealer-action pull-left'> 
+                                                            ";
+                                                        ?>
+                                                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')">VIEW</button>
+                                                       
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                     </div>
-                                    <?php } ?>
+                                         </div>
+                                        <?php }    
+
+                                    }?>
                             
 
                                

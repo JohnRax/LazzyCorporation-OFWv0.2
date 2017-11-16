@@ -63,15 +63,32 @@
 
             if(isset($_GET['applied']))
             {
-                if($user->apply_job($_GET['candidateid'],$_GET['id']))
+
+                $check_applied_query="SELECT * FROM job_submitted where j_id=:jid and u_id=:uid";
+                $check_applied_stmt=$connection->prepare($check_applied_query);
+                $check_applied_stmt->execute(['jid'=>$_GET['id'],
+                                              'uid'=>$_GET['candidateid']]);
+                $result = $check_applied_stmt->fetch(PDO::FETCH_ASSOC);
+
+                if(empty($result))
                 {
-                      echo"<script>
-                            alert('Successfully Applied! Please Wait for the Employer Reply. Thank you');
-                            closeWindow();
-                            function closeWindow() {
-                                window.close();
-                            }
-                          </script>";
+                    if($user->apply_job($_GET['candidateid'],$_GET['id']))
+                    {
+                          echo"<script>
+                                alert('Successfully Applied! Please Wait for the Employer Reply. Thank you');
+                                closeWindow();
+                                function closeWindow() {
+                                    window.close();
+                                }
+                              </script>";
+                    }
+                }
+                else
+                {
+                   echo "<script>
+                                alert('Already Applied to This Job! Please Wait for the Employer Reply. Thank you');
+                                location.href = 'job-page.php?id=".$_GET['id']."';
+                              </script>";
                 }
             }
             if(isset($_GET['denied']))
