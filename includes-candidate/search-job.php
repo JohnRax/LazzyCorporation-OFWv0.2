@@ -154,7 +154,7 @@
                                          <?php 
 
                                          require_once 'includes/connection.php';
-                                            $show_job_query="SELECT * FROM job_description where j_status=:status";
+                                            $show_job_query="SELECT *,  DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))

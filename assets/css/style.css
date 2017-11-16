@@ -2171,8 +2171,9 @@ single property page
 }
 .s-property-title {
     margin-bottom: 15px;
-    color: #FFA500;
-    font-size: 18px;
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .s-property-title::after {
