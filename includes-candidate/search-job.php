@@ -170,9 +170,9 @@
                                                                 
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                 <br>
-                                                                <h7><b>Location:</b> ".$result['j_country']."</h7>
+                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
                                                                 <br>
-                                                                <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                 <br>
                                                                 <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
                                                                 <br>

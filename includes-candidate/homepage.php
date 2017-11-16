@@ -22,7 +22,7 @@
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
                                                 echo " <div class='col-sm-6 col-md-3 p0'>
-                                                 <div class='box-two proerty-item'>
+                                                 <div class='box-two2 proerty-item'>
                                                    <div class='item-thumb'>
                                                         <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
