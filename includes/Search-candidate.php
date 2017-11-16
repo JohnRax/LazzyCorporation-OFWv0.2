@@ -1,7 +1,15 @@
 <br><br><br><br>
         <!-- property area -->
 <!-- Trigger the modal with a button -->
+<script>
+    function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode < 48 || charCode > 57)
+        return false;
+    return true;    
+}
 
+</script>
         <div class="properties-area recent-property" style="background-color: #FFF;">
             <div class="container">  
                 <div class="row">
@@ -20,38 +28,51 @@
 
                                     <fieldset>
                                         <div class="row">
-                                            <div class="col-xs-6">
+                                            <div class="col-xs-12">
 
-                                                <select id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
-
-                                                    <option>Hongkong</option>
-                                                    <option>Indonesia</option>
-                                                    <option>Philippines</option>
-                                                    <option>Japan</option>
-                                                  
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-6">
-
-                                                <select id="basic" class="form-control">
-                                                    <option>Gender</option>
-                                                    <option>Male </option>
-                                                    <option>Female</option>
-                                                    <option>Others</option>
-
+                                                <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
+                                                                <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
+                                                                <option value="Hong Kong">
+                                                                    Hong Kong
+                                                                </option>
+                                                                <option value="China">
+                                                                    China
+                                                                </option>
+                                                                <option value="Saudi Arabia">
+                                                                    Saudi Arabia
+                                                                </option>
+                                                                <option value="United Arab Emirates">
+                                                                    United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
+                                                                </option>
+                                    
                                                 </select>
                                             </div>
                                         </div>
-                                    </fieldset>
-                                      <fieldset class="padding-5">
+                                        <br>
                                         <div class="row">
-                                            <div class="col-xs-12">
-                                                <label for="price-range">Age range</label>
-                                                <input type="text" class="span2" value="" data-slider-min="0" 
-                                                       data-slider-max="600" data-slider-step="5" 
-                                                       data-slider-value="[0,450]" id="price-range" ><br />
-                                                <b class="pull-left color">18</b> 
-                                                <b class="pull-right color">50</b>                                                
+                                            <div class="col-xs-6">
+
+                                                <select id="basic" class="form-control">
+                                                    <option class="form-control" selected disabled value="">Gender</option>
+                                                    <option class="form-control" value="male">Male</option>
+                                                    <option class="form-control" value="female">Female</option>
+                                                </select>
+                                            </div>
+                                        
+                                    
+                                        
+                                            <div class="col-xs-6">
+                                                <div class="form-group">
+                                                    <input name="up_age" onkeypress="return isNumberKey(event)" type="text" class="form-control" maxlength="2" minlength="2" required placeholder="Age" title="Please input your age">
+                                                </div>                                                
                                             </div>
                                                                                      
                                         </div>
@@ -60,13 +81,13 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Baby Care</label>
+                                                    <label> <input id="in-helper_requirement2-107" name="upi_skillsexp[]" type="checkbox" value="Baby Care"> Baby Care</label>
                                                 </div> 
                                             </div>
 
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox"> Child Care</label>
+                                                    <label> <input id="in-helper_requirement2-236" name="upi_skillsexp[]" type="checkbox" value="Child Care"> Child Care</label>
                                                 </div>
                                             </div>                                            
                                         </div>
@@ -76,27 +97,12 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Elder Care</label>
+                                                    <label> <input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>Teen Care </label>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    </fieldset>
-
-                                    <fieldset class="padding-5">
-                                        <div class="row">
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"> Cooking </label>
-                                                </div>
-                                            </div>  
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input type="checkbox"> Housekeeping</label>
+                                                    <label> <input id="in-helper_requirement2-109" nname="upi_skillsexp[]" type="checkbox" value="Teen Care">Teen Care </label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -106,12 +112,27 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input type="checkbox" checked>Driver</label>
+                                                    <label><input id="in-helper_requirement2-113" name="upi_skillsexp[]" type="checkbox" value="Housekeeping"> Housekeeping </label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input type="checkbox"> Pet Care </label>
+                                                    <label> <input id="in-helper_requirement2-237" name="upi_skillsexp[]" type="checkbox" value="Cooking"> Cooking</label>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="padding-5">
+                                        <div class="row">
+                                            <div class="col-xs-6"> 
+                                                <div class="checkbox">
+                                                    <label>  <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver"> Driver</label>
+                                                </div>
+                                            </div>  
+                                            <div class="col-xs-6"> 
+                                                <div class="checkbox">
+                                                    <label>  <input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care </label>
                                                 </div>
                                             </div>  
                                         </div>
