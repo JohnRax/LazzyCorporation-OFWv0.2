@@ -78,7 +78,7 @@
                                             <br>
                                             <div class='span9 btn-block no-padding'>
                                         ";?>
-                                            <button type="button" class='btn btn-large btn-block btn-primary1 full-width'
+                                            <button type="button" class='btn btn-large btn-block btn-primary full-width'
                                             onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
                                                     >View Full Profile</button>
                                             </div>
@@ -109,7 +109,7 @@
         </div>
 
 
-                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
                         <!-- /.feature title -->
                         <h2>Recent Job Post</h2>
                         <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
@@ -124,7 +124,7 @@
                                     <?php 
 
                                          require_once 'includes/connection.php';
-                                            $show_job_query="SELECT * FROM job_description where j_status=:status order by j_dateposted DESC  LIMIT 4";
+                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_dateposted DESC  LIMIT 4";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
@@ -149,7 +149,7 @@
                                                                 <br>
                                                                 <div class='span9 btn-block no-padding'>
                                                                   ";?>
-                                                            <button type="button" class="btn btn-large btn-block btn-primary1 full-width" 
+                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
                                                             onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
                                                                 >View Full Post</button>
                                                                 
@@ -174,7 +174,7 @@
         <div class="count-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
                         <!-- /.feature title -->
                         <h2>You can trust Us </h2> 
                     </div>

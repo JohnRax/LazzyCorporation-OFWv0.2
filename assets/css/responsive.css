@@ -837,8 +837,10 @@
 @media (max-width:480px){
 
     .page-title {
-        padding-top: 400px;
-       
+        padding-top: 600px
+    }
+      .page-title1 {
+        padding-top: 0px
     }
    
     .search-btn

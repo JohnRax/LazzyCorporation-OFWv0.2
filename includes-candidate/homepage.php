@@ -16,20 +16,20 @@
                                     <?php 
 
                                          require_once 'includes/connection.php';
-                                            $show_job_query="SELECT * FROM job_description where j_status=:status LIMIT 4";
+                                            $show_job_query="SELECT  *,  DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status LIMIT 4";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
                                                 echo " <div class='col-sm-6 col-md-3 p0'>
-                                                 <div class='box-two2 proerty-item'>
+                                                 <div class='box-two proerty-item'>
                                                    <div class='item-thumb'>
                                                         <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
                                                                 <h4>&nbsp;".$result['j_jobtitle']."</h4>
-                                                                <div class='dot-hr1'></div>
+                                                                <div class='dot-hr'></div>
                                                             <div class='item-entry overflow'>
-                                                            <div class='item-entry1'>
+                                                          
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                 <br>
                                                                 <h7><b>Location: </b> ".$result['j_country']."</h7>
@@ -37,12 +37,12 @@
                                                                 <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                 <br>
                                                                 <span class='pull-left'><b>Posted :</b> ".$result['j_dateposted']."</span>
-                                                              </div>
+                                                             
                                                                 <br>
                                                                 <br>
                                                                 <div class='span9 btn-block no-padding'>
                                                                   ";?>
-                                                            <button type="button" class="btn btn-large btn-block btn-primary1 full-width" 
+                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
                                                             onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
                                                                 >View Full Post</button>
                                                         </div>

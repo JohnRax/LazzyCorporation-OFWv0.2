@@ -237,9 +237,11 @@
                                                      <labeL>Religion *</label>
                                                         <select name="up_religion" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your religion">
                                                             
-                                                            <option  value="Single">Catholic</option>
-                                                            <option  value="Married">Muslim</option>
-                                                           
+                                                            <option  value="Roman Catholic">Roman Catholic</option>
+                                                            <option  value="Muslim">Muslim</option>
+                                                            <option  value="Born Again Christian">Born Again Christian</option>
+                                                            <option  value="Iglesia Ni Cristo">Iglesia Ni Cristo</option>
+                                                            <option  value="Baptist">Baptist</option>
                                                            
                                                         </select>
                                                     </div>
@@ -585,7 +587,7 @@
 
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input type="checkbox" /> <strong>Accept terms and conditions.</strong>
+                                                            <input type="checkbox" required /> <strong>Accept terms and conditions.</strong>
                                                         </label>
                                                     </div> 
 
@@ -600,6 +602,7 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
+                                        <input type='button' class='btn btn-next btn-primary' name='next' value='Next'/>
                                         <input type='submit' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
                                     </div>
 
