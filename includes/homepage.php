@@ -21,7 +21,7 @@
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
                         <!-- /.feature title -->
                         <h2>Recent Submit Resume</h2>
-                        <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
+                        <p>List of Awesome Oversea Workers here at LAZZY WORKS.</p>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
                 <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
                         <!-- /.feature title -->
                         <h2>Recent Job Post</h2>
-                        <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
+                        <p>List of Awesome Job Offeres here at LAZZY WORKS.</p>
                     </div>
         <div class="container">
             <div class="row ">
