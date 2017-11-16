@@ -237,9 +237,11 @@
                                                      <labeL>Religion *</label>
                                                         <select name="up_religion" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your religion">
                                                             
-                                                            <option  value="Single">Catholic</option>
-                                                            <option  value="Married">Muslim</option>
-                                                           
+                                                            <option  value="Roman Catholic">Roman Catholic</option>
+                                                            <option  value="Muslim">Muslim</option>
+                                                            <option  value="Born Again Christian">Born Again Christian</option>
+                                                            <option  value="Iglesia Ni Cristo">Iglesia Ni Cristo</option>
+                                                            <option  value="Baptist">Baptist</option>
                                                            
                                                         </select>
                                                     </div>
