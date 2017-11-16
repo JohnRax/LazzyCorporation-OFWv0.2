@@ -2,7 +2,7 @@
   <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
                         <!-- /.feature title -->
-                        <h2>Recent Submit Resume</h2>
+                        <h2>Recent Posted Jobs</h2>
                         <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
                     </div>
                 </div>
