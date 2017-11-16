@@ -185,7 +185,7 @@
                                                      
                                                     <div class="form-group">
                                                         <label>Job Description *</label>
-                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
+                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="j_description" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>
                                                     </div> 
                                                
