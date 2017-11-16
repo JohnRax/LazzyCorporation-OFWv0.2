@@ -2,7 +2,7 @@
   <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
                         <!-- /.feature title -->
-                        <h2>Recent Submit Resume</h2>
+                        <h2>Recent Posted Jobs</h2>
                         <p>Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies . </p>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
                                                 echo " <div class='col-sm-6 col-md-3 p0'>
-                                                 <div class='box-two proerty-item'>
+                                                 <div class='box-two2 proerty-item'>
                                                    <div class='item-thumb'>
                                                         <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
