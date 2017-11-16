@@ -34,8 +34,7 @@
                                 <ul class="footer-menu">
                                     <li><a href="index-employer.php?source=searchhelper">Find Candidate</a>  </li> 
                                     <li><a href="index-employer.php?source=postjob">Post a Job</a>  </li>  
-                                    <li><a href="index-employer.php?source=listpostjobs">Dashboard</a>  </li>  
-                                    <li><a href="contact.html">Contact us</a></li> 
+                                    <li><a href="index-employer.php?source=listpostjobs">Dashboard</a>  </li>
                                     <li><a href="index-candidate.php?source=logout">LOGOUT</a></li>
                                     <!-- <li><a href="faq.html">fqa</a>  </li>  -->
                                     <!-- <li><a href="faq.html">Terms </a>  </li>  -->
