@@ -87,7 +87,7 @@
             if (isset($_GET['id'])) 
             {
                 
-                $show_profile_query="SELECT * FROM job_description where j_id=:id";
+                $show_profile_query="SELECT *,  DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_id=:id";
                 $show_profile_stmt=$connection->prepare($show_profile_query);
                 $show_profile_stmt->execute(['id'=>$_GET['id']]);
                 $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
