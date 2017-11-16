@@ -80,6 +80,10 @@
             $check_logo_stmt->execute(['id'=>$_GET['id']]);
             $result=$check_logo_stmt->fetch(PDO::FETCH_ASSOC);
             $logo=$result['j_logo'];
+            if(empty($logo))
+            {
+                $logo="default.png";
+            }
         }
 
         if($user->update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
@@ -201,7 +205,7 @@
                                                      
                                                     <div class="form-group">
                                                         <label>Job Description *</label>
-                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"><?php echo $result['j_description'] ?></textarea> 
+                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="j_description" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"><?php echo $result['j_description'] ?></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>
                                                     </div> 
                                                     <label>Prefered Working Status *</label>

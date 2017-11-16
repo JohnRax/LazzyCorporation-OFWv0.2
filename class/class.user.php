@@ -333,8 +333,7 @@ class User
 																j_familytype=:familytype,
 																j_startdate=:startdate,
 																j_monthlysalary=:monthlysalary,
-																j_logo=:logo,
-																j_status=:status
+																j_logo=:logo
 															WHERE j_id=:id";
 				$update_jobpost_stmt=$this->connection->prepare($update_jobpost_query);
 				$update_jobpost_stmt->execute(['id'=>$id,

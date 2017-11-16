@@ -60,8 +60,11 @@
             $check_logo_stmt->execute(['id'=>$id]);
             $result=$check_logo_stmt->fetch(PDO::FETCH_ASSOC);
             $picture=$result['up_picture'];
+            if (empty($picture)) 
+            {
+                $picture="default.png"
+            }
         }
-        
         $user->update_profile_personal_information($id,$picture,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
 
 

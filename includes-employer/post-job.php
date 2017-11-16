@@ -76,6 +76,10 @@
         $logo=$_FILES['j_logo']['name'];
         $logo_temp=$_FILES['j_logo']['tmp_name'];
         move_uploaded_file($logo_temp, "assets/img/profilepicture/{$logo}");
+        if(empty($logo))
+        {
+            $logo="default.png";
+        }
         if($user->post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            

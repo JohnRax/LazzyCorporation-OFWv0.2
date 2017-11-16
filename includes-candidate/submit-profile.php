@@ -59,6 +59,10 @@
         $picture=$_FILES['up_picture']['name'];
         $picture_temp=$_FILES['up_picture']['tmp_name'];
         move_uploaded_file($picture_temp, "assets/img/profilepicture/{$picture}");
+        if(empty($picture))
+        {
+            $picture="default.png";
+        }
         $user->post_profile_personal_information($id,$picture,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
 
 
