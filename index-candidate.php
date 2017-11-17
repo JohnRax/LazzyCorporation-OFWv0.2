@@ -1,8 +1,7 @@
 <?php ob_start() ?>
 <?php include "includes-candidate/header.php" ?>
 <?php include "includes-candidate/navigation.php" ?>
-
-<?php 
+<?php
     
     include_once 'includes/connection.php';
     if(!$user->is_loggedin())
