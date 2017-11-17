@@ -19,30 +19,12 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <select name="country" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
-                                                                <option class="form-control" selected disabled value="">Search By Location</option>
-                                                                <option value="Philippines">
-                                                                    Philippines
-                                                                </option>
-                                                                <option value="Hong Kong">
-                                                                    Hong Kong
-                                                                </option>
-                                                                <option value="China">
-                                                                    China
-                                                                </option>
-                                                                <option value="Saudi Arabia">
-                                                                    Saudi Arabia
-                                                                </option>
-                                                                <option value="United Arab Emirates">
-                                                                    United Arab Emirates
-                                                                </option>
-                                                                <option value="Qatar">
-                                                                    Qatar
-                                                                </option>
-                                                                <option value="Taiwan">
-                                                                    Taiwan
-                                                                </option>
-                                    
+                                                <select name="country" id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
+                                                    <option class="form-control" selected disabled value="">Search By Location</option>
+                                                    <option>Hong kong</option>
+                                                    <option>Indonesia</option>
+                                                    <option>Philippines</option>
+                                                    <option>Japan</option>                                                 
                                                 </select>
                                             </div>
                                    
@@ -144,12 +126,12 @@
                             <ul class="sort-by-list">
                                 <li class="active">
                                     <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
-                                        Posted Date <i class="fa fa-sort-amount-asc"></i>					
+                                        Posted Date <i class="fa fa-sort-amount-asc"></i>                   
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="javascript:void(0);" class="order_by_price" data-orderby="property_price" data-order="DESC">
-                                        Posted Date <i class="fa fa-sort-numeric-desc"></i>						
+                                        Posted Date <i class="fa fa-sort-numeric-desc"></i>                     
                                     </a>
                                 </li>
                             </ul><!--/ .sort-by-list-->
@@ -173,10 +155,11 @@
                                         {
 
                                               require_once 'includes/connection.php';
-                                              $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id desc";
+                                              $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
                                               $show_job_stmt=$connection->prepare($show_job_query);
                                               $show_job_stmt->execute(['status'=>'Approved']);                        
 
+                                                $sample="true";
                                               if(!empty($_POST['skills'])  && !empty($_POST['employertype']))
                                               {         
                                                
@@ -189,7 +172,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description order by j_id desc";
+                                                    $show_job_query="SELECT * FROM job_description  ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -198,7 +181,7 @@
 
                                                       $new_arr = implode(" OR ", $new_arr);
                                                       $show_job_query.=" where ".$new_arr;
-                                                      $show_job_query.=" and j_status=:status and j_employertype=:employertype";
+                                                      $show_job_query.=" and j_status=:status and j_employertype=:employertype order by j_id DESC";
 
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute([ 'status'=>'Approved',
@@ -209,7 +192,7 @@
                                               {
                                                      
                                                     
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype order by j_id desc";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype  order by j_id DESC";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country'],'employertype'=>$_POST['employertype']]);
                                               }
@@ -225,7 +208,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description order by j_id desc ";
+                                                    $show_job_query="SELECT * FROM job_description   ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -234,7 +217,7 @@
 
                                                       $new_arr = implode(" OR ", $new_arr);
                                                       $show_job_query.=" where ".$new_arr;
-                                                      $show_job_query.=" and j_status=:status and j_country=:country";
+                                                      $show_job_query.=" and j_status=:status and j_country=:country order by j_id DESC";
 
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute([ 'status'=>'Approved',
@@ -245,7 +228,7 @@
                                               {
                                                     
                                                     
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country order by j_id desc";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country  order by j_id DESC";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country']]);
                                            
@@ -253,7 +236,7 @@
                                               else if(!empty($_POST['employertype']))
                                               {
                                                 
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_employertype=:employertype order by j_id desc";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_employertype=:employertype  order by j_id DESC";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','employertype'=>$_POST['employertype']]);
                                               }
@@ -269,7 +252,7 @@
                                                         $array_skills = explode(',',  $skills);
                                                     
                                                                
-                                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description order by j_id desc";
+                                                            $show_job_query="SELECT * FROM job_description ";
                                                             foreach($array_skills as $val)
                                                             {
                                                                 $arr = "'%{$val}%'";
@@ -278,7 +261,7 @@
 
                                                           $new_arr = implode(" OR ", $new_arr);
                                                           $show_job_query.=" where ".$new_arr;
-                                                          $show_job_query.=" and j_status=:status";
+                                                          $show_job_query.=" and j_status=:status  order by j_id DESC";
 
                                                          $show_job_stmt=$connection->prepare($show_job_query);
                                                          $show_job_stmt->execute(['status'=>'Approved']);
@@ -319,7 +302,7 @@
                                         else
                                         {
                                            
-                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id desc";
+                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
