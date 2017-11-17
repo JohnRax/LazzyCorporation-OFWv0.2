@@ -72,25 +72,43 @@
 
                 if(empty($result))
                 {
-                    if($user->apply_job($_GET['candidateid'],$_GET['id']))
-                    {
-                          echo"<script>
-                                alert('Successfully Applied! Please Wait for the Employer Reply. Thank you');
-                                closeWindow();
-                                function closeWindow() {
-                                    window.close();
-                                }
-                              </script>";
-                    }
+                        $check_profile_query="SELECT * FROM user_personal_information WHERE u_id=:uid";
+                        $check_profile_stmt=$connection->prepare($check_profile_query);
+                        $check_profile_stmt->execute(['uid'=>$_GET['candidateid']]);
+                        $result_profile = $check_profile_stmt->fetch(PDO::FETCH_ASSOC);
+                 
+                        if(!empty($result_profile))
+                        {
+                            if($user->apply_job($_GET['candidateid'],$_GET['id']))
+                            {
+                                   echo"<script>
+                                    alert('Successfully Applied! Please Wait for the Employer Reply. Thank you');
+                                    closeWindow();
+                                    function closeWindow() {
+                                        window.close();
+                                    }
+                                  </script>";
+                              }
+                        }
+                        else
+                        {
+                              echo "<script>
+                                        alert('Please Submit Profile first to Apply for this job. Thank you');
+                                        location.href = 'job-page.php?id=".$_GET['id']."';
+                                     </script>";
+                        }
+
                 }
                 else
                 {
-                   echo "<script>
-                                alert('Already Applied to This Job! Please Wait for the Employer Reply. Thank you');
-                                location.href = 'job-page.php?id=".$_GET['id']."';
+                         echo "<script>
+                               alert('Already Applied to This Job! Please Wait for the Employer Reply. Thank you');
+                               location.href = 'job-page.php?id=".$_GET['id']."';
                               </script>";
-                }
+                
+                }  
             }
+            
             if(isset($_GET['denied']))
             {
                   echo"<script>
