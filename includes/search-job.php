@@ -19,12 +19,30 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <select name="country" id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
-                                                    <option class="form-control" selected disabled value="">Search By Location</option>
-                                                    <option>Hong kong</option>
-                                                    <option>Indonesia</option>
-                                                    <option>Philippines</option>
-                                                    <option>Japan</option>                                                 
+                                                <select name="country" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
+                                                                <option class="form-control" selected disabled value="">Search By Location</option>
+                                                                <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
+                                                                <option value="Hong Kong">
+                                                                    Hong Kong
+                                                                </option>
+                                                                <option value="China">
+                                                                    China
+                                                                </option>
+                                                                <option value="Saudi Arabia">
+                                                                    Saudi Arabia
+                                                                </option>
+                                                                <option value="United Arab Emirates">
+                                                                    United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
+                                                                </option>
+                                    
                                                 </select>
                                             </div>
                                    
@@ -48,7 +66,7 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Baby Care">Baby Care</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Baby Care"> Baby Care</label>
                                                 </div> 
                                             </div>
 
@@ -63,12 +81,12 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Elder Care">Elder Care</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Elder Care"> Elder Care</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Teen Care">Teen Care </label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Teen Care"> Teen Care </label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -93,7 +111,7 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input  name="skills[]" type="checkbox" value="Driver">Driver</label>
+                                                    <label>  <input  name="skills[]" type="checkbox" value="Driver"> Driver</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
@@ -155,7 +173,7 @@
                                         {
 
                                               require_once 'includes/connection.php';
-                                              $show_job_query="SELECT * FROM job_description where j_status=:status";
+                                              $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id desc";
                                               $show_job_stmt=$connection->prepare($show_job_query);
                                               $show_job_stmt->execute(['status'=>'Approved']);                        
 
@@ -171,7 +189,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description";
+                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description order by j_id desc";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -191,7 +209,7 @@
                                               {
                                                      
                                                     
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype order by j_id desc";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country'],'employertype'=>$_POST['employertype']]);
                                               }
@@ -207,7 +225,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description ";
+                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description order by j_id desc ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -227,7 +245,7 @@
                                               {
                                                     
                                                     
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_country=:country";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country order by j_id desc";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country']]);
                                            
@@ -235,7 +253,7 @@
                                               else if(!empty($_POST['employertype']))
                                               {
                                                 
-                                                     $show_job_query="SELECT * FROM job_description where j_status=:status and j_employertype=:employertype";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_employertype=:employertype order by j_id desc";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','employertype'=>$_POST['employertype']]);
                                               }
@@ -251,7 +269,7 @@
                                                         $array_skills = explode(',',  $skills);
                                                     
                                                                
-                                                            $show_job_query="SELECT * FROM job_description";
+                                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description order by j_id desc";
                                                             foreach($array_skills as $val)
                                                             {
                                                                 $arr = "'%{$val}%'";
@@ -279,11 +297,11 @@
                                                                     
                                                                     <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                     <br>
-                                                                    <h7><b>Location:</b> ".$result['j_country']."</h7>
+                                                                    <h7><b>Location: </b> ".$result['j_country']."</h7>
                                                                     <br>
-                                                                    <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                                    <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                     <br>
-                                                                    <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                                    <span class='pull-left'><b>Posted: </b> ".$result['j_dateposted']."</span>
                                                                     <br>
                                                                     <br>
                                                                     <div class='span9 btn-block no-padding'>
@@ -301,7 +319,7 @@
                                         else
                                         {
                                            
-                                            $show_job_query="SELECT * FROM job_description where j_status=:status";
+                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id desc";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
@@ -317,11 +335,11 @@
                                                                 
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                 <br>
-                                                                <h7><b>Location:</b> ".$result['j_country']."</h7>
+                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
                                                                 <br>
-                                                                <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                 <br>
-                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                                <span class='pull-left'><b>Posted: </b> ".$result['j_dateposted']."</span>
                                                                 <br>
                                                                 <br>
                                                                 <div class='span9 btn-block no-padding'>

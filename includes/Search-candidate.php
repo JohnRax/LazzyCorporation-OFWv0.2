@@ -195,6 +195,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       b.up_picture,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -206,7 +207,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status";
+                                                        ON a.u_id = c.u_id where b.up_status=:status order by u_id desc";
                                 $show_profile_stmt=$connection->prepare($show_profile_query);
                                 $show_profile_stmt->execute(['status'=>'Approved']);
                               
@@ -221,7 +222,7 @@
                                                       b.up_age,
                                                       a.u_gender,
                                                       b.up_picture,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -233,7 +234,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_address=:address";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_address=:address order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender'],'address'=>$_POST['up_address']]);
                                 }
@@ -245,7 +246,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       a.u_gender,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_picture,
                                                       b.up_address,
                                                       b.up_nationality,
@@ -258,7 +259,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_age=:age";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_age=:age order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender'],'age'=>$_POST['up_age']]);
                                 }
@@ -277,7 +278,7 @@
                                                           a.u_lname,
                                                           b.up_age,
                                                           a.u_gender,
-                                                           b.up_dateposted,
+                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_picture,
                                                           b.up_address,
                                                           b.up_nationality,
@@ -290,7 +291,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id";
+                                                        ON a.u_id = c.u_id order by u_id desc";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -312,7 +313,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       a.u_gender,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_picture,
                                                       b.up_address,
                                                       b.up_nationality,
@@ -325,7 +326,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address and b.up_age=:age";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address and b.up_age=:age order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address'],'age'=>$_POST['up_age']]);
                                 }
@@ -344,7 +345,7 @@
                                                           b.up_age,
                                                           a.u_gender,
                                                           b.up_picture,
-                                                           b.up_dateposted,
+                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_address,
                                                           b.up_nationality,
                                                           b.up_category,
@@ -356,7 +357,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id";
+                                                        ON a.u_id = c.u_id order by u_id desc";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -385,7 +386,7 @@
                                                           a.u_lname,
                                                           b.up_age,
                                                           a.u_gender,
-                                                           b.up_dateposted,
+                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_picture,
                                                           b.up_address,
                                                           b.up_nationality,
@@ -398,7 +399,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id";
+                                                        ON a.u_id = c.u_id order by u_id desc";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -421,7 +422,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       a.u_gender,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_picture,
                                                       b.up_address,
                                                       b.up_nationality,
@@ -434,7 +435,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age and b.up_address=:address";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age and b.up_address=:address order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age'],'address'=>$_POST['up_address']]);
                                 }
@@ -447,7 +448,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       b.up_picture,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -459,7 +460,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address']]);
                                 }
@@ -471,7 +472,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       a.u_gender,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_picture,
                                                       b.up_address,
                                                       b.up_nationality,
@@ -484,7 +485,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender']]);
                                 }
@@ -497,7 +498,7 @@
                                                       b.up_age,
                                                       a.u_gender,
                                                       b.up_picture,
-                                                       b.up_dateposted,
+                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -509,7 +510,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age']]);
                                 }
@@ -529,7 +530,7 @@
                                                           b.up_age,
                                                           a.u_gender,
                                                           b.up_picture,
-                                                           b.up_dateposted,
+                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                           b.up_address,
                                                           b.up_nationality,
                                                           b.up_category,
@@ -541,7 +542,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id";
+                                                        ON a.u_id = c.u_id order by u_id desc ";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -570,18 +571,18 @@
                                                     
                                                     <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
                                                     <br>
-                                                    <h7><b>Location:</b>".$result['up_address']."</h7>
+                                                    <h7><b>Location:</b> ".$result['up_address']."</h7>
                                                     <br>
                                                    
-                                                    <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
+                                                    <h7><b>Nationality:</b> ".$result['up_nationality']."</h7>
                                                     <br>
-                                                    <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
+                                                    <h7><b>Years Of Experience:</b> ".$result['upi_yearsofexp']."</h7>
                                                     <br>
                                                     <h7><b>Job Expertises:</b></h7>
                                                     <br>
                                                     <h7>".$result['upi_skillsexp']."</h7>
                                                     <br>
-                                                    <span class='pull-left'><b>Posted:</b> 20 Minutes Ago</span>
+                                                    <span class='pull-left'><b>Posted: </b>".$result['up_dateposted']."</span>
                                                     <br>
                                                     <div class='span9 btn-block no-padding'>
                                                 ";?>
@@ -602,7 +603,7 @@
                                                       a.u_lname,
                                                       b.up_age,
                                                       b.up_picture,
-                                                      b.up_dateposted,
+                                                       DATE_FORMAT(b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                                       b.up_address,
                                                       b.up_nationality,
                                                       b.up_category,
@@ -614,7 +615,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status";
+                                                        ON a.u_id = c.u_id where b.up_status=:status order by u_id desc";
                             $show_profile_stmt=$connection->prepare($show_profile_query);
                             $show_profile_stmt->execute(['status'=>'Approved']);
                             while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
@@ -630,18 +631,18 @@
                                                     
                                                     <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
                                                     <br>
-                                                    <h7><b>Location:</b>".$result['up_address']."</h7>
+                                                    <h7><b>Location: </b>".$result['up_address']."</h7>
                                                     <br>
                                                    
-                                                    <h7><b>Nationality:</b>".$result['up_nationality']."</h7>
+                                                    <h7><b>Nationality: </b>".$result['up_nationality']."</h7>
                                                     <br>
-                                                    <h7><b>Years Of Experience:</b>".$result['upi_yearsofexp']."</h7>
+                                                    <h7><b>Years Of Experience: </b> ".$result['upi_yearsofexp']."</h7>
                                                     <br>
-                                                    <h7><b>Job Expertises:</b></h7>
+                                                    <h7><b>Job Expertises: </b></h7>
                                                     <br>
-                                                    <h7>".$result['upi_skillsexp']."</h7>
+                                                    <h7> ".$result['upi_skillsexp']."</h7>
                                                     <br>
-                                                    <span class='pull-left'><b>Posted:</b>".$result['up_dateposted']."</span>
+                                                    <span class='pull-left'><b>Posted: </b> ".$result['up_dateposted']."</span>
                                                     <br>
                                                     <div class='span9 btn-block no-padding'>
                                                 ";?>

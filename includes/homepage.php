@@ -8,7 +8,7 @@
                       <br>
                          <div class="button">
                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
-                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">FIND EMPLOYERS</button>
+                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND JOBS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                     </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
                         <!-- /.feature title -->
                         <h2>Recent Submit Resume</h2>
-                        <p>List of Awesome Oversea Workers here at LAZZY WORKS.</p>
+                        <p>List of Awesome Oversea Workers here at <strong>LAZZY WORKS</strong> .</p>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@
                                                JOIN user_personal_information AS b 
                                                 ON b.u_id = a.u_id 
                                                JOIN user_professional_information AS c 
-                                                ON a.u_id = c.u_id where b.up_status=:status limit 7";
+                                                ON a.u_id = c.u_id  where  b.up_status=:status order by a.u_id DESC  limit 7 ";
                     $show_profile_stmt=$connection->prepare($show_profile_query);
                     $show_profile_stmt->execute(['status'=>'Approved']);
                     while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
@@ -93,7 +93,7 @@
                             <div class="box-tree more-proerty text-center">
                                 <br><br> <br><br> <br><br> <br><br>
                                 <div class="more-entry overflow">
-                                    <h5><a >CAN'T FIND HELPERS? ? </a></h5>
+                                    <h5><a >CAN'T FIND HELPERS?  </a></h5>
                                     
                                     <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Helpers</button>
 
@@ -122,7 +122,7 @@
                                     <?php 
 
                                          require_once 'includes/connection.php';
-                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_dateposted DESC  LIMIT 4";
+                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id DESC  LIMIT 7";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
@@ -156,6 +156,18 @@
                                                 </div>
                                             </div>
                                 <?php } ?>
+                                <div class="col-sm-6 col-md-3 p0">
+                            <div class="box-tree more-proerty text-center">
+                                <br><br> <br><br> <br><br> <br><br>
+                                <div class="more-entry overflow">
+                                    <h5><a >CAN'T FIND JOBS?  </a></h5>
+                                    
+                                    <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Jobs</button>
+
+                                
+                                </div>
+                            </div>
+                        </div>
 
                                        
 
