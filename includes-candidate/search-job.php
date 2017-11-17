@@ -48,7 +48,7 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Baby Care">Baby Care</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Baby Care"> Baby Care</label>
                                                 </div> 
                                             </div>
 
@@ -63,12 +63,12 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Elder Care">Elder Care</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Elder Care"> Elder Care</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Teen Care">Teen Care </label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Teen Care"> Teen Care </label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -93,7 +93,7 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input  name="skills[]" type="checkbox" value="Driver">Driver</label>
+                                                    <label>  <input  name="skills[]" type="checkbox" value="Driver"> Driver</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
