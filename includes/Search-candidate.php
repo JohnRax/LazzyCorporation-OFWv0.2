@@ -553,7 +553,7 @@
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
                                                         $show_profile_query.=" and b.up_status=:status order by u_id desc ";
-                                                        echo $show_profile_query;
+                                                  
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(['status'=>'Approved']);
                                 }
