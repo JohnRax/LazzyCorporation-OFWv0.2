@@ -606,7 +606,7 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
-                                        <input type='button' class='btn btn-next btn-primary' name='next' value='Next'/>
+                                       
                                         <input type='submit' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
                                     </div>
 

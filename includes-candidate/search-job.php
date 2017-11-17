@@ -155,7 +155,7 @@
                                         {
 
                                               require_once 'includes/connection.php';
-                                              $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status";
+                                              $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
                                               $show_job_stmt=$connection->prepare($show_job_query);
                                               $show_job_stmt->execute(['status'=>'Approved']);                        
 
@@ -172,7 +172,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description";
+                                                    $show_job_query="SELECT * FROM job_description  order by j_id DESC";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -192,7 +192,7 @@
                                               {
                                                      
                                                     
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype  order by j_id DESC";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country'],'employertype'=>$_POST['employertype']]);
                                               }
@@ -208,7 +208,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description ";
+                                                    $show_job_query="SELECT * FROM job_description  order by j_id DESC ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -228,7 +228,7 @@
                                               {
                                                     
                                                     
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country  order by j_id DESC";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','country'=>$_POST['country']]);
                                            
@@ -236,7 +236,7 @@
                                               else if(!empty($_POST['employertype']))
                                               {
                                                 
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_employertype=:employertype";
+                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_employertype=:employertype  order by j_id DESC";
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute(['status'=>'Approved','employertype'=>$_POST['employertype']]);
                                               }
@@ -252,7 +252,7 @@
                                                         $array_skills = explode(',',  $skills);
                                                     
                                                                
-                                                            $show_job_query="SELECT * FROM job_description";
+                                                            $show_job_query="SELECT * FROM job_description  order by j_id DESC";
                                                             foreach($array_skills as $val)
                                                             {
                                                                 $arr = "'%{$val}%'";
@@ -302,7 +302,7 @@
                                         else
                                         {
                                            
-                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status";
+                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))

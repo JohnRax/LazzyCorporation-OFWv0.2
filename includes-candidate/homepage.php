@@ -16,7 +16,7 @@
                                     <?php 
 
                                          require_once 'includes/connection.php';
-                                            $show_job_query="SELECT  *,  DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status LIMIT 4";
+                                            $show_job_query="SELECT  *,  DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id DESC  limit 7";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(['status'=>'Approved']);
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
@@ -50,10 +50,18 @@
                                                 </div>
                                             </div>
                                 <?php } ?>
+                                <div class="col-sm-6 col-md-3 p0">
+                            <div class="box-tree more-proerty text-center">
+                                <br><br> <br><br> <br><br> <br><br>
+                                <div class="more-entry overflow">
+                                    <h5><a >CAN'T FIND JOBS? </a></h5>
+                                    
+                                    <button onclick="location.href='index-candidate.php?source=searchfindjob'" class="btn border-btn more-black" value="All properties">All Jobs</button>
 
-                                       
-
-
+                                
+                                </div>
+                            </div>
+                        </div>
                                             </div>
                                         </div>                         
                                     </div>     
