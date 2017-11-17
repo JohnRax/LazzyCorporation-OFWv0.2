@@ -172,7 +172,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description  order by j_id DESC";
+                                                    $show_job_query="SELECT * FROM job_description  ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -181,7 +181,7 @@
 
                                                       $new_arr = implode(" OR ", $new_arr);
                                                       $show_job_query.=" where ".$new_arr;
-                                                      $show_job_query.=" and j_status=:status and j_employertype=:employertype";
+                                                      $show_job_query.=" and j_status=:status and j_employertype=:employertype order by j_id DESC";
 
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute([ 'status'=>'Approved',
@@ -208,7 +208,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description  order by j_id DESC ";
+                                                    $show_job_query="SELECT * FROM job_description   ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -217,7 +217,7 @@
 
                                                       $new_arr = implode(" OR ", $new_arr);
                                                       $show_job_query.=" where ".$new_arr;
-                                                      $show_job_query.=" and j_status=:status and j_country=:country";
+                                                      $show_job_query.=" and j_status=:status and j_country=:country order by j_id DESC";
 
                                                      $show_job_stmt=$connection->prepare($show_job_query);
                                                      $show_job_stmt->execute([ 'status'=>'Approved',
@@ -252,7 +252,7 @@
                                                         $array_skills = explode(',',  $skills);
                                                     
                                                                
-                                                            $show_job_query="SELECT * FROM job_description  order by j_id DESC";
+                                                            $show_job_query="SELECT * FROM job_description ";
                                                             foreach($array_skills as $val)
                                                             {
                                                                 $arr = "'%{$val}%'";
@@ -261,7 +261,7 @@
 
                                                           $new_arr = implode(" OR ", $new_arr);
                                                           $show_job_query.=" where ".$new_arr;
-                                                          $show_job_query.=" and j_status=:status";
+                                                          $show_job_query.=" and j_status=:status  order by j_id DESC";
 
                                                          $show_job_stmt=$connection->prepare($show_job_query);
                                                          $show_job_stmt->execute(['status'=>'Approved']);
