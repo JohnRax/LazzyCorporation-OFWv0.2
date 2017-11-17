@@ -94,7 +94,7 @@
                         {
                               echo "<script>
                                         alert('Please Submit Profile first to Apply for this job. Thank you');
-                                        location.href = 'job-page.php?id=".$_GET['id']."';
+                                        location.href = '../index-candidate.php?source=addnew';
                                      </script>";
                         }
 

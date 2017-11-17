@@ -198,7 +198,7 @@
                                         <span class="pe-7s-users"></span>
                                     </div>
                                     <div class="chart" data-percent="5000">
-                                        <h2 class="percent" id="counter">0</h2>
+                                        <h2 class="percent" >0</h2>
                                         <h5>SUBMITTED PROFILE </h5>
                                     </div>
                                 </div>
@@ -210,7 +210,7 @@
                                         <span class="pe-7s-flag"></span>
                                     </div>
                                     <div class="chart" data-percent="120">
-                                        <h2 class="percent" id="counter2">0</h2>
+                                        <h2 class="percent" id="">0</h2>
                                         <h5>POST JOBS </h5>
                                     </div>
                                 </div> 
@@ -221,7 +221,7 @@
                                         <span class="pe-7s-graph2"></span>
                                     </div>
                                     <div class="chart" data-percent="5000">
-                                        <h2 class="percent"  id="counter3">5000</h2>
+                                        <h2 class="percent"  id="">5000</h2>
                                         <h5>HELPERS ABROAD</h5>
                                     </div>
                                 </div> 
