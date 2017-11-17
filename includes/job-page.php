@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php   ob_start() ?>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -43,7 +43,7 @@
         </div>
         
         <?php 
-            session_start();
+          
             $host = 'localhost';
             $user = 'root';
             $password = '';
@@ -293,6 +293,7 @@
                            
                              
                                    <?php
+                                      session_start();
                                       if(isset($_SESSION['user_session'])) 
                                          {
                                               if(isset($_SESSION['user_type']))
