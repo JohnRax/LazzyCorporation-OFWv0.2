@@ -291,7 +291,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id order by u_id desc";
+                                                        ON a.u_id = c.u_id ";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -301,7 +301,7 @@
 
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and b.up_age=:age ";
+                                                        $show_profile_query.=" and b.up_status=:status and b.up_age=:age order by u_id desc";
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age']]);
                                 }
@@ -367,7 +367,7 @@
 
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and b.up_address=:address";
+                                                        $show_profile_query.=" and b.up_status=:status and b.up_address=:address" ;
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address']]);
                                 }
@@ -399,7 +399,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id order by u_id desc";
+                                                        ON a.u_id = c.u_id ";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -409,7 +409,7 @@
 
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and a.u_gender=:gender";
+                                                        $show_profile_query.=" and b.up_status=:status and a.u_gender=:gender order by u_id desc";
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender']]);
 
@@ -542,7 +542,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id order by u_id desc ";
+                                                        ON a.u_id = c.u_id";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -552,7 +552,8 @@
 
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status";
+                                                        $show_profile_query.=" and b.up_status=:status order by u_id desc ";
+                                                        echo $show_profile_query;
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(['status'=>'Approved']);
                                 }
