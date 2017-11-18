@@ -13,51 +13,20 @@ class User
 		{
 
 
+			
+			$new_password=password_hash($password,PASSWORD_DEFAULT);
+			$register_query="INSERT INTO user (u_password, u_email,u_mobile, u_type) 
+						  VALUES(:password,:email,:mobile,:type)";
+			$register_stmt=$this->connection->prepare($register_query);
+			$register_stmt->execute(['password'=>$new_password,'email'=>$email, 'mobile'=>$mobile,'type'=> $type]);
+			$id=$this->connection->lastInsertId();
 
+			$details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender)
+							VALUES (:id,:lastname,:firstname,:gender)";
+			$details_stmt=$this->connection->prepare($details_query);
+			$details_stmt->execute(['id'=> $id,'lastname'=>$lastname,'firstname'=>$firstname,'gender'=>$gender]);
 
-			$insert_user_query="INSERT INTO user (u_password, u_email,u_mobile, u_type) 
-										VALUES(
-										    '$password',
-										    '$email',
-										    '$mobile',
-										    '$role'
-										  )";
-				if(mysqli_query($connection,$insert_user_query))
-				{
-					
-					$id=mysqli_insert_id($connection);				
-					$insert_userdetails_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender) 
-											VALUES(
-											    '$id',
-											    '$lastname',
-											    '$firstname',
-											    '$gender'
-											  )";
-					$insert_userdetails_result=mysqli_query($connection,$insert_userdetails_query);
-					if(!$insert_userdetails_result)
-					{
-						 die("no result".mysqli_error($connection));
-					}
-					
-
-
-
-
-
-
-			// $new_password=password_hash($password,PASSWORD_DEFAULT);
-			// $register_query="INSERT INTO user (u_password, u_email,u_mobile, u_type) 
-			// 			  VALUES(:password,:email,:mobile,:type)";
-			// $register_stmt=$this->connection->prepare($register_query);
-			// $register_stmt->execute(['password'=>$new_password,'email'=>$email, 'mobile'=>$mobile,'type'=> $type]);
-			// $id=$this->connection->lastInsertId();
-
-			// $details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender)
-			// 				VALUES (:id,:lastname,:firstname,:gender)";
-			// $details_stmt=$this->connection->prepare($details_query);
-			// $details_stmt->execute(['id'=> $id,'lastname'=>$lastname,'firstname'=>$firstname,'gender'=>$gender]);
-
-			// return $type;
+			return $type;
 		}
 		catch(PDOException $e) 
 		{
