@@ -4,7 +4,7 @@
 	$host = 'lazycompanydb.comfhxnalolh.ap-southeast-1.rds.amazonaws.com';
 	$user = 'dblazyc0mpAnY';
 	$password = 'lazYPr0p3rt1eS';
-	$dbname='dblazyc0mpAnY';
+	$dbname='lazycorporation-ofwdatabase';
 	try 
 	{
 	    $dsn = 'mysql:host='.$host.';dbname='.$dbname;
