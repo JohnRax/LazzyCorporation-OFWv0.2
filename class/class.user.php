@@ -15,7 +15,7 @@ class User
 			$register_query="INSERT INTO user (u_password, u_email,u_mobile, u_type) 
 						  VALUES(:password,:email,:mobile,:type)";
 			$register_stmt=$this->connection->prepare($register_query);
-			$register_stmt->execute([':password'=>$new_password, 'email'=>$email, 'mobile'=>$mobile,'type'=> $type]);
+			$register_stmt->execute(['password'=>$new_password, 'email'=>$email, 'mobile'=>$mobile,'type'=> $type]);
 			$id=$this->connection->lastInsertId();
 
 			$details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender)
