@@ -36,7 +36,7 @@
                                                JOIN user_professional_information AS c 
                                                 ON a.u_id = c.u_id where b.up_status=:status limit 7";
                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                    $show_profile_stmt->execute(['status'=>'Approved']);
+                    $show_profile_stmt->execute(array(':status'=>'Approved'));
                     while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                     {
                         echo " <div class='col-sm-6 col-md-3 p0'>

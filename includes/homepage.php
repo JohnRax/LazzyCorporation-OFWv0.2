@@ -50,7 +50,7 @@
                                                JOIN user_professional_information AS c 
                                                 ON a.u_id = c.u_id  where  b.up_status=:status order by a.u_id DESC  limit 7 ";
                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                    $show_profile_stmt->execute(['status'=>'Approved']);
+                    $show_profile_stmt->execute(array(':status'=>'Approved'));
                     while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                     {
                         echo " <div class='col-sm-6 col-md-3 p0'>
@@ -124,7 +124,7 @@
                                          require_once 'includes/connection.php';
                                             $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id DESC  LIMIT 7";
                                              $show_job_stmt=$connection->prepare($show_job_query);
-                                             $show_job_stmt->execute(['status'=>'Approved']);
+                                             $show_job_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
                                                 echo " <div class='col-sm-6 col-md-3 p0'>
@@ -200,7 +200,7 @@
                                                 FROM
                                                   `job_description` ";
                                              $show_jobquantity_stmt=$connection->prepare($show_jobquantity_query);
-                                             $show_jobquantity_stmt->execute(['status'=>'Approved']);
+                                             $show_jobquantity_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_jobquantity_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
                                                 echo " <div class='col-sm-6 col-xs-6'>
@@ -226,7 +226,7 @@
                                                     FROM
                                                     `user_personal_information`";
                                              $show_jobquantity_stmt=$connection->prepare($show_jobquantity_query);
-                                             $show_jobquantity_stmt->execute(['status'=>'Approved']);
+                                             $show_jobquantity_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_jobquantity_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
                                                 echo " <div class='col-sm-6 col-xs-6'>

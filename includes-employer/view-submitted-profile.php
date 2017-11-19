@@ -31,7 +31,7 @@
                                 {
                                     $show_jobs_query="SELECT * FROM job_description WHERE j_id=:id";
                                     $show_jobs_stmt=$connection->prepare($show_jobs_query);
-                                    $show_jobs_stmt->execute(['id'=>$_GET['id']]);
+                                    $show_jobs_stmt->execute(array(':id'=>$_GET['id']));
                                     $result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC);
                                 
                                        echo "<div class='col-md-12 p0'>
@@ -152,7 +152,7 @@
                                                JOIN user_professional_information AS c 
                                                 ON a.u_id = c.u_id where a.u_id=:id";
                         $show_profile_stmt=$connection->prepare($show_profile_query);
-                        $show_profile_stmt->execute(['id'=>$result_applied['u_id']]);
+                        $show_profile_stmt->execute(array(':id'=>$result_applied['u_id']));
                         while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                         {
                            

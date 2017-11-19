@@ -66,15 +66,15 @@
 
                 $check_applied_query="SELECT * FROM job_submitted where j_id=:jid and u_id=:uid";
                 $check_applied_stmt=$connection->prepare($check_applied_query);
-                $check_applied_stmt->execute(['jid'=>$_GET['id'],
-                                              'uid'=>$_GET['candidateid']]);
+                $check_applied_stmt->execute(array(':jid'=>$_GET['id'],
+                                              ':uid'=>$_GET['candidateid']));
                 $result = $check_applied_stmt->fetch(PDO::FETCH_ASSOC);
 
                 if(empty($result))
                 {
                         $check_profile_query="SELECT * FROM user_personal_information WHERE u_id=:uid";
                         $check_profile_stmt=$connection->prepare($check_profile_query);
-                        $check_profile_stmt->execute(['uid'=>$_GET['candidateid']]);
+                        $check_profile_stmt->execute(array(':uid'=>$_GET['candidateid']));
                         $result_profile = $check_profile_stmt->fetch(PDO::FETCH_ASSOC);
                  
                         if(!empty($result_profile))
@@ -124,7 +124,7 @@
                 
                 $show_profile_query="SELECT *,  DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_id=:id";
                 $show_profile_stmt=$connection->prepare($show_profile_query);
-                $show_profile_stmt->execute(['id'=>$_GET['id']]);
+                $show_profile_stmt->execute(array(':id'=>$_GET['id']));
                 $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
                
                 

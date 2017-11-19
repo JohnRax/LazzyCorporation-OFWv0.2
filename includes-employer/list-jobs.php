@@ -32,7 +32,7 @@
                                 }
                                 $show_jobs_query="SELECT * FROM job_description WHERE u_id=:id";
                                 $show_jobs_stmt=$connection->prepare($show_jobs_query);
-                                $show_jobs_stmt->execute(['id'=>$_SESSION['user_session']]);
+                                $show_jobs_stmt->execute(array(':id'=>$_SESSION['user_session']));
                                 while($result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC))
                                 {
                                    echo "<div class='col-md-4 p0'>

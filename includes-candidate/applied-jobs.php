@@ -36,7 +36,7 @@
 
                                 $check_applied_query="SELECT * from job_submitted WHERE u_id=:id";
                                 $check_applied_stmt=$connection->prepare($check_applied_query);
-                                $check_applied_stmt->execute(['id'=>$_SESSION['user_session']]);
+                                $check_applied_stmt->execute(array(':id'=>$_SESSION['user_session']));
                                 while($result = $check_applied_stmt->fetch(PDO::FETCH_ASSOC))
                                 {
 
@@ -44,7 +44,7 @@
                         
                                     $show_jobs_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description WHERE j_id=:id";
                                     $show_jobs_stmt=$connection->prepare($show_jobs_query);
-                                    $show_jobs_stmt->execute(['id'=>$result['j_id']]);
+                                    $show_jobs_stmt->execute(array(':id'=>$result['j_id']));
                                     while($result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC))
                                     {
                                        echo "<div class='col-md-4 p0'>

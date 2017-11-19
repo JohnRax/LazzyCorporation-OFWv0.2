@@ -44,9 +44,9 @@
         
         <?php 
                 $host = 'lazycompanydb.comfhxnalolh.ap-southeast-1.rds.amazonaws.com';
-    $user = 'dblazyc0mpAnY';
-    $password = 'lazYPr0p3rt1eS';
-    $dbname='lazycorporation-ofwdatabase';
+                $user = 'dblazyc0mpAnY';
+                $password = 'lazYPr0p3rt1eS';
+                $dbname='lazycorporation-ofwdatabase';
                 try 
                 {
                     $dsn = 'mysql:host='.$host.';dbname='.$dbname;
@@ -71,7 +71,7 @@
                                     JOIN user_question AS e
                                     where a.u_id=:id";
                 $show_profile_stmt=$connection->prepare($show_profile_query);
-                $show_profile_stmt->execute(['id'=>$_GET['id']]);
+                $show_profile_stmt->execute(array(':id'=>$_GET['id']));
                 $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
 
                 

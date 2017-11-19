@@ -24,7 +24,7 @@
         {
             $check_query="SELECT * FROM user WHERE u_email=:email";
             $check_stmt=$connection->prepare($check_query);
-            $check_stmt->execute(['email'=>$email]);
+            $check_stmt->execute(array(':email'=>$email));
             $check_email=$check_stmt->fetch(PDO::FETCH_ASSOC);
             if($check_email['u_email']==$email)
             {
@@ -35,7 +35,7 @@
             {
                  $check_query="SELECT * FROM user WHERE u_mobile=:mobile";
                  $check_stmt=$connection->prepare($check_query);
-                 $check_stmt->execute(['mobile'=>$mobile]);
+                 $check_stmt->execute(array(':mobile'=>$mobile));
                  $check_mobile=$check_stmt->fetch(PDO::FETCH_ASSOC);
                  if ($check_mobile['u_mobile']==$mobile) 
                  {

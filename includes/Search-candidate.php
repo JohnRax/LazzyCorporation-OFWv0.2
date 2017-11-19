@@ -209,7 +209,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status order by u_id desc";
                                 $show_profile_stmt=$connection->prepare($show_profile_query);
-                                $show_profile_stmt->execute(['status'=>'Approved']);
+                                $show_profile_stmt->execute(array(':status'=>'Approved'));
                               
 
                                 if(!empty($_POST['up_address']) && !empty($_POST['gender']))
@@ -236,7 +236,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_address=:address order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender'],'address'=>$_POST['up_address']]);
+                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender'],':address'=>$_POST['up_address']));
                                 }
                                 else if(!empty($_POST['up_age']) && !empty($_POST['gender']))
                                 {
@@ -261,7 +261,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_age=:age order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender'],'age'=>$_POST['up_age']]);
+                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender'],':age'=>$_POST['up_age']));
                                 }
                                 else if(!empty($_POST['up_age']) && !empty($_POST['upi_skillsexp']))
                                 {
@@ -303,7 +303,7 @@
                                                         $show_profile_query.=" where ".$new_arr;
                                                         $show_profile_query.=" and b.up_status=:status and b.up_age=:age order by u_id desc";
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age']]);
+                                                        $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age']));
                                 }
                                 else if(!empty($_POST['up_address']) && !empty($_POST['up_age']))
                                 {
@@ -328,7 +328,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address and b.up_age=:age order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address'],'age'=>$_POST['up_age']]);
+                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address'],':age'=>$_POST['up_age']));
                                 }
                                 else if(!empty($_POST['up_address']) && !empty($_POST['upi_skillsexp']))
                                 {
@@ -369,7 +369,7 @@
                                                         $show_profile_query.=" where ".$new_arr;
                                                         $show_profile_query.=" and b.up_status=:status and b.up_address=:address" ;
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address']]);
+                                                        $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address']));
                                 }
                                 else if(!empty($_POST['gender']) && !empty($_POST['upi_skillsexp']))
                                 {
@@ -411,7 +411,7 @@
                                                         $show_profile_query.=" where ".$new_arr;
                                                         $show_profile_query.=" and b.up_status=:status and a.u_gender=:gender order by u_id desc";
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender']]);
+                                                        $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender']));
 
                                 }
                                 else if(!empty($_POST['up_address']) && !empty($_POST['up_age']))
@@ -437,7 +437,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age and b.up_address=:address order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age'],'address'=>$_POST['up_address']]);
+                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age'],':address'=>$_POST['up_address']));
                                 }
                                 else if(!empty($_POST['up_address']))
                                 {
@@ -462,7 +462,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(['status'=>'Approved','address'=>$_POST['up_address']]);
+                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address']));
                                 }
                                 else if(!empty($_POST['gender']))
                                 {
@@ -487,7 +487,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(['status'=>'Approved','gender'=>$_POST['gender']]);
+                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender']));
                                 }
                                 else if(!empty($_POST['up_age']))
                                 {
@@ -512,7 +512,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age order by u_id desc";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(['status'=>'Approved','age'=>$_POST['up_age']]);
+                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age']));
                                 }
                                 else if(!empty($_POST['upi_skillsexp']))
                                 {
@@ -555,7 +555,7 @@
                                                         $show_profile_query.=" and b.up_status=:status order by u_id desc ";
                                                   
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(['status'=>'Approved']);
+                                                        $show_profile_stmt->execute(array(':status'=>'Approved']));
                                 }
                                
 
@@ -618,7 +618,7 @@
                                                        JOIN user_professional_information AS c 
                                                         ON a.u_id = c.u_id where b.up_status=:status order by u_id desc";
                             $show_profile_stmt=$connection->prepare($show_profile_query);
-                            $show_profile_stmt->execute(['status'=>'Approved']);
+                            $show_profile_stmt->execute(array(':status'=>'Approved']));
                             while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                             {
                                 echo " <div class='col-sm-6 col-md-4 p0'>

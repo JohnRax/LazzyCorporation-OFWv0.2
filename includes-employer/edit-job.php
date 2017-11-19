@@ -98,7 +98,7 @@
     {
         $show_job_query="SELECT * FROM job_description WHERE j_id=:id";
         $show_job_stmt=$connection->prepare($show_job_query);
-        $show_job_stmt->execute(['id'=>$_GET['id']]);
+        $show_job_stmt->execute(array(':id'=>$_GET['id']));
         $result = $show_job_stmt->fetch(PDO::FETCH_ASSOC);
 
    

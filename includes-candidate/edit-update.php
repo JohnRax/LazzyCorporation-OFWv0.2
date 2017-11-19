@@ -57,7 +57,7 @@
         {
             $check_logo_query="SELECT * FROM user_personal_information WHERE u_id=:id";
             $check_logo_stmt=$connection->prepare($check_logo_query);
-            $check_logo_stmt->execute(['id'=>$id]);
+            $check_logo_stmt->execute(array(':id'=>$id]));
             $result=$check_logo_stmt->fetch(PDO::FETCH_ASSOC);
             $picture=$result['up_picture'];
             if (empty($picture)) 
@@ -132,7 +132,7 @@
                                ON c.u_id =d.u_id
                             WHERE a.u_id = :id ";
     $show_profile_stmt=$connection->prepare($show_profile_query);
-    $show_profile_stmt->execute(['id'=>$_SESSION['user_session']]);
+    $show_profile_stmt->execute(array(':id'=>$_SESSION['user_session']));
     $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
     
 

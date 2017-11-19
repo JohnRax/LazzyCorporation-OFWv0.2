@@ -40,7 +40,7 @@ class User
 		{
 			$login_query="SELECT * FROM user WHERE u_email=:email or u_mobile=:email";
 			$login_stmt=$this->connection->prepare($login_query);
-			$login_stmt->execute(['email'=>$email]);
+			$login_stmt->execute(array(':email'=>$email));
 			$userRow=$login_stmt->fetch(PDO::FETCH_ASSOC);
 		
 			if($login_stmt->rowCount() > 0)
@@ -74,20 +74,20 @@ class User
 			VALUES(:id,:picture,:category,:email,:address,:mobile,:telephone,:nationality,:religion,:age,:marital,:education,:languages,:status)";
 
 			$insert_personal_stmt=$this->connection->prepare($insert_personal_query);
-			$insert_personal_stmt->execute(['id'=>$id,
-											'picture'=>$picture,
-											'category'=>$category,
-											'email'=>$email,
-											'address'=>$location,
-											'mobile'=>$mobile,
-											'telephone'=>$telephone,
-											'nationality'=>$nationality,
-											'religion'=>$religion,
-											'age'=>$age,
-											'marital'=>$marital,
-											'education'=>$education,
-											'languages'=>$languages,
-											'status'=>'Unapproved']);
+			$insert_personal_stmt->execute(array(':id'=>$id,
+											':picture'=>$picture,
+											':category'=>$category,
+											':email'=>$email,
+											':address'=>$location,
+											':mobile'=>$mobile,
+											':telephone'=>$telephone,
+											':nationality'=>$nationality,
+											':religion'=>$religion,
+											':age'=>$age,
+											':marital'=>$marital,
+											':education'=>$education,
+											':languages'=>$languages,
+											':status'=>'Unapproved'));
 			return $insert_personal_stmt;
 		}
 		catch(PDOException $e)
@@ -104,15 +104,15 @@ class User
 			$insert_professional_query="INSERT INTO user_professional_information(u_id,upi_preferedworklocation,upi_yearsofexp,upi_expsummary,upi_cookingskills,upi_skillsexp,upi_otherskills,upi_availability,upi_status)
 			VALUES(:id,:preferedworklocation,:yearsofexp,:expsummary,:cookingskills,:skills,:otherskills,:availability,:status)";
 			$insert_professional_stmt=$this->connection->prepare($insert_professional_query);
-			$insert_professional_stmt->execute(['id'=>$id,
-												'preferedworklocation'=>$preferedworklocation,
-												'yearsofexp'=>$yearsofexp,
-												'expsummary'=>$expsummary,
-												'skills'=>$skills,
-												'cookingskills'=>$cookingskills,
-												'otherskills'=>$otherskills,
-												'availability'=>$availability,
-												'status'=>'Unapproved']);
+			$insert_professional_stmt->execute(array(':id'=>$id,
+												':preferedworklocation'=>$preferedworklocation,
+												':yearsofexp'=>$yearsofexp,
+												':expsummary'=>$expsummary,
+												':skills'=>$skills,
+												':cookingskills'=>$cookingskills,
+												':otherskills'=>$otherskills,
+												':availability'=>$availability,
+												':status'=>'Unapproved'));
 			return $insert_professional_stmt;
 
 		}
@@ -129,17 +129,17 @@ class User
 			$insert_question_query="INSERT INTO user_question(u_id,uq_1,uq_2,uq_3,uq_4,uq_5,uq_6,uq_7,uq_8,uq_9,uq_10)
 			VALUES(:id,:q1,:q2,:q3,:q4,:q5,:q6,:q7,:q8,:q9,:q10)";
 			$insert_question_stmt=$this->connection->prepare($insert_question_query);
-			$insert_question_stmt->execute(['id'=>$id,
-											'q1'=>$ans1,
-											'q2'=>$ans2,
-											'q3'=>$ans3,
-											'q4'=>$ans4,
-											'q5'=>$ans5,
-											'q6'=>$ans6,
-											'q7'=>$ans7,
-											'q8'=>$ans8,
-											'q9'=>$ans9,
-											'q10'=>$ans10]);
+			$insert_question_stmt->execute(array(':id'=>$id,
+											':q1'=>$ans1,
+											':q2'=>$ans2,
+											':q3'=>$ans3,
+											':q4'=>$ans4,
+											':q5'=>$ans5,
+											':q6'=>$ans6,
+											':q7'=>$ans7,
+											':q8'=>$ans8,
+											':q9'=>$ans9,
+											':q10'=>$ans10));
 			return $insert_question_stmt;
 		}
 		catch(PDOException $e)
@@ -168,19 +168,19 @@ class User
 																		up_languages=:languages 
 																	WHERE u_id=:id";
 		    $insert_personal_stmt=$this->connection->prepare($insert_personal_query);
-			$insert_personal_stmt->execute(['id'=>$id,
-											'picture'=>$picture,
-											'category'=>$category,
-											'email'=>$email,
-											'address'=>$location,
-											'mobile'=>$mobile,
-											'telephone'=>$telephone,
-											'nationality'=>$nationality,
-											'religion'=>$religion,
-											'age'=>$age,
-											'marital'=>$marital,
-											'education'=>$education,
-											'languages'=>$languages]);
+			$insert_personal_stmt->execute(array(':id'=>$id,
+											':picture'=>$picture,
+											':category'=>$category,
+											':email'=>$email,
+											':address'=>$location,
+											':mobile'=>$mobile,
+											':telephone'=>$telephone,
+											':nationality'=>$nationality,
+											':religion'=>$religion,
+											':age'=>$age,
+											':marital'=>$marital,
+											':education'=>$education,
+											':languages'=>$languages));
 			return $insert_personal_stmt;
 		}
 		catch(PDOException $e)
@@ -200,20 +200,16 @@ class User
 																				upi_skillsexp=:skills,
 																				upi_otherskills=:otherskills,
 																				upi_availability=:availability
-																			  WHERE u_id=:id"
-																			 ;
-
-
-		
+																			  WHERE u_id=:id";
 			$insert_professional_stmt=$this->connection->prepare($insert_professional_query);
-			$insert_professional_stmt->execute(['id'=>$id,
-												'preferedworklocation'=>$preferedworklocation,
-												'yearsofexp'=>$yearsofexp,
-												'expsummary'=>$expsummary,
-												'skills'=>$skills,
-												'cookingskills'=>$cookingskills,
-												'otherskills'=>$otherskills,
-												'availability'=>$availability]);
+			$insert_professional_stmt->execute(array(':id'=>$id,
+												':preferedworklocation'=>$preferedworklocation,
+												':yearsofexp'=>$yearsofexp,
+												':expsummary'=>$expsummary,
+												':skills'=>$skills,
+												':cookingskills'=>$cookingskills,
+												':otherskills'=>$otherskills,
+												':availability'=>$availability));
 			return $insert_professional_stmt;
 
 		}
@@ -239,17 +235,17 @@ class User
 															uq_10=:q10 
 															WHERE u_id=:id";
 			$insert_question_stmt=$this->connection->prepare($insert_question_query);
-			$insert_question_stmt->execute(['id'=>$id,
-											'q1'=>$ans1,
-											'q2'=>$ans2,
-											'q3'=>$ans3,
-											'q4'=>$ans4,
-											'q5'=>$ans5,
-											'q6'=>$ans6,
-											'q7'=>$ans7,
-											'q8'=>$ans8,
-											'q9'=>$ans9,
-											'q10'=>$ans10]);
+			$insert_question_stmt->execute(array(':id'=>$id,
+											':q1'=>$ans1,
+											':q2'=>$ans2,
+											':q3'=>$ans3,
+											':q4'=>$ans4,
+											':q5'=>$ans5,
+											':q6'=>$ans6,
+											':q7'=>$ans7,
+											':q8'=>$ans8,
+											':q9'=>$ans9,
+											':q10'=>$ans10));
 			return $insert_question_stmt;
 		}
 		catch(PDOException $e)
@@ -269,26 +265,26 @@ class User
 				VALUES(:id,:jobtitle,:employertype,:country,:districtlocation,:type,:category,:description,:workingstatus,:requiredlanguages,:contact,:mainduties,:cookingskill,:applicationemail,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
 
 				$insert_jobpost_stmt=$this->connection->prepare($insert_jobpost_query);
-				$insert_jobpost_stmt->execute(['id'=>$id,
-													'jobtitle'=>$jobtitle,
-													'employertype'=>$employertype,
-													'country'=>$country,
-													'districtlocation'=>$districtlocation,
-													'type'=>$type,
-													'category'=>$category,
-													'description'=>$description,
-													'workingstatus'=>$workingstatus,
-													'requiredlanguages'=>$requiredlanguages,
-													'contact'=>$contact,
-													'mainduties'=>$mainduties,
-													'cookingskill'=>$cookingskill,
-													'applicationemail'=>$applicationemail,
-													'nationality'=>$nationality,
-													'familytype'=>$familytype,
-													'startdate'=>$startdate,
-													'monthlysalary'=>$monthlysalary,
-													'logo'=>$logo,
-													'status'=>'Unapproved']);
+				$insert_jobpost_stmt->execute(array(':id'=>$id,
+													':jobtitle'=>$jobtitle,
+													':employertype'=>$employertype,
+													':country'=>$country,
+													':districtlocation'=>$districtlocation,
+													':type'=>$type,
+													':category'=>$category,
+													':description'=>$description,
+													':workingstatus'=>$workingstatus,
+													':requiredlanguages'=>$requiredlanguages,
+													':contact'=>$contact,
+													':mainduties'=>$mainduties,
+													':cookingskill'=>$cookingskill,
+													':applicationemail'=>$applicationemail,
+													':nationality'=>$nationality,
+													':familytype'=>$familytype,
+													':startdate'=>$startdate,
+													':monthlysalary'=>$monthlysalary,
+													':logo'=>$logo,
+													':status'=>'Unapproved'));
 	
 				return $insert_jobpost_stmt;
 	  
@@ -305,7 +301,7 @@ class User
 		{
 			$delete_job_query="DELETE FROM job_description WHERE j_id=:id";
 			$delete_job_stmt=$this->connection->prepare($delete_job_query);
-			$delete_job_stmt->execute(['id'=>$j_id]);
+			$delete_job_stmt->execute(array(':id'=>$j_id));
 
 			return $delete_job_stmt;
 
@@ -339,25 +335,25 @@ class User
 																j_logo=:logo
 															WHERE j_id=:id";
 				$update_jobpost_stmt=$this->connection->prepare($update_jobpost_query);
-				$update_jobpost_stmt->execute(['id'=>$id,
-															'jobtitle'=>$jobtitle,
-															'employertype'=>$employertype,
-															'country'=>$country,
-															'districtlocation'=>$districtlocation,
-															'type'=>$type,
-															'category'=>$category,
-															'description'=>$description,
-															'workingstatus'=>$workingstatus,
-															'requiredlanguages'=>$requiredlanguages,
-															'contact'=>$contact,
-															'mainduties'=>$mainduties,
-															'cookingskill'=>$cookingskill,
-															'applicationemail'=>$applicationemail,
-															'nationality'=>$nationality,
-															'familytype'=>$familytype,
-															'startdate'=>$startdate,
-															'monthlysalary'=>$monthlysalary,
-															'logo'=>$logo]);
+				$update_jobpost_stmt->execute(array(':id'=>$id,
+												':jobtitle'=>$jobtitle,
+												':employertype'=>$employertype,
+												':country'=>$country,
+												':districtlocation'=>$districtlocation,
+												':type'=>$type,
+												':category'=>$category,
+												':description'=>$description,
+												':workingstatus'=>$workingstatus,
+												':requiredlanguages'=>$requiredlanguages,
+												':contact'=>$contact,
+												':mainduties'=>$mainduties,
+												':cookingskill'=>$cookingskill,
+												':applicationemail'=>$applicationemail,
+												':nationality'=>$nationality,
+												':familytype'=>$familytype,
+												':startdate'=>$startdate,
+												':monthlysalary'=>$monthlysalary,
+												':logo'=>$logo));
 				return $update_jobpost_stmt;
 
 		}catch(PDOException $e)
@@ -372,7 +368,7 @@ class User
 		{
 			$apply_job_query="INSERT INTO job_submitted(j_id,u_id) VALUES(:j_id,:u_id)";
 			$apply_job_stmt=$this->connection->prepare($apply_job_query);
-			$apply_job_stmt->execute(['j_id'=>$j_id,'u_id'=>$id]);
+			$apply_job_stmt->execute(array(':j_id'=>$j_id,':u_id'=>$id));
 			return $apply_job_stmt;
 		}
 		catch(PDOException $e)
