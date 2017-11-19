@@ -57,7 +57,7 @@
         {
             $check_logo_query="SELECT * FROM user_personal_information WHERE u_id=:id";
             $check_logo_stmt=$connection->prepare($check_logo_query);
-            $check_logo_stmt->execute(array(':id'=>$id]));
+            $check_logo_stmt->execute(array(':id'=>$id));
             $result=$check_logo_stmt->fetch(PDO::FETCH_ASSOC);
             $picture=$result['up_picture'];
             if (empty($picture)) 
