@@ -27,7 +27,7 @@
     switch ($source) 
     {     
         case 'findhelpers':
-             include "includes/search-candidate.php"; 
+             include "includes/Search-candidate.php"; 
             break;
         case 'findemployer':
              include "includes/search-job.php"; 
