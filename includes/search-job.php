@@ -303,7 +303,7 @@
                                            
                                             $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
                                              $show_job_stmt=$connection->prepare($show_job_query);
-                                             $show_job_stmt->execute(array(':status'=>'Approved']));
+                                             $show_job_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
                                              {         
                                                 echo " <div class='col-sm-6 col-md-4 p0'>
