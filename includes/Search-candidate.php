@@ -555,7 +555,7 @@
                                                         $show_profile_query.=" and b.up_status=:status order by u_id desc ";
                                                   
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(array(':status'=>'Approved']));
+                                                        $show_profile_stmt->execute(array(':status'=>'Approved'));
                                 }
                                
 
