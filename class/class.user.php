@@ -24,7 +24,7 @@ class User
 			$details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender)
 							VALUES (:id,:lastname,:firstname,:gender)";
 			$details_stmt=$this->connection->prepare($details_query);
-			$details_stmt->execute(['id'=> $id,'lastname'=>$lastname,'firstname'=>$firstname,'gender'=>$gender]);
+			$details_stmt->execute([':id'=> $id,':lastname'=>$lastname,':firstname'=>$firstname,':gender'=>$gender]);
 
 			return $type;
 		}
