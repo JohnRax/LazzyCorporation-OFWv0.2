@@ -1,9 +1,9 @@
 <?php
 	
 	session_start();
-	$host = 'localhost';
-	$user = 'root';
-	$password = '';
+	$host = 'lazycompanydb.comfhxnalolh.ap-southeast-1.rds.amazonaws.com';
+	$user = 'dblazyc0mpAnY';
+	$password = 'lazYPr0p3rt1eS';
 	$dbname='lazycorporation-ofwdatabase';
 	try 
 	{
