@@ -59,9 +59,10 @@
                                            <img src='assets/img/profilepicture/".$result['up_picture']."'>
                                         </div>
                                         <div class='item-entry overflow'>
-                                            <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
+                                           <center> <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4></center>
+                                        </div>
                                             <div class='dot-hr'></div>
-                                            
+                                          <div class='item-entry1 overflow'>  
                                             <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
                                             <br>
                                             <h7><b>Location: </b>".$result['up_address']."</h7>
@@ -71,17 +72,17 @@
                                             <h7><b>Years Of Experience: </b>".$result['upi_yearsofexp']."</h7>
                                             <br>
                                             <h7><b>Job Expertises:</b></h7>
-                                            <br>
                                             <h7>".$result['upi_skillsexp']."</h7>
                                             <br>
-                                            
                                             <br>
-                                            <div class='span9 btn-block no-padding'>
+                                            </div>
+                                            
                                         ";?>
+                                        <div class='span9 btn-block no-padding'>
                                             <button type="button" class='btn btn-large btn-block btn-primary full-width'
                                             onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
                                                     >View Full Profile</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -134,8 +135,9 @@
                                                           </div>
                                                              <div class='item-entry overflow'>
                                                                 <h4>".$result['j_jobtitle']."</h4>
-                                                                <div class='dot-hr'></div>
-                                                                
+                                                              </div> 
+                                                               <div class='dot-hr'></div>
+                                                             <div class='item-entry1 overflow'>  
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                 <br>
                                                                 <h7><b>Location: </b> ".$result['j_country']."</h7>
@@ -149,9 +151,8 @@
                                                                   ";?>
                                                             <button type="button" class="btn btn-large btn-block btn-primary full-width" 
                                                             onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
-                                                                >View Full Post</button>
-                                                                
-                                                        </div>
+                                                                >View Full Post</button>  
+                                                         </div> 
                                                     </div>
                                                 </div>
                                             </div>
