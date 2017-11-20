@@ -157,7 +157,7 @@
                                               require_once 'includes/connection.php';
                                               $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
                                               $show_job_stmt=$connection->prepare($show_job_query);
-                                              $show_job_stmt->execute(array(':status'=>'Approved']));                        
+                                              $show_job_stmt->execute(array(':status'=>'Approved'));                        
 
                                                 $sample="true";
                                               if(!empty($_POST['skills'])  && !empty($_POST['employertype']))
