@@ -39,6 +39,7 @@
                                               b.up_picture,
                                               b.up_address,
                                               b.up_nationality,
+                                               DATE_FORMAT(b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                               b.up_category,
                                               b.up_address,
                                               c.upi_skillsexp,
@@ -59,7 +60,7 @@
                                            <img src='assets/img/profilepicture/".$result['up_picture']."'>
                                         </div>
                                         <div class='item-entry overflow'>
-                                           <center> <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4></center>
+                                           <center> <h4>".$result['u_fname']." ".$result['u_lname']."</h4></center>
                                         </div>
                                             <div class='dot-hr'></div>
                                           <div class='item-entry1 overflow'>  
@@ -74,7 +75,8 @@
                                             <h7><b>Job Expertises:</b></h7>
                                             <h7>".$result['upi_skillsexp']."</h7>
                                             <br>
-                                            <br>
+                                            <span class='pull-left'><b>Posted: </b> ".$result['up_dateposted']."</span>
+                                             <br>
                                             </div>
                                             
                                         ";?>
@@ -134,7 +136,7 @@
                                                         <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
                                                              <div class='item-entry overflow'>
-                                                                <h4>".$result['j_jobtitle']."</h4>
+                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
                                                               </div> 
                                                                <div class='dot-hr'></div>
                                                              <div class='item-entry1 overflow'>  
@@ -146,13 +148,12 @@
                                                                 <br>
                                                                 <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
                                                                 <br>
-                                                                <br>
-                                                                <div class='span9 btn-block no-padding'>
+                                                                </div> 
                                                                   ";?>
+                                                                  <div class='span9 btn-block no-padding'>
                                                             <button type="button" class="btn btn-large btn-block btn-primary full-width" 
                                                             onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
                                                                 >View Full Post</button>  
-                                                         </div> 
                                                     </div>
                                                 </div>
                                             </div>

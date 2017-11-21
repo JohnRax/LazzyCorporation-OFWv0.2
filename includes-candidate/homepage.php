@@ -26,26 +26,25 @@
                                                    <div class='item-thumb'>
                                                         <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
-                                                                <h4>&nbsp;".$result['j_jobtitle']."</h4>
-                                                                <div class='dot-hr'></div>
-                                                            <div class='item-entry overflow'>
-                                                          
+                                                              <div class='item-entry overflow'>
+                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
+                                                              </div> 
+                                                               <div class='dot-hr'></div>
+                                                             <div class='item-entry1 overflow'>  
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                 <br>
                                                                 <h7><b>Location: </b> ".$result['j_country']."</h7>
                                                                 <br>
                                                                 <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                 <br>
-                                                                <span class='pull-left'><b>Posted :</b> ".$result['j_dateposted']."</span>
-                                                             
+                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
                                                                 <br>
-                                                                <br>
-                                                                <div class='span9 btn-block no-padding'>
+                                                                </div> 
                                                                   ";?>
+                                                                  <div class='span9 btn-block no-padding'>
                                                             <button type="button" class="btn btn-large btn-block btn-primary full-width" 
                                                             onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
-                                                                >View Full Post</button>
-                                                        </div>
+                                                                >View Full Post</button>  
                                                     </div>
                                                 </div>
                                             </div>

@@ -29,7 +29,7 @@
 
                                 if(isset($_GET['id']))
                                 {
-                                    $show_jobs_query="SELECT * FROM job_description WHERE j_id=:id";
+                                    $show_jobs_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description WHERE j_id=:id";
                                     $show_jobs_stmt=$connection->prepare($show_jobs_query);
                                     $show_jobs_stmt->execute(array(':id'=>$_GET['id']));
                                     $result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC);
@@ -48,11 +48,11 @@
                                                          <br>
                                                          <h7><b>Location:</b> ".$result['j_country']."</h7>
                                                          <br>
-                                                         <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                         <h7><b>Job Category:</b> ".$result['j_mainduties']."</h7>
                                                          <br>
                                                          <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
                                                          <br> 
-                                                         <h7><b>Status:</b>".$result['j_status']."</h7>
+                                                         <h7><b>Status:</b> ".$result['j_status']."</h7>
                                                          <br>                                                 
                                                       
                                                         <div class='dealer-action pull-left'>                 

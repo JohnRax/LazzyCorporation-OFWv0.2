@@ -19,12 +19,30 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <select name="country" id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
-                                                    <option class="form-control" selected disabled value="">Search By Location</option>
-                                                    <option>Hong kong</option>
-                                                    <option>Indonesia</option>
-                                                    <option>Philippines</option>
-                                                    <option>Japan</option>                                                 
+                                                <select name="country" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
+                                                                <option class="form-control" selected disabled value="">Search By Location</option>
+                                                                <option value="Philippines">
+                                                                    Philippines
+                                                                </option>
+                                                                <option value="Hong Kong">
+                                                                    Hong Kong
+                                                                </option>
+                                                                <option value="China">
+                                                                    China
+                                                                </option>
+                                                                <option value="Saudi Arabia">
+                                                                    Saudi Arabia
+                                                                </option>
+                                                                <option value="United Arab Emirates">
+                                                                    United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar">
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan">
+                                                                    Taiwan
+                                                                </option>
+                                    
                                                 </select>
                                             </div>
                                    
@@ -33,17 +51,21 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <select name="employertype" id="lunchBegins" class="form-control" data-live-search="true" data-live-search-style="begins" title="Location">
-                                                    <option class="form-control" selected disabled value="">Search By Employer Type</option>
-                                                    <option>Agency</option>
-                                                    <option>Direct Employer</option>
-                                                                                       
+                                                
+                                                <select name="employertype" id="lunchBegins" class="selectpicker"  data-live-search="true" data-live-search-style="begins" title="Employer Type">
+                                                    <option value="Direct Employer">
+                                                                    Direct Employer
+                                                                </option>
+                                                                 <option value="Agency">
+                                                                    Agency
+                                                                </option>
                                                 </select>
                                             </div>
                                    
                                         </div>
                                     </fieldset>
                         
+                                   <label><u>Skills</label>
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6">
@@ -93,7 +115,7 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input  name="skills[]" type="checkbox" value="Driver"> Driver</label>
+                                                    <label>  <input  name="skills[]" type="checkbox" value="Professional Driver"> Professional Driver</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
@@ -123,7 +145,7 @@
                 <div class="col-md-9  pr0 padding-top-40 properties-page">
                     <div class="col-md-12 clear"> 
                         <div class="col-xs-10 page-subheader sorting pl0">
-                            <ul class="sort-by-list">
+                            <!-- <ul class="sort-by-list">
                                 <li class="active">
                                     <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
                                         Posted Date <i class="fa fa-sort-amount-asc"></i>                   
@@ -134,14 +156,14 @@
                                         Posted Date <i class="fa fa-sort-numeric-desc"></i>                     
                                     </a>
                                 </li>
-                            </ul><!--/ .sort-by-list-->
+                            </ul >--><!--/ .sort-by-list-->
 
                         
                         </div>
 
                         <div class="col-xs-2 layout-switcher">
-                            <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
-                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>                          
+                            <!-- <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
+                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>  -->                         
                         </div><!--/ .layout-switcher-->
                     </div>
 
@@ -172,7 +194,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description  ";
+                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description  ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -207,7 +229,7 @@
                                                     $array_skills = explode(',',  $skills);
                                                 
                                                            
-                                                    $show_job_query="SELECT * FROM job_description   ";
+                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description   ";
                                                     foreach($array_skills as $val)
                                                     {
                                                         $arr = "'%{$val}%'";
@@ -251,7 +273,7 @@
                                                         $array_skills = explode(',',  $skills);
                                                     
                                                                
-                                                            $show_job_query="SELECT * FROM job_description ";
+                                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description ";
                                                             foreach($array_skills as $val)
                                                             {
                                                                 $arr = "'%{$val}%'";
@@ -274,27 +296,27 @@
                                                            <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                               </div>
                                                                  <div class='item-entry overflow'>
-                                                                    <h4>".$result['j_jobtitle']."</h4>
-                                                                    <div class='dot-hr'></div>
-                                                                    
-                                                                    <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
-                                                                    <br>
-                                                                    <h7><b>Location: </b> ".$result['j_country']."</h7>
-                                                                    <br>
-                                                                    <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
-                                                                    <br>
-                                                                    <span class='pull-left'><b>Posted: </b> ".$result['j_dateposted']."</span>
-                                                                    <br>
-                                                                    <br>
-                                                                    <div class='span9 btn-block no-padding'>
-                                                                       ";?>
-                                                                <button type="button" class="btn btn-large btn-block btn-primary full-width" 
-                                                                onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
-                                                                    >View Full Post</button>
-                                                            </div>
-                                                        </div>
+                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
+                                                              </div> 
+                                                               <div class='dot-hr'></div>
+                                                             <div class='item-entry1 overflow'>  
+                                                                <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
+                                                                <br>
+                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
+                                                                <br>
+                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
+                                                                <br>
+                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                                <br>
+                                                                </div> 
+                                                                  ";?>
+                                                                  <div class='span9 btn-block no-padding'>
+                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                                            onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
+                                                                >View Full Post</button>  
                                                     </div>
                                                 </div>
+                                            </div>
                                             <?php } 
                                             
                                         }
@@ -312,24 +334,24 @@
                                                        <img src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
                                                              <div class='item-entry overflow'>
-                                                                <h4>".$result['j_jobtitle']."</h4>
-                                                                <div class='dot-hr'></div>
-                                                                
+                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
+                                                              </div> 
+                                                               <div class='dot-hr'></div>
+                                                             <div class='item-entry1 overflow'>  
                                                                 <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                                 <br>
                                                                 <h7><b>Location: </b> ".$result['j_country']."</h7>
                                                                 <br>
                                                                 <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
                                                                 <br>
-                                                                <span class='pull-left'><b>Posted: </b> ".$result['j_dateposted']."</span>
+                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
                                                                 <br>
-                                                                <br>
-                                                                <div class='span9 btn-block no-padding'>
-                                                                   ";?>
+                                                                </div> 
+                                                                  ";?>
+                                                                  <div class='span9 btn-block no-padding'>
                                                             <button type="button" class="btn btn-large btn-block btn-primary full-width" 
                                                             onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
-                                                                >View Full Post</button>
-                                                        </div>
+                                                                >View Full Post</button>  
                                                     </div>
                                                 </div>
                                             </div>

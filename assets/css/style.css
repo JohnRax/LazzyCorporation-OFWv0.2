@@ -1810,7 +1810,7 @@ proerty-th
 }
 .proerty-th .proerty-item{
     background-color: #FFF;
-    height: 630px;
+    height: 660px;
     margin: 10px;
 }
 .proerty-th .proerty-item .item-thumb{
@@ -1833,7 +1833,7 @@ proerty-th
 }
 .proerty-th .proerty-item  .item-entry1{
     padding: 8px;
-    height: 205px;
+    height: 230px;
    
 }
 .proerty-th .proerty-item  .item-entry{
@@ -2330,6 +2330,7 @@ single property page
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 300;
+    padding: 5px;
 }
 .dealer-action a:hover{
     color: black;

@@ -30,7 +30,7 @@
                                                 </script>";
                                     }
                                 }
-                                $show_jobs_query="SELECT * FROM job_description WHERE u_id=:id";
+                                $show_jobs_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description WHERE u_id=:id";
                                 $show_jobs_stmt=$connection->prepare($show_jobs_query);
                                 $show_jobs_stmt->execute(array(':id'=>$_SESSION['user_session']));
                                 while($result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC))
@@ -42,20 +42,22 @@
                                             </div>
 
                                             <div class='item-entry overflow'>
-                                                <h4>".$result['j_jobtitle']."</h4>
-                                                <div class='dot-hr'></div>
+                                               <center> <h4>".$result['j_jobtitle']."</h4></center> 
+                                               </div>
 
+                                                <div class='dot-hr'></div>
+                                                    <div class='item-entry1 overflow'>
                                                      <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
                                                      <br>
                                                      <h7><b>Location:</b> ".$result['j_country']."</h7>
                                                      <br>
-                                                     <h7><b>Job Category:</b>".$result['j_mainduties']."</h7>
+                                                     <h7><b>Job Category:</b> ".$result['j_mainduties']."</h7>
                                                      <br>
                                                      <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
                                                      <br> 
-                                                     <h7><b>Status:</b>".$result['j_status']."</h7>
+                                                     <h7><b>Status:</b> ".$result['j_status']."</h7>
                                                      <br>                                                 
-                                                  
+                                                  </div>
                                                     <div class='dealer-action pull-left'> 
                                                         <a href='index-employer.php?source=viewsubmitted&id=".$result['j_id']."'  data-toggle='modal' class='button'>View Submitted Profile </a>                   
                                                         <a href='index-employer.php?source=editjob&id=".$result['j_id']."' class='button'>Edit </a>
@@ -63,7 +65,7 @@
                                                     ?>
                                                         <a href='#' onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')" class='button'>View</a>
                                                    
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                      </div>

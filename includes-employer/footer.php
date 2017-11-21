@@ -12,7 +12,7 @@
 
                                 <p><strong>Lazzy Works</strong> is an innovative job and employee finder created by Lazzy Technologies that let customer choose their desired preferences like skills, age, health status, and location for a wide range of Employements in your selected country.</p>
                                 <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong">Room 510, Global Gateway, Tower, 63 Wing Hong Street, Lai Chi Kok, KLN, Hong Kong</i></li>
+                                    <li><i class="pe-7s-map-marker strong"> Room 510, Global Gateway, Tower, 63 Wing Hong Street, Lai Chi Kok, KLN, Hong Kong</i></li>
                                     <li><i class="pe-7s-mail strong"> support@lazzyworks.com</i></li>
                                     <li><i class="pe-7s-call strong"> +1 999 999 9999</i> </li>
                                 </ul>

@@ -47,36 +47,33 @@
                                     $show_jobs_stmt->execute(array(':id'=>$result['j_id']));
                                     while($result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC))
                                     {
-                                       echo "<div class='col-md-4 p0'>
+                                       echo "<div class='col-md-3 p0'>
                                             <div class='box-two proerty-item'>
                                                 <div class='item-thumb'>
                                                     <a href='' ><img src='assets/img/profilepicture/".$result['j_logo']."'></a>
                                                 </div>
-
-                                                <div class='item-entry overflow'>
-                                                    <h4>".$result['j_jobtitle']."</h4>
-                                                    <div class='dot-hr'></div>
-
-                                                         <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
-                                                         <br>
-                                                         <h7><b>Location: </b> ".$result['j_country']."</h7>
-                                                         <br>
-                                                         <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
-                                                         <br>
-                                                         <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
-                                                         <br> 
-                                                         <h7><b>Status: </b>".$result['j_status']."</h7>
-                                                         <br>                                                 
-                                                      
-                                                        <div class='dealer-action pull-left'> 
-                                                            ";
-                                                        ?>
-                                                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')">VIEW</button>
-                                                       
+                                                        <div class='item-entry overflow'>
+                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
+                                                              </div> 
+                                                               <div class='dot-hr'></div>
+                                                             <div class='item-entry1 overflow'>  
+                                                                <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
+                                                                <br>
+                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
+                                                                <br>
+                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
+                                                                <br>
+                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
+                                                                <br>
+                                                                </div> 
+                                                                  ";?>
+                                                                  <div class='span9 btn-block no-padding'>
+                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
+                                                            onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
+                                                                >View Full Post</button>  
                                                     </div>
                                                 </div>
-                                            </div>
-                                         </div>
+                                            </div>  
                                         <?php }    
 
                                     }?>

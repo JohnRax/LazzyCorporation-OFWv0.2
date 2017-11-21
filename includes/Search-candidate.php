@@ -61,10 +61,9 @@
                                         <div class="row">
                                             <div class="col-xs-6">
 
-                                                <select id="basic" class="form-control" name="gender">
-                                                    <option class="form-control" selected disabled value="">Gender</option>
-                                                    <option class="form-control" value="male">male</option>
-                                                    <option class="form-control" value="female">female</option>
+                                                <select name="gender" class="selectpicker"  data-live-search="true" data-live-search-style="begins" title="Gender">
+                                                   <option  value="male">Male</option>
+                                                    <option  value="female">Female</option>
                                                 </select>
                                             </div>
                                         
@@ -78,6 +77,7 @@
                                                                                      
                                         </div>
                                     </fieldset>  
+                                    <label><u>Skills</label>
                                     <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6">
@@ -128,7 +128,7 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver"> Driver</label>
+                                                    <label>  <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver"> Professional Driver</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
@@ -158,7 +158,7 @@
                 <div class="col-md-9  pr0 padding-top-40 properties-page">
                     <div class="col-md-12 clear"> 
                         <div class="col-xs-10 page-subheader sorting pl0">
-                            <ul class="sort-by-list">
+                            <!-- <ul class="sort-by-list">
                                 <li class="active">
                                     <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
                                         Posted Date <i class="fa fa-sort-amount-asc"></i>                   
@@ -169,14 +169,14 @@
                                         Posted Date <i class="fa fa-sort-numeric-desc"></i>                     
                                     </a>
                                 </li>
-                            </ul><!--/ .sort-by-list-->
+                            </ul> --><!--/ .sort-by-list-->
 
                            
                         </div>
 
                         <div class="col-xs-2 layout-switcher">
-                            <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
-                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>                          
+                           <!--  <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
+                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>  -->                         
                         </div><!--/ .layout-switcher-->
                     </div>
 
@@ -567,7 +567,7 @@
                                                    <img src='assets/img/profilepicture/".$result['up_picture']."'>
                                                 </div>
                                                 <div class='item-entry overflow'>
-                                                    <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
+                                                     <center><h4>".$result['u_fname']." ".$result['u_lname']."</h4></center>
                                                  </div>     
                                                  <div class='dot-hr'></div>
                                                   <div class='item-entry1 overflow'>     
@@ -629,7 +629,7 @@
                                                    <img src='assets/img/profilepicture/".$result['up_picture']."'>
                                                 </div>
                                                 <div class='item-entry overflow'>
-                                                    <h4><b>".$result['u_fname']." ".$result['u_lname']."</b></h4>
+                                                     <center><h4>".$result['u_fname']." ".$result['u_lname']."</h4></center>
                                                  </div>
                                                     <div class='dot-hr'></div>
                                                  <div class='item-entry1 overflow'>     

@@ -153,6 +153,9 @@
                                                                 <option value="Hong Kong"  <?php if($result['j_country']=="Hong Kong")echo "selected"; ?>>
                                                                     Hong Kong
                                                                 </option>
+                                                                <option value="China"  <?php if($result['j_country']=="China")echo "selected"; ?>>
+                                                                    China
+                                                                </option>
                                                                 <option value="Saudi Arabia" <?php if($result['j_country']=="Saudi Arabia")echo "selected"; ?> >
                                                                     Saudi Arabia
                                                                 </option>
