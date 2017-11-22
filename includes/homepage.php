@@ -194,16 +194,16 @@
                 <div class="row">
                     <div class="col-md-12 col-xs-12 percent-blocks m-main" data-waypoint-scroll="true">
                         <div class="row">
-                                         <?php 
-
-                                         require_once 'includes/connection.php';
+                                         <?php require_once 'includes/connection.php';
                                             $show_jobquantity_query="SELECT 
-                                                  COUNT(j_id) AS job 
-                                                FROM
-                                                  `job_description` ";
+                                                      COUNT(u_id) AS user 
+                                                    FROM
+                                                    `user_personal_information`";
                                              $show_jobquantity_stmt=$connection->prepare($show_jobquantity_query);
                                              $show_jobquantity_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_jobquantity_stmt->fetch(PDO::FETCH_ASSOC))
+
+                                         
                                              {         
                                                 echo " <div class='col-sm-6 col-xs-6'>
                                 <div class='count-item'>
@@ -211,7 +211,7 @@
                                         <span class='pe-7s-users'></span>
                                     </div>
                                     <div class='chart' data-percent='5000'>
-                                        <h2 class='percent' > ".$result['job']."</h2>
+                                        <h2 class='percent' > ".$result['user']."</h2>
                                         <h5>SUBMITTED PROFILE </h5>
                                     </div>
                                 </div>
@@ -220,16 +220,16 @@
                                                     
                                 <?php } ?>                
                            
-                             <?php 
-
-                                         require_once 'includes/connection.php';
+                             <?php require_once 'includes/connection.php';
                                             $show_jobquantity_query="SELECT 
-                                                      COUNT(u_id) AS user 
-                                                    FROM
-                                                    `user_personal_information`";
+                                                  COUNT(j_id) AS job 
+                                                FROM
+                                                  `job_description` ";
                                              $show_jobquantity_stmt=$connection->prepare($show_jobquantity_query);
                                              $show_jobquantity_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_jobquantity_stmt->fetch(PDO::FETCH_ASSOC))
+
+                                         
                                              {         
                                                 echo " <div class='col-sm-6 col-xs-6'>
                                 <div class='count-item'>
@@ -237,7 +237,7 @@
                                         <span class='pe-7s-flag'></span>
                                     </div>
                                     <div class='chart' data-percent='120'>
-                                        <h2 class='percent' id=''>".$result['user']."</h2>
+                                        <h2 class='percent' id=''>".$result['job']."</h2>
                                         <h5>POST JOBS </h5>
                                     </div>
                                 </div> 
