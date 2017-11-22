@@ -10,7 +10,7 @@
     }
     else
     {
-        if($_SESSION['user_type']=='employer')
+        if($_SESSION['user_type']=='agency')
         {
             $user->redirect('index-employer.php');
         }

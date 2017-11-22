@@ -192,7 +192,7 @@
                                             <select required id="usertype" class="form-control" name="u_type">
                                                 <option class="form-control" selected disabled value="">Select Account Type</option>
                                                  <option class="form-control" value="candidate">Candidate</option>   
-                                                 <option class="form-control" value="employer">Employer</option>
+                                                 <option class="form-control" value="agency">Agency</option>
                                                
                                             </select>
                                         </div>
@@ -219,8 +219,8 @@
                                         <label for="Gender">Gender *</label>
                                          <select id="gender" required="" class="form-control" name="u_gender">
                                                 <option class="form-control" selected disabled value="">Select Gender</option>
-                                                <option class="form-control" value="male">Male</option>
-                                                <option class="form-control" value="female">Female</option>
+                                                <option class="form-control" value="Male">Male</option>
+                                                <option class="form-control" value="Female">Female</option>
                                          </select>
                                     </div>
                                     <div class="text-center">
