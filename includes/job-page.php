@@ -8,9 +8,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Lazzy Works | Candidate Profile</title>
-        <meta name="description" content="GARO is a real-estate template">
-        <meta name="author" content="Kimarotec">
-        <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
+        <meta name="description" content="LazzyWorks is a free to use platform for jobseekers out there.">
+        <meta name="author" content="Lazzy Technologies">
+        <meta name="keyword" content="OFW, Lazzy, Works, LazzyWorks, Helper , Lazzy Technologies, Find, Find Job, Job, Apply">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
