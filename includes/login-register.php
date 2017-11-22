@@ -192,7 +192,7 @@
                                             <select required id="usertype" class="form-control" name="u_type">
                                                 <option class="form-control" selected disabled value="">Select Account Type</option>
                                                  <option class="form-control" value="candidate">Candidate</option>   
-                                                 <option class="form-control" value="employer">Employer</option>
+                                                 <option class="form-control" value="agency">Agency</option>
                                                
                                             </select>
                                         </div>
