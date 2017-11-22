@@ -116,6 +116,7 @@
                              closeWindow();
                             function closeWindow() {
                                 window.close();
+                                
                             }
                         </script>";
             }
@@ -144,9 +145,9 @@
                             <div class="light-slide-item">            
                                 <div class="clearfix">
                                     <div class="favorite-and-print">
-                                        <a class="add-to-fav" href="#login-modal" data-toggle="modal">
+                                        <!-- <a class="add-to-fav" href="#login-modal" data-toggle="modal">
                                             <i class="fa fa-star-o"></i>
-                                        </a>
+                                        </a> -->
                                         <a class="printer-icon " href="javascript:window.print()">
                                             <i class="fa fa-print"></i> 
                                         </a>
@@ -165,21 +166,21 @@
                                                 <div class="col-xs-4"></div>
                                                  <div class="col-xs-4">
                                                     <a href="">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../assets/img/profilepicture/<?php echo $result['j_logo']; ?>" class="img-circle">
+                                 <center><img src="../assets/img/profilepicture/<?php echo $result['j_logo']; ?>" class="img-circle"></center>
                                                      
                                                      </div>
                                                 <div class="col-xs-4"></div>
                                                    <div class="col-xs-12">
-                                                       </a><h3>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $result['j_jobtitle'];?></h3>
+                                                       </a><h3 align="center"> <?php echo $result['j_jobtitle'];?></h3>
                                                    </div> 
                                             </div>
                                             
                                 </div>
                                  <div class="clearfix">
                                     <div class="favorite-and-print">
-                                        <a class="add-to-fav" href="#login-modal" data-toggle="modal">
+                                       <!--  <a class="add-to-fav" href="#login-modal" data-toggle="modal">
                                             <i class="fa fa-star-o"></i>
-                                        </a>
+                                        </a> -->
                                         <a class="printer-icon " href="javascript:window.print()">
                                             <i class="fa fa-print"></i> 
                                         </a>
@@ -193,60 +194,60 @@
                                 <ul class="additional-details-list clearfix">
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Employer Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_employertype']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_employertype']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Country</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_country']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_country']; ?></span>
                                     </li>
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Dristrict Location</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_districtlocation']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_districtlocation']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Job Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_type']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_type']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Job Category</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_category']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_category']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Status</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_workingstatus']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_workingstatus']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Contact</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_contact']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_contact']; ?></span>
                                     </li> 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Application Email</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_applicationemail']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_applicationemail']; ?></span>
                                     </li>  
                                         
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Nationality</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_nationality']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_nationality']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Family Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_familytype']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_familytype']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_startdate']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_startdate']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Monthly Salary</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_monthlysalary']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_monthlysalary']; ?></span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Date Posted</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['j_dateposted']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_dateposted']; ?></span>
                                     </li>  
 
 

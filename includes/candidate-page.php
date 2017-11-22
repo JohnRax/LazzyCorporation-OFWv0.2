@@ -91,12 +91,12 @@
                             <div class="light-slide-item">            
                                 <div class="clearfix">
                                     <div class="favorite-and-print">
-                                        <a class="add-to-fav" href="#login-modal" data-toggle="modal">
+                                        <!-- <a class="add-to-fav" href="#login-modal" data-toggle="modal">
                                             <i class="fa fa-star-o"></i>
-                                        </a>
-                                        <a class="printer-icon " href="javascript:window.print()">
+                                        </a> -->
+                                        <!-- <a class="printer-icon " href="javascript:window.print()">
                                             <i class="fa fa-print"></i> 
-                                        </a>
+                                        </a> -->
                                     </div> 
                                 </div>
                             </div>
@@ -112,18 +112,18 @@
                                                 <div class="col-xs-4"></div>
                                                  <div class="col-xs-4">
                                                     <a href="">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../assets/img/profilepicture/<?php echo $result['up_picture']; ?>" class="img-circle">
-                                                     </a><h3>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $result['u_fname']." ".$result['u_lname'];?></h3>
+                                <center><img src="../assets/img/profilepicture/<?php echo $result['up_picture']; ?>" class="img-circle">
+                                                     </a><h3><?php echo $result['u_fname']." ".$result['u_lname'];?></h3>
                                                      </div>
-                                                <div class="col-xs-4"></div>
+                                                <div class="col-xs-4"></div></center>
                                                 </div>
                                             
                                 </div>
                                  <div class="clearfix">
                                     <div class="favorite-and-print">
-                                        <a class="add-to-fav" href="#login-modal" data-toggle="modal">
+                                        <!-- <a class="add-to-fav" href="#login-modal" data-toggle="modal">
                                             <i class="fa fa-star-o"></i>
-                                        </a>
+                                        </a> -->
                                         <a class="printer-icon " href="javascript:window.print()">
                                             <i class="fa fa-print"></i> 
                                         </a>
@@ -136,52 +136,52 @@
                                 <ul class="additional-details-list clearfix">
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">AGE</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_age']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_age']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Expertise</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['upi_skillsexp']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['upi_skillsexp']; ?></span>
                                     </li>
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Location Now</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_address']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_address']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Nationality</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_nationality']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_nationality']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Religion</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_religion']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_religion']; ?></span>
                                     </li>
 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Highest Education</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_education']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_education']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Marital Status</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_maritalstatus']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_maritalstatus']; ?></span>
                                     </li> 
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Gender</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['u_gender']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['u_gender']; ?></span>
                                     </li>  
                                         
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Mobile Number</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_mobile']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_mobile']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Telephone Number</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_telephone']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_telephone']; ?></span>
                                     </li> 
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Email</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><?php echo $result['up_email']; ?></span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['up_email']; ?></span>
                                     </li> 
 
 
@@ -227,37 +227,37 @@
 
                              <div class="section additional-details">
 
-                                <h4 class="s-property-title">Experience 1</h4>
+                                <!-- <h4 class="s-property-title">Experience 1</h4>
 
                                 <ul class="additional-details-list clearfix">
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2017-2-3</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">2017-2-3</span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">End Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2017-2-3</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">2017-2-3</span>
                                     </li>
                                     <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Place</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Hong Kong</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Hong Kong</span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Family Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Couple</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Couple</span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Reference</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Cooking</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Cooking</span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Notes</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Good</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Good</span>
                                     </li>
                                  
                                     
 
-                                </ul>
+                                </ul> -->
                             </div>  
                              
                              <div class="section additional-details">
@@ -267,42 +267,42 @@
                                 <ul class="additional-details-list clearfix">
                                     <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Would you agreee to do extra work?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"> <?php echo $result['uq_1']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"> <?php echo $result['uq_1']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">If your employer asked you to work on your holiday and willing to pay as compensation, are you willing to do so?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_2']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_2']; ?></span>
                                     </li>
                                     <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Are you willing to work for a family without your own servant room?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_3']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_3']; ?></span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Are you willing to take care of children no matter how many the family has?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_4']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_4']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Living with elderly person?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_5']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_5']; ?></span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title"> Are you willing to take care of disabled elderly?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_6']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_6']; ?></span>
                                            <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Do you got experience to take care of dogs or pets?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_7']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_7']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Have you suffered from health problems in your nervous system, eyes, feet, legs or any other parts of your body?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_8']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_8']; ?></span>
                                     </li>
                                       <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Can you drive?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_9']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_9']; ?></span>
                                     </li>
                                      <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title"> Do you smoke?</span>
-                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-entry"><?php echo $result['uq_10']; ?></span>
+                                        <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_10']; ?></span>
                                     </li>
                                  
                                     

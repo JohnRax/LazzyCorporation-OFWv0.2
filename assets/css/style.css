@@ -36,6 +36,7 @@ h2, .h2{
 h3, .h3{
     font-size: 28px;
     margin: 20px 0 10px;
+    color: black;
 }
 h4, .h4{
     font-size: 22px;
@@ -2195,7 +2196,6 @@ single property page
 .additional-details-list li{
     overflow: hidden;
     margin: 2px;
-    border: 1px solid #F3F3F3;
 }
 .add-d-title {
     font-weight: 600;
@@ -2204,6 +2204,12 @@ single property page
     margin: 0px;
     color: #FFF;
 }
+
+.add-d-title1 {
+    font-weight: 400;
+    color: #000;
+}
+
 .add-d-title:hover {
     background-color: #727272;
 }
@@ -2213,7 +2219,7 @@ single property page
     padding: 15px 25px 25px;
 }
 .dealer-widget {
-    background-color: #838383;
+    background-color: #ddd;
     padding: 15px;
     color:#FFF;
     padding-bottom: 20px;
@@ -2260,6 +2266,7 @@ single property page
 }
 .dealer-content p{
     padding-left: 10px;
+    color: black;
 }
 .section {
     padding-top: 15px;
@@ -2268,6 +2275,7 @@ single property page
 .property-features ul {
     padding: 0px ;
     list-style: outside none none;
+    color: black;
 }
 .property-features ul li{
     margin: 0px 15px 15px 0px;
