@@ -24,9 +24,7 @@
                                 <li>
                                     <a href="homepage.php?source=user">View all User</a>
                                 </li>
-                                <li>
-                                    <a href="morris.html">Add New User</a>
-                                </li>
+            
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

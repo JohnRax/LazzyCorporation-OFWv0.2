@@ -1,17 +1,16 @@
-<?php ob_start();
- session_start(); ?>
-<?php include "../includes/connection.php" ?>
+<?php ob_start(); ?>
 <?php include "includes/header.php" ?>
 <?php include "includes/topnavigation.php" ?>
 <?php include "includes/navigation.php" ?>
-<?php include "includes/function.php" ?>
 
 <?php 
     
 
-    if (!isset($_SESSION['a_id'])) 
+    include_once 'includes/connection.php';
+    if(!$admin->is_loggedin())
     {
-        header("Location:index.php");
+        $admin->redirect('index.php');
+       
     }
 
     if (isset($_GET['source'])) 
@@ -35,6 +34,18 @@
         break;
     case 'jobs':
         include "jobs.php";
+        break;
+    case 'professional':
+        include "includes/professional.php";
+        break;
+    case 'experience':
+        include "includes/experience.php";
+        break;
+    case 'supplementary':
+        include "includes/supplementary.php";
+        break;
+    case 'logout':
+        include "includes/logout.php";
         break;
     
     default:

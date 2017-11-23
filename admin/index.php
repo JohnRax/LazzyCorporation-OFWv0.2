@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "../includes/connection.php"; ?>
 <head>
 
     <meta charset="utf-8">
@@ -32,48 +31,25 @@
 
 </head>
     <?php 
-            session_start();
+            include_once "includes/connection.php";
+            if($admin->is_loggedin())
+            {
+                $admin->redirect('homepage.php');
+               
+            }
             if (isset($_POST['submit'])) 
             {
                 $username=$_POST['a_username'];
                 $password=$_POST['a_password'];
-                $db_username="";
-                $db_password="";
-                $username=mysqli_real_escape_string($connection,$username); 
-                $password=mysqli_real_escape_string($connection,$password);
-
-                $login_query="SELECT * 
-                                FROM
-                                  admin 
-                                WHERE a_username = '$username' 
-                                  AND a_password = '$password' ";
-                $login_result=mysqli_query($connection,$login_query);
-                if(!$login_result)
+                if($admin->login($username,$password))
                 {
-                     die("no result".mysqli_error($connection));
-                }
-
-                while($row=mysqli_fetch_assoc($login_result))
-                {
-
-                    $db_userid=$row['a_id'];
-                    $db_username=$row['a_username'];
-                    $db_password=$row['a_password'];
-                  
-                }
-
-                if($db_username===$username && $db_password===$password)
-                {
-                    $_SESSION['a_id']= $db_userid;
-                    $_SESSION['a_username']=$db_username;
-                    header("Location:homepage.php");
+                    $admin->redirect("homepage.php");
                 }
                 else
                 {
-                    echo"<script>
-                            alert('Your credentials are incorrect');
-                        </script>";
+                    echo "WRONG DETAILS";
                 }
+
             }
     
      
