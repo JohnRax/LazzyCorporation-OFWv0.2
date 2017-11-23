@@ -68,6 +68,18 @@
 
         //Propessional Info
 
+
+        $jd=$_POST['ue_jd'];
+        $jdlocation=$_POST['ue_jdlocation'];
+        $from=$_POST['ue_from'];
+        $to=$_POST['ue_to'];
+        
+        
+        $user->post_profile_work_experience($id,$jd,$jdlocation,$from,$to);
+
+
+        //work Experience
+
         if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
         { 
             $skillsexp = implode(',', $_POST['upi_skillsexp']);
@@ -94,10 +106,9 @@
             $otherskills="none";        
         }
         $preferedworklocation=$_POST['upi_preferedworklocation'];
-        $yearsofexp=$_POST['upi_yearsofexp'];
-        $expsummary=$_POST['upi_expsummary'];
-        $availability=$_POST['upi_availability'];
-        $user->post_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skillsexp,$cookingskills,$otherskills,$availability);
+        $user->post_profile_professional_information($id,$preferedworklocation,$skillsexp,$cookingskills,$otherskills);
+
+
 
         $q1=$_POST['uq_1'];
         $q2=$_POST['uq_2'];
@@ -161,15 +172,6 @@
                                                     </select>
 
                                                 <div class="form-group">
-                                                    <labeL>Last Name *</label>
-                                                    <input name="u_lname" required type="text" class="form-control" placeholder="Last Name" title="Please input your last name">
-                                                </div>
-                                                   <div class="form-group">
-                                                    <labeL>First Name *</label>
-                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="First Name" title="Please input your first name">
-                                                </div>
-                                                <div class="form-group">
-
                                                     <labeL>Email address *</label>
                                                     <input name="up_email"  required type="text" class="form-control" placeholder="Email address" title="Please input your email address">
 
@@ -327,37 +329,7 @@
                                                                     Taiwan
                                                                 </option> 
                                                         </select>
-                                                </div>
-                                                
-                                                    <div class="col-sm-12"> 
-                                                        <label>Years Of Experience *</label>
-                                                        <select required="" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Please select your years of experience">
-                                                          
-                                                            <option value="0">0</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                            <option value="10">10</option>
-                                                            <option value="11">11</option>
-                                                            <option value="12">12</option>
-                                                            <option value="13">13</option>
-                                                            <option value="14">14</option>
-                                                            <option value="15">15</option>
-                                                        </select>
-                                                </div>
-                                                <div class="col-sm-12"> 
-                                                    <div class="form-group">
-                                                        <label>Experience Summary </label> 
-                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
-                                                                <i><small><div id='CharCountLabel1'></div></small></i>
-                                                    </div> 
-                                                </div>                            
+                                                </div>      
                                             <div class="col-sm-12 padding-top-15">
                                             <label>My Skills and Experience <small><i>Maximum of 4</i></small></label>
                                                  
@@ -384,8 +356,8 @@
                                                     <div class="col-sm-3">
                                                         <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver"> Professional Driver
                                                     </div>
-                                                    <div class="col-sm-3">
-                                                        <input id="in-helper_requirement2-109" nname="upi_skillsexp[]" type="checkbox" value="Teen Care"> Teen Care
+                                                     <div class="col-sm-3">
+                                                        <input id="in-helper_requirement2-109" name="upi_skillsexp[]" type="checkbox" value="Disabled Person"> Disabled Person
                                                     </div>
                                                    
                                                  </ul>
@@ -395,32 +367,29 @@
                                             <label>My Cooking Skills <small><i>Maximum of 4</i></small> </label>
                                                    <ul class="job-manager-term-checklist job-manager-term-checklist-cooking_requirements2">
 
-                                                        <div class="col-sm-3">
-                                                            <input id="in-cooking_requirement2-193" name="upi_cookingskills[]" type="checkbox" value="American"> American
+                                                       <div class="col-sm-3">
+                                                            <input id="in-cooking_requirement2-114" name="upi_cookingskills[]" type="checkbox" value="Filipino"> Filipino
                                                         </div>
+                                                        
                                                         <div class="col-sm-3">
                                                             <input id="in-cooking_requirement2-114" name="upi_cookingskills[]" type="checkbox" value="Arabic"> Arabic
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <input id="in-cooking_requirement2-115" name="upi_cookingskills[]" type="checkbox" value="Chinese"> Chinese
                                                         </div>
-                                                        <div class="col-sm-3">    
-                                                            <input id="in-cooking_requirement2-191" name="upi_cookingskills[]" type="checkbox" value="French"> French
+                                                         <div class="col-sm-3">
+                                                            <input id="in-cooking_requirement2-114" name="upi_cookingskills[]" type="checkbox" value="Indonesian"> Indonesian
                                                         </div>
+                                                        
                                                         <div class="col-sm-3">   
                                                             <input id="in-cooking_requirement2-116" name="upi_cookingskills[]" type="checkbox" value="Indian"> Indian
                                                         </div>
-                                                        <div class="col-sm-3">   
-                                                            <input id="in-cooking_requirement2-192" name="upi_cookingskills[]" type="checkbox" value="Italian"> Italian
-                                                        </div>
+                                                        
                                                         <div class="col-sm-3">   
                                                             <input id="in-cooking_requirement2-119" name="upi_cookingskills[]" type="checkbox" value="Japanese"> Japanese
                                                         </div>
                                                         <div class="col-sm-3">    
                                                             <input id="in-cooking_requirement2-235" name="upi_cookingskills[]" type="checkbox" value="Thai"> Thai
-                                                        </div>
-                                                        <div class="col-sm-3">   
-                                                            <input id="in-cooking_requirement2-117" name="upi_cookingskills[]" type="checkbox" value="Vegeterian"> Vegeterian
                                                         </div>
                                                         <div class="col-sm-3">  
                                                             <input id="in-cooking_requirement2-118" name="upi_cookingskills[]" type="checkbox" value="Western"> Western
@@ -428,6 +397,7 @@
                                                         
                                         </ul> 
                                             </div>
+
                                              <div class="col-sm-12 padding-top-15">
                                             <label>My Other Skills <small><i>Maximum of 4</i></small></label>
                                                   <ul class="job-manager-term-checklist job-manager-term-checklist-other_skills2">
@@ -464,13 +434,20 @@
                                                    
                                         </ul>
                                             </div>
-                                                  <div class="col-sm-12"> 
+                                            <br>
+                                            <h3>Work Experience</h3>
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-6">
+                                                    <label>Job Description <small><i>Optional</i></small> </label> <input class="form-control" name="ue_jd" placeholder="Job Description"   type="text">
 
-                                                     <labeL>Start Date *</label>
-                                                    <input name="upi_availability" required="" type="date" class="form-control" placeholder="" title="Please input your start date">
+                                                    <label>Location <small><i>Optional</i></small></label> <input class="form-control" name="ue_jdlocation" placeholder="Work Location"   type="text">
 
-                                                   
+                                                    <label>From (Year) <small><i>Optional</i></small></label> <input class="form-control"  name="ue_from" placeholder="From"  type="month">
+
+                                                     <label>To (Year) <small><i>Optional</i></small></label> <input class="form-control"  name="ue_to" placeholder="To"  type="month">
                                                 </div>
+                                                
+                                            </div>
                                             <br>
                                         </div>
                                     </div>
@@ -580,7 +557,7 @@
                                         </div> 
                                             <div class="col-sm-12">
                                                      <p>
-                                                        <label><strong>10. Do you smoke?</strong></label>
+                                                        <label><strong>10. Are you wiling to work with other person?</strong></label>
                                                            <select name="uq_10" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                              <option value="Yes">Yes</option>

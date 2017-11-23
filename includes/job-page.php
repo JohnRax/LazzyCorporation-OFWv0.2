@@ -216,10 +216,7 @@
                                         <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_category']; ?></span>
                                     </li>
 
-                                    <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Status</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_workingstatus']; ?></span>
-                                    </li> 
+                                    
                                      <li>
                                         <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Contact</span>
                                         <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"><?php echo $result['j_contact']; ?></span>

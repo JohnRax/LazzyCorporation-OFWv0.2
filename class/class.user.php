@@ -97,21 +97,18 @@ class User
 
 	}
 	
-	public function post_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skills,$cookingskills,$otherskills,$availability)
+	public function post_profile_professional_information($id,$preferedworklocation,$skills,$cookingskills,$otherskills)
 	{
 		try
 		{
-			$insert_professional_query="INSERT INTO user_professional_information(u_id,upi_preferedworklocation,upi_yearsofexp,upi_expsummary,upi_cookingskills,upi_skillsexp,upi_otherskills,upi_availability,upi_status)
-			VALUES(:id,:preferedworklocation,:yearsofexp,:expsummary,:cookingskills,:skills,:otherskills,:availability,:status)";
+			$insert_professional_query="INSERT INTO user_professional_information(u_id,upi_preferedworklocation,upi_cookingskills,upi_skillsexp,upi_otherskills,upi_status)
+			VALUES(:id,:preferedworklocation,:cookingskills,:skills,:otherskills,:status)";
 			$insert_professional_stmt=$this->connection->prepare($insert_professional_query);
 			$insert_professional_stmt->execute(array(':id'=>$id,
 												':preferedworklocation'=>$preferedworklocation,
-												':yearsofexp'=>$yearsofexp,
-												':expsummary'=>$expsummary,
 												':skills'=>$skills,
 												':cookingskills'=>$cookingskills,
 												':otherskills'=>$otherskills,
-												':availability'=>$availability,
 												':status'=>'Unapproved'));
 			return $insert_professional_stmt;
 
@@ -148,6 +145,51 @@ class User
 		}
 
 	}
+	public function post_profile_work_experience($id,$jd,$jdlocation,$from,$to)
+	{
+		try
+		{
+			$insert_work_experience_query="INSERT INTO user_experience(u_id,ue_jd,ue_jdlocation,ue_from,ue_to)
+			VALUES(:id,:ue_jd,:ue_jdlocation,:ue_from,:ue_to)";
+			$insert_work_experience_stmt=$this->connection->prepare($insert_work_experience_query);
+			$insert_work_experience_stmt->execute(array(':id'=>$id,
+											':ue_jd'=>$jd,
+											':ue_jdlocation'=>$jdlocation,
+											':ue_from'=>$from,
+											':ue_to'=>$to));
+			return $insert_work_experience_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+	}
+	public function update_profile_work_experience($id,$jd,$jdlocation,$jdfrom,$to)
+	{
+		try
+		{
+			$insert_work_experience_query="UPDATE user_experience SET ue_jd=:jd,
+															ue_jdlocation=:jdlocation,
+															ue_from=:jdfrom,
+															ue_to=:to
+															WHERE u_id=:id";
+			$insert_work_experience_stmt=$this->connection->prepare($insert_work_experience_query);
+			$insert_work_experience_stmt->execute(array(':id'=>$id,
+											':jd'=>$jd,
+											':jdlocation'=>$jdlocation,
+											':jdfrom'=>$jdfrom,
+											':to'=>$to));
+
+			return $insert_work_experience_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+ 	}
+ 		
 	
 
 	public function update_profile_personal_information($id,$picture,$category,$email,$location,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages)
@@ -189,27 +231,22 @@ class User
 		}
 
 	}
- 	public function update_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skills,$cookingskills,$otherskills,$availability)
+ 	public function update_profile_professional_information($id,$preferedworklocation,$skills,$cookingskills,$otherskills)
  	{
  		try
 		{
 			$insert_professional_query="UPDATE user_professional_information SET upi_preferedworklocation=:preferedworklocation,
-																				upi_yearsofexp=:yearsofexp,
-																				upi_expsummary=:expsummary,
 																				upi_cookingskills=:cookingskills,
 																				upi_skillsexp=:skills,
-																				upi_otherskills=:otherskills,
-																				upi_availability=:availability
+																				upi_otherskills=:otherskills
+																				
 																			  WHERE u_id=:id";
 			$insert_professional_stmt=$this->connection->prepare($insert_professional_query);
 			$insert_professional_stmt->execute(array(':id'=>$id,
 												':preferedworklocation'=>$preferedworklocation,
-												':yearsofexp'=>$yearsofexp,
-												':expsummary'=>$expsummary,
-												':skills'=>$skills,
 												':cookingskills'=>$cookingskills,
-												':otherskills'=>$otherskills,
-												':availability'=>$availability));
+												':skills'=>$skills,
+												':otherskills'=>$otherskills));
 			return $insert_professional_stmt;
 
 		}
@@ -257,12 +294,12 @@ class User
 
 
 	
-	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
+	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
 	{
 		 try
 			{
-				$insert_jobpost_query="INSERT INTO job_description(u_id,j_jobtitle,j_employertype,j_country,j_districtlocation,j_type,j_category,j_description,j_workingstatus,j_requiredlanguages,j_contact,j_mainduties,j_cookingskill,j_applicationemail,j_nationality,j_familytype,j_startdate,j_monthlysalary,j_logo,j_status)
-				VALUES(:id,:jobtitle,:employertype,:country,:districtlocation,:type,:category,:description,:workingstatus,:requiredlanguages,:contact,:mainduties,:cookingskill,:applicationemail,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
+				$insert_jobpost_query="INSERT INTO job_description(u_id,j_jobtitle,j_employertype,j_country,j_districtlocation,j_type,j_category,j_description,j_requiredlanguages,j_contact,j_mainduties,j_cookingskill,j_applicationemail,j_nationality,j_familytype,j_startdate,j_monthlysalary,j_logo,j_status)
+				VALUES(:id,:jobtitle,:employertype,:country,:districtlocation,:type,:category,:description,:requiredlanguages,:contact,:mainduties,:cookingskill,:applicationemail,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
 
 				$insert_jobpost_stmt=$this->connection->prepare($insert_jobpost_query);
 				$insert_jobpost_stmt->execute(array(':id'=>$id,
@@ -273,7 +310,6 @@ class User
 													':type'=>$type,
 													':category'=>$category,
 													':description'=>$description,
-													':workingstatus'=>$workingstatus,
 													':requiredlanguages'=>$requiredlanguages,
 													':contact'=>$contact,
 													':mainduties'=>$mainduties,
@@ -311,7 +347,7 @@ class User
 			echo $e->getMessage();
 		}
 	}
-	public function update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
+	public function update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
 	{
 		try
 		{
@@ -322,7 +358,6 @@ class User
 																j_type=:type,
 																j_category=:category,
 																j_description=:description,
-																j_workingstatus=:workingstatus,
 																j_requiredlanguages=:requiredlanguages,
 																j_contact=:contact,
 																j_mainduties=:mainduties,
@@ -343,7 +378,6 @@ class User
 												':type'=>$type,
 												':category'=>$category,
 												':description'=>$description,
-												':workingstatus'=>$workingstatus,
 												':requiredlanguages'=>$requiredlanguages,
 												':contact'=>$contact,
 												':mainduties'=>$mainduties,

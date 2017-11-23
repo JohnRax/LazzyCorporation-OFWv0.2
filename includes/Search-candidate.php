@@ -100,12 +100,12 @@
                                                 <div class="checkbox">
                                                     <label> <input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care</label>
                                                 </div>
-                                            </div>  
+                                            </div> 
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input id="in-helper_requirement2-109" nname="upi_skillsexp[]" type="checkbox" value="Teen Care">Teen Care </label>
+                                                    <label>  <input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care </label>
                                                 </div>
-                                            </div>  
+                                            </div> 
                                         </div>
                                     </fieldset>
 
@@ -133,9 +133,9 @@
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care </label>
+                                                    <label> <input id="in-helper_requirement2-109" name="upi_skillsexp[]" type="checkbox" value="Disabled Person"> Disabled Person </label>
                                                 </div>
-                                            </div>  
+                                            </div>    
                                         </div>
                                     </fieldset>
 

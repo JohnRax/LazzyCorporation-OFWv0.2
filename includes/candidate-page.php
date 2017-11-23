@@ -43,9 +43,9 @@
         </div>
         
         <?php 
-                $host = 'lazycompanydb.comfhxnalolh.ap-southeast-1.rds.amazonaws.com';
-                $user = 'dblazyc0mpAnY';
-                $password = 'lazYPr0p3rt1eS';
+                $host = 'localhost';
+                $user = 'root';
+                $password = '';
                 $dbname='lazycorporation-ofwdatabase';
                 try 
                 {
@@ -215,16 +215,6 @@
                                 </ul>
 
                             </div>
-
-
-
-                                <div class="section">
-                                <h4 class="s-property-title">Description</h4>
-                                <div class="s-property-content">
-                                    <p> <?php echo $result['upi_expsummary']; ?></p>
-                                </div>
-                            </div>
-
                              <div class="section additional-details">
 
                                 <!-- <h4 class="s-property-title">Experience 1</h4>
@@ -286,7 +276,7 @@
                                         <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_5']; ?></span>
                                     </li>
                                       <li>
-                                        <span class="col-xs-6 col-sm-10 col-md-10 add-d-title"> Are you willing to take care of disabled elderly?</span>
+                                        <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Are you willing to take care of disabled elderly?</span>
                                         <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_6']; ?></span>
                                            <li>
                                         <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Do you got experience to take care of dogs or pets?</span>
@@ -301,7 +291,7 @@
                                         <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_9']; ?></span>
                                     </li>
                                      <li>
-                                        <span class="col-xs-6 col-sm-10 col-md-10 add-d-title"> Do you smoke?</span>
+                                        <span class="col-xs-6 col-sm-10 col-md-10 add-d-title">Are you wiling to work with other person?</span>
                                         <span class="col-xs-6 col-sm-2 col-md-2 add-d-title1"><?php echo $result['uq_10']; ?></span>
                                     </li>
                                  

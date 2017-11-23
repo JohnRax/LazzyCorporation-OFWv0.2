@@ -87,7 +87,7 @@
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Teen Care"> Teen Care </label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Disabled Person"> Disabled Person </label>
                                                 </div>
                                             </div>  
                                         </div>

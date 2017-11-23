@@ -133,7 +133,7 @@
                                                 echo " <div class='col-sm-6 col-md-3 p0'>
                                                  <div class='box-two proerty-item'>
                                                    <div class='item-thumb'>
-                                                        <img src='assets/img/profilepicture/".$result['j_logo']."'>
+                                                        <img  src='assets/img/profilepicture/".$result['j_logo']."'>
                                                           </div>
                                                              <div class='item-entry overflow'>
                                                                 <center><h4>".$result['j_jobtitle']."</h4> </center>
@@ -198,7 +198,7 @@
                                             $show_jobquantity_query="SELECT 
                                                       COUNT(u_id) AS user 
                                                     FROM
-                                                    `user_personal_information`";
+                                                    `user_personal_information` where up_status=:status";
                                              $show_jobquantity_stmt=$connection->prepare($show_jobquantity_query);
                                              $show_jobquantity_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_jobquantity_stmt->fetch(PDO::FETCH_ASSOC))
@@ -208,7 +208,7 @@
                                                 echo " <div class='col-sm-6 col-xs-6'>
                                 <div class='count-item'>
                                     <div class='count-item-circle'>
-                                        <span class='pe-7s-users'></span>
+                                        <span class='pe-7s-id'></span>
                                     </div>
                                     <div class='chart' data-percent='5000'>
                                         <h2 class='percent' > ".$result['user']."</h2>
@@ -224,7 +224,7 @@
                                             $show_jobquantity_query="SELECT 
                                                   COUNT(j_id) AS job 
                                                 FROM
-                                                  `job_description` ";
+                                                  `job_description` where j_status=:status ";
                                              $show_jobquantity_stmt=$connection->prepare($show_jobquantity_query);
                                              $show_jobquantity_stmt->execute(array(':status'=>'Approved'));
                                              while($result = $show_jobquantity_stmt->fetch(PDO::FETCH_ASSOC))
@@ -234,7 +234,7 @@
                                                 echo " <div class='col-sm-6 col-xs-6'>
                                 <div class='count-item'>
                                     <div class='count-item-circle'>
-                                        <span class='pe-7s-flag'></span>
+                                        <span class='pe-7s-portfolio'></span>
                                     </div>
                                     <div class='chart' data-percent='120'>
                                         <h2 class='percent' id=''>".$result['job']."</h2>

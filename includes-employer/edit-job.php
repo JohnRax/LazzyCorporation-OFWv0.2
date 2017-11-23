@@ -62,7 +62,6 @@
         $type=$_POST['j_type'];
         $category=$_POST['j_category'];
         $description=$_POST['j_description'];
-        $workingstatus=$_POST['j_workingstatus'];
         $contact=$_POST['j_contact'];
         $applicationemail=$_POST['j_email'];
         $nationality=$_POST['j_nationality'];
@@ -86,7 +85,7 @@
             }
         }
 
-        if($user->update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        if($user->update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            
             echo"<script>
@@ -211,29 +210,7 @@
                                                             <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="j_description" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"><?php echo $result['j_description'] ?></textarea> 
                                                                 <i><small><div id='CharCountLabel1'></div></small></i>
                                                     </div> 
-                                                    <label>Prefered Working Status *</label>
-                                                        <select  required  name="j_workingstatus" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select working status">
-                                                            <option  value="Break Contract"  <?php if($result['j_workingstatus']=="Break Contract")echo "selected"; ?>>
-                                                                Break Contract
-                                                            </option>
-                                                            <option  value="Finished Contract" <?php if($result['j_workingstatus']=="Finished Contract")echo "selected"; ?>>
-                                                                Finished Contract
-                                                            </option>
-                                                            <option  value="Terminated Due to Relocation/Financial" <?php if($result['j_workingstatus']=="Terminated Due to Relocation/Financial")echo "selected"; ?>>
-                                                                Terminated Due to Relocation/Financial
-                                                            </option>
-                                                            <option  value="Terminated for Other Reasons" <?php if($result['j_workingstatus']=="Terminated for Other Reasons")echo "selected"; ?>>
-                                                                Terminated for Other Reasons
-                                                            </option>
-                                                            <option  value="Transfer" <?php if($result['j_workingstatus']=="Transfer")echo "selected"; ?>>
-                                                                Transfer
-                                                            </option>
-                                                            <option  value="Unemployed" <?php if($result['j_workingstatus']=="Unemployed")echo "selected"; ?>>
-                                                                Unemployed
-                                                            </option>
-                                                           
-                                                        </select>
-
+                                                   
                                                     <h3>Family Status</h3>
                                                     <label>Nationality *</label>
                                                         <select required  name="j_nationality" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select nationality">

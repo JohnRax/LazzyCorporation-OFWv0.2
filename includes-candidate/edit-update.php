@@ -94,11 +94,20 @@
             $otherskills="none";        
         }
         $preferedworklocation=$_POST['upi_preferedworklocation'];
-        $yearsofexp=$_POST['upi_yearsofexp'];
-        $expsummary=$_POST['upi_expsummary'];
-        $availability=$_POST['upi_availability'];
-        $user->update_profile_professional_information($id,$preferedworklocation,$yearsofexp,$expsummary,$skillsexp,$cookingskills,$otherskills,$availability);
+        $user->update_profile_professional_information($id,$preferedworklocation,$skillsexp,$cookingskills,$otherskills);
         
+        $jd=$_POST['ue_jd'];
+        $jdlocation=$_POST['ue_jdlocation'];
+        $jdfrom=$_POST['ue_from'];
+        $to=$_POST['ue_to'];
+        
+        
+        $user->update_profile_work_experience($id,$jd,$jdlocation,$jdfrom,$to);
+
+
+        //work Experience
+
+
          $q1=$_POST['uq_1'];
         $q2=$_POST['uq_2'];
         $q3=$_POST['uq_3'];
@@ -121,7 +130,7 @@
      }
 
      $show_profile_query="SELECT 
-                              a.*,b.*,c.*,d.*
+                              a.*,b.*,c.*,d.*,e.*
                             FROM
                              user_details AS a
                               JOIN user_personal_information AS b 
@@ -130,6 +139,8 @@
                                 ON a.u_id = c.u_id 
                                JOIN user_question AS d 
                                ON c.u_id =d.u_id
+                               JOIN user_experience AS e
+                               ON d.u_id =e.u_id
                             WHERE a.u_id = :id ";
     $show_profile_stmt=$connection->prepare($show_profile_query);
     $show_profile_stmt->execute(array(':id'=>$_SESSION['user_session']));
@@ -323,44 +334,35 @@
                                                 <div class="col-sm-12"> 
                                                         <label>Where Do You Want To Work *</label>
                                                         <select name="upi_preferedworklocation" required="" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your prefered location">
-                                                            
+                                                            <option value="Philippines"  <?php if($result['upi_preferedworklocation']=="Philippines")echo "selected"; ?>>
+                                                                    Philippines
+                                                                </option>
+                                                                <option value="Hong Kong"  <?php if($result['upi_preferedworklocation']=="Hong Kong")echo "selected"; ?>>
+                                                                    Hong Kong
+                                                                </option>
+                                                                <option value="China"  <?php if($result['upi_preferedworklocation']=="China")echo "selected"; ?>>
+                                                                    China
+                                                                </option>
+                                                                <option value="Saudi Arabia"  <?php if($result['upi_preferedworklocation']=="Saudi Arabia")echo "selected"; ?>>
+                                                                    Saudi Arabia
+                                                                </option>
+                                                                <option value="United Arab Emirates"  <?php if($result['upi_preferedworklocation']=="United Arab Emirates")echo "selected"; ?>>
+                                                                    United Arab Emirates
+                                                                </option>
+                                                                <option value="Qatar"  <?php if($result['upi_preferedworklocation']=="Qatar")echo "selected"; ?>>
+                                                                    Qatar
+                                                                </option>
+                                                                <option value="Taiwan"  <?php if($result['upi_preferedworklocation']=="Taiwan")echo "selected"; ?>>
+                                                                    Taiwan
+                                                                </option> 
+
                                                             <option value="Philippines" <?php if($result['upi_preferedworklocation']=="Philippines")echo "selected"; ?>>Philippines</option>
                                                             <option value="China" <?php if($result['upi_preferedworklocation']=="China")echo "selected"; ?>>China</option>
                                                             <option value="India" <?php if($result['upi_preferedworklocation']=="India")echo "selected"; ?>>India</option>
                                                             <option value="Indonesia" <?php if($result['upi_preferedworklocation']=="Indonesia")echo "selected"; ?>>Indonesia</option>
                                                             <option value="Thailand" <?php if($result['upi_preferedworklocation']=="Thailand")echo "selected"; ?>>Thailand</option>
                                                         </select>
-                                                </div>
-                                                
-                                                    <div class="col-sm-12"> 
-                                                        <label>Years Of Experience *</label>
-                                                        <select required="" class="selectpicker" name="upi_yearsofexp" data-live-search="true" data-live-search-style="begins" title="Please select your years of experience">
-                                                          
-                                                            <option value="0" <?php if($result['upi_yearsofexp']=="0")echo "selected"; ?>>0</option>
-                                                            <option value="1" <?php if($result['upi_yearsofexp']=="1")echo "selected"; ?> >1</option>
-                                                            <option value="2" <?php if($result['upi_yearsofexp']=="2")echo "selected"; ?>>2</option>
-                                                            <option value="3" <?php if($result['upi_yearsofexp']=="3")echo "selected"; ?>>3</option>
-                                                            <option value="4" <?php if($result['upi_yearsofexp']=="4")echo "selected"; ?>>4</option>
-                                                            <option value="5" <?php if($result['upi_yearsofexp']=="5")echo "selected"; ?>>5</option>
-                                                            <option value="6" <?php if($result['upi_yearsofexp']=="6")echo "selected"; ?>>6</option>
-                                                            <option value="7" <?php if($result['upi_yearsofexp']=="7")echo "selected"; ?>>7</option>
-                                                            <option value="8" <?php if($result['upi_yearsofexp']=="8")echo "selected"; ?>>8</option>
-                                                            <option value="9" <?php if($result['upi_yearsofexp']=="9")echo "selected"; ?>>9</option>
-                                                            <option value="10" <?php if($result['upi_yearsofexp']=="10")echo "selected"; ?>>10</option>
-                                                            <option value="11" <?php if($result['upi_yearsofexp']=="11")echo "selected"; ?>>11</option>
-                                                            <option value="12" <?php if($result['upi_yearsofexp']=="12")echo "selected"; ?>>12</option>
-                                                            <option value="13" <?php if($result['upi_yearsofexp']=="13")echo "selected"; ?>>13</option>
-                                                            <option value="14" <?php if($result['upi_yearsofexp']=="14")echo "selected"; ?>>14</option>
-                                                            <option value="15" <?php if($result['upi_yearsofexp']=="15")echo "selected"; ?>>15</option>
-                                                        </select>
-                                                </div>
-                                                <div class="col-sm-12"> 
-                                                    <div class="form-group">
-                                                        <label>Experience Summary </label> 
-                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="upi_expsummary" placeholder="Explain here your working experience." required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"><?php echo $result['upi_expsummary'] ?></textarea> 
-                                                                <i><small><div id='CharCountLabel1'></div></small></i>
-                                                    </div> 
-                                                </div>                            
+                                                </div>                 
                                             <div class="col-sm-12 padding-top-15">
                                             <label>My Skills and Experience <small><i>Maximum of 4</i></small></label>
                                                  
@@ -391,9 +393,9 @@
                                                         <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver" <?php  if(in_array('Professional Driver', $array_experience))echo "checked"; ?>> Professional Driver
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input id="in-helper_requirement2-109" nname="upi_skillsexp[]" type="checkbox" value="Teen Care" <?php  if(in_array('Teen Care', $array_experience))echo "checked"; ?>> Teen Care
+                                                        <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Disabled Person" <?php  if(in_array('Disabled Person', $array_experience))echo "checked"; ?>> Disabled Person
                                                     </div>
-                                                   
+                                                    
                                                  </ul>
                                             </div>
 
@@ -404,8 +406,9 @@
                                                          $array_cooking = explode(',', $result['upi_cookingskills']);
                                                    
                                                             ?>
+
                                                         <div class="col-sm-3">
-                                                            <input id="in-cooking_requirement2-193" name="upi_cookingskills[]" type="checkbox" value="American"  <?php  if(in_array('American', $array_cooking))echo "checked"; ?>> American
+                                                            <input id="in-cooking_requirement2-193" name="upi_cookingskills[]" type="checkbox" value="Filipino"  <?php  if(in_array('Filipino', $array_cooking))echo "checked"; ?>> Filipino
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <input id="in-cooking_requirement2-114" name="upi_cookingskills[]" type="checkbox" value="Arabic"  <?php  if(in_array('Arabic', $array_cooking))echo "checked"; ?>> Arabic
@@ -414,22 +417,17 @@
                                                             <input id="in-cooking_requirement2-115" name="upi_cookingskills[]" type="checkbox" value="Chinese"  <?php  if(in_array('Chinese', $array_cooking))echo "checked"; ?>> Chinese
                                                         </div>
                                                         <div class="col-sm-3">    
-                                                            <input id="in-cooking_requirement2-191" name="upi_cookingskills[]" type="checkbox" value="French"  <?php  if(in_array('French', $array_cooking))echo "checked"; ?>> French
+                                                            <input id="in-cooking_requirement2-191" name="upi_cookingskills[]" type="checkbox" value="Indonesian"  <?php  if(in_array('Indonesian', $array_cooking))echo "checked"; ?>> Indonesian
                                                         </div>
                                                         <div class="col-sm-3">   
                                                             <input id="in-cooking_requirement2-116" name="upi_cookingskills[]" type="checkbox" value="Indian"  <?php  if(in_array('Indian', $array_cooking))echo "checked"; ?>> Indian
                                                         </div>
-                                                        <div class="col-sm-3">   
-                                                            <input id="in-cooking_requirement2-192" name="upi_cookingskills[]" type="checkbox" value="Italian"  <?php  if(in_array('Italian', $array_cooking))echo "checked"; ?>> Italian
-                                                        </div>
+                                                        
                                                         <div class="col-sm-3">   
                                                             <input id="in-cooking_requirement2-119" name="upi_cookingskills[]" type="checkbox" value="Japanese"  <?php  if(in_array('Japanese', $array_cooking))echo "checked"; ?>> Japanese
                                                         </div>
                                                         <div class="col-sm-3">    
                                                             <input id="in-cooking_requirement2-235" name="upi_cookingskills[]" type="checkbox" value="Thai"  <?php  if(in_array('Thai', $array_cooking))echo "checked"; ?>> Thai
-                                                        </div>
-                                                        <div class="col-sm-3">   
-                                                            <input id="in-cooking_requirement2-117" name="upi_cookingskills[]" type="checkbox" value="Vegeterian"  <?php  if(in_array('Vegeterian', $array_cooking))echo "checked"; ?>> Vegeterian
                                                         </div>
                                                         <div class="col-sm-3">  
                                                             <input id="in-cooking_requirement2-118" name="upi_cookingskills[]" type="checkbox" value="Western"  <?php  if(in_array('Western', $array_experience))echo "checked"; ?>> Western
@@ -478,14 +476,21 @@
                                                    
                                         </ul>
                                             </div>
-                                                  <div class="col-sm-12"> 
-
-                                                     <labeL>Start Date *</label>
-                                                    <input name="upi_availability" required="" type="date" class="form-control" placeholder="" title="Please input your start date" value="<?php echo $result['upi_availability'] ?>">
-
-                                                   
-                                                </div>
+                                                 
                                             <br>
+                                            <h3>Work Experience</h3>
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-6">
+                                                    <label>Job Description <small><i>Optional</i></small> </label> <input class="form-control" name="ue_jd" placeholder="Job Description"   type="text" value="<?php echo $result['ue_jd']; ?>">
+
+                                                    <label>Location <small><i>Optional</i></small></label> <input class="form-control" name="ue_jdlocation" placeholder="Work Location"   type="text" value="<?php echo $result['ue_jdlocation']; ?>">
+
+                                                    <label>From (Year) <small><i>Optional</i></small></label> <input class="form-control"  name="ue_from" placeholder="From"  type="month" value="<?php echo $result['ue_from']; ?>">
+
+                                                     <label>To (Year) <small><i>Optional</i></small></label> <input class="form-control"  name="ue_to" placeholder="To"  type="month" value="<?php echo $result['ue_to']; ?>">
+                                                </div>
+                                            </div>
+                                             <br>
                                         </div>
                                     </div>
                                     <!-- End step 2 -->
@@ -594,7 +599,7 @@
                                         </div> 
                                             <div class="col-sm-12">
                                                      <p>
-                                                        <label><strong>10. Do you smoke?</strong></label>
+                                                        <label><strong>10. Are you wiling to work with other person?</strong></label>
                                                            <select name="uq_10" class="form-group">
                                                            <option selected disabled value="">Y/N</option>
                                                           <option value="Yes" <?php if($result['uq_10']=="Yes")echo "selected"; ?>>Yes</option>

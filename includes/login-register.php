@@ -197,7 +197,7 @@
                                             </select>
                                         </div>
                                         <label for="name">Email *</label>
-                                        <input type="email" required class="form-control" name="u_email" placeholder="Email Address">
+                                        <input type="email"  class="form-control" name="u_email" placeholder="Email Address">
                                         
                                         <label for="name">Phone Number * </label>
                                         <input type="text" onkeypress="return isNumberKey(event)" required class="form-control" name="u_mobile" placeholder="Phone Number">

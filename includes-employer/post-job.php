@@ -66,7 +66,6 @@
         $type=$_POST['j_type'];
         $category=$_POST['j_category'];
         $description=$_POST['j_description'];
-        $workingstatus=$_POST['j_workingstatus'];
         $contact=$_POST['j_contact'];
         $applicationemail=$_POST['j_email'];
         $nationality=$_POST['j_nationality'];
@@ -80,7 +79,7 @@
         {
             $logo="default.png";
         }
-        if($user->post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$workingstatus,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        if($user->post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            
             echo"<script>
@@ -198,28 +197,8 @@
                                                
 
                                                     
-                                                    <label>Prefered Working Status *</label>
-                                                        <select  required  name="j_workingstatus" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select working status">
-                                                            <option  value="Break Contract">
-                                                                Break Contract
-                                                            </option>
-                                                            <option  value="Finished Contract">
-                                                                Finished Contract
-                                                            </option>
-                                                            <option  value="Terminated Due to Relocation/Financial">
-                                                                Terminated Due to Relocation/Financial
-                                                            </option>
-                                                            <option  value="Terminated for Other Reasons">
-                                                                Terminated for Other Reasons
-                                                            </option>
-                                                            <option  value="Transfer">
-                                                                Transfer
-                                                            </option>
-                                                            <option  value="Unemployed">
-                                                                Unemployed
-                                                            </option>
-                                                           
-                                                        </select>
+                                                   
+
 
                                                     <h3>Family Status</h3>
                                                     <label>Nationality *</label>
