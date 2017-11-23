@@ -153,23 +153,18 @@
                                 ?>
                             <h2>New account : </h2> 
                            
-                            <!-- <script type="text/javascript">
+                            <script type="text/javascript">
                                 $(document).ready(function(){
                                     $("#usertype").change(function(){
                                         var typevalue=$("#usertype").val();                                       
                                         switch (typevalue) 
                                         {   
-                                            case 'disabled':
-                                                $("#show").load("ajaxfiles/register-disabled.html");
+                                           
+                                            case 'Candidate':
+                                               $("#show").load("ajaxfiles/register-candidate.html");
                                                 break;
-                                            case 'agent':
-                                               $("#show").load("ajaxfiles/register-agent.html");
-                                                break;
-                                            case 'helper':
-                                               $("#show").load("ajaxfiles/register-landlord.html");
-                                                break;
-                                            case 'agency':
-                                               $("#show").load("ajaxfiles/register-buyer.html");
+                                            case 'Agency':
+                                               $("#show").load("ajaxfiles/register-agency.html");
                                                 break;
                                             default:
                                                
@@ -177,61 +172,28 @@
                                         } 
                                     });
                                 });
-                            </script> -->
+                            </script>
 
 
                             <form  action="" method="post">                               
-                                <div class="form-group">
-                                     
-                                    <br>
-                                     <div class="form-group">
-
-                             
+                                <div  class="form-group">
                                      <div class="form-group">
                                          <label  for="Lastname">Account Type *</label>
-                                            <select required id="usertype" class="form-control" name="u_type">
+                                            <select  id="usertype" class="form-control" name="u_type">
                                                 <option class="form-control" selected disabled value="">Select Account Type</option>
-                                                 <option class="form-control" value="candidate">Candidate</option>   
-                                                 <option class="form-control" value="agency">Agency</option>
+                                                 <option class="form-control" value="Candidate">Candidate</option>   
+                                                 <option class="form-control" value="Agency">Agency</option>
                                                
                                             </select>
+                                            <div id="show">
+                                              
+                                            </div>
                                         </div>
-                                        <label for="name">Email *</label>
-                                        <input type="email"  class="form-control" name="u_email" placeholder="Email Address">
-                                        
-                                        <label for="name">Phone Number * </label>
-                                        <input type="text" onkeypress="return isNumberKey(event)" required class="form-control" name="u_mobile" placeholder="Phone Number">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password *</label>
-                                        <input type="password" required class="form-control" minlength="6" name="u_password" placeholder="******">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="Lastname">Last Name *</label>
-                                        <input type="text" required class="form-control" name="u_lname" placeholder="Last Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Firstname">First Name *</label>
-                                        <input type="text" required class="form-control" name="u_fname" placeholder="First Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Gender">Gender *</label>
-                                         <select id="gender" required="" class="form-control" name="u_gender">
-                                                <option class="form-control" selected disabled value="">Select Gender</option>
-                                                <option class="form-control" value="Male">Male</option>
-                                                <option class="form-control" value="Female">Female</option>
-                                         </select>
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" name="btn-register" class="btn btn-block btn-primary">
-                                     <i class="glyphicon glyphicon-log-in"></i>&nbsp;REGISTER
-                                </button>    
-                                    </div>
-                                        
                                 </div>
                                
                             </form>
+
+                              
 
 
 
