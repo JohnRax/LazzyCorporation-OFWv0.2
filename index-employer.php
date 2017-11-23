@@ -11,7 +11,7 @@
     }
     else
     {
-        if($_SESSION['user_type']=='candidate')
+        if($_SESSION['user_type']=='Candidate')
         {
             $user->redirect('index-candidate.php');
         }
