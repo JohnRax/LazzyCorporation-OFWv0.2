@@ -47,7 +47,9 @@
                 }
                 else
                 {
-                    echo "WRONG DETAILS";
+                   echo"<script>
+                            alert('Wrong Username/Password');
+                        </script>";
                 }
 
             }

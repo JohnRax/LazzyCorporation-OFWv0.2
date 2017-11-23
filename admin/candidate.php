@@ -1,4 +1,4 @@
-  <div id="page-wrapper">
+ <div id="page-wrapper">    
             <div class="container-fluid">
                 <div class="row">
    
@@ -84,7 +84,7 @@
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
-            </div>
+              </div>
             <!-- /.container-fluid -->
-        </div>
+          </div>
         <!-- /#page-wrapper -->
