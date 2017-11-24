@@ -85,7 +85,7 @@
                             </div>
                         </div>
 
-                        <div class="section"> 
+                        <!-- <div class="section"> 
                             <div class="pull-right">
                                 <div class="pagination">
                                     <ul>
@@ -98,7 +98,7 @@
                                     </ul>
                                 </div>
                             </div>                
-                        </div>
+                        </div> -->
 
                     </div>       
                          

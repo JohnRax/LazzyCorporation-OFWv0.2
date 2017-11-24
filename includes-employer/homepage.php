@@ -27,8 +27,7 @@
                                               b.up_nationality,
                                               b.up_category,
                                               b.up_address,
-                                              c.upi_skillsexp,
-                                              c.upi_yearsofexp
+                                              c.upi_skillsexp
                                             FROM
                                               user_details AS a 
                                                JOIN user_personal_information AS b 
@@ -54,8 +53,6 @@
                                             <h7><b>Location: </b>".$result['up_address']."</h7>
                                             <br>
                                             <span class='proerty-price pull-left'><b>Nationality: </b>".$result['up_nationality']."</span>
-                                            <br>
-                                            <h7><b>Years Of Experience: </b>".$result['upi_yearsofexp']."</h7>
                                             <br>
                                             <h7><b>Job Expertises:</b></h7>
                                             <h7>".$result['upi_skillsexp']."</h7>

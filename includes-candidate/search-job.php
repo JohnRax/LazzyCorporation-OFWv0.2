@@ -84,12 +84,13 @@
                                                 <div class="checkbox">
                                                     <label> <input name="skills[]" type="checkbox" value="Elder Care"> Elder Care</label>
                                                 </div>
-                                            </div>  
+                                            </div> 
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Disabled Person"> Disabled Person </label>
+                                                    <label>  <input  name="skills[]" type="checkbox" value="Pet Care"> Pet Care </label>
                                                 </div>
                                             </div>  
+                                             
                                         </div>
                                     </fieldset>
 
@@ -115,11 +116,12 @@
                                                     <label>  <input  name="skills[]" type="checkbox" value="Professional Driver"> Professional Driver</label>
                                                 </div>
                                             </div>  
+                                             
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input  name="skills[]" type="checkbox" value="Pet Care"> Pet Care </label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Disabled Person"> Disabled Person </label>
                                                 </div>
-                                            </div>  
+                                            </div> 
                                         </div>
                                     </fieldset>
 
@@ -363,7 +365,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-12"> 
+                    <!-- <div class="col-md-12"> 
                         <div class="pull-right">
                             <div class="pagination">
                                 <ul>
@@ -376,7 +378,7 @@
                                 </ul>
                             </div>
                         </div>                
-                    </div>
+                    </div> -->
                 </div>  
                 </div>              
             </div>

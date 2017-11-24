@@ -200,8 +200,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -227,8 +226,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -252,8 +250,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -284,8 +281,7 @@
                                                           b.up_nationality,
                                                           b.up_category,
                                                           b.up_address,
-                                                          c.upi_skillsexp,
-                                                          c.upi_yearsofexp
+                                                          c.upi_skillsexp
                                                         FROM
                                                         user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -319,8 +315,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -350,8 +345,7 @@
                                                           b.up_nationality,
                                                           b.up_category,
                                                           b.up_address,
-                                                          c.upi_skillsexp,
-                                                          c.upi_yearsofexp
+                                                          c.upi_skillsexp
                                                         FROM
                                                         user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -392,8 +386,7 @@
                                                           b.up_nationality,
                                                           b.up_category,
                                                           b.up_address,
-                                                          c.upi_skillsexp,
-                                                          c.upi_yearsofexp
+                                                          c.upi_skillsexp
                                                         FROM
                                                         user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -428,8 +421,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -453,8 +445,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -478,9 +469,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
-                                                    FROM
+                                                      c.upi_skillsexp
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
@@ -503,8 +492,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -535,8 +523,7 @@
                                                           b.up_nationality,
                                                           b.up_category,
                                                           b.up_address,
-                                                          c.upi_skillsexp,
-                                                          c.upi_yearsofexp
+                                                          c.upi_skillsexp
                                                         FROM
                                                         user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -578,8 +565,6 @@
                                                    
                                                     <h7><b>Nationality:</b> ".$result['up_nationality']."</h7>
                                                     <br>
-                                                    <h7><b>Years Of Experience:</b> ".$result['upi_yearsofexp']."</h7>
-                                                    <br>
                                                     <h7><b>Job Expertises:</b></h7>
                                                     <h7>".$result['upi_skillsexp']."</h7>
                                                     <br>
@@ -611,8 +596,7 @@
                                                       b.up_nationality,
                                                       b.up_category,
                                                       b.up_address,
-                                                      c.upi_skillsexp,
-                                                      c.upi_yearsofexp
+                                                      c.upi_skillsexp
                                                     FROM
                                                       user_details AS a 
                                                        JOIN user_personal_information AS b 
@@ -640,8 +624,6 @@
                                                    
                                                     <h7><b>Nationality: </b>".$result['up_nationality']."</h7>
                                                     <br>
-                                                    <h7><b>Years Of Experience: </b> ".$result['upi_yearsofexp']."</h7>
-                                                    <br>
                                                     <h7><b>Job Expertises: </b></h7>
                                                     <h7> ".$result['upi_skillsexp']."</h7>
                                                     <br>
@@ -666,7 +648,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-12"> 
+                    <!-- <div class="col-md-12"> 
                         <div class="pull-right">
                             <div class="pagination">
                                 <ul>
@@ -679,7 +661,7 @@
                                 </ul>
                             </div>
                         </div>                
-                    </div>
+                    </div> -->
                 </div>  
                 </div>              
             </div>
