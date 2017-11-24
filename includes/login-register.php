@@ -18,7 +18,7 @@
         $password=trim($_POST['u_password']);
         $lastname=trim($_POST['u_lname']);
         $firstname=trim($_POST['u_fname']);
-        $gender=trim($_POST['u_gender']);
+        $gender=trim($_POST[@'u_gender']);
 
         try
         {

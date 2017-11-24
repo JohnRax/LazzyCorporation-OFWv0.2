@@ -80,6 +80,16 @@
 
         //work Experience
 
+        $alname=$_POST['ac_lname'];
+        $afname=$_POST['ac_fname'];
+        $agender=$_POST['ac_gender'];
+        
+        
+        $user->post_agency_candidate($id,$alname,$afname,$agender);
+
+
+        //agency candidate
+
         if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
         { 
             $skillsexp = implode(',', $_POST['upi_skillsexp']);
@@ -125,7 +135,7 @@
          
             echo"<script>
                     alert('Complete! Your profile is under approval. Thank you');
-                    location.href = 'index-candidate.php';
+                    location.href = 'index-employer.php?source=addnew';
                 </script>";
         }
         //Supplementary Questions
@@ -170,12 +180,27 @@
                                                         <option value="Helper">Helper</option>
                                                         
                                                     </select>
+                                                <div class="form-group">
+                                                    <labeL>First Name *</label>
+                                                    <input name="ac_fname"  required type="text" class="form-control" placeholder="First Name" title="Please input your first name">
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <labeL>Last Name *</label>
+                                                    <input name="ac_lname"  required type="text" class="form-control" placeholder="Last Name" title="Please input your last name">
+
+                                                </div>
 
                                                 <div class="form-group">
                                                     <labeL>Email address *</label>
-                                                    <input name="up_email"  required type="text" class="form-control" placeholder="Email address" title="Please input your email address">
+                                                    <input name="up_email"  required type="email" class="form-control" placeholder="Email address" title="Please input your email address">
 
                                                 </div>
+                                                <label>Gender  *</label>
+                                                        <select name="ac_gender" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your gender">
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                        </select>
                                                 <div class="form-group">
                                                     <labeL>Mobile number *</label>
                                                     <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number">

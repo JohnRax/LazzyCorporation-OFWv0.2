@@ -36,6 +36,9 @@
         case 'postjob':
              include "includes-employer/post-job.php"; 
             break; 
+        case 'addnew':
+            include "includes-employer/agency_submit-profile.php"; 
+               break;
         case 'listpostjobs':
              include "includes-employer/list-jobs.php"; 
             break; 

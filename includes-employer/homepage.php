@@ -16,28 +16,34 @@
                     <?php 
 
                     require_once 'includes/connection.php';
-                    $show_profile_query="SELECT
-                                              a.u_id, 
-                                              a.u_fname,
-                                              a.u_lname,
-                                              b.up_age,
-                                              b.up_picture,
-                                              b.up_address,
-                                                DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                              b.up_nationality,
-                                              b.up_category,
-                                              b.up_address,
-                                              c.upi_skillsexp
-                                            FROM
-                                              user_details AS a 
-                                               JOIN user_personal_information AS b 
-                                                ON b.u_id = a.u_id 
-                                               JOIN user_professional_information AS c 
-                                                ON a.u_id = c.u_id where b.up_status=:status limit 7";
+                    $show_profile_query="SELECT DISTINCT
+                                            e.u_type,
+                                            a.u_id,
+                                            a.u_fname,
+                                            a.u_lname,
+                                            b.up_age,
+                                            b.up_picture,
+                                            b.up_address,
+                                            DATE_FORMAT(b.up_dateposted, '%M %d, %Y') AS up_dateposted,
+                                            b.up_nationality,
+                                            b.up_category,
+                                            b.up_address,
+                                            c.upi_skillsexp
+                                          FROM USER AS e
+                                            JOIN user_details AS a 
+                                              ON e.u_id = a.u_id
+                                            JOIN user_personal_information AS b 
+                                              ON b.u_id = a.u_id 
+                                            JOIN user_professional_information AS c 
+                                              ON a.u_id = c.u_id 
+                                              WHERE b.up_status = 'Approved' 
+                                          ORDER BY b.up_dateposted DESC  
+                                        LIMIT 7 ";
                     $show_profile_stmt=$connection->prepare($show_profile_query);
                     $show_profile_stmt->execute(array(':status'=>'Approved'));
                     while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
                     {
+
                         echo " <div class='col-sm-6 col-md-3 p0'>
                                     <div class='box-two proerty-item'>
                                         <div class='item-thumb'>
@@ -72,7 +78,8 @@
                                 </div>
                     <?php } ?>
                     
-
+                    
+                  
                            
                         <div class="col-sm-6 col-md-3 p0">
                             <div class="box-tree more-proerty text-center">

@@ -165,6 +165,27 @@ class User
 		}
 
 	}
+
+	public function post_agency_candidate($id,$alname,$afname,$agender)
+	{
+		try
+		{
+			$insert_agency_candidate_query="INSERT INTO agency_candidate(u_id,ac_lname,ac_fname,ac_gender)
+			VALUES(:id,:ac_lname,:ac_fname,:ac_gender)";
+			$insert_agency_candidate_stmt=$this->connection->prepare($insert_agency_candidate_query);
+			$insert_agency_candidate_stmt->execute(array(':id'=>$id,
+											':ac_lname'=>$alname,
+											':ac_fname'=>$afname,
+											':ac_gender'=>$agender));
+			return $insert_agency_candidate_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+	}
+
 	public function update_profile_work_experience($id,$jd,$jdlocation,$jdfrom,$to)
 	{
 		try

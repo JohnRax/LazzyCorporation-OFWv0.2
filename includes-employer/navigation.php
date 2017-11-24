@@ -25,6 +25,9 @@
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
                              <a href="index-employer.php?source=postjob" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">POST JOB</a>
                       </li>
+                      <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                             <a href="index-employer.php?source=addnew" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">SUBMIT PROFILE</a>
+                      </li>
                    
                    
                         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
