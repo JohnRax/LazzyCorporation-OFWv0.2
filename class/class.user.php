@@ -166,18 +166,21 @@ class User
 
 	}
 
-	public function post_agency_candidate($id,$alname,$afname,$agender)
+	public function post_agency_candidate($u_id,$lastname,$firstname,$gender)
 	{
 		try
 		{
-			$insert_agency_candidate_query="INSERT INTO agency_candidate(u_id,ac_lname,ac_fname,ac_gender)
-			VALUES(:id,:ac_lname,:ac_fname,:ac_gender)";
+			$insert_agency_candidate_query="INSERT INTO agency_candidate(u_id)
+			VALUES(:u_id)";
 			$insert_agency_candidate_stmt=$this->connection->prepare($insert_agency_candidate_query);
-			$insert_agency_candidate_stmt->execute(array(':id'=>$id,
-											':ac_lname'=>$alname,
-											':ac_fname'=>$afname,
-											':ac_gender'=>$agender));
-			return $insert_agency_candidate_stmt;
+			$insert_agency_candidate_stmt->execute(array(':u_id'=>$u_id));
+		    $ac_id=$this->connection->lastInsertId();
+
+		    $details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender)
+							VALUES (:id,:lastname,:firstname,:gender)";
+			$details_stmt=$this->connection->prepare($details_query);
+			$details_stmt->execute(array(':id'=> $ac_id,':lastname'=>$lastname,':firstname'=>$firstname,':gender'=>$gender));
+			return $ac_id;
 		}
 		catch(PDOException $e)
 		{
@@ -211,8 +214,6 @@ class User
 
  	}
  		
-	
-
 	public function update_profile_personal_information($id,$picture,$category,$email,$location,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages)
 	{
 		try
@@ -312,9 +313,6 @@ class User
 		}
 
  	}
-
-
-	
 	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
 	{
 		 try

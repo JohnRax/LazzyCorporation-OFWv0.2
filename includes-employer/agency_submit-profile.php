@@ -35,6 +35,12 @@
     if (isset($_POST['finish']))
     {
 
+
+        $ac_fname=$_POST['ac_fname'];
+        $ac_lname=$_POST['ac_lname'];
+        $ac_gender=$_POST['ac_gender'];
+        $ac_id=$user->post_agency_candidate($_SESSION['user_session'],$ac_lname,$ac_fname,$ac_gender);
+        
         //personal Info
 
         if( isset($_POST['up_languages']) && !empty($_POST['up_languages']) ) 
@@ -45,7 +51,7 @@
         {
             $languages="none";        
         }
-        $id=$_SESSION['user_session'];
+        $id=$ac_id;
         $category=$_POST['up_category'];
         $email=$_POST['up_email'];
         $mobile=$_POST['up_mobile'];
@@ -67,28 +73,23 @@
 
 
         //Propessional Info
+        $jd=$_POST['ue_jd'];
+        $jdlocation=$_POST['ue_jdlocation'];
+        $from=$_POST['ue_from'];
+        $to=$_POST['ue_to'];
+        $user->post_profile_work_experience($id,$jd,$jdlocation,$from,$to);
 
 
+        //work Experience
         $jd=$_POST['ue_jd'];
         $jdlocation=$_POST['ue_jdlocation'];
         $from=$_POST['ue_from'];
         $to=$_POST['ue_to'];
         
-        
         $user->post_profile_work_experience($id,$jd,$jdlocation,$from,$to);
 
 
-        //work Experience
 
-        $alname=$_POST['ac_lname'];
-        $afname=$_POST['ac_fname'];
-        $agender=$_POST['ac_gender'];
-        
-        
-        $user->post_agency_candidate($id,$alname,$afname,$agender);
-
-
-        //agency candidate
 
         if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
         { 

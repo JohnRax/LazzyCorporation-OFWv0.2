@@ -48,7 +48,7 @@
                                                JOIN user_personal_information AS b 
                                                 ON b.u_id = a.u_id 
                                                JOIN user_professional_information AS c 
-                                                ON a.u_id = c.u_id  where  b.up_status=:status order by b.up_dateposted DESC  limit 7 ";
+                                                ON a.u_id = c.u_id  where  b.up_status=:status order by a.u_id DESC  limit 7 ";
                     $show_profile_stmt=$connection->prepare($show_profile_query);
                     $show_profile_stmt->execute(array(':status'=>'Approved'));
                     while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
