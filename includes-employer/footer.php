@@ -19,12 +19,13 @@
                             </div>
                                <div class="social pull-right"> 
                                     <ul>
-                                        <!-- <li><a class="wow fadeInUp animated" href="https://twitter.com/lazzytechnology"><i class="fa fa-twitter"></i></a></li> -->
+                                      <!--  <li><a class="wow fadeInUp animated" href="https://twitter.com/lazzytechnology"><i class="fa fa-twitter"></i></a></li> -->
                                         <li><a class="wow fadeInUp animated" href="https://www.facebook.com/Lazzy-Technologies-LTD-1763745776977014/?ref=br_rs" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
-                                        <<!-- li><a class="wow fadeInUp animated" href="https://plus.google.com/u/0/105292546621754819289" data-wow-delay="0.3s"><i class="fa fa-google-plus"></i></a></li> -->
+                                        <!-- <li><a class="wow fadeInUp animated" href="https://plus.google.com/u/0/105292546621754819289" data-wow-delay="0.3s"><i class="fa fa-google-plus"></i></a></li> -->
                                         <li><a class="wow fadeInUp animated" href="https://www.instagram.com/lazzytechnologies/" data-wow-delay="0.4s"><i class="fa fa-instagram"></i></a></li>
                                         <li><a class="wow fadeInUp animated" href="www.linkedin.com/in/lazzy-technologies" data-wow-delay="0.6s"><i class="fa fa-linkedin"></i></a></li>
                                         <li><a class="wow fadeInUp animated" href="https://www.youtube.com/" data-wow-delay="0.6s"><i class="fa fa-youtube"></i></a></li>
+
                                     </ul> 
                                 </div>
                         </div>
