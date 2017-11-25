@@ -1,19 +1,25 @@
-<br><br><br><br>
+<br><br><br><br><br>
         <!-- property area -->
-     <div id="homepage"  class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
-                        <!-- /.feature title -->
-                        <h2>Recent Submit Resume</h2>
-                        <p>List of Awesome Oversea Workers here at <strong>LAZZY WORKS</strong>. </p>
-                    </div>
-                </div>
+        <!-- Trigger the modal with a button -->
 
+        <div class="content-area recent-property" style="background-color: #FFF;">
+            <div class="container">   
                 <div class="row">
-                    <div class="proerty-th">
-                        
-                     <?php 
+
+                       <div class="col-md-10 col-md-offset-1 col-sm-12 text-center ">
+                        <!-- /.feature title -->
+                        <h2>MY CANDIDATES</h2>
+                       
+                    </div>
+                     <div class="col-md-1 pr-30 padding-top-40 properties-page user-properties">
+                     </div>
+                    <div class="col-md-12 pr-30 padding-top-40 properties-page user-properties">
+
+
+                        <div class="section"> 
+                            <div id="list-type" class="proerty-th">
+                                                      
+                                 <?php 
 
                     require_once 'includes/connection.php';
                     $show_profile_query="SELECT
@@ -60,32 +66,38 @@
                                              <br>
                                             </div>
                                             
-                                        ";?>
-                                        <div class='span9 btn-block no-padding'>
-                                            <button type="button" class='btn btn-large btn-block btn-primary full-width'
-                                            onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
-                                                    >View Full Profile</button>
-                                            
                                         </div>
-                                    </div>
-                                </div>
-                    <?php } ?>
-                    
-                  
-                           
-                        <div class="col-sm-6 col-md-3 p0">
-                            <div class="box-tree more-proerty text-center">
-                                <br><br> <br><br> <br><br> <br><br>
-                                <div class="more-entry overflow">
-                                    <h5><a">CAN'T FIND HELPERS? ? </a></h5>
-                                    
-                                    <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Helpers</button>
-
-                                
-                                </div>
+                                </div> ";
+                                       
+                                   
+                    } ?>
+                               
+                                                          
+                                                       
                             </div>
                         </div>
-                    </div>
+
+                        <!-- <div class="section"> 
+                            <div class="pull-right">
+                                <div class="pagination">
+                                    <ul>
+                                        <li><a href="#">Prev</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">Next</a></li>
+                                    </ul>
+                                </div>
+                            </div>                
+                        </div> -->
+
+                    </div>       
+                            <div class="col-md-1 pr-30 padding-top-40 properties-page user-properties">
+                     </div>
+                    
                 </div>
             </div>
         </div>
+
+        

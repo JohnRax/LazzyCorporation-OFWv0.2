@@ -35,7 +35,10 @@
                             <ul class="dropdown-menu navbar-nav">
                             
                                 <li>
-                                    <a href="index-employer.php?source=listpostjobs">LIST JOBS</a>
+                                    <a href="index-employer.php?source=listpostjobs">MY JOBS LIST</a>
+                                </li>
+                                <li>
+                                    <a href="index-employer.php?source=listpostcandidate">MY CANDIDATES LIST</a>
                                 </li>
                                 <li>
                                     <a href="index-employer.php?source=logout">LOG OUT</a>

@@ -41,7 +41,10 @@
                break;
         case 'listpostjobs':
              include "includes-employer/list-jobs.php"; 
-            break; 
+            break;   
+        case 'listpostcandidate':
+            include "includes-employer/list-candidates.php"; 
+             break;
        case 'editjob':
              include "includes-employer/edit-job.php"; 
             break;
@@ -51,6 +54,7 @@
         case 'logout':
             include "includes-employer/logout.php";
             break;
+      
         default:
             include "includes-employer/homepage.php"; 
         break;
