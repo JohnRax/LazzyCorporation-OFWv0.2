@@ -19,58 +19,67 @@
                         <div class="section"> 
                             <div id="list-type" class="proerty-th">
                                                       
-                                 <?php 
+                    <?php 
 
                     require_once 'includes/connection.php';
-                    $show_profile_query="SELECT
-                                              a.u_id, 
-                                              a.u_fname,
-                                              a.u_lname,
-                                              b.up_age,
-                                              b.up_picture,
-                                              b.up_address,
-                                              b.up_nationality,
-                                               DATE_FORMAT(b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                              b.up_category,
-                                              b.up_address,
-                                              c.upi_skillsexp
-                                            FROM
-                                              user_details AS a 
-                                               JOIN user_personal_information AS b 
-                                                ON b.u_id = a.u_id 
-                                               JOIN user_professional_information AS c 
-                                                ON a.u_id = c.u_id  where  b.up_status=:status order by a.u_id DESC  limit 7 ";
-                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                    $show_profile_stmt->execute(array(':status'=>'Approved'));
-                    while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
+
+                    $agency_candidate_query="SELECT * FROM agency_candidate WHERE u_id=:id";
+                    $agency_candidate_stmt=$connection->prepare($agency_candidate_query);
+                    $agency_candidate_stmt->execute(array(':id'=>$_SESSION['user_session']));
+                    while($candidates = $agency_candidate_stmt->fetch(PDO::FETCH_ASSOC))
                     {
-                        echo " <div class='col-sm-6 col-md-3 p0'>
-                                    <div class='box-two proerty-item'>
-                                        <div class='item-thumb'>
-                                           <img src='assets/img/profilepicture/".$result['up_picture']."'>
-                                        </div>
-                                        <div class='item-entry overflow'>
-                                           <center> <h4>".$result['u_fname']." ".$result['u_lname']."</h4></center>
-                                        </div>
-                                            <div class='dot-hr'></div>
-                                          <div class='item-entry1 overflow'>  
-                                            <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
-                                            <br>
-                                            <h7><b>Location: </b>".$result['up_address']."</h7>
-                                            <br>
-                                            <span class='proerty-price pull-left'><b>Nationality: </b>".$result['up_nationality']."</span>
-                                            <br>                                            <h7><b>Job Expertises:</b></h7>
-                                            <h7>".$result['upi_skillsexp']."</h7>
-                                            <br>
-                                            <span class='pull-left'><b>Posted: </b> ".$result['up_dateposted']."</span>
-                                             <br>
-                                            </div>
-                                            
-                                        </div>
-                                </div> ";
-                                       
-                                   
-                    } ?>
+
+                      $show_profile_query="SELECT
+                                                a.u_id, 
+                                                a.u_fname,
+                                                a.u_lname,
+                                                b.up_age,
+                                                b.up_picture,
+                                                b.up_address,
+                                                b.up_nationality,
+                                                 DATE_FORMAT(b.up_dateposted,'%M %d, %Y') as up_dateposted,
+                                                b.up_category,
+                                                b.up_address,
+                                                c.upi_skillsexp
+                                              FROM
+                                                user_details AS a 
+                                                 JOIN user_personal_information AS b 
+                                                  ON b.u_id = a.u_id 
+                                                 JOIN user_professional_information AS c 
+                                                  ON a.u_id = c.u_id  where  a.u_id=:aid and b.up_status=:status order by a.u_id DESC  limit 7 ";
+                      $show_profile_stmt=$connection->prepare($show_profile_query);
+                      $show_profile_stmt->execute(array(':aid'=>$candidates['ac_id'],':status'=>'Approved'));
+                      while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
+                      {
+                          echo " <div class='col-sm-6 col-md-3 p0'>
+                                      <div class='box-two proerty-item'>
+                                          <div class='item-thumb'>
+                                             <img src='assets/img/profilepicture/".$result['up_picture']."'>
+                                          </div>
+                                          <div class='item-entry overflow'>
+                                             <center> <h4>".$result['u_fname']." ".$result['u_lname']."</h4></center>
+                                          </div>
+                                              <div class='dot-hr'></div>
+                                            <div class='item-entry1 overflow'>  
+                                              <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
+                                              <br>
+                                              <h7><b>Location: </b>".$result['up_address']."</h7>
+                                              <br>
+                                              <span class='proerty-price pull-left'><b>Nationality: </b>".$result['up_nationality']."</span>
+                                              <br>                                            <h7><b>Job Expertises:</b></h7>
+                                              <h7>".$result['upi_skillsexp']."</h7>
+                                              <br>
+                                              <span class='pull-left'><b>Posted: </b> ".$result['up_dateposted']."</span>
+                                               <br>
+                                              </div>
+                                              
+                                          </div>
+                                  </div> ";
+                                         
+                                     
+                      } 
+
+                  }?>
                                
                                                           
                                                        
