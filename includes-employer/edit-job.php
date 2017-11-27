@@ -100,6 +100,7 @@
         $show_job_stmt->execute(array(':id'=>$_GET['id']));
         $result = $show_job_stmt->fetch(PDO::FETCH_ASSOC);
 
+
    
   ?>
  <div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
@@ -289,7 +290,7 @@
                                                         </select>
                                                     <label>Family Type *</label>
                                                         <select class="selectpicker" data-live-search="true" data-live-search-style="begins" name="j_familytype" required="" title="Select family type">
-                                                            <option value="Couple">
+                                                            <option value="Couple" <?php if($result['j_familytype']=="Couple")echo "selected"; ?>>
                                                                 Couple
                                                             </option>
                                                             <option value="Couple + 1 kid" <?php if($result['j_familytype']=="Couple + 1 kid")echo "selected"; ?>>
