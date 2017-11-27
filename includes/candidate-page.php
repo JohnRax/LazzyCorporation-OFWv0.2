@@ -69,6 +69,8 @@
                                     JOIN user_professional_information AS c 
                                     ON a.u_id = c.u_id 
                                     JOIN user_question AS e
+                                    ON a.u_id = e.u_id 
+                                    JOIN user_experience AS d
                                     where a.u_id=:id";
                 $show_profile_stmt=$connection->prepare($show_profile_query);
                 $show_profile_stmt->execute(array(':id'=>$_GET['id']));
@@ -217,37 +219,26 @@
                             </div>
                              <div class="section additional-details">
 
-                                <!-- <h4 class="s-property-title">Experience 1</h4>
+                                <h4 class="s-property-title">Work Experience</h4>
 
                                 <ul class="additional-details-list clearfix">
                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">2017-2-3</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Job Description</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_jd']; ?></span>
                                     </li>
                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">End Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">2017-2-3</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Location</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_jdlocation']; ?></span>
                                     </li>
                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Place</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Hong Kong</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_from']; ?></span>
                                     </li>
                                       <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Family Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Couple</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">End date</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_to']; ?></span>
                                     </li>
-                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Reference</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Cooking</span>
-                                    </li>
-                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Notes</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Good</span>
-                                    </li>
-                                 
-                                    
-
-                                </ul> -->
+                                </ul>
                             </div>  
                              
                              <div class="section additional-details">
