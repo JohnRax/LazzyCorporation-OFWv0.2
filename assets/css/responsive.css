@@ -107,8 +107,10 @@
         font-size: 13px;
     }
     .nav-button{
-        font-size: 13px;
-        padding: 6px 13px;
+        font-size: 12.5px;
+        padding: 6px 3px;
+        height: 30px;
+        line-height: 8px;
     }
     .navbar-nav > li > a{
         padding-left: 15px;
@@ -141,7 +143,12 @@
         margin: 0 auto;
     }
     .slider-content h2{
-        margin-top: 80px;
+        margin-top: -20px;
+        font-size: 21px;
+        margin-bottom: 15px;
+    }
+    .slider-content1 {
+        margin-top: -25px;
         font-size: 21px;
         margin-bottom: 15px;
     }
@@ -179,7 +186,7 @@
     }
 
     .home-area-1 { 
-        padding-top: 65px;
+        padding-top: 75px;
     }
     #bg-slider .item img {
         height: 440px;
@@ -837,7 +844,7 @@
 @media (max-width:480px){
 
     .page-title {
-        padding-top: 450px
+        padding-top: 430px
     }
       .page-title1 {
         padding-top: 0px

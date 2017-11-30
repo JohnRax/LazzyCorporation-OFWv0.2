@@ -1,21 +1,28 @@
+ <div class='homepage'> 
   <div class="slider-area">   
             <div class="slider-content">
                 <div class="row">
                                  
                        <h2>World’s No. 1 Job hiring overseas!</h2> 
-                       <h5>Start your dream job here in overseas with highly secured and trusted Employers. Registration is free.
+                       <h5>Start your dream job here in overseas with highly secured and trusted Employers. 
 </h5    >               
                       <br>
+                      <div class="slider-content1">
                          <div class="button">
                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND JOBS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                        </div>
                     </div>
             </div>
         </div>
 </div>
 
 <!-- property area -->
-        <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+        <div class="content-area home-area-1 recent-property" style="    background-color: #FCFCFC;
+    padding-bottom: 55px;
+    position: relative;
+    top: -150px;
+;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
@@ -249,6 +256,7 @@
                 </div>
             </div>
         </div>
+     </div>
     
         <!-- boy-sale area -->
         

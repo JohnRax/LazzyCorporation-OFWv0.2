@@ -4,7 +4,7 @@
 	$host = 'localhost';
 	$user = 'root';
 	$password = '';
-	$dbname='lazycorporation-ofwdatabase';
+	$dbname='LazzyCorporation_OFW';
 	try 
 	{
 	    $dsn = 'mysql:host='.$host.';dbname='.$dbname;
