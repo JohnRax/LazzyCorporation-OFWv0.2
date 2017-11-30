@@ -41,7 +41,7 @@
         }
         $id=$_SESSION['user_session'];
         $category=$_POST['up_category'];
-        $email=$_POST['up_email'];
+        $email=(@$_POST['up_email']);
         $mobile=$_POST['up_mobile'];
         $telephone=$_POST['up_telephone'];
         $nationality=$_POST['up_nationality'];
@@ -196,8 +196,8 @@
                                                 </div>
                                                 <div class="form-group">
 
-                                                    <labeL>Email address *</label>
-                                                    <input name="up_email"  required type="text" class="form-control" placeholder="Email address" title="Please input your email address" value="<?php echo $result['up_email']; ?>">
+                                                    <labeL>Email address <small><i>Optional</i></small></label>
+                                                    <input name="up_email"  type="text" class="form-control" placeholder="Email address" title="Please input your email address" value="<?php echo $result['up_email']; ?>">
 
                                                 </div>
                                                 <div class="form-group">

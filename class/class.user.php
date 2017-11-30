@@ -7,7 +7,7 @@ class User
 	{
 		$this->connection=$connection;
 	}
-	public function register($type,$email,$mobile,$password,$lastname,$firstname,$gender)
+	public function register($type,$email,$mobile,$password,$lastname,$firstname,$gender,$ucountry)
 	{
 		try
 		{
@@ -15,16 +15,16 @@ class User
 
 			
 			$new_password=password_hash($password,PASSWORD_DEFAULT);
-			$register_query="INSERT INTO user (u_password, u_email,u_mobile, u_type) 
+			$register_query="INSERT INTO user (u_password, u_email,u_mobile,u_type) 
 						  VALUES(:password,:email,:mobile,:type)";
 			$register_stmt=$this->connection->prepare($register_query);
 			$register_stmt->execute(array(':password'=>$new_password,':email'=>$email, ':mobile'=>$mobile,':type'=> $type));
 			$id=$this->connection->lastInsertId();
 
-			$details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender)
-							VALUES (:id,:lastname,:firstname,:gender)";
+			$details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender,u_country)
+							VALUES (:id,:lastname,:firstname,:gender,:ucountry)";
 			$details_stmt=$this->connection->prepare($details_query);
-			$details_stmt->execute(array(':id'=> $id,':lastname'=>$lastname,':firstname'=>$firstname,':gender'=>$gender));
+			$details_stmt->execute(array(':id'=> $id,':lastname'=>$lastname,':firstname'=>$firstname,':gender'=>$gender,':ucountry'=>$ucountry));
 
 			return $type;
 		}
@@ -87,7 +87,7 @@ class User
 											':marital'=>$marital,
 											':education'=>$education,
 											':languages'=>$languages,
-											':status'=>'Unapproved'));
+											':status'=>'Approved'));
 			return $insert_personal_stmt;
 		}
 		catch(PDOException $e)
@@ -109,7 +109,7 @@ class User
 												':skills'=>$skills,
 												':cookingskills'=>$cookingskills,
 												':otherskills'=>$otherskills,
-												':status'=>'Unapproved'));
+												':status'=>'Approved'));
 			return $insert_professional_stmt;
 
 		}
@@ -339,7 +339,7 @@ class User
 													':startdate'=>$startdate,
 													':monthlysalary'=>$monthlysalary,
 													':logo'=>$logo,
-													':status'=>'Unapproved'));
+													':status'=>'Approved'));
 	
 				return $insert_jobpost_stmt;
 	  

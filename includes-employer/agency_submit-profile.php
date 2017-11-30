@@ -53,7 +53,7 @@
         }
         $id=$ac_id;
         $category=$_POST['up_category'];
-        $email=$_POST['up_email'];
+        $email=(@$_POST['up_email']);
         $mobile=$_POST['up_mobile'];
         $telephone=$_POST['up_telephone'];
         $nationality=$_POST['up_nationality'];
@@ -193,8 +193,8 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <labeL>Email address *</label>
-                                                    <input name="up_email"  required type="email" class="form-control" placeholder="Email address" title="Please input your email address">
+                                                    <labeL>Email address <small><i>Optional</i></small></label>
+                                                    <input name="up_email"  type="email" class="form-control" placeholder="Email address" title="Please input your email address">
 
                                                 </div>
                                                 <label>Gender  *</label>

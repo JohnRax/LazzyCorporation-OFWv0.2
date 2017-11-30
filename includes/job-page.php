@@ -10,6 +10,8 @@
         <title>Lazzy Works | Candidate Profile</title>
         <meta name="description" content="LazzyWorks is a free to use platform for jobseekers out there.">
         <meta name="author" content="Lazzy Technologies">
+
+<link rel="icon" type="image/x-icon" href="../assets/img/icon-lazzyworks.ico"/>
         <meta name="keyword" content="OFW, Lazzy, Works, LazzyWorks, Helper , Lazzy Technologies, Find, Find Job, Job, Apply">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,10 +46,10 @@
         
         <?php 
           
-            $host = 'lazycompanydb.comfhxnalolh.ap-southeast-1.rds.amazonaws.com';
-            $user = 'dblazyc0mpAnY';
-            $password = 'lazYPr0p3rt1eS';
-            $dbname='lazycorporation-ofwdatabase';
+           	$host = 'localhost';
+	$user = 'ordinary_user';
+	$password = 'lazzycorporation_user';
+	$dbname='LazzyCorporation_OFW';
             try 
             {
                 $dsn = 'mysql:host='.$host.';dbname='.$dbname;

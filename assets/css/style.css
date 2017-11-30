@@ -1091,7 +1091,7 @@ position: fixed;
 .slider-area{
     position: relative;
     height: 700px;
-    margin-bottom: -280px;
+    margin-bottom: -370px;
 }
 #bg-slider .item img{
     width: 100%;
@@ -1110,7 +1110,7 @@ position: fixed;
     margin-bottom: 20px;
     text-transform: uppercase;color: #333;
     font-weight: 500;
-    padding-top: 80px;
+    padding-top: 0px;
 }
 .slider-content p {
     font-size: 14px;

@@ -18,7 +18,8 @@
         $password=trim($_POST['u_password']);
         $lastname=trim($_POST['u_lname']);
         $firstname=trim($_POST['u_fname']);
-        $gender=trim($_POST[@'u_gender']);
+        $gender=trim(@$_POST['u_gender']);
+        $ucountry=trim(@$_POST['u_country']);
 
         try
         {
@@ -43,7 +44,7 @@
                  }
                  else
                  {
-                     if($user->register($type,$email,$mobile,$password,$lastname,$firstname,$gender))
+                     if($user->register($type,$email,$mobile,$password,$lastname,$firstname,$gender,$ucountry))
                      {
                         $user->redirect('index.php?source=loginandregister&joined');
                      }

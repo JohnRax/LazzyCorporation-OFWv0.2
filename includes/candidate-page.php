@@ -10,6 +10,8 @@
         <title>Lazzy Works | Candidate Profile</title>
         <meta name="description" content="LazzyWorks is a free to use platform for jobseekers out there.">
         <meta name="author" content="Lazzy Technologies">
+
+<link rel="icon" type="image/x-icon" href="../assets/img/icon-lazzyworks.ico"/>
         <meta name="keyword" content="OFW, Lazzy, Works, LazzyWorks, Helper , Lazzy Technologies, Find, Find Job, Job, Apply">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,9 +46,9 @@
         
         <?php 
                 $host = 'localhost';
-                $user = 'root';
-                $password = '';
-                $dbname='lazycorporation-ofwdatabase';
+	$user = 'ordinary_user';
+	$password = 'lazzycorporation_user';
+	$dbname='LazzyCorporation_OFW';
                 try 
                 {
                     $dsn = 'mysql:host='.$host.';dbname='.$dbname;
@@ -61,14 +63,22 @@
             if (isset($_GET['id'])) 
             {
                 
-                $show_profile_query="SELECT * 
-                                     FROM
-                                    user_details AS a 
-                                    JOIN user_personal_information AS b 
-                                    ON b.u_id = a.u_id 
-                                    JOIN user_professional_information AS c 
-                                    ON a.u_id = c.u_id 
-                                    JOIN user_question AS e
+                $show_profile_query="SELECT 
+  a.*,
+  b.*,
+  c.*,
+  d.*,
+  e.* 
+FROM
+  user_details AS a 
+  JOIN user_personal_information AS b 
+    ON a.u_id = b.u_id 
+  JOIN user_professional_information AS c 
+    ON b.u_id = c.u_id 
+  LEFT JOIN user_experience AS d 
+    ON c.u_id = d.u_id 
+  LEFT JOIN user_question AS e 
+    ON d.u_id = e.u_id 
                                     where a.u_id=:id";
                 $show_profile_stmt=$connection->prepare($show_profile_query);
                 $show_profile_stmt->execute(array(':id'=>$_GET['id']));
@@ -217,37 +227,26 @@
                             </div>
                              <div class="section additional-details">
 
-                                <!-- <h4 class="s-property-title">Experience 1</h4>
+                                <h4 class="s-property-title">Work Experience</h4>
 
                                 <ul class="additional-details-list clearfix">
                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">2017-2-3</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Job Description</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_jd']; ?></span>
                                     </li>
                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">End Date</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">2017-2-3</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Location</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_jdlocation']; ?></span>
                                     </li>
                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Working Place</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Hong Kong</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Start Date</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_from']; ?></span>
                                     </li>
                                       <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Family Type</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Couple</span>
+                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">End date</span>
+                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1"> <?php echo $result['ue_to']; ?></span>
                                     </li>
-                                     <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Reference</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Cooking</span>
-                                    </li>
-                                      <li>
-                                        <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Notes</span>
-                                        <span class="col-xs-6 col-sm-8 col-md-8 add-d-title1">Good</span>
-                                    </li>
-                                 
-                                    
-
-                                </ul> -->
+                                </ul>
                             </div>  
                              
                              <div class="section additional-details">

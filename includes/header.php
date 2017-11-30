@@ -6,10 +6,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" type="image/x-icon" href="../assets/img/icon-lazzyworks.ico"/>
         <title>LAZZY WORKS | Home page</title>
         <meta name="description" content="LazzyWorks is a free to use platform for jobseekers out there.">
         <meta name="author" content="Lazzy Technologies">
-        <meta name="keyword" content="OFW, Lazzy, Works, LazzyWork, Helper , Lazzy Technologies, Find, Find Job, Job, Apply">
+        <meta name="keyword" content="OFW, Lazzy, Works, LazzyWork, Lazzywork.com, lazzyworks.com, lazzywork.com, lazzywork, lazzyworks, Lazzyworks.com, OFW, Helper, Lazzy Technologies, Find, Find Job, Job, Apply">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>

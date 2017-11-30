@@ -11,12 +11,10 @@
                                 <th>Picture</th> 
                                 <th>Id</th> 
                                 <th>Full Name</th>  
-                                
                                 <th>Job Description</th> 
                                 <th>Job Location</th> 
                                 <th>From</th> 
                                 <th>To</th>
-                                <th>Job Location</th>
 
                             </tr>
                         </thead>

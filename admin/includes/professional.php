@@ -11,13 +11,10 @@
                                 <th>Picture</th> 
                                 <th>Id</th> 
                                 <th>Full Name</th>  
-                                <th>Prefered Work Location</th> 
-                                <th>Years of Experience</th> 
-                                <th>Experience Summary</th> 
+                                <th>Prefered Work Location</th>
                                 <th>Cooking Skills</th>
                                 <th>Skills Experience</th>  
-                                <th>Other Skills</th>  
-                                <th>Availability</th>        
+                                <th>Other Skills</th>       
                             </tr>
                         </thead>
                         <tbody>   
@@ -32,12 +29,9 @@
                                     echo "<td>".$professional[$key]->u_lname.", ".$professional[$key]->u_fname."</td>";
 
                                     echo "<td>".$professional[$key]->upi_preferedworklocation."</td>";
-                                    echo "<td>".$professional[$key]->upi_yearsofexp."</td>";
-                                    echo "<td>".$professional[$key]->upi_expsummary."</td>";
                                      echo "<td>".$professional[$key]->upi_cookingskills."</td>";
                                     echo "<td>".$professional[$key]->upi_skillsexp."</td>";
                                      echo "<td>".$professional[$key]->upi_otherskills."</td>";
-                                    echo "<td>".$professional[$key]->upi_availability."</td>";
                                     echo "</tr>";
                                 }
                            ?>
