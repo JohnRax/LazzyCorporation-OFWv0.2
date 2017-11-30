@@ -483,13 +483,15 @@
     }
 
     .slider-content {
-        top: 5%;
+        top: -1%;
     }
     .slider-area{
         height:440px;        
     }
     .content-area { 
-        padding-top: 100px;
+        
+    padding-top: 180px;
+
     }
     #bg-slider .item img {
         height: 440px;
