@@ -22,17 +22,6 @@
         $ucountry=trim(@$_POST['u_country']);
 
         try
-        {
-            $check_query="SELECT * FROM user WHERE u_email=:email";
-            $check_stmt=$connection->prepare($check_query);
-            $check_stmt->execute(array(':email'=>$email));
-            $check_email=$check_stmt->fetch(PDO::FETCH_ASSOC);
-            if($check_email['u_email']==$email)
-            {
-                $error="Sorry Email Address is already registered";
-
-            }
-            else
             {
                  $check_query="SELECT * FROM user WHERE u_mobile=:mobile";
                  $check_stmt=$connection->prepare($check_query);
@@ -50,8 +39,6 @@
                      }
                  }
             }
-
-        }
         catch(PDOExeception $e)
         {
             echo $e->getMessage();

@@ -857,7 +857,7 @@ position: fixed;
 }
 .navbar-default {
     position: fixed;
-    z-index:100;
+    z-index:1000;
     width: 100%; 
     background-image: none;
     background-color: #333;
@@ -1100,10 +1100,11 @@ position: fixed;
 
 .slider-content{
     position: absolute;
-    top: 20%;
+    top: 2%;
     text-align: center;
     color: #FFF;
     width: 100%;
+    z-index: 100;
 }
 .slider-content h2 {
     font-size: 40px; 
@@ -3179,4 +3180,7 @@ padding: 10px;
 }
 #map {
     height: 300px;
+}
+.homepage{
+
 }
