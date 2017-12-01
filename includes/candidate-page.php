@@ -45,10 +45,10 @@
         </div>
         
         <?php 
-                $host = 'localhost';
-	$user = 'ordinary_user';
-	$password = 'lazzycorporation_user';
-	$dbname='LazzyCorporation_OFW';
+              $host = 'localhost';
+              $user = 'root';
+              $password = '';
+              $dbname='lazycorporation-ofwdatabase';
                 try 
                 {
                     $dsn = 'mysql:host='.$host.';dbname='.$dbname;

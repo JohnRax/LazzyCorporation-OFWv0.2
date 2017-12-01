@@ -48,6 +48,9 @@
        case 'editjob':
              include "includes-employer/edit-job.php"; 
             break;
+        case 'editcandidate':
+             include "includes-employer/edit-candidate.php"; 
+            break;
         case 'viewsubmitted':
              include "includes-employer/view-submitted-profile.php"; 
             break;  

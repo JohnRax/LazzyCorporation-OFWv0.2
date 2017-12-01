@@ -65,21 +65,28 @@
                                               <br>
                                               <h7><b>Location: </b>".$result['up_address']."</h7>
                                               <br>
-                                              <span class='proerty-price pull-left'><b>Nationality: </b>".$result['up_nationality']."</span>
+                                             <h7><b>Nationality: </b>".$result['up_nationality']."</h7>
                                               <br>                                            <h7><b>Job Expertises:</b></h7>
                                               <h7>".$result['upi_skillsexp']."</h7>
                                               <br>
                                               <span class='pull-left'><b>Posted: </b> ".$result['up_dateposted']."</span>
                                                <br>
+                                                  <div class='dealer-action pull-left'> 
+                                                                      
+                                                        <a href='index-employer.php?source=editcandidate&id=".$result['u_id']."' class='button'>Edit </a>
+                                                        <a href='index-employer.php?source=listcandidate&delete_id=".$result['u_id']."' class='button delete_user_car'>Delete</a> ";
+                                                        ?>
+                                                        <a href=''   class='button' onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id']; ?>')">View Profile </a>  
+
                                               </div>
                                               
                                           </div>
-                                  </div> ";
+                                  </div> 
                                          
-                                     
+                      <?php           
                       } 
 
-                  }?>
+                    }?>
                                
                                                           
                                                        

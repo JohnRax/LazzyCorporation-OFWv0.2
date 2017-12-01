@@ -2,9 +2,9 @@
 	
 	session_start();
 	$host = 'localhost';
-	$user = 'ordinary_user';
-	$password = 'lazzycorporation_user';
-	$dbname='LazzyCorporation_OFW';
+	$user = 'root';
+	$password = '';
+	$dbname='lazycorporation-ofwdatabase';
 	try 
 	{
 	    $dsn = 'mysql:host='.$host.';dbname='.$dbname;
