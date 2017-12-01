@@ -293,13 +293,16 @@
                            
                              
                                    <?php
-                                      session_start();
+                                        session_start();
                                       if(isset($_SESSION['user_session'])) 
                                          {
+                                            
+
                                               if(isset($_SESSION['user_type']))
                                               {
-                                                if($_SESSION['user_type']=='candidate')
-                                                {
+                                                if($_SESSION['user_type']=='Candidate')
+                                                {   
+                                                  
                                                     ?>
                                                   <button type="button" class="btn btn-large btn-block btn-primary full-width";
                                                    onclick="location.href='job-page.php?id=<?php echo $_GET['id'] ?>&candidateid=<?php echo $_SESSION['user_session'] ?>&applied'">CLICK HERE TO APPLY</button>
