@@ -28,29 +28,127 @@
 
  <?php  
     require_once 'includes/connection.php';
-   if (isset($_GET['id'])) {
-try
-{
-   $show_profile_query="SELECT 
-                              a.*,b.*,c.*,d.*,e.*
-                            FROM
-                             user_details AS a
-                              JOIN user_personal_information AS b 
-                                ON b.u_id = a.u_id 
-                              JOIN user_professional_information AS c 
-                                ON a.u_id = c.u_id 
-                               JOIN user_question AS d 
-                               ON c.u_id =d.u_id
-                               JOIN user_experience AS e
-                               ON d.u_id =e.u_id
-                            WHERE a.u_id = :id ";
-    $show_profile_stmt=$connection->prepare($show_profile_query);
-    $show_profile_stmt->execute(array(':id'=>$_GET['id']));
-    $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
-}catch(PDOException $e)
-{
-    echo $e->getMessage();
-}
+     if(isset($_POST['finish']))
+     {
+
+        if( isset($_POST['up_languages']) && !empty($_POST['up_languages']) ) 
+        { 
+            $languages = implode(',', $_POST['up_languages']);
+        }
+        else
+        {
+            $languages="none";        
+        }
+        $id=$_GET['id'];
+        $category=$_POST['up_category'];
+        $email=(@$_POST['up_email']);
+        $mobile=$_POST['up_mobile'];
+        $telephone=$_POST['up_telephone'];
+        $nationality=$_POST['up_nationality'];
+        $address=$_POST['up_address'];
+        $age=$_POST['up_age'];
+        $religion=$_POST['up_religion'];
+        $education=$_POST['up_education'];
+        $marital=$_POST['up_maritalstatus'];
+        $picture=$_FILES['up_picture']['name'];
+        $picture_temp=$_FILES['up_picture']['tmp_name'];
+        move_uploaded_file($picture_temp, "assets/img/profilepicture/{$picture}");
+        if(empty($picture))
+        {
+            $check_logo_query="SELECT * FROM user_personal_information WHERE u_id=:id";
+            $check_logo_stmt=$connection->prepare($check_logo_query);
+            $check_logo_stmt->execute(array(':id'=>$id));
+            $result=$check_logo_stmt->fetch(PDO::FETCH_ASSOC);
+            $picture=$result['up_picture'];
+            if (empty($picture)) 
+            {
+                $picture="default.png";
+            }
+        }
+        $user->update_profile_personal_information($id,$picture,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
+
+
+        if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
+        { 
+            $skillsexp = implode(',', $_POST['upi_skillsexp']);
+        }
+        else
+        {
+            $skillsexp="none";        
+        }
+
+        if( isset($_POST['upi_cookingskills']) && !empty($_POST['upi_cookingskills']) ) 
+        { 
+            $cookingskills = implode(',', $_POST['upi_cookingskills']);
+        }
+        else
+        {
+            $cookingskills="none";        
+        }
+        if( isset($_POST['upi_otherskills']) && !empty($_POST['upi_otherskills']) ) 
+        { 
+            $otherskills = implode(',', $_POST['upi_otherskills']);
+        }
+        else
+        {
+            $otherskills="none";        
+        }
+        $preferedworklocation=$_POST['upi_preferedworklocation'];
+        $user->update_profile_professional_information($id,$preferedworklocation,$skillsexp,$cookingskills,$otherskills);
+        
+        $jd=$_POST['ue_jd'];
+        $jdlocation=$_POST['ue_jdlocation'];
+        $jdfrom=$_POST['ue_from'];
+        $to=$_POST['ue_to'];
+        
+        
+        $user->update_profile_work_experience($id,$jd,$jdlocation,$jdfrom,$to);
+
+
+        //work Experience
+
+
+         $q1=$_POST['uq_1'];
+        $q2=$_POST['uq_2'];
+        $q3=$_POST['uq_3'];
+        $q4=$_POST['uq_4'];
+        $q5=$_POST['uq_5'];
+        $q6=$_POST['uq_6'];
+        $q7=$_POST['uq_7'];
+        $q8=$_POST['uq_8'];
+        $q9=$_POST['uq_9'];
+        $q10=$_POST['uq_10'];
+        if($user->update_profile_supplementary_question($id,$q1,$q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10))
+        {
+         
+            echo"<script>
+                    alert('Complete! Your profile is Updated. Thank you');
+                </script>";
+        }
+    }
+        if (isset($_GET['id'])) {
+        try
+        {
+           $show_profile_query="SELECT 
+                                      a.*,b.*,c.*,d.*,e.*
+                                    FROM
+                                     user_details AS a
+                                      JOIN user_personal_information AS b 
+                                        ON b.u_id = a.u_id 
+                                      JOIN user_professional_information AS c 
+                                        ON a.u_id = c.u_id 
+                                       JOIN user_question AS d 
+                                       ON c.u_id =d.u_id
+                                       JOIN user_experience AS e
+                                       ON d.u_id =e.u_id
+                                    WHERE a.u_id = :id ";
+            $show_profile_stmt=$connection->prepare($show_profile_query);
+            $show_profile_stmt->execute(array(':id'=>$_GET['id']));
+            $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
+        }catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
     
 
  ?>

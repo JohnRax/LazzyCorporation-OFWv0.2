@@ -22,7 +22,15 @@
                     <?php 
 
                     require_once 'includes/connection.php';
-
+                    if(isset($_GET['delete_id']))
+                      {
+                        if($user->delete_agency_candidate($_GET['delete_id']))
+                            {
+                                echo"<script>
+                                        alert('Delete Complete!');
+                                    </script>";
+                             }
+                      }
                     $agency_candidate_query="SELECT * FROM agency_candidate WHERE u_id=:id";
                     $agency_candidate_stmt=$connection->prepare($agency_candidate_query);
                     $agency_candidate_stmt->execute(array(':id'=>$_SESSION['user_session']));
@@ -74,7 +82,7 @@
                                                   <div class='dealer-action pull-left'> 
                                                                       
                                                         <a href='index-employer.php?source=editcandidate&id=".$result['u_id']."' class='button'>Edit </a>
-                                                        <a href='index-employer.php?source=listcandidate&delete_id=".$result['u_id']."' class='button delete_user_car'>Delete</a> ";
+                                                        <a href='index-employer.php?source=listpostcandidate&delete_id=".$result['u_id']."' class='button delete_user_car'>Delete</a> ";
                                                         ?>
                                                         <a href=''   class='button' onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id']; ?>')">View Profile </a>  
 

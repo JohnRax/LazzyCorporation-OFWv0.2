@@ -430,6 +430,38 @@ class User
 		}
 
 	}
+	public function delete_agency_candidate($u_id)
+	{
+		try
+		{
+			$delete_profile1_query="DELETE FROM user_question WHERE u_id=:id";
+			$delete_profile1_stmt=$this->connection->prepare($delete_profile1_query);
+			$delete_profile1_stmt->execute(array(':id'=>$u_id));
+
+			$delete_profile2_query="DELETE FROM user_personal_information WHERE u_id=:id";
+			$delete_profile2_stmt=$this->connection->prepare($delete_profile2_query);
+			$delete_profile2_stmt->execute(array(':id'=>$u_id));
+
+			$delete_profile3_query="DELETE FROM user_experience WHERE u_id=:id";
+			$delete_profile3_stmt=$this->connection->prepare($delete_profile3_query);
+			$delete_profile3_stmt->execute(array(':id'=>$u_id));
+
+			$delete_profile4_query="DELETE FROM user_professional_information WHERE u_id=:id";
+			$delete_profile4_stmt=$this->connection->prepare($delete_profile4_query);
+			$delete_profile4_stmt->execute(array(':id'=>$u_id));
+
+			$delete_profile5_query="DELETE FROM user_details WHERE u_id=:id";
+			$delete_profile5_stmt=$this->connection->prepare($delete_profile5_query);
+			$delete_profile5_stmt->execute(array(':id'=>$u_id));
+
+			return "";
+
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}
 	public function is_loggedin()
 	{
 		if(isset($_SESSION['user_session']))

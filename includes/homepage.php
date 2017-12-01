@@ -1,28 +1,21 @@
- <div class='homepage'> 
   <div class="slider-area">   
             <div class="slider-content">
                 <div class="row">
                                  
                        <h2>World’s No. 1 Job hiring overseas!</h2> 
-                       <h5>Start your dream job here in overseas with highly secured and trusted Employers. 
+                       <h5>Start your dream job here in overseas with highly secured and trusted Employers. Registration is free.
 </h5    >               
                       <br>
-                      <div class="slider-content1">
                          <div class="button">
                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND JOBS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                        </div>
                     </div>
             </div>
         </div>
 </div>
 
 <!-- property area -->
-        <div class="content-area home-area-1 recent-property" style="    background-color: #FCFCFC;
-    padding-bottom: 55px;
-    position: relative;
-    top: -150px;
-;">
+        <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
@@ -38,8 +31,7 @@
                     <?php 
 
                     require_once 'includes/connection.php';
-                    $show_profile_query="SELECT
-                                              a.u_id, 
+                    $show_profile_query="SELECT a.u_id, 
                                               a.u_fname,
                                               a.u_lname,
                                               b.up_age,
@@ -49,13 +41,14 @@
                                                DATE_FORMAT(b.up_dateposted,'%M %d, %Y') as up_dateposted,
                                               b.up_category,
                                               b.up_address,
-                                              c.upi_skillsexp
+                                              c.upi_skillsexp,
+                                              c.upi_yearsofexp
                                             FROM
-                                              user_details AS a 
+                                               user_details AS a 
                                                JOIN user_personal_information AS b 
                                                 ON b.u_id = a.u_id 
                                                JOIN user_professional_information AS c 
-                                                ON a.u_id = c.u_id  where  b.up_status=:status order by a.u_id DESC  limit 7 ";
+                                                ON a.u_id = c.u_id  where  b.up_status=:status order by a.u_id DESC  limit 7";
                     $show_profile_stmt=$connection->prepare($show_profile_query);
                     $show_profile_stmt->execute(array(':status'=>'Approved'));
                     while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
@@ -75,17 +68,22 @@
                                             <h7><b>Location: </b>".$result['up_address']."</h7>
                                             <br>
                                             <span class='proerty-price pull-left'><b>Nationality: </b>".$result['up_nationality']."</span>
-                                            <br>                                            <h7><b>Job Expertises:</b></h7>
+                                            <br>
+                                            <h7><b>Years Of Experience: </b>".$result['upi_yearsofexp']."</h7>
+                                            <br>
+                                            <h7><b>Job Expertises:</b></h7>
                                             <h7>".$result['upi_skillsexp']."</h7>
                                             <br>
                                             <span class='pull-left'><b>Posted: </b> ".$result['up_dateposted']."</span>
                                              <br>
                                             </div>
                                             
-                                        ";?>
+                                        ";
+
+                                        ?>
                                         <div class='span9 btn-block no-padding'>
                                             <button type="button" class='btn btn-large btn-block btn-primary full-width'
-                                            onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
+                                            onclick="window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
                                                     >View Full Profile</button>
                                             
                                         </div>
@@ -256,7 +254,6 @@
                 </div>
             </div>
         </div>
-     </div>
     
         <!-- boy-sale area -->
         
