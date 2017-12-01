@@ -50,10 +50,26 @@
         $religion=$_POST['up_religion'];
         $education=$_POST['up_education'];
         $marital=$_POST['up_maritalstatus'];
-        $picture=$_FILES['up_picture']['name'];
-        $picture_temp=$_FILES['up_picture']['tmp_name'];
-        move_uploaded_file($picture_temp, "assets/img/profilepicture/{$picture}");
-        if(empty($picture))
+
+
+       $fileName = $_FILES["up_picture"]["name"];
+       $filename_parts = explode('.',$fileName);
+       $count = count($filename_parts);
+        if($count> 1) {
+            $ext = $filename_parts[$count-1];
+            unset($filename_parts[$count-1]);
+            $filename_to_md5 =  implode('.',$filename_parts);
+            $newName = md5($filename_to_md5). '.' . $ext ;
+        } else {
+            $newName = md5($fileName);
+        }        
+        
+       $fileTmpLoc = $_FILES["up_picture"]["tmp_name"]; 
+       $fileType = $_FILES["up_picture"]["type"]; 
+       $fileSize = $_FILES["up_picture"]["size"];
+       $fileErrorMsg = $_FILES["up_picture"]["error"]; 
+       
+        if(empty($newName))
         {
             $check_logo_query="SELECT * FROM user_personal_information WHERE u_id=:id";
             $check_logo_stmt=$connection->prepare($check_logo_query);
@@ -62,10 +78,30 @@
             $picture=$result['up_picture'];
             if (empty($picture)) 
             {
-                $picture="default.png";
+                $newName="default.png";
             }
         }
-        $user->update_profile_personal_information($id,$picture,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
+        else
+        {
+                $kaboom = explode(".", $newName); 
+                $fileExt = end($kaboom); 
+                $resized_file = "assets/img/profilepicture/$newName";
+                $wmax = 225;
+                $hmax = 225;   
+               list($w_orig, $h_orig) = getimagesize($fileTmpLoc);                   
+                if ($fileType == "gif"){ 
+                  $img = imagecreatefromgif($fileTmpLoc);
+                } else if($fileType =="image/png" || $fileType=="image/PNG"){ 
+                  $img = imagecreatefrompng($fileTmpLoc);
+                } else { 
+                  $img = imagecreatefromjpeg($fileTmpLoc);
+                }
+                $tci = imagecreatetruecolor($wmax, $hmax);
+                // imagecopyresampled(dst_img, src_img, dst_x, dst_y, src_x, src_y, dst_w, dst_h, src_w, src_h)
+                imagecopyresampled($tci, $img, 0, 0, 0, 0, $wmax, $hmax, $w_orig, $h_orig);
+                imagejpeg($tci, $resized_file, 80);
+        }
+        $user->update_profile_personal_information($id,$newName,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
 
 
         if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
@@ -126,30 +162,31 @@
                 </script>";
         }
     }
-        if (isset($_GET['id'])) {
-        try
+        if (isset($_GET['id'])) 
         {
-           $show_profile_query="SELECT 
-                                      a.*,b.*,c.*,d.*,e.*
-                                    FROM
-                                     user_details AS a
-                                      JOIN user_personal_information AS b 
-                                        ON b.u_id = a.u_id 
-                                      JOIN user_professional_information AS c 
-                                        ON a.u_id = c.u_id 
-                                       JOIN user_question AS d 
-                                       ON c.u_id =d.u_id
-                                       JOIN user_experience AS e
-                                       ON d.u_id =e.u_id
-                                    WHERE a.u_id = :id ";
-            $show_profile_stmt=$connection->prepare($show_profile_query);
-            $show_profile_stmt->execute(array(':id'=>$_GET['id']));
-            $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
-        }catch(PDOException $e)
-        {
-            echo $e->getMessage();
-        }
-    
+            try
+            {
+               $show_profile_query="SELECT 
+                                          a.*,b.*,c.*,d.*,e.*
+                                        FROM
+                                         user_details AS a
+                                          JOIN user_personal_information AS b 
+                                            ON b.u_id = a.u_id 
+                                          JOIN user_professional_information AS c 
+                                            ON b.u_id = c.u_id 
+                                          left JOIN user_question AS d 
+                                           ON c.u_id =d.u_id
+                                           left JOIN user_experience AS e
+                                           ON d.u_id =e.u_id
+                                        WHERE a.u_id = :id ";
+                $show_profile_stmt=$connection->prepare($show_profile_query);
+                $show_profile_stmt->execute(array(':id'=>$_GET['id']));
+                $result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC);
+            }catch(PDOException $e)
+            {
+                echo $e->getMessage();
+            }
+        
 
  ?>
 

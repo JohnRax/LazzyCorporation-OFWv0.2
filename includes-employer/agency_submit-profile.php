@@ -62,17 +62,56 @@
         $religion=$_POST['up_religion'];
         $education=$_POST['up_education'];
         $marital=$_POST['up_maritalstatus'];
-        $picture=$_FILES['up_picture']['name'];
-        $picture_temp=$_FILES['up_picture']['tmp_name'];
-        move_uploaded_file($picture_temp, "assets/img/profilepicture/{$picture}");
-        if(empty($picture))
+        
+        $fileName = $_FILES["up_picture"]["name"];
+       $filename_parts = explode('.',$fileName);
+       $count = count($filename_parts);
+        if($count> 1) {
+            $ext = $filename_parts[$count-1];
+            unset($filename_parts[$count-1]);
+            $filename_to_md5 =  implode('.',$filename_parts);
+            $newName = md5($filename_to_md5). '.' . $ext ;
+        } else {
+            $newName = md5($fileName);
+        }        
+        
+       $fileTmpLoc = $_FILES["up_picture"]["tmp_name"]; 
+       $fileType = $_FILES["up_picture"]["type"]; 
+       $fileSize = $_FILES["up_picture"]["size"];
+       $fileErrorMsg = $_FILES["up_picture"]["error"]; 
+       
+
+
+        if(empty($newName))
         {
-            $picture="default.png";
+            $newName="default.png";
         }
-        $user->post_profile_personal_information($id,$picture,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
+        else
+        {     
+               
+                $kaboom = explode(".", $newName); 
+                $fileExt = end($kaboom); 
+                $resized_file = "assets/img/profilepicture/$newName";
+                $wmax = 225;
+                $hmax = 225;   
+               list($w_orig, $h_orig) = getimagesize($fileTmpLoc);                   
+                if ($fileType == "gif"){ 
+                  $img = imagecreatefromgif($fileTmpLoc);
+                } else if($fileType =="image/png" || $fileType=="image/PNG"){ 
+                  $img = imagecreatefrompng($fileTmpLoc);
+                } else { 
+                  $img = imagecreatefromjpeg($fileTmpLoc);
+                }
+                $tci = imagecreatetruecolor($wmax, $hmax);
+                // imagecopyresampled(dst_img, src_img, dst_x, dst_y, src_x, src_y, dst_w, dst_h, src_w, src_h)
+                imagecopyresampled($tci, $img, 0, 0, 0, 0, $wmax, $hmax, $w_orig, $h_orig);
+                imagejpeg($tci, $resized_file, 80);
+                
+        }
+        $user->post_profile_personal_information($id,$newName,$category,$email,$address,$mobile,$telephone,$nationality,$religion,$age,$marital,$education,$languages);
 
 
-        //Propessional Info
+
         $jd=$_POST['ue_jd'];
         $jdlocation=$_POST['ue_jdlocation'];
         $from=$_POST['ue_from'];

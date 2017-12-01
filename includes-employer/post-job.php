@@ -28,6 +28,7 @@
 <?php 
 
     require_once 'includes/connection.php';
+
     if (isset($_POST['finish']))
     {
 
@@ -72,14 +73,52 @@
         $familytype=$_POST['j_familytype'];
         $startdate=$_POST['j_startdate'];
         $monthlysalary=$_POST['j_monthlysalary'];
-        $logo=$_FILES['j_logo']['name'];
-        $logo_temp=$_FILES['j_logo']['tmp_name'];
-        move_uploaded_file($logo_temp, "assets/img/profilepicture/{$logo}");
-        if(empty($logo))
+        
+        $fileName = $_FILES["j_logo"]["name"];
+       $filename_parts = explode('.',$fileName);
+       $count = count($filename_parts);
+        if($count> 1) {
+            $ext = $filename_parts[$count-1];
+            unset($filename_parts[$count-1]);
+            $filename_to_md5 =  implode('.',$filename_parts);
+            $newName = md5($filename_to_md5). '.' . $ext ;
+        } else {
+            $newName = md5($fileName);
+        }        
+        
+       $fileTmpLoc = $_FILES["j_logo"]["tmp_name"]; 
+       $fileType = $_FILES["j_logo"]["type"]; 
+       $fileSize = $_FILES["j_logo"]["size"];
+       
+
+        if(empty($newName))
         {
-            $logo="default.png";
+            $newName="default.png";
         }
-        if($user->post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        else
+        {
+               
+                $kaboom = explode(".", $newName); 
+                $fileExt = end($kaboom); 
+                echo $fileType;
+                $resized_file = "assets/img/profilepicture/$newName";
+                $wmax = 225;
+                $hmax = 225;   
+               list($w_orig, $h_orig) = getimagesize($fileTmpLoc);                   
+                if ($fileType == "gif"){ 
+                  $img = imagecreatefromgif($fileTmpLoc);
+                } else if($fileType =="image/png" || $fileType=="image/PNG"){ 
+                  $img = imagecreatefrompng($fileTmpLoc);
+                } else { 
+                  $img = imagecreatefromjpeg($fileTmpLoc);
+                }
+                $tci = imagecreatetruecolor($wmax, $hmax);
+                // imagecopyresampled(dst_img, src_img, dst_x, dst_y, src_x, src_y, dst_w, dst_h, src_w, src_h)
+                imagecopyresampled($tci, $img, 0, 0, 0, 0, $wmax, $hmax, $w_orig, $h_orig);
+                imagejpeg($tci, $resized_file, 80);
+
+        }
+        if($user->post_jobs($id,$newName,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            
             echo"<script>

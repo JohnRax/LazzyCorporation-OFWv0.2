@@ -68,11 +68,22 @@
         $familytype=$_POST['j_familytype'];
         $startdate=$_POST['j_startdate'];
         $monthlysalary=$_POST['j_monthlysalary'];
-        $logo=$_FILES['j_logo']['name'];
-        $logo_temp=$_FILES['j_logo']['tmp_name'];
-        move_uploaded_file($logo_temp, "assets/img/profilepicture/{$logo}");
+        $fileName = $_FILES["j_logo"]["name"];
+       $filename_parts = explode('.',$fileName);
+       $count = count($filename_parts);
+        if($count> 1) {
+            $ext = $filename_parts[$count-1];
+            unset($filename_parts[$count-1]);
+            $filename_to_md5 =  implode('.',$filename_parts);
+            $newName = md5($filename_to_md5). '.' . $ext ;
+        } else {
+            $newName = md5($fileName);
+        }        
         
-        if(empty($logo))
+       $fileTmpLoc = $_FILES["j_logo"]["tmp_name"]; 
+       $fileType = $_FILES["j_logo"]["type"]; 
+       $fileSize = $_FILES["j_logo"]["size"];     
+        if(empty($newName))
         {
             $check_logo_query="SELECT * FROM job_description WHERE j_id=:id";
             $check_logo_stmt=$connection->prepare($check_logo_query);
@@ -81,11 +92,32 @@
             $logo=$result['j_logo'];
             if(empty($logo))
             {
-                $logo="default.png";
+                $newName="default.png";
             }
         }
+        else
+        {
+           
+                $kaboom = explode(".", $newName); 
+                $fileExt = end($kaboom); 
+                $resized_file = "assets/img/profilepicture/$newName";
+                $wmax = 225;
+                $hmax = 225;   
+                list($w_orig, $h_orig) = getimagesize($fileTmpLoc);                   
+                if ($fileType == "gif"){ 
+                  $img = imagecreatefromgif($fileTmpLoc);
+                } else if($fileType =="image/png" || $fileType=="image/PNG"){ 
+                  $img = imagecreatefrompng($fileTmpLoc);
+                } else { 
+                  $img = imagecreatefromjpeg($fileTmpLoc);
+                }
+                $tci = imagecreatetruecolor($wmax, $hmax);
+                // imagecopyresampled(dst_img, src_img, dst_x, dst_y, src_x, src_y, dst_w, dst_h, src_w, src_h)
+                imagecopyresampled($tci, $img, 0, 0, 0, 0, $wmax, $hmax, $w_orig, $h_orig);
+                imagejpeg($tci, $resized_file, 80);
+        }
 
-        if($user->update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        if($user->update_job($id,$newName,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            
             echo"<script>
