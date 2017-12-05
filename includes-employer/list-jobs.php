@@ -35,7 +35,7 @@
                                 $show_jobs_stmt->execute(array(':id'=>$_SESSION['user_session']));
                                 while($result = $show_jobs_stmt->fetch(PDO::FETCH_ASSOC))
                                 {
-                                   echo "<div class='col-md-4 p0'>
+                                   echo "<div class='col-md-3 p0'>
                                         <div class='box-two proerty-item'>
                                             <div class='item-thumb'>
                                                 <a href='index-employer.php?source=editjob&id=".$result['j_id']."' ><img src='assets/img/profilepicture/".$result['j_logo']."'></a>
