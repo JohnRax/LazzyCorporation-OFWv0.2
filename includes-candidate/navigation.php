@@ -24,10 +24,10 @@
                
                    
                         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a  class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MY ACCOUNT <b class="caret"></b></a>
+                            <a href="index-candidate.php?source=dashboard" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MY ACCOUNT <b class="caret"></b></a>
                             <ul class="dropdown-menu navbar-nav">
                                
-                                <li>
+                                <li>    
                                     <a href="index-candidate.php?source=editupdateprofile">EDIT/UPDATE PROFILE</a>
                                 </li>
                                 <li>
