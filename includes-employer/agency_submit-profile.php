@@ -32,6 +32,7 @@
  <?php 
 
     require_once 'includes/connection.php';
+  
     if (isset($_POST['finish']))
     {
 
@@ -174,15 +175,17 @@
         {
          
             echo"<script>
-                    alert('Complete! Your profile is under approval. Thank you');
+                    alert('Complete! Thank you');
                     location.href = 'index-employer.php?source=addnew';
                 </script>";
         }
         //Supplementary Questions
         
     }
+
    
   ?>
+  
 
  <div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
             <div class="container">
@@ -236,19 +239,19 @@
                                                     <input name="up_email"  type="email" class="form-control" placeholder="Email address" title="Please input your email address">
 
                                                 </div>
+                                                <div class="form-group">
+                                                    <labeL>Mobile number *</label>
+                                                    <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
+                                                </div>
                                                 <label>Gender  *</label>
                                                         <select name="ac_gender" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your gender">
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
                                                         </select>
-                                                <div class="form-group">
-                                                    <labeL>Mobile number *</label>
-                                                    <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
-                                                </div>
-                                                   <div class="form-group">
+                                                   <!-- <div class="form-group">
                                                     <labeL>Telephone number <small><i>Optional</i></small> </label>
                                                     <input name="up_telephone" onkeypress="return isNumberKey(event)" type="text" class="form-control" placeholder="Telephone number">
-                                                </div>
+                                                </div> -->
                                                 <label>Nationality  *</label>
                                                         <select name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your nationality">
                                                             

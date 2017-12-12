@@ -205,6 +205,9 @@
                                                         
                                                         <option value="Driver">Driver</option>
                                                         <option value="Helper">Helper</option>
+                                                        <option value="Worker">Worker</option>
+                                                        <option value="Professional">Professional</option>
+                                                        <option value="Others">Others</option>
                                                         
                                                     </select>
 
@@ -319,6 +322,9 @@
                                                         <input  name="up_languages[]" type="checkbox" value="Filipino"> Filipino
                                                     </div>
                                                     <div class="col-sm-3">
+                                                        <input  name="up_languages[]" type="checkbox" value="Indonesian"> Indonesian
+                                                    </div>
+                                                     <div class="col-sm-3">
                                                         <input  name="up_languages[]" type="checkbox" value="Japanese"> Japanese
                                                     </div>
                                                     <div class="col-sm-3">
@@ -379,10 +385,10 @@
                                                         <input id="in-helper_requirement2-236" name="upi_skillsexp[]" type="checkbox" value="Child Care"> Child Care
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input id="in-helper_requirement2-237" name="upi_skillsexp[]" type="checkbox" value="Cooking"> Cooking
+                                                        <input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care
+                                                        <input id="in-helper_requirement2-237" name="upi_skillsexp[]" type="checkbox" value="Cooking"> Cooking
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <input id="in-helper_requirement2-113" name="upi_skillsexp[]" type="checkbox" value="Housekeeping"> Housekeeping

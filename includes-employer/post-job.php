@@ -63,12 +63,12 @@
         $jobtitle=$_POST['j_jobtitle'];
         $employertype=$_POST['j_employertype'];
         $country=$_POST['j_country'];
-        $districtlocation=$_POST['j_districtlocation'];
+        $accomodation=$_POST['j_accomodation'];
         $type=$_POST['j_type'];
         $category=$_POST['j_category'];
         $description=$_POST['j_description'];
         $contact=$_POST['j_contact'];
-        $applicationemail=$_POST['j_email'];
+        // $applicationemail=(@$_POST['j_email']);
         $nationality=$_POST['j_nationality'];
         $familytype=$_POST['j_familytype'];
         $startdate=$_POST['j_startdate'];
@@ -118,7 +118,8 @@
                 imagejpeg($tci, $resized_file, 80);
 
         }
-        if($user->post_jobs($id,$newName,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        if($user->post_jobs($id,$newName,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$nationality,$familytype,$startdate,$monthlysalary))
+            // WITH EMAIL if($user->post_jobs($id,$newName,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            
             echo"<script>
@@ -158,10 +159,35 @@
                                                         <input type="file" id="wizard-picture" name="j_logo">
                                                     </div> 
                                                 </div>
-                                                <div class="form-group">
                                                     <labeL>Job Title *</label>
                                                     <input name="j_jobtitle" type="text" required class="form-control" placeholder="Select Job Title" title="Please input job title">
-                                                </div>
+                                            
+                                                
+                                                    <label>Job Description *</label>
+                                                        <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="j_description" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 6vw;"></textarea> 
+                                                            <i><small><div id='CharCountLabel1'></div></small></i>
+                                                <label>Job Category *</label>
+                                                        <select  required  name="j_category" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job category">
+                                                            <option  value="Domestic Helper">
+                                                                Domestic Helper
+                                                            </option>
+                                                            <option  value="Driver">
+                                                                Driver
+                                                            </option>
+                                                            <option  value="Babysitter">
+                                                               Babysitter
+                                                            </option>
+                                                            <option  value="Gardener">
+                                                                Gardener
+                                                            </option>
+                                                            <option  value="Handyman">
+                                                                Handyman
+                                                            </option>
+                                                            <option  value="Marternity Specialist">
+                                                                Marternity Specialist
+                                                            </option>
+                                                        </select>
+                                               
                                                 <label> Employer Type  *</label>
                                                         <select  name="j_employertype" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select employer type">
                                                             <option value="Direct Employer">Direct Employer</option>
@@ -192,10 +218,19 @@
                                                                     Taiwan
                                                                 </option>
                                                         </select>
-                                                <div class="form-group">
-                                                    <labeL>City *</label>
-                                                    <input name="j_districtlocation" type="text" required title="Select city" class="form-control" placeholder="City">
-                                                </div>
+                                                <label>Accomodation *</label>
+                                                        <select  name="j_accomodation" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select accomodation">
+                                                                <option value="Private Room">
+                                                                    Private Room
+                                                                </option>
+                                                                <option value="Share with Children">
+                                                                   Share with Children
+                                                                </option>
+                                                                <option value="Others">
+                                                                    Others
+                                                                </option>
+                                                                
+                                                        </select>
                                                 <div class="form-group">
                                                     <labeL>Contact Number *</label>
                                                     <input name="j_contact" type="text"  onkeypress="return isNumberKey(event)" title="Please input contact number" required class="form-control" placeholder="Contact">
@@ -206,39 +241,9 @@
                                                             <option value="Full Time">Full Time</option>
                                                             <option value="Part Time">Part Time</option>
                                                         </select>
-                                                  <label>Job Category *</label>
-                                                        <select  required  name="j_category" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job category">
-                                                            <option  value="Domestic Helper">
-                                                                Domestic Helper
-                                                            </option>
-                                                            <option  value="Driver">
-                                                                Driver
-                                                            </option>
-                                                            <option  value="Babysitter">
-                                                               Babysitter
-                                                            </option>
-                                                            <option  value="Gardener">
-                                                                Gardener
-                                                            </option>
-                                                            <option  value="Handyman">
-                                                                Handyman
-                                                            </option>
-                                                            <option  value="Marternity Specialist">
-                                                                Marternity Specialist
-                                                            </option>
-                                                        </select>
+                                                  
                                                      
-                                                    <div class="form-group">
-                                                        <label>Job Description *</label>
-                                                            <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="j_description" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 20vw;"></textarea> 
-                                                                <i><small><div id='CharCountLabel1'></div></small></i>
-                                                    </div> 
-                                               
-
                                                     
-                                                   
-
-
                                                     <h3>Family Status</h3>
                                                     <label>Nationality *</label>
                                                         <select required  name="j_nationality" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select nationality">
@@ -376,7 +381,7 @@
                                                     <input id="in-helper_requirement-54" name="j_mainduties[]" type="checkbox" value="Elder Care"> Elder Care
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-180" name="j_mainduties[]" type="checkbox" value="Groceries"> Groceries
+                                                    <input id="in-helper_requirement-180" name="j_mainduties[]" type="checkbox" value="Cooking"> Cooking
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <input id="in-helper_requirement-79" name="j_mainduties[]" type="checkbox" value="Housekeeping"> Housekeeping
@@ -388,7 +393,7 @@
                                                     <input id="in-helper_requirement-91" name="j_mainduties[]" type="checkbox" value="Professional Driver"> Professional Driver
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-55" name="j_mainduties[]" type="checkbox" value="Teen Care"> Teen Care
+                                                    <input id="in-helper_requirement-55" name="j_mainduties[]" type="checkbox" value="Disabled Person"> Disabled Person
                                                 </div>
                                         </ul>
                                             </div><br>
@@ -396,10 +401,16 @@
                                                 <label>Cooking Skills<small></small></label><br>
                                                 <ul class="job-manager-term-checklist job-manager-term-checklist-helper_requirements">
                                                 <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-57" name="j_cookingskill[]" type="checkbox" value="Filipino"> Filipino
+                                                </div>
+                                                <div class="col-sm-3">
                                                     <input id="in-helper_requirement-57" name="j_cookingskill[]" type="checkbox" value="Arabic"> Arabic
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <input id="in-helper_requirement-56" name="j_cookingskill[]" type="checkbox" value="Chinese"> Chinese
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input id="in-helper_requirement-54" name="j_cookingskill[]" type="checkbox" value="Indonesian"> Indonesian
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <input id="in-helper_requirement-54" name="j_cookingskill[]" type="checkbox" value="Indian"> Indian
@@ -408,16 +419,20 @@
                                                     <input id="in-helper_requirement-180" name="j_cookingskill[]" type="checkbox" value="Japanese"> Japanese
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-79" name="j_cookingskill[]" type="checkbox" value="Vegetarian"> Vegetarian
+                                                    <input id="in-helper_requirement-79" name="j_cookingskill[]" type="checkbox" value="Thai"> Thai
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <input id="in-helper_requirement-91" name="j_cookingskill[]" type="checkbox" value="Western"> Western
                                                 </div>
                                         </ul>
                                             </div><br>
+                                       
                                             <div class="col-sm-12 padding-top-15">
                                                 <label>Required Languages<small></small></label><br>
                                                <ul class="job-manager-term-checklist job-manager-term-checklist-candidate_languages2" required >
+                                               <div class="col-sm-3">
+                                                    <input id="in-candidate_language2-149"  name="j_requiredlanguages[]" type="checkbox" value="Arabic"> Arabic
+                                               </div>
                                                <div class="col-sm-3">
                                                     <input id="in-candidate_language2-149"  name="j_requiredlanguages[]" type="checkbox" value="Cantonese"> Cantonese
                                                </div>
@@ -437,17 +452,14 @@
                                                     <input id="in-candidate_language2-150" name="j_requiredlanguages[]" type="checkbox" value="Mandarin"> Mandarin
                                                </div>
                                                <div class="col-sm-3">
-                                                    <input id="in-candidate_language2-168" name="j_requiredlanguages[]" type="checkbox" value="Modern Arabic"> Modern Arabic
-                                               </div>
-                                               <div class="col-sm-3">
                                                     <input id="in-candidate_language2-151" name="j_requiredlanguages[]" type="checkbox" value="Thai"> Thai
                                                </div>
                                         </ul>
                                             </div><br>
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <label>Application Email  *</label> 
                                                 <input class="form-control" required="" title="Please input application email" name="j_email" placeholder="Application Email"  type="email">
-                                            </div>  
+                                            </div> -->  
                                             <div class="form-group">
                                                 <label>Monthly Salary  *</label> 
                                                 <input class="form-control" required="" title="Please input montly salary" name="j_monthlysalary" placeholder="e.g. PHP 25,000"  type="type">
@@ -496,7 +508,7 @@
                                         <input type='button' class='btn btn-previous btn-default' name='previous' value='Previous' />
                                     </div>
                                     <div class="clearfix"></div>                                            
-                                </div>	
+                                </div>  
                             </form>
                         </div>
                         <!-- End submit form -->

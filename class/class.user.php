@@ -7,7 +7,7 @@ class User
 	{
 		$this->connection=$connection;
 	}
-	public function register($type,$email,$mobile,$password,$lastname,$firstname,$gender,$ucountry)
+	public function register($type,$email,$mobile,$password,$lastname,$firstname,$gender,$ucountry,$companyname)
 	{
 		try
 		{
@@ -21,10 +21,10 @@ class User
 			$register_stmt->execute(array(':password'=>$new_password,':email'=>$email, ':mobile'=>$mobile,':type'=> $type));
 			$id=$this->connection->lastInsertId();
 
-			$details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender,u_country)
-							VALUES (:id,:lastname,:firstname,:gender,:ucountry)";
+			$details_query="INSERT INTO user_details (u_id,u_lname,u_fname,u_gender,u_country,u_companyname)
+							VALUES (:id,:lastname,:firstname,:gender,:ucountry,:companyname)";
 			$details_stmt=$this->connection->prepare($details_query);
-			$details_stmt->execute(array(':id'=> $id,':lastname'=>$lastname,':firstname'=>$firstname,':gender'=>$gender,':ucountry'=>$ucountry));
+			$details_stmt->execute(array(':id'=> $id,':lastname'=>$lastname,':firstname'=>$firstname,':gender'=>$gender,':ucountry'=>$ucountry,':companyname'=>$companyname));
 
 			return $type;
 		}
@@ -313,19 +313,26 @@ class User
 		}
 
  	}
-	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
+	public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$nationality,$familytype,$startdate,$monthlysalary)
+	// public function post_jobs($id,$logo,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
 	{
 		 try
 			{
-				$insert_jobpost_query="INSERT INTO job_description(u_id,j_jobtitle,j_employertype,j_country,j_districtlocation,j_type,j_category,j_description,j_requiredlanguages,j_contact,j_mainduties,j_cookingskill,j_applicationemail,j_nationality,j_familytype,j_startdate,j_monthlysalary,j_logo,j_status)
-				VALUES(:id,:jobtitle,:employertype,:country,:districtlocation,:type,:category,:description,:requiredlanguages,:contact,:mainduties,:cookingskill,:applicationemail,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
+				$insert_jobpost_query="INSERT INTO job_description(u_id,j_jobtitle,j_employertype,j_country,j_accomodation,j_type,j_category,j_description,j_requiredlanguages,j_contact,j_mainduties,j_cookingskill,j_nationality,j_familytype,j_startdate,j_monthlysalary,j_logo,j_status)
+				VALUES(:id,:jobtitle,:employertype,:country,:accomodation,:type,:category,:description,:requiredlanguages,:contact,:mainduties,:cookingskill,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
+
+
+
+				// WITH EMAIL $insert_jobpost_query="INSERT INTO job_description(u_id,j_jobtitle,j_employertype,j_country,j_accomodation,j_type,j_category,j_description,j_requiredlanguages,j_contact,j_mainduties,j_cookingskill,j_applicationemail,j_nationality,j_familytype,j_startdate,j_monthlysalary,j_logo,j_status)
+				// VALUES(:id,:jobtitle,:employertype,:country,:accomodation,:type,:category,:description,:requiredlanguages,:contact,:mainduties,:cookingskill,:applicationemail,:nationality,:familytype,:startdate,:monthlysalary,:logo,:status)";
+
 
 				$insert_jobpost_stmt=$this->connection->prepare($insert_jobpost_query);
 				$insert_jobpost_stmt->execute(array(':id'=>$id,
 													':jobtitle'=>$jobtitle,
 													':employertype'=>$employertype,
 													':country'=>$country,
-													':districtlocation'=>$districtlocation,
+													':accomodation'=>$accomodation,
 													':type'=>$type,
 													':category'=>$category,
 													':description'=>$description,
@@ -333,7 +340,7 @@ class User
 													':contact'=>$contact,
 													':mainduties'=>$mainduties,
 													':cookingskill'=>$cookingskill,
-													':applicationemail'=>$applicationemail,
+													// ':applicationemail'=>$applicationemail,
 													':nationality'=>$nationality,
 													':familytype'=>$familytype,
 													':startdate'=>$startdate,
@@ -366,14 +373,15 @@ class User
 			echo $e->getMessage();
 		}
 	}
-	public function update_job($id,$logo,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
+	public function update_job($id,$logo,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$nationality,$familytype,$startdate,$monthlysalary)
+	// public function update_job($id,$logo,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary)
 	{
 		try
 		{
 				$update_jobpost_query="UPDATE job_description SET j_jobtitle=:jobtitle,
 																j_employertype=:employertype,
 																j_country=:country,
-																j_districtlocation=:districtlocation,
+																j_accomodation=:accomodation,
 																j_type=:type,
 																j_category=:category,
 																j_description=:description,
@@ -393,7 +401,7 @@ class User
 												':jobtitle'=>$jobtitle,
 												':employertype'=>$employertype,
 												':country'=>$country,
-												':districtlocation'=>$districtlocation,
+												':accomodation'=>$accomodation,
 												':type'=>$type,
 												':category'=>$category,
 												':description'=>$description,
@@ -401,7 +409,7 @@ class User
 												':contact'=>$contact,
 												':mainduties'=>$mainduties,
 												':cookingskill'=>$cookingskill,
-												':applicationemail'=>$applicationemail,
+												// ':applicationemail'=>$applicationemail,
 												':nationality'=>$nationality,
 												':familytype'=>$familytype,
 												':startdate'=>$startdate,

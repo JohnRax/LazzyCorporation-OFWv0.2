@@ -172,9 +172,9 @@
                                 ON b.u_id = a.u_id 
                               JOIN user_professional_information AS c 
                                 ON a.u_id = c.u_id 
-                               JOIN user_question AS d 
+                              LEFT JOIN user_question AS d 
                                ON c.u_id =d.u_id
-                               JOIN user_experience AS e
+                               LEFT JOIN user_experience AS e
                                ON d.u_id =e.u_id
                             WHERE a.u_id = :id ";
     $show_profile_stmt=$connection->prepare($show_profile_query);

@@ -38,15 +38,19 @@
         case 'editupdateprofile':
             include "includes-candidate/checker.php"; 
                break;
+        case 'dashboard':
+            include "includes-candidate/dashboard.php"; 
+                break;
         case 'searchfindjob':
                include "includes-candidate/search-job.php"; 
                break;
         case 'appliedjobs':
                include "includes-candidate/applied-jobs.php"; 
                break;
-         case 'logout':
+        case 'logout':
                include "includes-candidate/logout.php"; 
                break;
+       
         
         default:
              include "includes-candidate/homepage.php"; 

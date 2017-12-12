@@ -85,7 +85,13 @@
 
         <script>
             $(document).ready(function () {
-
+				if (/Mobi/.test(navigator.userAgent)) {
+					// mobile!
+					//$('#products .item').addClass('list-group-item');
+					$(".propertyIMG").removeAttr("style");
+				}
+				// $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+				// $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
                 $('#image-gallery').lightSlider({
                     gallery: true,
                     item: 1,

@@ -13,13 +13,14 @@
     {
 
         $type=trim($_POST['u_type']);
-        $email=trim($_POST['u_email']);
+        $email=trim(@$_POST['u_email']);
         $mobile=trim($_POST['u_mobile']);
         $password=trim($_POST['u_password']);
         $lastname=trim($_POST['u_lname']);
         $firstname=trim($_POST['u_fname']);
         $gender=trim(@$_POST['u_gender']);
         $ucountry=trim(@$_POST['u_country']);
+        $companyname=trim(@$_POST['u_companyname']);
 
         try
             {
