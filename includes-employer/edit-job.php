@@ -58,7 +58,7 @@
         $jobtitle=$_POST['j_jobtitle'];
         $employertype=$_POST['j_employertype'];
         $country=$_POST['j_country'];
-        $districtlocation=$_POST['j_districtlocation'];
+        $accomodation=$_POST['j_accomodation'];
         $type=$_POST['j_type'];
         $category=$_POST['j_category'];
         $description=$_POST['j_description'];
@@ -117,7 +117,7 @@
                 imagejpeg($tci, $resized_file, 80);
         }
 
-        if($user->update_job($id,$newName,$jobtitle,$employertype,$country,$districtlocation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        if($user->update_job($id,$newName,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
         {
            
             echo"<script>
@@ -203,7 +203,7 @@
                                                         </select>
                                                 <div class="form-group">
                                                     <labeL>City *</label>
-                                                    <input name="j_districtlocation" type="text" required title="Select city" class="form-control" placeholder="City" value="<?php echo $result['j_country'] ?>">
+                                                    <input name="j_accomodation" type="text" required title="Select city" class="form-control" placeholder="City" value="<?php echo $result['j_accomodation'] ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Contact Number *</label>

@@ -68,7 +68,7 @@
         $category=$_POST['j_category'];
         $description=$_POST['j_description'];
         $contact=$_POST['j_contact'];
-        // $applicationemail=(@$_POST['j_email']);
+        $applicationemail=(@$_POST['j_email']);
         $nationality=$_POST['j_nationality'];
         $familytype=$_POST['j_familytype'];
         $startdate=$_POST['j_startdate'];
@@ -118,8 +118,8 @@
                 imagejpeg($tci, $resized_file, 80);
 
         }
-        if($user->post_jobs($id,$newName,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$nationality,$familytype,$startdate,$monthlysalary))
-            // WITH EMAIL if($user->post_jobs($id,$newName,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+        if($user->post_jobs($id,$newName,$jobtitle,$employertype,$country,$accomodation,$type,$category,$description,$requiredlanguages,$contact,$mainduties,$cookingskill,$applicationemail,$nationality,$familytype,$startdate,$monthlysalary))
+            
         {
            
             echo"<script>
@@ -129,6 +129,15 @@
 
 
     }
+    $show_contact_query="SELECT 
+                              *
+                            FROM
+                             user
+                            WHERE u_id = :id ";
+    $show_contact_stmt=$connection->prepare($show_contact_query);
+    $show_contact_stmt->execute(array(':id'=>$_SESSION['user_session']));
+    $result = $show_contact_stmt->fetch(PDO::FETCH_ASSOC);
+    
    
   ?>
  <div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
@@ -160,7 +169,7 @@
                                                     </div> 
                                                 </div>
                                                     <labeL>Job Title *</label>
-                                                    <input name="j_jobtitle" type="text" required class="form-control" placeholder="Select Job Title" title="Please input job title">
+                                                    <input name="j_jobtitle" type="text" required class="form-control" placeholder="Select Job Title" title="Please input job title" >
                                             
                                                 
                                                     <label>Job Description *</label>
@@ -231,11 +240,6 @@
                                                                 </option>
                                                                 
                                                         </select>
-                                                <div class="form-group">
-                                                    <labeL>Contact Number *</label>
-                                                    <input name="j_contact" type="text"  onkeypress="return isNumberKey(event)" title="Please input contact number" required class="form-control" placeholder="Contact">
-                                                </div>
-                                                   
                                                  <label>Job Type *</label>
                                                         <select  name="j_type" required  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job type">
                                                             <option value="Full Time">Full Time</option>
@@ -456,10 +460,14 @@
                                                </div>
                                         </ul>
                                             </div><br>
-                                            <!-- <div class="form-group">
+                                            <div class="form-group">
                                                 <label>Application Email  *</label> 
-                                                <input class="form-control" required="" title="Please input application email" name="j_email" placeholder="Application Email"  type="email">
-                                            </div> -->  
+                                                <input class="form-control" required="" title="Please input application email" name="j_email" placeholder="Application Email"  type="email" value="<?php echo $result['u_email']; ?>">
+                                            </div>  
+                                            <div class="form-group">
+                                                    <labeL>Contact Number *</label>
+                                                    <input name="j_contact" type="text"  onkeypress="return isNumberKey(event)" title="Please input contact number" required class="form-control" placeholder="Contact" value="<?php echo $result['u_mobile']; ?>">
+                                                </div>
                                             <div class="form-group">
                                                 <label>Monthly Salary  *</label> 
                                                 <input class="form-control" required="" title="Please input montly salary" name="j_monthlysalary" placeholder="e.g. PHP 25,000"  type="type">

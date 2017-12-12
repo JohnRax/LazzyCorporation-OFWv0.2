@@ -182,6 +182,14 @@
         //Supplementary Questions
         
     }
+     $show_contact_query="SELECT 
+                              *
+                            FROM
+                             user
+                            WHERE u_id = :id ";
+    $show_contact_stmt=$connection->prepare($show_contact_query);
+    $show_contact_stmt->execute(array(':id'=>$_SESSION['user_session']));
+    $result = $show_contact_stmt->fetch(PDO::FETCH_ASSOC);
 
    
   ?>
@@ -236,12 +244,12 @@
 
                                                 <div class="form-group">
                                                     <labeL>Email address <small><i>Optional</i></small></label>
-                                                    <input name="up_email"  type="email" class="form-control" placeholder="Email address" title="Please input your email address">
+                                                    <input name="up_email"  type="email" class="form-control" placeholder="Email address" title="Please input your email address" value="<?php echo $result['u_email']; ?>">
 
                                                 </div>
                                                 <div class="form-group">
                                                     <labeL>Mobile number *</label>
-                                                    <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number">
+                                                    <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number" value="<?php echo $result['u_mobile']; ?>">
                                                 </div>
                                                 <label>Gender  *</label>
                                                         <select name="ac_gender" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your gender">
@@ -348,6 +356,9 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <input  name="up_languages[]" type="checkbox" value="Filipino"> Filipino
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <input name="up_languages[]" type="checkbox" value="Indonesian"> Indonesian
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <input  name="up_languages[]" type="checkbox" value="Japanese"> Japanese

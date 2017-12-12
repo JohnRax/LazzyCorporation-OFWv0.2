@@ -1,70 +1,76 @@
-<br><br><br><br>
-  <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
+
+<?php 
+require_once 'includes/connection.php';
+$show_profile_query="SELECT 
+  *,
+  DATE_FORMAT(j_dateposted, '%M %d, %Y') AS j_dateposted 
+FROM
+  job_description 
+ where j_status=:status GROUP BY j_id 
+ORDER BY rand() LIMIT 10";
+$show_profile_stmt=$connection->prepare($show_profile_query);
+$show_profile_stmt->execute(array(':status'=>'Approved'));
+   ?>
+ <style type="text/css">
+  table {
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+  
+  .onHover{
+  cursor: pointer;  
+  }
+  </style>
+  
+
+<!-- property area -->
+        <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-top: -55px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
                         <!-- /.feature title -->
                         <h2>Recent Posted Jobs</h2>
-                        <p>List of Awesome Job Offers here at LAZZY WORKS.</p>
+                        <p>List of Awesome Job Offers here at <strong>LAZZY WORKS</strong> .</p>
                     </div>
                 </div>
-        <div class="container">
-            <div class="row ">
-                        <div class="col-md-12 clear"> 
-                                <div id="list-type" class="property-th">
-                                   
-                                    <div id="list-type" class="proerty-th">   
-
-                                    <?php 
-
-                                         require_once 'includes/connection.php';
-                                            $show_job_query="SELECT  *,  DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status order by j_id DESC  limit 7";
-                                             $show_job_stmt=$connection->prepare($show_job_query);
-                                             $show_job_stmt->execute(['status'=>'Approved']);
-                                             while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
-                                             {         
-                                                echo " <div class='col-sm-6 col-md-3 p0'>
-                                                 <div class='box-two proerty-item'>
-                                                   <div class='item-thumb'>
-                                                        <img src='assets/img/profilepicture/".$result['j_logo']."'>
-                                                          </div>
-                                                              <div class='item-entry overflow'>
-                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
-                                                              </div> 
-                                                               <div class='dot-hr'></div>
-                                                             <div class='item-entry1 overflow'>  
-                                                                <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
-                                                                <br>
-                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
-                                                                <br>
-                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
-                                                                <br>
-                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
-                                                                <br>
-                                                                </div> 
-                                                                  ";?>
-                                                                  <div class='span9 btn-block no-padding'>
-                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
-                                                            onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
-                                                                >View Full Post</button>  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                <?php } ?>
-                                <div class="col-sm-6 col-md-3 p0">
-                            <div class="box-tree more-proerty text-center">
-                                <br><br> <br><br> <br><br> <br><br>
-                                <div class="more-entry overflow">
-                                    <h5><a >CAN'T FIND JOBS? </a></h5>
-                                    
-                                    <button onclick="location.href='index-candidate.php?source=searchfindjob'" class="btn border-btn more-black" value="All properties">All Jobs</button>
-
-                                
-                                </div>
-                            </div>
-                        </div>
-                                            </div>
-                                        </div>                         
-                                    </div>     
-                                </div>
-                            </div>
-               </div>
+       
+                <div id="chckSize" class="row">
+                    <div class="proerty-th">
+            <table class="display table-condensed table dt-responsive responsive-display">
+              <?php while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC)): 
+                  $img = "assets/img/profilepicture/".$result['j_logo'];
+                  $name = $result['j_jobtitle'] . " ". $result['j_jobtitle'];
+                  $age = $result['j_employertype']; 
+                  $address = $result['j_country']; 
+                  $nationality = $result['j_mainduties']; 
+                  $skillsexp = $result['j_dateposted']; 
+                  ?>
+                <tr>
+                  <td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')" class='propertyIMG'>
+                   
+                   <img  class="img-thumbnail" src="<?php echo $img;?>  " alt="" />
+                  </td>
+                  <td><a href="includes/job-page.php?id=<?php echo $result['j_id'];  ?>">
+                    <div style="color: black">
+                    <div><h4><?php echo $name;?></h4></div>
+                    <div> <b>Employer Type: </b><?php echo $age;?></div>
+                    <div><b>Location: </b><?php echo $address;?></div>
+                    <div><b>Job Category: </b><?php echo $nationality;?></div>
+                    <div><small><i>Posted: <?php echo $skillsexp;?></i></small></div>
+                    </div>
+                    </div>
+                    </a>
+                  </td>
+                </tr>
+              <?php endwhile; ?>
+            </table>
+                      <div class="box-tree more-proerty text-center">
+                          <div class="more-entry overflow">
+                              <h5><a >CAN'T FIND Job?  </a></h5>
+                              <button onclick="location.href='index-candidate.php?source=searchfindjob'" class="btn border-btn more-black" value="All properties">See more Jobs</button>
+                          </div>
+                      </div>
+                    </div>
+                </div>
             </div>
+        </div>

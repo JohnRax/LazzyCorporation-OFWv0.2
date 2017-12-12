@@ -1,4 +1,5 @@
 
+       
 <?php 
 require_once 'includes/connection.php';
 $show_profile_query="SELECT 
@@ -25,7 +26,8 @@ FROM
   JOIN user_personal_information AS b 
     ON b.u_id = a.u_id 
   JOIN user_professional_information AS c 
-    ON a.u_id = c.u_id  where  b.up_status=:status order by a.u_id DESC  limit 50";
+   ON a.u_id = c.u_id where  b.up_status=:status GROUP BY b.u_id 
+ORDER BY rand() LIMIT 10";
 $show_profile_stmt=$connection->prepare($show_profile_query);
 $show_profile_stmt->execute(array(':status'=>'Approved'));
    ?>
@@ -90,17 +92,24 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
 										<div><b>Address: </b><?php echo $address;?></div>
 										<div><b>Nationality: </b><?php echo $nationality;?></div>
 										<div><b >Job Expertises: </b><?php echo $skillsexp;?></div>
-										<div><small><b>Job Posted: </b><?php echo $dateposted;?></small></div>
+										<div><small><i>Posted: <?php echo $dateposted;?></i></small></div>
                     </div>
                     </a>
 									</td>
 								</tr>
 							<?php endwhile; ?>
 						</table>
+                      <div class="box-tree more-proerty text-center">
+                          <div class="more-entry overflow">
+                              <h5><a >CAN'T FIND CANDIDATE?  </a></h5>
+                              <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">See more Candidate</button>
+                          </div>
+                      </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
 
                 <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
@@ -156,24 +165,15 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
                                 <br><br> <br><br> <br><br> <br><br>
                                 <div class="more-entry overflow">
                                     <h5><a >CAN'T FIND JOBS?  </a></h5>
-                                    
-                                    <button onclick="location.href='index.php?source=findhelpers'" class="btn border-btn more-black" value="All properties">All Jobs</button>
-
-                                
+                                    <button onclick="location.href='index.php?source=findemployer'" class="btn border-btn more-black" value="All properties">All Jobs</button>
                                 </div>
                             </div>
                         </div>
-
-                                       
-
-
-                                            </div>
-                                        </div>                         
-                                    </div>     
-                                </div>
-                            </div>
-               </div>
-            </div>
+                      </div>
+                  </div>                         
+              </div>     
+          </div>
+                                         
 
 <!-- Count area -->
         <div class="count-area">
