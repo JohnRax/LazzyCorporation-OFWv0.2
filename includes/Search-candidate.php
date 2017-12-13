@@ -157,7 +157,7 @@
 
                
 
-                    <div class="col-md-12 clear"> 
+                    <div class="col-md-9 "> 
                         <div id="list-type" class="proerty-th">
                            
                             <?php 

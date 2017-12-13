@@ -1,5 +1,5 @@
 <br><br><br><br>
-<<<<<<< HEAD:includes/agencylist.php
+
 
 <style type="text/css">
     
@@ -12,7 +12,7 @@ td {
 
 </style>
 
-=======
+
 <br><br>
 <div align="center" class="button">
         <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=PH'" type="reset">Philippines</button> 
@@ -22,21 +22,20 @@ td {
         </button>
     </div>
 <br>
->>>>>>> a37728d0fd92b3f080015134272858fbac04a802:includes/agencylisthk.php
+
 
         <!-- property area -->
         <div class="properties-area recent-property" style="background-color: #FFF;">
             <div class="container">  
                 <div class="row">
-<<<<<<< HEAD:includes/agencylist.php
+
                      
           
                 <div class="col-md-12  pr0  properties-page">
-=======
                 <center><h2>Accredited Recruitmnent Agency in Hong Kong</h2> </center>
                     <br>
                 <div class="col-md-12  pr0 padding-top-40 properties-page">
->>>>>>> a37728d0fd92b3f080015134272858fbac04a802:includes/agencylisthk.php
+
                     <div class="col-md-12 clear"> 
                        
                    <div align="center" class="button">

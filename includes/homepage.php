@@ -44,8 +44,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
 	cursor: pointer;	
 	}
   </style>
-<<<<<<< HEAD
-  
+
  
         <div class="container">
             <div class="slider-area">   
@@ -64,23 +63,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
           </div>
       </div>
     </div>
-=======
-  <div class="slider-area">   
-            <div class="slider-content">
-                <div class="row">
-                                 
-                       <h2>World’s No. 1 Job hiring overseas!</h2> 
-                       <h5>Start your dream job here in overseas with highly secured and trusted Employers. Registration is free.</h5>               
-                      <br>
-                         <div class="button">
-                          <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
-                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND JOBS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=PH'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AGENCY LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                    </div>
-            </div>
-        </div>
-</div>
->>>>>>> a37728d0fd92b3f080015134272858fbac04a802
+
 
 <!-- property area -->
         <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
