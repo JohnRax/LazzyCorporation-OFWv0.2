@@ -1,19 +1,20 @@
 <br><br><br><br>
 <br><br>
 <div align="center" class="button">
-        <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=agency'" type="reset">Philippines</button> <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=agency'" type="reset">Hong Kong</button> 
-        <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=agency'" type="reset">Indonesia</button> 
-        <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=agency'" type="reset">Sri Lanka
+        <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=PH'" type="reset">Philippines</button> 
+        <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=HK'" type="reset">Hong Kong</button> 
+        <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=INDI'" type="reset">Indonesia</button> 
+        <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='index.php?source=SRI'" type="reset">Sri Lanka
         </button>
     </div>
-<br><br><br><br>
+<br>
 
         <!-- property area -->
         <div class="properties-area recent-property" style="background-color: #FFF;">
             <div class="container">  
                 <div class="row">
-                     
-          
+                <center><h2>Accredited Recruitmnent Agency in Hong Kong</h2> </center>
+                    <br>
                 <div class="col-md-12  pr0 padding-top-40 properties-page">
                     <div class="col-md-12 clear"> 
                         <div class="col-xs-10 page-subheader sorting pl0">

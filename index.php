@@ -32,6 +32,7 @@
         case 'findemployer':
              include "includes/search-job.php"; 
             break;
+
         case 'loginandregister':
              include "includes/login-register.php"; 
             break;
@@ -41,9 +42,18 @@
         case 'viewnews2':
              include "includes/viewnews2.php"; 
             break;  
-        case 'agency':
-             include "includes/agencylist.php"; 
-            break;  
+        case 'HK':
+             include "includes/agencylisthk.php"; 
+            break;
+        case 'PH':
+             include "includes/agencylistph.php"; 
+            break;
+        case 'SRI':
+             include "includes/agencylistsri.php"; 
+            break;
+        case 'INDI':
+             include "includes/agencylistindi.php"; 
+            break;   
         case 'news':
              include "includes/news.php"; 
             break;         
