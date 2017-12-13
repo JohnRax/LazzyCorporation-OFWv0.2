@@ -34,6 +34,15 @@
             break;
         case 'loginandregister':
              include "includes/login-register.php"; 
+            break;
+        case 'viewnews':
+             include "includes/viewnews.php"; 
+            break; 
+        case 'viewnews2':
+             include "includes/viewnews2.php"; 
+            break;  
+        case 'agency':
+             include "includes/agencylist.php"; 
             break;  
         case 'news':
              include "includes/news.php"; 

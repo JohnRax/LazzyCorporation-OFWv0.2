@@ -55,6 +55,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
                          <div class="button">
                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND JOBS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=agency'">List of Agencies</button>
                     </div>
             </div>
         </div>

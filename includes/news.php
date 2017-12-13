@@ -20,154 +20,99 @@
                                     </a>
                                 </li>
                             </ul >--><!--/ .sort-by-list-->
-
-                        
                         </div>
 
                         <div class="col-xs-2 layout-switcher">
                             <!-- <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
-                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>  -->                         
+                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>  -->
                         </div><!--/ .layout-switcher-->
                     </div>
 
-                    <div class="col-md-12 clear"> 
-                        <div id="list-type" class="proerty-th">                                                   
-                                 
-
-                                    <?php 
-                                        
-                                        if(isset($_POST['search']))
-                                        {
-
-                                              require_once 'includes/connection.php';
-                                              $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
-                                              $show_job_stmt=$connection->prepare($show_job_query);
-                                              $show_job_stmt->execute(array(':status'=>'Approved'));                        
-
-                                                $sample="true";
-                                              if(!empty($_POST['skills'])  && !empty($_POST['employertype']))
-                                              {         
-                                               
-                                                  if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
-                                                    { 
-                                                        $skills = implode(',', $_POST['skills']);
-                                                    }
-                                                     
-                                                    
-                                                    $array_skills = explode(',',  $skills);
-                                                
-                                                           
-                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description  ";
-                                                    foreach($array_skills as $val)
-                                                    {
-                                                        $arr = "'%{$val}%'";
-                                                        $new_arr[] =" j_mainduties LIKE ".$arr;
-                                                    }
-
-                                                      $new_arr = implode(" OR ", $new_arr);
-                                                      $show_job_query.=" where ".$new_arr;
-                                                      $show_job_query.=" and j_status=:status and j_employertype=:employertype order by j_id DESC";
-
-                                                     $show_job_stmt=$connection->prepare($show_job_query);
-                                                     $show_job_stmt->execute(array( ':status'=>'Approved',
-                                                                                ':employertype'=>$_POST['employertype'] ));
-
-                                              }
-                                              else if(!empty($_POST['country']) && !empty($_POST['employertype']))
-                                              {
-                                                    
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country and j_employertype=:employertype  order by j_id DESC";
-                                                     $show_job_stmt=$connection->prepare($show_job_query);
-                                                     $show_job_stmt->execute(array(':status'=>'Approved',':country'=>$_POST['country'],':employertype'=>$_POST['employertype']));
-                                              }
-                                              else if(!empty($_POST['country']) && !empty($_POST['skills']))
-                                              {
-                                                
-                                                 if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
-                                                    { 
-                                                        $skills = implode(',', $_POST['skills']);
-                                                    }
-                                                     
-                                                    
-                                                    $array_skills = explode(',',  $skills);
-                                                
-                                                           
-                                                    $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description   ";
-                                                    foreach($array_skills as $val)
-                                                    {
-                                                        $arr = "'%{$val}%'";
-                                                        $new_arr[] =" j_mainduties LIKE ".$arr;
-                                                    }
-
-                                                      $new_arr = implode(" OR ", $new_arr);
-                                                      $show_job_query.=" where ".$new_arr;
-                                                      $show_job_query.=" and j_status=:status and j_country=:country order by j_id DESC";
-
-                                                     $show_job_stmt=$connection->prepare($show_job_query);
-                                                     $show_job_stmt->execute(array( ':status'=>'Approved',
-                                                                                ':country'=>$_POST['country']));
-
-                                              }
-                                              else if(!empty($_POST['country']))
-                                              {
-                                                    
-                                                    
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_country=:country  order by j_id DESC";
-                                                     $show_job_stmt=$connection->prepare($show_job_query);
-                                                     $show_job_stmt->execute(array(':status'=>'Approved',':country'=>$_POST['country']));
-                                           
-                                              }
-                                              else if(!empty($_POST['employertype']))
-                                              {
-                                                
-                                                     $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status and j_employertype=:employertype  order by j_id DESC";
-                                                     $show_job_stmt=$connection->prepare($show_job_query);
-                                                     $show_job_stmt->execute(array(':status'=>'Approved',':employertype'=>$_POST['employertype']));
-                                              }
-                                              else if(!empty($_POST['skills']))
-                                              {
-
-                                                        if( isset($_POST['skills']) && !empty($_POST['skills']) ) 
-                                                        { 
-                                                            $skills = implode(',', $_POST['skills']);
-                                                        }
-                                                         
-                                                        
-                                                        $array_skills = explode(',',  $skills);
-                                                    
-                                                               
-                                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description ";
-                                                            foreach($array_skills as $val)
-                                                            {
-                                                                $arr = "'%{$val}%'";
-                                                                $new_arr[] =" j_mainduties LIKE ".$arr;
-                                                            }
-
-                                                          $new_arr = implode(" OR ", $new_arr);
-                                                          $show_job_query.=" where ".$new_arr;
-                                                          $show_job_query.=" and j_status=:status  order by j_id DESC";
-
-                                                         $show_job_stmt=$connection->prepare($show_job_query);
-                                                         $show_job_stmt->execute(array('status'=>'Approved'));
-                                              }                                            
-                                               
-                                            include "job.php";
-                                            
-                                        }
-                                        else
-                                        {
-                                           
-                                            $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
-                                             $show_job_stmt=$connection->prepare($show_job_query);
-                                             $show_job_stmt->execute(array(':status'=>'Approved'));
-                                            include "job.php";
-                                        
-                                        }  
-
-                                    ?>                                     
-                                         
-
-                                   
+                   <div class="col-md-12 clear">
+                        <div class="proerty-th" id="list-type">
+                            <div class="row" id="chckSize">
+                                <div class="proerty-th">
+                                    <table class="display table-condensed table dt-responsive responsive-display">
+                                        <tr>
+                                            <td class='propertyIMG' onclick="window.open('includes/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title="Click to View Profile"><img alt="" class="img-thumbnail" src="assets/img/news/qatar_building.png"></td>
+                                            <td>
+                                                <div style="color: black">
+                                                    <div>
+                                                        <h3><a href="index.php?source=viewnews">How Many Filipinos in Qatar?</a></h3>
+                                                    </div>
+                                                    <div>
+                                                        <i>Travelling for work from Qatar to Philippines is a booming choice for Overseas Filipino workers. However, certain large-scale problems might emerge. Diplomatic crisis, for instance, can be a huge pain in the side of OFWs, particularly our own overseas Filipino workers in Qatar.</i>
+                                                    </div>
+                                                    <div>
+                                                        <button class="navbar-btn nav-button" onclick="location.href='index.php?source=loginandregister'" style="height: 30px; font-size: 17px; border-radius:10px; line-height: 10px;">Read More</button>
+                                                    </div>
+                                                    <div>
+                                                        <small><i><b>Date Posted:</b> December 13, 2017</i></small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 clear">
+                        <div class="proerty-th" id="list-type">
+                            <div class="row" id="chckSize">
+                                <div class="proerty-th">
+                                    <table class="display table-condensed table dt-responsive responsive-display">
+                                        <tr>
+                                            <td class='propertyIMG' onclick="window.open('includes/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title="Click to View Profile"><img alt="" class="img-thumbnail"  src="assets/img/news/passport.png"></td>
+                                            <td>
+                                                <div style="color: black">
+                                                    <div>
+                                                        <h3><a href="index.php?source=viewnews2">DFA Passport Appointment Website is Down, Where To Apply?</a></h3>
+                                                    </div>
+                                                    <div>
+                                                        <i>Department of Foreign Affairs (DFA) announced on its former website that starting from June 17, all passport appointment system will now be handled buy APO Productions, Inc. Since the former website is not working anymore because it was hacked and the now the web server is down, DFA decided to check the site down now.</i>
+                                                    </div>
+                                                    <div>
+                                                        <button class="navbar-btn nav-button" onclick="location.href='index.php?source=viewnews2'" style="height: 30px; font-size: 17px; border-radius:10px; line-height: 10px;">Read More</button>
+                                                    </div>
+                                                    <div>
+                                                        <small><i><b>Date Posted:</b> December 13, 2017</i></small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 clear">
+                        <div class="proerty-th" id="list-type">
+                            <div class="row" id="chckSize">
+                                <div class="proerty-th">
+                                    <table class="display table-condensed table dt-responsive responsive-display">
+                                        <tr>
+                                            <td class='propertyIMG' onclick="window.open('includes/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title="Click to View Profile"><img alt="" class="img-thumbnail" src="assets/img/news/qatar_building.png"></td>
+                                            <td>
+                                                <div style="color: black">
+                                                    <div>
+                                                        <h3><a href="index.php?source=viewnews">How Many Filipinos in Qatar?</a></h3>
+                                                    </div>
+                                                    <div>
+                                                        <i>Travelling for work from Qatar to Philippines is a booming choice for Overseas Filipino workers. However, certain large-scale problems might emerge. Diplomatic crisis, for instance, can be a huge pain in the side of OFWs, particularly our own overseas Filipino workers in Qatar.</i>
+                                                    </div>
+                                                    <div>
+                                                        <button class="navbar-btn nav-button" onclick="location.href='index.php?source=loginandregister'" style="height: 30px; font-size: 17px; border-radius:10px; line-height: 10px;">Read More</button>
+                                                    </div>
+                                                    <div>
+                                                        <small><i><b>Date Posted:</b> December 13, 2017</i></small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
