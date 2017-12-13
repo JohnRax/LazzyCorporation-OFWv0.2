@@ -5,7 +5,7 @@
                 <div class="row">
                      
           
-                <div class="col-md-9  pr0 padding-top-40 properties-page">
+                <div class="col-md-12  pr0 padding-top-40 properties-page">
                     <div class="col-md-12 clear"> 
                         <div class="col-xs-10 page-subheader sorting pl0">
                             <!-- <ul class="sort-by-list">
@@ -44,7 +44,7 @@
                                                         <i>Travelling for work from Qatar to Philippines is a booming choice for Overseas Filipino workers. However, certain large-scale problems might emerge. Diplomatic crisis, for instance, can be a huge pain in the side of OFWs, particularly our own overseas Filipino workers in Qatar.</i>
                                                     </div>
                                                     <div>
-                                                        <button class="navbar-btn nav-button" onclick="location.href='index.php?source=loginandregister'" style="height: 30px; font-size: 17px; border-radius:10px; line-height: 10px;">Read More</button>
+                                                        <button class="navbar-btn nav-button" onclick="location.href='index.php?source=viewnews'" style="height: 30px; font-size: 17px; border-radius:10px; line-height: 10px;">Read More</button>
                                                     </div>
                                                     <div>
                                                         <small><i><b>Date Posted:</b> December 13, 2017</i></small>

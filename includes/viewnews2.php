@@ -5,7 +5,7 @@
 <div class="properties-area recent-property" style="background-color: #FFF;">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 pr0 padding-top-40 properties-page">
+                <div class="col-md-12 pr0 padding-top-40 properties-page">
                     <div class="col-md-12 clear">
                         <div class="col-xs-10 page-subheader sorting pl0">
                             <!-- <ul class="sort-by-list">
