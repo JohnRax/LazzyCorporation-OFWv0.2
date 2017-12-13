@@ -3183,13 +3183,26 @@ padding: 10px;
 #map {
     height: 300px;
 }
-.tablse :hover{
-    background:  #33aabb;
 
-}
 .translator{
-   width: 100px;
-    right: 50px;
+  right: 45%;
     top: 1px;
-    position: absolute; 
+    position: absolute;
+}
+.wilsontable{ 
+    border-collapse: collapse; 
+}
+.wilsontr{ 
+    border: none; 
+}
+.wilsontr :hover{ 
+    border: none; 
+    background: #33aabb;
+}
+td {
+  border-top: solid 1px ; 
+  border-bottom: solid 1px ;
+}
+td :hover{
+  
 }
