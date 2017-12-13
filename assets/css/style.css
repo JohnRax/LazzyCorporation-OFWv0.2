@@ -3183,7 +3183,13 @@ padding: 10px;
 #map {
     height: 300px;
 }
-.table :hover{
-    color:green;
+.tablse :hover{
+    background:  #33aabb;
 
+}
+.translator{
+   width: 100px;
+    right: 50px;
+    top: 1px;
+    position: absolute; 
 }
