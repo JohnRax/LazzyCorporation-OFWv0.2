@@ -4,8 +4,8 @@
             <div class="container">  
                 <div class="row">
                      
-                <div class="col-md-3 p0 padding-top-40">
-                    <div class="blog-asside-right pr0">
+                <div class="col-md-3  padding-top-40">
+                    <div class="blog-asside-right">
                         <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
                             <div class="panel-heading">
                                 <h3 class="panel-title">Smart search</h3>
@@ -142,30 +142,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-9  pr0 padding-top-40 properties-page">
-                    <div class="col-md-12 clear"> 
-                        <div class="col-xs-10 page-subheader sorting pl0">
-                            <!-- <ul class="sort-by-list">
-                                <li class="active">
-                                    <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
-                                        Posted Date <i class="fa fa-sort-amount-asc"></i>                   
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="javascript:void(0);" class="order_by_price" data-orderby="property_price" data-order="DESC">
-                                        Posted Date <i class="fa fa-sort-numeric-desc"></i>                     
-                                    </a>
-                                </li>
-                            </ul >--><!--/ .sort-by-list-->
-
-                        
-                        </div>
-
-                        <div class="col-xs-2 layout-switcher">
-                            <!-- <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
-                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>  -->                         
-                        </div><!--/ .layout-switcher-->
-                    </div>
+               
 
                     <div class="col-md-12 clear"> 
                         <div id="list-type" class="proerty-th">                                                   
@@ -326,5 +303,5 @@
                 </div>              
             </div>
         </div>
-
+ </div>
         

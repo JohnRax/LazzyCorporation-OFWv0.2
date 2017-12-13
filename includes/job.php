@@ -1,4 +1,4 @@
- <div id="chckSize" class="row">
+      <div id="chckSize" class="row">
                     <div class="proerty-th">
             <table class="display table-condensed table dt-responsive responsive-display">
               <?php while($result1 = $show_job_stmt->fetch(PDO::FETCH_ASSOC)): 

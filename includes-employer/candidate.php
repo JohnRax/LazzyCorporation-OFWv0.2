@@ -1,4 +1,4 @@
-            <div class="container">            
+                  
                 <div id="chckSize" class="row">
                     <div class="proerty-th">
 						<table class="display table-condensed table dt-responsive responsive-display">
@@ -31,7 +31,4 @@
 							<?php endwhile; ?>
 						</table>
         
-                    </div>
-                </div>
-            </div>
-        
+            

@@ -75,11 +75,11 @@
     <div class="mainDetails">
 
      
-
-      <div id="name">
-           <div id="headshot" class="quickFade">
+  <div id="headshot" class="quickFade">
           <img src="../assets/img/profilepicture/<?php echo $result['up_picture']; ?>" alt="Lazzy Picture" />
         </div>
+      <div id="name">
+         
         <h1 class="quickFade delayTwo"><?php echo $result['u_fname']." ".$result['u_lname'];?></h1>
         <h2 class="quickFade delayThree"><?php echo $result['up_nationality']; ?></h2>
         <h3 class="quickFade delayThree"><?php echo $result['up_email']; ?></h3>

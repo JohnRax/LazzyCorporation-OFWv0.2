@@ -288,7 +288,9 @@
         margin-top: -200px;
     }
     .properties-area .pr0 {
+      
         padding-right: 15px !important;
+     
     }
 
     .proerty-th-list .col-md-4 .item-thumb img { 
@@ -571,7 +573,8 @@
         margin-top: -200px;
     }
     .pr0 {
-        padding-right: 15px !important;
+       padding-right: 15px !important;
+    
     }
     .proerty-th-list .col-md-4 .item-thumb img { 
         height: 285px; 
@@ -579,7 +582,7 @@
         padding-right: 14px;
     }
     .pl0 {
-        padding-left: 15px !important;
+        padding-right: 15px !important;
     } 
     .proerty-th-list p { 
         padding-top: 10px; 

@@ -121,11 +121,12 @@
     <div class="mainDetails">
 
      
-
+    <div id="headshot" class="quickFade">
+          <img src="../assets/img/profilepicture/<?php echo $result['j_logo']; ?>" alt="lazzy picture" />
+        </div>
+     
       <div id="name">
-	      <div id="headshot" class="quickFade">
-	        <img src="../assets/img/profilepicture/<?php echo $result['j_logo']; ?>" alt="lazzy picture" />
-	      </div>
+	      
         <h1 class="quickFade delayTwo"><?php echo $result['j_jobtitle'];?></h1>
         <h2 class="quickFade delayThree"><?php echo $result['j_employertype']; ?></h2>
         <h3 class="quickFade delayThree"><?php echo $result['j_applicationemail']; ?></h3>
@@ -151,7 +152,7 @@
                                          else
                                          {
                                             ?>
-                                            <button type='button' class='btn btn-large btn-block btn-primary full-width';
+                                            <button type='button' id="printpagebuttonjob" class='btn btn-large btn-block btn-primary full-width';
                                                   onclick="location.href='job.php?id=<?php echo $_GET['id'] ?>&denied'">CLICK HERE TO APPLY&nbsp;</button>
                                          <?php }
                                          
