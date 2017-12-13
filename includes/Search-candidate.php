@@ -206,7 +206,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status GROUP BY b.u_id order by b.up_dateposted DESC";
                                 $show_profile_stmt=$connection->prepare($show_profile_query);
                                 $show_profile_stmt->execute(array(':status'=>'Approved'));
                               
@@ -232,7 +232,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_address=:address order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_address=:address GROUP BY b.u_id order by b.up_dateposted DESC";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender'],':address'=>$_POST['up_address']));
                                 }
@@ -256,7 +256,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_age=:age order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender'],':age'=>$_POST['up_age']));
                                 }
@@ -297,7 +297,7 @@
 
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and b.up_age=:age order by b.up_dateposted DESC";
+                                                        $show_profile_query.=" and b.up_status=:status and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age']));
                                 }
@@ -321,7 +321,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address and b.up_age=:age order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address'],':age'=>$_POST['up_age']));
                                 }
@@ -351,7 +351,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id  GROUP BY b.u_id order by b.up_dateposted DESC";
                                                             
                                                         foreach($array_skills as $val)
                                                         {
@@ -402,7 +402,7 @@
 
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and a.u_gender=:gender order by b.up_dateposted DESC";
+                                                        $show_profile_query.=" and b.up_status=:status and a.u_gender=:gender GROUP BY b.u_id order by b.up_dateposted DESC";
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender']));
 
@@ -427,7 +427,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age and b.up_address=:address order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age GROUP BY b.u_id and b.up_address=:address order by b.up_dateposted DESC";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age'],':address'=>$_POST['up_address']));
                                 }
@@ -451,7 +451,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address GROUP BY b.u_id order by b.up_dateposted DESC";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address']));
                                 }
@@ -474,7 +474,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender GROUP BY b.u_id order by b.up_dateposted DESC";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender']));
                                 }
@@ -498,7 +498,7 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
                                                     $show_profile_stmt=$connection->prepare($show_profile_query);
                                                     $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age']));
                                 }
@@ -539,49 +539,14 @@
 
                                                         $new_arr = implode(" OR ", $new_arr);
                                                         $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status order by b.up_dateposted DESC";
+                                                        $show_profile_query.=" and b.up_status=:status GROUP BY b.u_id order by b.up_dateposted DESC";
                                                   
                                                         $show_profile_stmt=$connection->prepare($show_profile_query);
                                                         $show_profile_stmt->execute(array(':status'=>'Approved'));
                                 }
                                
-
-                                 while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
-                                    {
-                                         echo " <div class='col-sm-6 col-md-4 p0'>
-                                            <div class='box-two proerty-item'>
-                                                <div class='item-thumb'>
-                                                   <img src='assets/img/profilepicture/".$result['up_picture']."'>
-                                                </div>
-                                                <div class='item-entry overflow'>
-                                                     <center><h4>".$result['u_fname']." ".$result['u_lname']."</h4></center>
-                                                 </div>     
-                                                 <div class='dot-hr'></div>
-                                                  <div class='item-entry1 overflow'>     
-                                                    <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
-                                                    <br>
-                                                    <h7><b>Location:</b> ".$result['up_address']."</h7>
-                                                    <br>
-                                                   
-                                                    <h7><b>Nationality:</b> ".$result['up_nationality']."</h7>
-                                                    <br>
-                                                    <h7><b>Job Expertises:</b></h7>
-                                                    <h7>".$result['upi_skillsexp']."</h7>
-                                                    <br>
-                                                    <span class='pull-left'><b>Posted: </b>".$result['up_dateposted']."</span>
-                                                    <br>
-                                                      </div>
-                                                    
-                                                ";?>
-                                                <div class='span9 btn-block no-padding'>
-                                                    <button type="button" class="btn btn-large btn-block btn-primary full-width" 
-                                                    onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
-                                                            >View Full Profile</button>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                <?php } 
+                                 include "candidate.php";
+                                 
                             }
                             else
                             {
@@ -602,43 +567,11 @@
                                                        JOIN user_personal_information AS b 
                                                         ON b.u_id = a.u_id 
                                                        JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status order by b.up_dateposted DESC";
+                                                        ON a.u_id = c.u_id where b.up_status=:status GROUP BY b.u_id order by b.up_dateposted DESC";
                             $show_profile_stmt=$connection->prepare($show_profile_query);
                             $show_profile_stmt->execute(array(':status'=>'Approved'));
-                            while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))
-                            {
-                                echo " <div class='col-sm-6 col-md-4 p0'>
-                                            <div class='box-two proerty-item'>
-                                                <div class='item-thumb'>
-                                                   <img src='assets/img/profilepicture/".$result['up_picture']."'>
-                                                </div>
-                                                <div class='item-entry overflow'>
-                                                     <center><h4>".$result['u_fname']." ".$result['u_lname']."</h4></center>
-                                                 </div>
-                                                    <div class='dot-hr'></div>
-                                                 <div class='item-entry1 overflow'>     
-                                                    <span class='pull-left'><b>Age : </b>".$result['up_age']."</span>
-                                                    <br>
-                                                    <h7><b>Location: </b>".$result['up_address']."</h7>
-                                                    <br>
-                                                   
-                                                    <h7><b>Nationality: </b>".$result['up_nationality']."</h7>
-                                                    <br>
-                                                    <h7><b>Job Expertises: </b></h7>
-                                                    <h7> ".$result['upi_skillsexp']."</h7>
-                                                    <br>
-                                                    <span class='pull-left'><b>Posted: </b> ".$result['up_dateposted']."</span>
-                                                    <br>
-                                                   </div>  
-                                                ";?><div class='span9 btn-block no-padding'>
-                                                    <button type="button" class="btn btn-large btn-block btn-primary full-width" 
-                                                    onclick=" window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')"
-                                                            >View Full Profile</button>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                            <?php } 
+                            
+                                include "candidate.php";
 
                             }?>
                                       

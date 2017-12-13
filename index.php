@@ -34,6 +34,9 @@
             break;
         case 'loginandregister':
              include "includes/login-register.php"; 
+            break;  
+        case 'news':
+             include "includes/news.php"; 
             break;         
         default:
             include "includes/homepage.php";
