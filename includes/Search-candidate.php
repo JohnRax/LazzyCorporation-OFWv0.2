@@ -30,8 +30,8 @@
                                         <div class="row">
                                             <div class="col-xs-12">
 
-                                                <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
-                                                                <option class="form-control" selected disabled value="">Search By Location</option>
+                                                <select name="up_address" class="selectpicker"  title="Location">
+                                                                
                                                                 <option value="Philippines">
                                                                     Philippines
                                                                 </option>
@@ -61,7 +61,7 @@
                                         <div class="row">
                                             <div class="col-xs-6">
 
-                                                <select name="gender" class="selectpicker"  data-live-search="true" data-live-search-style="begins" title="Gender">
+                                                <select name="gender" class="selectpicker"  title="Gender">
                                                    <option  value="male">Male</option>
                                                     <option  value="female">Female</option>
                                                 </select>

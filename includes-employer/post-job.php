@@ -176,7 +176,7 @@
                                                         <textarea class="form-control" id="myfield" maxlength='250' minlength="30" name="j_description" placeholder="Tell more about the job. e.g. (Job requirements, Salary, Incentives)" required="" style="font-family: arial; font-size: 12pt; width: 100%; height: 6vw;"></textarea> 
                                                             <i><small><div id='CharCountLabel1'></div></small></i>
                                                 <label>Job Category *</label>
-                                                        <select  required  name="j_category" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job category">
+                                                        <select  required  name="j_category" class="selectpicker"  title="Select job category">
                                                             <option  value="Domestic Helper">
                                                                 Domestic Helper
                                                             </option>
@@ -198,13 +198,13 @@
                                                         </select>
                                                
                                                 <label> Employer Type  *</label>
-                                                        <select  name="j_employertype" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select employer type">
+                                                        <select  name="j_employertype" required class="selectpicker"  title="Select employer type">
                                                             <option value="Direct Employer">Direct Employer</option>
                                                             <option value="Agency">Agency</option>
                                                         </select>
                                                 
                                                 <label>Job Region *</label>
-                                                        <select  name="j_country" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job location">
+                                                        <select  name="j_country" required class="selectpicker"  title="Select job location">
                                                                 <option value="Philippines">
                                                                     Philippines
                                                                 </option>
@@ -228,7 +228,7 @@
                                                                 </option>
                                                         </select>
                                                 <label>Accomodation *</label>
-                                                        <select  name="j_accomodation" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select accomodation">
+                                                        <select  name="j_accomodation" required class="selectpicker"  title="Select accomodation">
                                                                 <option value="Private Room">
                                                                     Private Room
                                                                 </option>
@@ -241,7 +241,7 @@
                                                                 
                                                         </select>
                                                  <label>Job Type *</label>
-                                                        <select  name="j_type" required  class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select job type">
+                                                        <select  name="j_type" required  class="selectpicker"  title="Select job type">
                                                             <option value="Full Time">Full Time</option>
                                                             <option value="Part Time">Part Time</option>
                                                         </select>
@@ -250,7 +250,7 @@
                                                     
                                                     <h3>Family Status</h3>
                                                     <label>Nationality *</label>
-                                                        <select required  name="j_nationality" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select nationality">
+                                                        <select required  name="j_nationality" class="selectpicker"  title="Select nationality">
                                                                  <option value="American Family">
                                                                     American Family
                                                                 </option>
@@ -325,7 +325,7 @@
                                                                 </option>
                                                         </select>
                                                     <label>Family Type *</label>
-                                                        <select class="selectpicker" data-live-search="true" data-live-search-style="begins" name="j_familytype" required="" title="Select family type">
+                                                        <select class="selectpicker"  name="j_familytype" required="" title="Select family type">
                                                             <option value="Couple">
                                                                 Couple
                                                             </option>

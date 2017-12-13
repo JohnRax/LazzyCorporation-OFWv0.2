@@ -19,8 +19,8 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <select name="country" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
-                                                                <option class="form-control" selected disabled value="">Search By Location</option>
+                                                <select name="country" class="selectpicker" title="Location">
+                                                              
                                                                 <option value="Philippines">
                                                                     Philippines
                                                                 </option>
@@ -52,7 +52,7 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 
-                                                <select name="employertype" id="lunchBegins" class="selectpicker"  data-live-search="true" data-live-search-style="begins" title="Employer Type">
+                                                <select name="employertype" id="lunchBegins" class="selectpicker" title="Employer Type">
                                                     <option value="Direct Employer">
                                                                     Direct Employer
                                                                 </option>

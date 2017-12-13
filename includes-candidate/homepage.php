@@ -46,11 +46,11 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
                   $skillsexp = $result['j_dateposted']; 
                   ?>
                 <tr>
-                  <td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')" class='propertyIMG'>
+                  <td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('print/job.php?id=<?php echo $result['j_id'];  ?>')" class='propertyIMG'>
                    
                    <img  class="img-thumbnail" src="<?php echo $img;?>  " alt="" />
                   </td>
-                  <td><a href="includes/job-page.php?id=<?php echo $result['j_id'];  ?>">
+                  <td><a href="print/job.php?id=<?php echo $result['j_id'];  ?>">
                     <div style="color: black">
                     <div><h4><?php echo $name;?></h4></div>
                     <div> <b>Employer Type: </b><?php echo $age;?></div>

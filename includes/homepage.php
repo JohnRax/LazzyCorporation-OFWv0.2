@@ -85,11 +85,11 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
 								  $dateposted = $result['up_dateposted']; 
 								  ?>
 								<tr>
-									<td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')" class='propertyIMG'>
+									<td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('print/profile.php?id=<?php echo $result['u_id'];  ?>')" class='propertyIMG'>
 									 
                    <img  class="img-thumbnail" src="<?php echo $img;?>  " alt="" />
 									</td>
-									<td><a href="includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>"></a>
+									<td><a href="print/profile.php?id=<?php echo $result['u_id'];  ?>"></a>
 										<div style="color: black">
                     <div><h3><?php echo $name;?></h3></div>
 										<div> <b>Age: </b><?php echo $age;?></div>
@@ -147,11 +147,11 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
                   $posted=$result1['j_dateposted'];
                   ?>
                 <tr>
-                  <td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('includes/job-page.php?id=<?php echo $result1['j_id'];  ?>')" class='propertyIMG'>
+                  <td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('print/job.php?id=<?php echo $result1['j_id'];  ?>')" class='propertyIMG'>
                    
                    <img  class="img-thumbnail" src="<?php echo $img1;?>  " alt="" />
                   </td>
-                  <td><a href="includes/job-page.php?id=<?php echo $result1['j_id'];  ?>"></a>
+                  <td><a href="print/job.php?id=<?php echo $result1['j_id'];  ?>"></a>
                     <div style="color: black">
                     <div><h3><?php echo $jobtitle;?></h3></div>
                     <div><b>Employer Type: </b><?php echo $employertype;?></div>

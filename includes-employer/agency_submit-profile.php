@@ -225,7 +225,7 @@
                                                <h3 class="info-text"> Personal Information </h3>
 
                                                 <label>Resume Category *</label>
-                                                    <select required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your resume category" name="up_category" >
+                                                    <select required class="selectpicker"  title="Select your resume category" name="up_category" >
                                                         
                                                         <option value="Driver">Driver</option>
                                                         <option value="Helper">Helper</option>
@@ -252,7 +252,7 @@
                                                     <input name="up_mobile"  required type="text" onkeypress="return isNumberKey(event)" class="form-control" placeholder="Mobile number" title="Please input your mobile number" value="<?php echo $result['u_mobile']; ?>">
                                                 </div>
                                                 <label>Gender  *</label>
-                                                        <select name="ac_gender" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your gender">
+                                                        <select name="ac_gender" required class="selectpicker"  title="Please select your gender">
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
                                                         </select>
@@ -261,7 +261,7 @@
                                                     <input name="up_telephone" onkeypress="return isNumberKey(event)" type="text" class="form-control" placeholder="Telephone number">
                                                 </div> -->
                                                 <label>Nationality  *</label>
-                                                        <select name="up_nationality" required class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your nationality">
+                                                        <select name="up_nationality" required class="selectpicker"  title="Please select your nationality">
                                                             
                                                             <option value="Filipino">Filipino</option>
                                                             <option value="Chinese">Chinese</option>
@@ -273,7 +273,7 @@
                                                         </select>
 
                                                 <label>Location  *</label>
-                                                        <select name="up_address" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your location">
+                                                        <select name="up_address" class="selectpicker" required  title="Please select your location">
 
                                                                  <option value="Philippines">
                                                                     Philippines
@@ -306,7 +306,7 @@
                                             
                                                 <div class="form-group">
                                                      <labeL>Marital Status *</label>
-                                                        <select name="up_maritalstatus" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your marital status">
+                                                        <select name="up_maritalstatus" class="selectpicker" required  title="Please select your marital status">
                                                             
                                                             <option  value="Single">Single</option>
                                                             <option  value="Married">Married</option>
@@ -317,7 +317,7 @@
                                                 </div>
                                                    <div class="form-group">
                                                      <labeL>Religion *</label>
-                                                        <select name="up_religion" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your religion">
+                                                        <select name="up_religion" class="selectpicker" required  title="Please select your religion">
                                                             
                                                             <option  value="Roman Catholic">Roman Catholic</option>
                                                             <option  value="Muslim">Muslim</option>
@@ -329,7 +329,7 @@
                                                     </div>
                                                      <div class="form-group">
                                                      <labeL>Highest Education Attainment *</label>
-                                                        <select name="up_education" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Please select your highest educational attainment">
+                                                        <select name="up_education" class="selectpicker" required  title="Please select your highest educational attainment">
                                                             
                                                             <option  value="Elementary">Elementary</option>
                                                             <option  value="High School">High School</option>
@@ -384,7 +384,7 @@
                                         <h3 class="info-text"> Professional Information </h3>
                                                 <div class="col-sm-12"> 
                                                         <label>Where Do You Want To Work *</label>
-                                                        <select name="upi_preferedworklocation" required="" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Please select your prefered location">
+                                                        <select name="upi_preferedworklocation" required="" class="selectpicker"  title="Please select your prefered location">
                                                             
                                                             <option value="Philippines">
                                                                     Philippines

@@ -19,9 +19,8 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                 <select name="country" class="selectpicker" required data-live-search="true" data-live-search-style="begins" title="Location">
-                                                    <option class="form-control" selected disabled value="">Search By Location</option>
-                                                    <option value="Philippines">
+                                                 <select name="country" class="selectpicker"   title="Search By Location">     
+                                                                <option value="Philippines">
                                                                     Philippines
                                                                 </option>
                                                                 <option value="Hong Kong">
@@ -50,7 +49,7 @@
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <select name="employertype" class="selectpicker"  data-live-search="true" data-live-search-style="begins" title="Employer Type">
+                                                <select name="employertype" class="selectpicker"   title="Employer Type">
                                                     <option value="Direct Employer">
                                                                     Direct Employer
                                                                 </option>
@@ -287,37 +286,8 @@
                                                          $show_job_stmt->execute(array('status'=>'Approved'));
                                               }                                            
                                                
-                                            while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
-                                                 {         
-                                                    echo " <div class='col-sm-6 col-md-4 p0'>
-                                                     <div class='box-two proerty-item'>
-                                                       <div class='item-thumb'>
-                                                           <img src='assets/img/profilepicture/".$result['j_logo']."'>
-                                                              </div>
-                                                                 <div class='item-entry overflow'>
-                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
-                                                              </div> 
-                                                               <div class='dot-hr'></div>
-                                                             <div class='item-entry1 overflow'>  
-                                                                <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
-                                                                <br>
-                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
-                                                                <br>
-                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
-                                                                <br>
-                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
-                                                                <br>
-                                                                </div> 
-                                                                  ";?>
-                                                                  <div class='span9 btn-block no-padding'>
-                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
-                                                            onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
-                                                                >View Full Post</button>  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <?php } 
-                                            
+                                          
+                                             include "job.php";
                                         }
                                         else
                                         {
@@ -325,38 +295,8 @@
                                             $show_job_query="SELECT *, DATE_FORMAT(j_dateposted,'%M %d, %Y') as j_dateposted FROM job_description where j_status=:status  order by j_id DESC";
                                              $show_job_stmt=$connection->prepare($show_job_query);
                                              $show_job_stmt->execute(array(':status'=>'Approved'));
-                                             while($result = $show_job_stmt->fetch(PDO::FETCH_ASSOC))
-                                             {         
-                                                echo " <div class='col-sm-6 col-md-4 p0'>
-                                                 <div class='box-two proerty-item'>
-                                                   <div class='item-thumb'>
-                                                       <img src='assets/img/profilepicture/".$result['j_logo']."'>
-                                                          </div>
-                                                             <div class='item-entry overflow'>
-                                                                <center><h4>".$result['j_jobtitle']."</h4> </center>
-                                                              </div> 
-                                                               <div class='dot-hr'></div>
-                                                             <div class='item-entry1 overflow'>  
-                                                                <span class='pull-left'><b>Employer Type : </b>".$result['j_employertype']." </span>
-                                                                <br>
-                                                                <h7><b>Location: </b> ".$result['j_country']."</h7>
-                                                                <br>
-                                                                <h7><b>Job Category: </b>".$result['j_mainduties']."</h7>
-                                                                <br>
-                                                                <span class='pull-left'><b>Posted:</b> ".$result['j_dateposted']."</span>
-                                                                <br>
-                                                                </div> 
-                                                                  ";?>
-                                                                  <div class='span9 btn-block no-padding'>
-                                                            <button type="button" class="btn btn-large btn-block btn-primary full-width" 
-                                                            onclick=" window.open('includes/job-page.php?id=<?php echo $result['j_id'];  ?>')"
-                                                                >View Full Post</button>  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php } 
-                                        
-                                        }  
+                                             include "job.php";
+                                        }
 
                                     ?>                                     
                                          

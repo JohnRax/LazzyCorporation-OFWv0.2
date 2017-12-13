@@ -65,11 +65,11 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
                   $dateposted = $result['up_dateposted']; 
                   ?>
                 <tr>
-                  <td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>')" class='propertyIMG'>
+                  <td class='onHover col-md-4' title="Click to View Profile" onclick="window.open('print/profile.php?id=<?php echo $result['u_id'];  ?>')" class='propertyIMG'>
                    
                    <img  class="img-thumbnail" src="<?php echo $img;?>  " alt="" />
                   </td>
-                  <td><a href="includes/candidate-page.php?id=<?php echo $result['u_id'];  ?>">
+                  <td><a href="print/profile-page.php?id=<?php echo $result['u_id'];  ?>">
                     <div style="color: black">
                     <div><h3><?php echo $name;?></h3></div>
                     <div> <b>Age: </b><?php echo $age;?></div>
