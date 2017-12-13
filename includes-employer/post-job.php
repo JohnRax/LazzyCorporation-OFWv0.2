@@ -394,10 +394,10 @@
                                                     <input id="in-helper_requirement-53" name="j_mainduties[]" type="checkbox" value="Pet Care"> Pet Care
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-91" name="j_mainduties[]" type="checkbox" value="Professional Driver"> Professional Driver
+                                                    <input id="in-helper_requirement-91" name="j_mainduties[]" type="checkbox" value="Driver">Driver
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input id="in-helper_requirement-55" name="j_mainduties[]" type="checkbox" value="Disabled Person"> Disabled Person
+                                                    <input id="in-helper_requirement-55" name="j_mainduties[]" type="checkbox" value="Disabled">Disabled
                                                 </div>
                                         </ul>
                                             </div><br>

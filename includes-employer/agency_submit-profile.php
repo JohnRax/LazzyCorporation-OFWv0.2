@@ -433,10 +433,10 @@
                                                         <input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver"> Professional Driver
+                                                        <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Driver">Driver
                                                     </div>
                                                      <div class="col-sm-3">
-                                                        <input id="in-helper_requirement2-109" name="upi_skillsexp[]" type="checkbox" value="Disabled Person"> Disabled Person
+                                                        <input id="in-helper_requirement2-109" name="upi_skillsexp[]" type="checkbox" value="Disabled"> Disabled
                                                     </div>
                                                    
                                                  </ul>
