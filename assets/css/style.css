@@ -3206,3 +3206,8 @@ td {
 td :hover{
   
 }
+.divider {
+  border-top: solid 1px #1a1a1a;
+  height: 1px;
+  width: 100%;
+}
