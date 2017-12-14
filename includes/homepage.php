@@ -52,8 +52,11 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
             <div class="slider-content">
                 <div class="row">
                                  
-                       <h2>World’s No. 1 Job hiring overseas!</h2> 
-                       <h5>Start your dream job here in overseas with highly secured and trusted Employers. Registration is free.</h5>               
+                       <h2>World’s No. 1 Job search engine!</h2> 
+                       <h5>Start your dream job here in overseas with highly secured and trusted Employers.<b> Registration is free</b>.</h5>  
+                        <h5>Click & post your CV in just 1 minute.</h5>
+                         <h5>100% free of charge.</h5>
+                          <h5>Post your CV to get <b>Worldwide opportunities</b>.</h5>             
                       <br>
                          <div class="button">
                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
@@ -66,7 +69,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
 
 
 <!-- property area -->
-        <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+        <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC;padding-top: 200px;  padding-bottom: 55px;">
             <div class="container">
 
                 <div class="row">
@@ -130,7 +133,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
      $show_job_stmt->execute(array(':status'=>'Approved'));
 
 ?>
-      <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC;">
+      <div class="content-area home-area-2 recent-property" style="background-color: #FCFCFC;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">

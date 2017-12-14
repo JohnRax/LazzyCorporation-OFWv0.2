@@ -189,7 +189,7 @@
         padding-top: 75px;
     }
     .home-area-2 { 
-        padding-top: 0px;
+        padding-top: 15px;
     }
     #bg-slider .item img {
         height: 440px;
@@ -859,7 +859,7 @@
 @media (max-width:480px){
 
     .page-title {
-        padding-top: 430px
+        padding-top: 320px
     }
       .page-title1 {
         padding-top: 0px
