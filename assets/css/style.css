@@ -1193,8 +1193,8 @@ page-header
 }
 .content-area{
     background-color: #FCFCFC; 
-    padding-top: 220px;
-    padding-bottom: 55px;
+    padding-top: 50px;
+    padding-bottom: 0px;
 }
 .layout-switcher a{
     font-size: 25px;

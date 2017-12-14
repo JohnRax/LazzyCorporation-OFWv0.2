@@ -130,10 +130,10 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
      $show_job_stmt->execute(array(':status'=>'Approved'));
 
 ?>
-      <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+      <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC;">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
                         <!-- /.feature title -->
                          <h2>Recent Job Post</h2>
                         <p>List of Awesome Job Offeres here at LAZZY WORKS.</p>
