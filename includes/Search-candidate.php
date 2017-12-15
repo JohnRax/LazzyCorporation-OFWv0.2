@@ -1,15 +1,81 @@
 <br><br><br><br>
-        <!-- property area -->
-<!-- Trigger the modal with a button -->
-<script>
-    function isNumberKey(evt){
-    var charCode = (evt.which) ? evt.which : event.keyCode
-    if (charCode < 48 || charCode > 57)
-        return false;
-    return true;    
-}
 
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+      var flag=0;    
+      var start=0;
+     
+
+                 $.ajax({
+                      type: "GET",
+                      url:  'includes/candidate.php',
+                      data: {"page":1,"start":1},
+                      success: function(data){
+                        $('#bodycandidate').append(data);
+                        flag+=1;
+                        start+=10;
+                      }
+                  });
+
+        $('#show').click(function(){
+            var country = $("#address option:selected").val();  
+            var gender = $("#gender option:selected").val();
+            var nationality = $("#nationality option:selected").val();
+            var marital = $("#marital option:selected").val();     
+            var education = $("#education option:selected").val();   
+                $.ajax({
+                      type: "GET",
+                      url:  'includes/candidate.php',
+                      data: {"page":flag,"start":start,
+                                "address":country,
+                              "gender":gender,
+                               "nationality":nationality,
+                                "marital":marital,
+                                "education":education},
+                      success: function(data){
+                        $('#bodycandidate').append(data);
+                        flag+=1;
+                        start+=10;
+                      }
+                  });
+
+                
+          });
+
+
+       
+         $('#search').click(function(){
+            var country = $("#address option:selected").val();  
+            var gender = $("#gender option:selected").val();
+            var nationality = $("#nationality option:selected").val();
+            var marital = $("#marital option:selected").val();     
+            var education = $("#education option:selected").val();             
+                $.ajax({
+                      type: "GET",
+                      url:  'includes/candidate.php',
+                      data: {"address":country,
+                              "gender":gender,
+                               "nationality":nationality,
+                                "marital":marital,
+                                "education":education},
+                      success: function(data){
+                        $('#bodycandidate').append(data);
+                      }
+                  });
+
+                
+          });
+
+                   
+
+    });
+    </script>
+    
+
+
+
         <div class="properties-area recent-property" style="background-color: #FFF;">
             <div class="container">  
                 <div class="row">
@@ -20,558 +86,170 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Smart search</h3>
                             </div>
-                            <div class="panel-body search-widget">
-                                <form action="" method="post" class="form-inline"> 
-                                    <fieldset>
+
+
+                                <div class="panel-body search-widget">
+                                    <form name="fp" id="fp" action="" method="post" class="form-inline"> 
                                      
-                                    </fieldset>
 
-                                    <fieldset>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-
-                                                <select name="up_address" class="selectpicker"  title="Location">
-                                                                
-                                                                <option value="Philippines">
-                                                                    Philippines
-                                                                </option>
-                                                                <option value="Hong Kong">
-                                                                    Hong Kong
-                                                                </option>
-                                                                <option value="China">
-                                                                    China
-                                                                </option>
-                                                                <option value="Saudi Arabia">
-                                                                    Saudi Arabia
-                                                                </option>
-                                                                <option value="United Arab Emirates">
-                                                                    United Arab Emirates
-                                                                </option>
-                                                                <option value="Qatar">
-                                                                    Qatar
-                                                                </option>
-                                                                <option value="Taiwan">
-                                                                    Taiwan
-                                                                </option>
-                                    
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-
-                                                <select name="gender" class="selectpicker"  title="Gender">
-                                                   <option  value="male">Male</option>
-                                                    <option  value="female">Female</option>
-                                                </select>
-                                            </div>
+                                        <fieldset>
+                                           
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <select id="address" name="up_address" class="selectpicker"   title="Location">
+                                                                    
+                                                                    <option value="Philippines">
+                                                                        Philippines
+                                                                    </option>
+                                                                    <option value="Hong Kong">
+                                                                        Hong Kong
+                                                                    </option>
+                                                                    <option value="China">
+                                                                        China
+                                                                    </option>
+                                                                    <option value="Saudi Arabia">
+                                                                        Saudi Arabia
+                                                                    </option>
+                                                                    <option value="United Arab Emirates">
+                                                                        United Arab Emirates
+                                                                    </option>
+                                                                    <option value="Qatar">
+                                                                        Qatar
+                                                                    </option>
+                                                                    <option value="Taiwan">
+                                                                        Taiwan
+                                                                    </option>
                                         
-                                    
-                                        
-                                            <div class="col-xs-6">
-                                                <div class="form-group">
-                                                    <input name="up_age" onkeypress="return isNumberKey(event)" type="text" class="form-control" maxlength="2" minlength="2"  placeholder="Age" title="Please input your age">
-                                                </div>                                                
+                                                    </select>
+
+                                                    <select id="gender" name="gender" class="selectpicker"  title="Gender">
+                                                       <option  value="male">Male</option>
+                                                        <option  value="female">Female</option>
+                                                    </select>
+                                                     <select id="nationality" name="nationality" class="selectpicker"  title="Nationality">
+                                                         <option  value="Filipino">Filipino</option>
+                                                         <option  value="Chinese">Chinese</option>
+                                                        <option  value="Vietnamese">Vietnamese</option>
+                                                         <option  value="Vietnamese">Vietnamese</option>
+                                                    </select>
+
+                                                    <select id="marital" name="marital" class="selectpicker"  title="Marital Status">
+                                                       <option  value="Married">Married</option>
+                                                        <option  value="Single">Single</option>
+                                                        <option  value="Divorce">Divorce</option>
+                                                        <option  value="Widowed">Widowed</option>
+                                                    </select>
+                                                    
+                                                    <select id="education" name="education" class="selectpicker"  title="Education Level">
+                                                       <option  value="Elementary">Elementary</option>
+                                                        <option  value="Highschool">Highschool</option>
+                                                        <option  value="Degree Holder">Degree Holder</option>
+                                                    </select>
+                                            
+                                              <label>Age</label>
+                                              <input id="age" name="up_age" type="text" class="span2" value="" data-slider-min="16" data-slider-max="60" data-slider-step="1" data-slider-value="[16,60]" id="property-geo" style="">
+                                              </div>
+                                                                                 
                                             </div>
-                                                                                     
-                                        </div>
-                                    </fieldset>  
-                                    <label><u>Skills</label>
-                                    <fieldset class="padding-5">
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <div class="checkbox">
-                                                    <label> <input id="in-helper_requirement2-107" name="upi_skillsexp[]" type="checkbox" value="Baby Care"> Baby Care</label>
+                                        </fieldset>  
+                                        <label><u>Skills</label>
+                                        <fieldset class="padding-5">
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <div class="checkbox">
+                                                        <label> <input id="in-helper_requirement2-107" name="upi_skillsexp[]" type="checkbox" value="Baby Care"> Baby Care</label>
+                                                    </div> 
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="checkbox">
+                                                        <label> <input id="in-helper_requirement2-236" name="upi_skillsexp[]" type="checkbox" value="Child Care"> Child Care</label>
+                                                    </div>
+                                                </div>                                            
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="padding-5">
+                                            <div class="row">
+                                                <div class="col-xs-6"> 
+                                                    <div class="checkbox">
+                                                        <label> <input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care</label>
+                                                    </div>
+                                                </div> 
+                                                <div class="col-xs-6"> 
+                                                    <div class="checkbox">
+                                                        <label>  <input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care </label>
+                                                    </div>
                                                 </div> 
                                             </div>
+                                        </fieldset>
 
-                                            <div class="col-xs-6">
-                                                <div class="checkbox">
-                                                    <label> <input id="in-helper_requirement2-236" name="upi_skillsexp[]" type="checkbox" value="Child Care"> Child Care</label>
-                                                </div>
-                                            </div>                                            
-                                        </div>
-                                    </fieldset>
+                                        <fieldset class="padding-5">
+                                            <div class="row">
+                                               
+                                                <div class="col-xs-6"> 
+                                                    <div class="checkbox">
+                                                        <label>  <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Driver">Driver</label>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-xs-6"> 
+                                                    <div class="checkbox">
+                                                        <label> <input id="in-helper_requirement2-237" name="upi_skillsexp[]" type="checkbox" value="Cooking"> Cooking</label>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </fieldset>
 
-                                    <fieldset class="padding-5">
-                                        <div class="row">
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care</label>
-                                                </div>
-                                            </div> 
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label>  <input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care </label>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                    </fieldset>
+                                        <fieldset class="padding-5">
+                                            <div class="row">
 
-                                    <fieldset class="padding-5">
-                                        <div class="row">
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label><input id="in-helper_requirement2-113" name="upi_skillsexp[]" type="checkbox" value="Housekeeping"> Housekeeping </label>
-                                                </div>
-                                            </div>  
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input id="in-helper_requirement2-237" name="upi_skillsexp[]" type="checkbox" value="Cooking"> Cooking</label>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    </fieldset>
 
-                                    <fieldset class="padding-5">
-                                        <div class="row">
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label>  <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Professional Driver"> Professional Driver</label>
-                                                </div>
-                                            </div>  
-                                            <div class="col-xs-6"> 
-                                                <div class="checkbox">
-                                                    <label> <input id="in-helper_requirement2-109" name="upi_skillsexp[]" type="checkbox" value="Disabled Person"> Disabled Person </label>
-                                                </div>
-                                            </div>    
-                                        </div>
-                                    </fieldset>
+                                               <div class="col-xs-6"> 
+                                                    <div class="checkbox">
+                                                        <label><input id="in-helper_requirement2-113" name="upi_skillsexp[]" type="checkbox" value="Housekeeping"> Housekeeping </label>
+                                                    </div>
+                                                </div>  
+
+
+                                                <div class="col-xs-6"> 
+                                                    <div class="checkbox">
+                                                        <label> <input id="in-helper_requirement2-109" name="upi_skillsexp[]" type="checkbox" value="Disabled"> Disabled</label>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                        </fieldset>
 
 
 
-                                    <fieldset >
-                                        <div class="row">
-                                            <div class="col-xs-12">  
-                                                <input class="button btn largesearch-btn" value="Search" type="submit" name="search">
-                                            </div>  
-                                        </div>
-                                    </fieldset>                                     
-                                </form>
-                            </div>
+                                        <fieldset >
+                                            <div class="row">
+                                                <div class="col-xs-12">  
+                                                 
+
+                                                     
+                                                </div>  
+                                            </div>
+                                        </fieldset>                                     
+                                    </form>
+
+                                </div>
                         </div>
-
-                    </div>
+                            <button id="search" class="navbar-btn nav-button wow  login">submit</button>
+                    </div>      
                 </div>
+                        
+                        <div id="bodycandidate" class="col-md-9">
+                        
 
-               
-
-                    <div class="col-md-9 "> 
-                        <div id="list-type" class="proerty-th">
-                           
-                            <?php 
-
-                            require_once 'includes/connection.php';
-                            if(isset($_POST['search']))
-                            {
-
-                                $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      b.up_picture,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status GROUP BY b.u_id order by b.up_dateposted DESC";
-                                $show_profile_stmt=$connection->prepare($show_profile_query);
-                                $show_profile_stmt->execute(array(':status'=>'Approved'));
-                              
-
-                                if(!empty($_POST['up_address']) && !empty($_POST['gender']))
-                                {
-
-                                    $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      a.u_gender,
-                                                      b.up_picture,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_address=:address GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender'],':address'=>$_POST['up_address']));
-                                }
-                                else if(!empty($_POST['up_age']) && !empty($_POST['gender']))
-                                {
-                                      $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      a.u_gender,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_picture,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender'],':age'=>$_POST['up_age']));
-                                }
-                                else if(!empty($_POST['up_age']) && !empty($_POST['upi_skillsexp']))
-                                {
-                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
-                                    { 
-                                        $skills = implode(',', $_POST['upi_skillsexp']);
-                                    }
-                                                                                                 
-                                    $array_skills = explode(',',  $skills);
-
-                                   $show_profile_query="SELECT
-                                                          a.u_id, 
-                                                          a.u_fname,
-                                                          a.u_lname,
-                                                          b.up_age,
-                                                          a.u_gender,
-                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                          b.up_picture,
-                                                          b.up_address,
-                                                          b.up_nationality,
-                                                          b.up_category,
-                                                          b.up_address,
-                                                          c.upi_skillsexp
-                                                        FROM
-                                                        user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id ";
-                                                            
-                                                        foreach($array_skills as $val)
-                                                        {
-                                                            $arr = "'%{$val}%'";
-                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
-                                                        }
-
-                                                        $new_arr = implode(" OR ", $new_arr);
-                                                        $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age']));
-                                }
-                                else if(!empty($_POST['up_address']) && !empty($_POST['up_age']))
-                                {
-                                      $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      a.u_gender,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_picture,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address'],':age'=>$_POST['up_age']));
-                                }
-                                else if(!empty($_POST['up_address']) && !empty($_POST['upi_skillsexp']))
-                                {
-                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
-                                    { 
-                                        $skills = implode(',', $_POST['upi_skillsexp']);
-                                    }
-                                                                                                 
-                                    $array_skills = explode(',',  $skills);
-                                    $show_profile_query="SELECT
-                                                          a.u_id, 
-                                                          a.u_fname,
-                                                          a.u_lname,
-                                                          b.up_age,
-                                                          a.u_gender,
-                                                          b.up_picture,
-                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                          b.up_address,
-                                                          b.up_nationality,
-                                                          b.up_category,
-                                                          b.up_address,
-                                                          c.upi_skillsexp
-                                                        FROM
-                                                        user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id  GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                            
-                                                        foreach($array_skills as $val)
-                                                        {
-                                                            $arr = "'%{$val}%'";
-                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
-                                                        }
-
-                                                        $new_arr = implode(" OR ", $new_arr);
-                                                        $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and b.up_address=:address" ;
-                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address']));
-                                }
-                                else if(!empty($_POST['gender']) && !empty($_POST['upi_skillsexp']))
-                                {
-                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
-                                    { 
-                                        $skills = implode(',', $_POST['upi_skillsexp']);
-                                    }
-                                                                                                 
-                                    $array_skills = explode(',',  $skills);
-
-                                   $show_profile_query="SELECT
-                                                          a.u_id, 
-                                                          a.u_fname,
-                                                          a.u_lname,
-                                                          b.up_age,
-                                                          a.u_gender,
-                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                          b.up_picture,
-                                                          b.up_address,
-                                                          b.up_nationality,
-                                                          b.up_category,
-                                                          b.up_address,
-                                                          c.upi_skillsexp
-                                                        FROM
-                                                        user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id ";
-                                                            
-                                                        foreach($array_skills as $val)
-                                                        {
-                                                            $arr = "'%{$val}%'";
-                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
-                                                        }
-
-                                                        $new_arr = implode(" OR ", $new_arr);
-                                                        $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status and a.u_gender=:gender GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender']));
-
-                                }
-                                else if(!empty($_POST['up_address']) && !empty($_POST['up_age']))
-                                {
-                                    $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      a.u_gender,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_picture,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age GROUP BY b.u_id and b.up_address=:address order by b.up_dateposted DESC";
-                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age'],':address'=>$_POST['up_address']));
-                                }
-                                else if(!empty($_POST['up_address']))
-                                {
-                                    
-                                     $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      b.up_picture,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_address=:address GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':address'=>$_POST['up_address']));
-                                }
-                                else if(!empty($_POST['gender']))
-                                {
-                                     $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      a.u_gender,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_picture,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and a.u_gender=:gender GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':gender'=>$_POST['gender']));
-                                }
-                                else if(!empty($_POST['up_age']))
-                                {
-                                     $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      a.u_gender,
-                                                      b.up_picture,
-                                                      DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status and b.up_age=:age GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                    $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                    $show_profile_stmt->execute(array(':status'=>'Approved',':age'=>$_POST['up_age']));
-                                }
-                                else if(!empty($_POST['upi_skillsexp']))
-                                {
-                                    if( isset($_POST['upi_skillsexp']) && !empty($_POST['upi_skillsexp']) ) 
-                                    { 
-                                        $skills = implode(',', $_POST['upi_skillsexp']);
-                                    }
-                                                                                                 
-                                    $array_skills = explode(',',  $skills);
-
-                                   $show_profile_query="SELECT
-                                                          a.u_id, 
-                                                          a.u_fname,
-                                                          a.u_lname,
-                                                          b.up_age,
-                                                          a.u_gender,
-                                                          b.up_picture,
-                                                          DATE_FORMAT( b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                          b.up_address,
-                                                          b.up_nationality,
-                                                          b.up_category,
-                                                          b.up_address,
-                                                          c.upi_skillsexp
-                                                        FROM
-                                                        user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id";
-                                                            
-                                                        foreach($array_skills as $val)
-                                                        {
-                                                            $arr = "'%{$val}%'";
-                                                            $new_arr[] =" c.upi_skillsexp LIKE ".$arr;
-                                                        }
-
-                                                        $new_arr = implode(" OR ", $new_arr);
-                                                        $show_profile_query.=" where ".$new_arr;
-                                                        $show_profile_query.=" and b.up_status=:status GROUP BY b.u_id order by b.up_dateposted DESC";
-                                                  
-                                                        $show_profile_stmt=$connection->prepare($show_profile_query);
-                                                        $show_profile_stmt->execute(array(':status'=>'Approved'));
-                                }
-                               
-                                 include "candidate.php";
-                                 
-                            }
-                            else
-                            {
-                            $show_profile_query="SELECT
-                                                      a.u_id, 
-                                                      a.u_fname,
-                                                      a.u_lname,
-                                                      b.up_age,
-                                                      b.up_picture,
-                                                       DATE_FORMAT(b.up_dateposted,'%M %d, %Y') as up_dateposted,
-                                                      b.up_address,
-                                                      b.up_nationality,
-                                                      b.up_category,
-                                                      b.up_address,
-                                                      c.upi_skillsexp
-                                                    FROM
-                                                      user_details AS a 
-                                                       JOIN user_personal_information AS b 
-                                                        ON b.u_id = a.u_id 
-                                                       JOIN user_professional_information AS c 
-                                                        ON a.u_id = c.u_id where b.up_status=:status GROUP BY b.u_id order by b.up_dateposted DESC";
-                            $show_profile_stmt=$connection->prepare($show_profile_query);
-                            $show_profile_stmt->execute(array(':status'=>'Approved'));
-                            
-                                include "candidate.php";
-
-                            }?>
-                                      
-
-                                    </div>
-                                </div> 
+                        </div>
+                            <div class="col-md-12">  
+                                 <button id="show" class="navbar-btn nav-button wow  login">SHOW MORE CANDIDATE</button>
+                            </div>
+                  
                         </div>
                     </div>
-                    
-                    <!-- <div class="col-md-12"> 
-                        <div class="pull-right">
-                            <div class="pagination">
-                                <ul>
-                                    <li><a href="#">Prev</a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">Next</a></li>
-                                </ul>
-                            </div>
-                        </div>                
-                    </div> -->
+                      
                 </div>  
                 </div>              
             </div>

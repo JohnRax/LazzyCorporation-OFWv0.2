@@ -48,14 +48,14 @@ function googleTranslateElementInit() {
                       
 
                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.php?source=findhelpers" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">CANDIDATE</a>
+                            <a href="index.php?source=findhelpers&page=1" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">CANDIDATE</a>
                       </li>
 
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                             <a href="index.php?source=findemployer" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">FIND JOBS</a>
+                             <a href="index.php?source=findemployer&page=1" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">FIND JOBS</a>
                       </li>
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                             <a href="index.php?source=news" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">NEWS</a>
+                             <a href="index.php?source=news&page=1" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">NEWS</a>
                       </li>
                                                                       
                         

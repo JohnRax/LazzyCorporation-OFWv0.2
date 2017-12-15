@@ -42,17 +42,8 @@
                                                                 <option value="Taiwan">
                                                                     Taiwan
                                                                 </option>
-                                    
-                                                </select>
-                                            </div>
-                                   
-                                        </div>
-                                    </fieldset>
-                                    <fieldset>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                
-                                                <select name="employertype" id="lunchBegins" class="selectpicker" title="Employer Type">
+                                                                </select>
+                                                  <select name="employertype" id="lunchBegins" class="selectpicker" title="Employer Type">
                                                     <option value="Direct Employer">
                                                                     Direct Employer
                                                                 </option>
@@ -60,10 +51,12 @@
                                                                     Agency
                                                                 </option>
                                                 </select>
+                                                
                                             </div>
                                    
                                         </div>
                                     </fieldset>
+                                  
                         
                                    <label><u>Skills</label>
                                     <fieldset class="padding-5">
@@ -105,7 +98,7 @@
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input name="skills[]" type="checkbox" value="Housekeeping"> Housekeeping</label>
+                                                    <label> <input name="skills[]" type="checkbox" value="Driver"> Driver</label>
                                                 </div>
                                             </div>  
                                         </div>
@@ -115,12 +108,12 @@
                                         <div class="row">
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label>  <input  name="skills[]" type="checkbox" value="Professional Driver"> Professional Driver</label>
+                                                    <label>  <input  name="skills[]" type="checkbox" value="Housekeeping">  Housekeeping</label>
                                                 </div>
                                             </div>  
                                             <div class="col-xs-6"> 
                                                 <div class="checkbox">
-                                                    <label> <input  name="skills[]" type="checkbox" value="Disabled Person"> Disabled Person </label>
+                                                    <label> <input  name="skills[]" type="checkbox" value="Disabled Person"> Disabled </label>
                                                 </div>
                                             </div>   
                                         </div>
