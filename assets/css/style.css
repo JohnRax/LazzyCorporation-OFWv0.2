@@ -1193,7 +1193,7 @@ page-header
 }
 .content-area{
     background-color: #FCFCFC; 
-    padding-top: 220px;
+    padding-top: 50px;
     padding-bottom: 55px;
 }
 .layout-switcher a{
@@ -1449,7 +1449,7 @@ Asside widgets CSS
 }
 
 .page-title {
-    padding-top: 0px;
+    padding-top: 70px;
 }
 .page-title h5{
     font-weight: 300;
@@ -3183,13 +3183,31 @@ padding: 10px;
 #map {
     height: 300px;
 }
-.tablse :hover{
-    background:  #33aabb;
 
-}
 .translator{
-   width: 100px;
-    right: 50px;
+  right: 45%;
     top: 1px;
-    position: absolute; 
+    position: absolute;
+}
+.wilsontable{ 
+    border-collapse: collapse; 
+}
+.wilsontr{ 
+    border: none; 
+}
+.wilsontr :hover{ 
+    border: none; 
+    background: #33aabb;
+}
+td {
+  border-top: solid 1px ; 
+  border-bottom: solid 1px ;
+}
+td :hover{
+  
+}
+.divider {
+  border-top: solid 1px #1a1a1a;
+  height: 1px;
+  width: 100%;
 }

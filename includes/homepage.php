@@ -47,6 +47,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
 
  
         <div class="container">
+<<<<<<< HEAD
             <div class="slider-area">   
               <div class="slider-content">
                   <div class="row">
@@ -63,10 +64,31 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
           </div>
       </div>
     </div>
+=======
+            
+  <div class="slider-area">   
+            <div class="slider-content">
+                <div class="row">
+                                 
+                       <h2>World’s No. 1 Job search engine!</h2> 
+                       <h5>Start your dream job here in overseas with highly secured and trusted Employers.<b> Registration is free</b>.</h5>  
+                        <h5>Click & post your CV in just 1 minute.</h5>
+                         <h5>100% free of charge.</h5>
+                          <h5>Post your CV to get <b>Worldwide opportunities</b>.</h5>             
+                      <br>
+                         <div class="button">
+                          <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findhelpers'">FIND CANDIDATES</button>
+                           <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=findemployer'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND JOBS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            <button class="navbar-btn nav-button wow bounceInRight login" type="reset" onclick="location.href='index.php?source=PH'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AGENCY LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    </div>
+            </div>
+        </div>
+</div>
+>>>>>>> 932c78bd12715fe090670ae892cb43a773f7052c
 
 
 <!-- property area -->
-        <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+        <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC;padding-top: 200px;  padding-bottom: 55px;">
             <div class="container">
 
                 <div class="row">
@@ -130,10 +152,10 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
      $show_job_stmt->execute(array(':status'=>'Approved'));
 
 ?>
-      <div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+      <div class="content-area home-area-2 recent-property" style="background-color: #FCFCFC;">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title1">
                         <!-- /.feature title -->
                          <h2>Recent Job Post</h2>
                         <p>List of Awesome Job Offeres here at LAZZY WORKS.</p>

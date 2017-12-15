@@ -23,20 +23,11 @@
                      
                      
                       <div class="button navbar-right">
-                      <div id="google_translate_element" class="translator"></div>
-
+                      <div id="google_translate_element" class="translator" ></div>
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage:'en', includedLanguages: 'ar,en,es,id,ja,ru,th,tl,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<div id="google_translate_element"></div><script type="text/javascript">
                     function googleTranslateElementInit() {
-                      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,en,es,id,ja,ru,th,tl,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, multilanguagePage: true}, 'google_translate_element'); }
-                     
+                      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,en,es,id,ja,ru,th,tl,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element'); }
+              </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                       
                      
                         </script>
