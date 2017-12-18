@@ -16,6 +16,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     
+                                <div id="google_translate_element" class="translator" ></div>
+<script type="text/javascript">
+                    function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,en,es,id,ja,ru,th,tl,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element'); }
+              </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                      
                     <ul class="main-nav nav navbar-nav navbar-right">                   
                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">

@@ -13,7 +13,7 @@
                       url:  'includes/candidate.php',
                       data: {"page":1,"start":1},
                       success: function(data){
-                        $('#bodycandidate').append(data);
+                        $('#bodycandidate').html(data);
                         flag+=1;
                         start+=10;
                       }
@@ -24,46 +24,67 @@
             var gender = $("#gender option:selected").val();
             var nationality = $("#nationality option:selected").val();
             var marital = $("#marital option:selected").val();     
-            var education = $("#education option:selected").val();   
-                $.ajax({
-                      type: "GET",
-                      url:  'includes/candidate.php',
-                      data: {"page":flag,"start":start,
-                                "address":country,
-                              "gender":gender,
-                               "nationality":nationality,
-                                "marital":marital,
-                                "education":education},
-                      success: function(data){
-                        $('#bodycandidate').append(data);
-                        flag+=1;
-                        start+=10;
-                      }
-                  });
+            var education = $("#education option:selected").val();
+            var age = $(".span2").val(); 
+            var selectedskill = new Array();
+            $('input[name="upi_skillsexp"]:checked').each(function() {
+                    selectedskill.push(this.value);
+            });
+            $.ajax({
+                  type: "GET",
+                  url:  'includes/candidate.php',
+                  data: { "page":flag,
+                          "start":start,
+                          "address":country,
+                          "gender":gender,
+                          "nationality":nationality,
+                          "marital":marital,
+                          "education":education,
+                          "age":age,
+                          "skill":selectedskill},
+                  success: function(data){
+                    $('#bodycandidate').append(data);
+                    flag+=1;
+                    start+=10;
+                  }
+              });
 
                 
           });
 
-
-       
-         $('#search').click(function(){
+         $('#search').click(function(){          
             var country = $("#address option:selected").val();  
             var gender = $("#gender option:selected").val();
             var nationality = $("#nationality option:selected").val();
             var marital = $("#marital option:selected").val();     
-            var education = $("#education option:selected").val();             
-                $.ajax({
-                      type: "GET",
-                      url:  'includes/candidate.php',
-                      data: {"address":country,
-                              "gender":gender,
-                               "nationality":nationality,
-                                "marital":marital,
-                                "education":education},
-                      success: function(data){
-                        $('#bodycandidate').append(data);
-                      }
-                  });
+            var education = $("#education option:selected").val(); 
+            var age = $(".span2").val();
+            var selectedskill = new Array();
+            $('input[name="upi_skillsexp"]:checked').each(function() {
+                    selectedskill.push(this.value);
+            });
+           
+
+            $.ajax({
+                  
+                  type: "GET",
+                  url:  'includes/candidate.php',
+                  data: {"page":1,
+                          "start":1,
+                          "address":country,
+                          "gender":gender,
+                          "nationality":nationality,
+                          "marital":marital,
+                          "education":education,
+                          "age":age,
+                          "skill":selectedskill},
+                  success: function(data){
+                     $('#bodycandidate').html(data);
+                   
+                     flag+=1;
+                    start+=10;
+                  }
+              });
 
                 
           });
@@ -73,8 +94,10 @@
     });
     </script>
     
-
-
+  <script type="text/javascript">
+     function refreshPage(){
+     location.reload();}
+  </script>
 
         <div class="properties-area recent-property" style="background-color: #FFF;">
             <div class="container">  
@@ -93,7 +116,6 @@
                                      
 
                                         <fieldset>
-                                           
                                             <br>
                                             <div class="row">
                                                 <div class="col-xs-12">
@@ -123,32 +145,33 @@
                                         
                                                     </select>
 
-                                                    <select id="gender" name="gender" class="selectpicker"  title="Gender">
+                                                    <select id="gender" name="up_gender" class="selectpicker"  title="Gender">
                                                        <option  value="male">Male</option>
                                                         <option  value="female">Female</option>
                                                     </select>
-                                                     <select id="nationality" name="nationality" class="selectpicker"  title="Nationality">
+                                                     <select id="nationality" name="up_nationality" class="selectpicker"  title="Nationality">
                                                          <option  value="Filipino">Filipino</option>
                                                          <option  value="Chinese">Chinese</option>
                                                         <option  value="Vietnamese">Vietnamese</option>
                                                          <option  value="Vietnamese">Vietnamese</option>
                                                     </select>
 
-                                                    <select id="marital" name="marital" class="selectpicker"  title="Marital Status">
+                                                    <select id="marital" name="up_marital" class="selectpicker"  title="Marital Status">
                                                        <option  value="Married">Married</option>
                                                         <option  value="Single">Single</option>
                                                         <option  value="Divorce">Divorce</option>
                                                         <option  value="Widowed">Widowed</option>
                                                     </select>
                                                     
-                                                    <select id="education" name="education" class="selectpicker"  title="Education Level">
+                                                    <select id="education" name="up_education" class="selectpicker"  title="Education Level">
                                                        <option  value="Elementary">Elementary</option>
                                                         <option  value="Highschool">Highschool</option>
                                                         <option  value="Degree Holder">Degree Holder</option>
                                                     </select>
                                             
+
                                               <label>Age</label>
-                                              <input id="age" name="up_age" type="text" class="span2" value="" data-slider-min="16" data-slider-max="60" data-slider-step="1" data-slider-value="[16,60]" id="property-geo" style="">
+                                                <input  type="text" class="span2" value="" data-slider-min="16" data-slider-max="60" data-slider-step="1" data-slider-value="[16,60]" id="property-geo" style="">
                                               </div>
                                                                                  
                                             </div>
@@ -158,13 +181,13 @@
                                             <div class="row">
                                                 <div class="col-xs-6">
                                                     <div class="checkbox">
-                                                        <label> <input id="in-helper_requirement2-107" name="upi_skillsexp[]" type="checkbox" value="Baby Care"> Baby Care</label>
+                                                        <label> <input id="skills" name="upi_skillsexp" type="checkbox" value="Baby Care"> Baby Care</label>
                                                     </div> 
                                                 </div>
 
                                                 <div class="col-xs-6">
                                                     <div class="checkbox">
-                                                        <label> <input id="in-helper_requirement2-236" name="upi_skillsexp[]" type="checkbox" value="Child Care"> Child Care</label>
+                                                        <label> <input id="skills" name="upi_skillsexp" type="checkbox" value="Child Care"> Child Care</label>
                                                     </div>
                                                 </div>                                            
                                             </div>
@@ -174,12 +197,12 @@
                                             <div class="row">
                                                 <div class="col-xs-6"> 
                                                     <div class="checkbox">
-                                                        <label> <input id="in-helper_requirement2-110" name="upi_skillsexp[]" type="checkbox" value="Elder Care"> Elder Care</label>
+                                                        <label> <input id="skills" name="upi_skillsexp" type="checkbox" value="Elder Care"> Elder Care</label>
                                                     </div>
                                                 </div> 
                                                 <div class="col-xs-6"> 
                                                     <div class="checkbox">
-                                                        <label>  <input id="in-helper_requirement2-112" name="upi_skillsexp[]" type="checkbox" value="Pet Care"> Pet Care </label>
+                                                        <label>  <input id="skills" name="upi_skillsexp" type="checkbox" value="Pet Care"> Pet Care </label>
                                                     </div>
                                                 </div> 
                                             </div>
@@ -190,12 +213,12 @@
                                                
                                                 <div class="col-xs-6"> 
                                                     <div class="checkbox">
-                                                        <label>  <input id="in-helper_requirement2-111" name="upi_skillsexp[]" type="checkbox" value="Driver">Driver</label>
+                                                        <label>  <input id="skills" name="upi_skillsexp" type="checkbox" value="Professional Driver">Driver</label>
                                                     </div>
                                                 </div>  
                                                 <div class="col-xs-6"> 
                                                     <div class="checkbox">
-                                                        <label> <input id="in-helper_requirement2-237" name="upi_skillsexp[]" type="checkbox" value="Cooking"> Cooking</label>
+                                                        <label> <input id="skills" name="upi_skillsexp" type="checkbox" value="Cooking"> Cooking</label>
                                                     </div>
                                                 </div>  
                                             </div>
@@ -207,38 +230,40 @@
 
                                                <div class="col-xs-6"> 
                                                     <div class="checkbox">
-                                                        <label><input id="in-helper_requirement2-113" name="upi_skillsexp[]" type="checkbox" value="Housekeeping"> Housekeeping </label>
+                                                        <label><input id="skills" name="upi_skillsexp" type="checkbox" value="Housekeeping"> Housekeeping </label>
                                                     </div>
                                                 </div>  
 
 
                                                 <div class="col-xs-6"> 
                                                     <div class="checkbox">
-                                                        <label> <input id="in-helper_requirement2-109" name="upi_skillsexp[]" type="checkbox" value="Disabled"> Disabled</label>
+                                                        <label> <input id="skills" name="upi_skillsexp" type="checkbox" value="Disabled"> Disabled</label>
                                                     </div>
                                                 </div>    
                                             </div>
+
+                                         
+                                        
                                         </fieldset>
 
 
 
-                                        <fieldset >
-                                            <div class="row">
-                                                <div class="col-xs-12">  
-                                                 
-
-                                                     
-                                                </div>  
-                                            </div>
-                                        </fieldset>                                     
+                                                                         
                                     </form>
 
                                 </div>
                         </div>
-                            <button id="search" class="navbar-btn nav-button wow  login">submit</button>
+
+
+                        <div class="col-md-12"> 
+                            <button id="search" class="btn btn-default">SEARCH</button>  
+                            <button id="clear" class="btn btn-default" onclick="refreshPage()">CLEAR</button>  
+                         </div>       
+                       
                     </div>      
                 </div>
                         
+                        <div class="col-md-9 "> 
                         <div id="bodycandidate" class="col-md-9">
                         
 
@@ -249,6 +274,7 @@
                   
                         </div>
                     </div>
+                    
                       
                 </div>  
                 </div>              

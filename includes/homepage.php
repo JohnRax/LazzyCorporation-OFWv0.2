@@ -47,24 +47,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
 
  
         <div class="container">
-<<<<<<< HEAD
-            <div class="slider-area">   
-              <div class="slider-content">
-                  <div class="row">
-                                   
-                         <h2>World’s No. 1 Job hiring overseas!</h2> 
-                         <h5>Start your dream job here in overseas with highly secured and trusted Employers. Registration is free.</h5    >               
-                        <br>
-                           <div class="button">
-                            <button class="navbar-btn nav-button wow  login" type="reset" onclick="location.href='index.php?source=findhelpers&page=1'">FIND CANDIDATES</button>
-                             <button class="navbar-btn nav-button wow  login" type="reset" onclick="location.href='index.php?source=findhelpers&page=1'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FIND JOBS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                              <button class="navbar-btn nav-button wow  login" type="reset" onclick="location.href='index.php?source=agency'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AGENCY LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                      </div>
-              </div>
-          </div>
-      </div>
-    </div>
-=======
+
             
   <div class="slider-area">   
             <div class="slider-content">
@@ -84,7 +67,7 @@ $show_profile_stmt->execute(array(':status'=>'Approved'));
             </div>
         </div>
 </div>
->>>>>>> 932c78bd12715fe090670ae892cb43a773f7052c
+
 
 
 <!-- property area -->

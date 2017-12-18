@@ -1,3 +1,4 @@
+
 html, body {
     width: 100%;
     overflow-x: hidden;
@@ -325,6 +326,7 @@ input[type="search"]::-webkit-search-decoration {
     color: #fff;
     background-color: #176e93;
     font-weight: 600;
+    width: 200px;
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
     color: #fff;
@@ -814,6 +816,14 @@ position: fixed;
     color:#fff;
     margin-right: 5px;
     margin-top: 2px;
+}
+.nav-button.#search{
+    background-color: #176e93;
+    border: 1.5px solid  #33aabb;
+    color:#fff;
+    margin-right: 5px;
+    margin-top: 2px;
+    width:200px;
 }
 .nav-button.reg {
     background-color: #333;
