@@ -31,7 +31,7 @@
                                     </script>";
                              }
                       }
-                    $agency_candidate_query="SELECT * FROM agency_candidate WHERE u_id=:id";
+                    $agency_candidate_query="SELECT * FROM agency_candidate WHERE u_id=:id  ";
                     $agency_candidate_stmt=$connection->prepare($agency_candidate_query);
                     $agency_candidate_stmt->execute(array(':id'=>$_SESSION['user_session']));
                     while($candidates = $agency_candidate_stmt->fetch(PDO::FETCH_ASSOC))
@@ -54,7 +54,9 @@
                                                  JOIN user_personal_information AS b 
                                                   ON b.u_id = a.u_id 
                                                  JOIN user_professional_information AS c 
-                                                  ON a.u_id = c.u_id  where  a.u_id=:aid and b.up_status=:status order by a.u_id DESC  limit 7 ";
+                                                  ON a.u_id = c.u_id  where  a.u_id=:aid and b.up_status=:status  
+                                                    group by b.u_id
+                                                  order by a.u_id DESC";
                       $show_profile_stmt=$connection->prepare($show_profile_query);
                       $show_profile_stmt->execute(array(':aid'=>$candidates['ac_id'],':status'=>'Approved'));
                       while($result = $show_profile_stmt->fetch(PDO::FETCH_ASSOC))

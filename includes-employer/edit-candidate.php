@@ -132,6 +132,8 @@
         $preferedworklocation=$_POST['upi_preferedworklocation'];
         $user->update_profile_professional_information($id,$preferedworklocation,$skillsexp,$cookingskills,$otherskills);
         
+        // user experience
+
         $jd=$_POST['ue_jd'];
         $jdlocation=$_POST['ue_jdlocation'];
         $jdfrom=$_POST['ue_from'];
@@ -139,6 +141,13 @@
         
         
         $user->update_profile_work_experience($id,$jd,$jdlocation,$jdfrom,$to);
+
+        //user details
+         
+        $fname=$_POST['u_fname'];
+        $lname=$_POST['u_lname'];
+
+        $user->update_user_details($id,$fname,$lname);
 
 
         //work Experience
@@ -233,7 +242,7 @@
                                                 </div>
                                                    <div class="form-group">
                                                     <labeL>First Name *</label>
-                                                    <input name="u_firstname" required type="text" class="form-control" placeholder="First Name" title="Please input your first name" value="<?php echo $result['u_fname']; ?>">
+                                                    <input name="u_fname" required type="text" class="form-control" placeholder="First Name" title="Please input your first name" value="<?php echo $result['u_fname']; ?>">
                                                 </div>
                                                 <div class="form-group">
 

@@ -278,6 +278,27 @@ class User
 		}
 
  	}
+
+ 	public function update_user_details($id,$fname,$lname)
+	{
+		try
+		{
+			$insert_user_details_query="UPDATE user_details SET u_fname=:fname,
+															u_lname=:lname
+															WHERE u_id=:id";
+			$insert_user_details_stmt=$this->connection->prepare($insert_user_details_query);
+			$insert_user_details_stmt->execute(array(':id'=>$id,
+											':fname'=>$fname,
+											':lname'=>$lname));
+
+			return $insert_user_details_stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+ 	}
  	public function update_profile_supplementary_question($id,$ans1,$ans2,$ans3,$ans4,$ans5,$ans6,$ans7,$ans8,$ans9,$ans10)
  	{
  		try
