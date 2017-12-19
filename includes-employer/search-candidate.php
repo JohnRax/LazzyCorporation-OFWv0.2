@@ -213,7 +213,7 @@
                                                
                                                 <div class="col-xs-6"> 
                                                     <div class="checkbox">
-                                                        <label>  <input id="skills" name="upi_skillsexp" type="checkbox" value="Professional Driver">Driver</label>
+                                                        <label>  <input id="skills" name="upi_skillsexp" type="checkbox" value="Driver"> Driver</label>
                                                     </div>
                                                 </div>  
                                                 <div class="col-xs-6"> 
