@@ -26,6 +26,10 @@
                        <li class="dropdown ymm-sw " data-wow-delay="0.1s">
                             <a href="index-candidate.php?source=searchfindjob" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">SEARCH/FIND JOB</a>
                       </li>
+                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                             <a href="index-candidate.php?source=news" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">NEWS</a>
+                      </li>
+
                
                    
                         <li class="dropdown ymm-sw " data-wow-delay="0.1s">

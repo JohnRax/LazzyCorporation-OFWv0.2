@@ -46,7 +46,7 @@
                              <a href="index.php?source=findemployer" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">FIND JOBS</a>
                       </li>
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                             <a href="index.php?source=news&page=1" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">NEWS</a>
+                             <a href="index.php?source=news" class="dropdown-toggle" data-toggle="ddropdown" data-hover="dropdown" data-delay="200">NEWS</a>
                       </li>
                                                                       
                         

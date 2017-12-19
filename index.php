@@ -41,7 +41,13 @@
             break; 
         case 'viewnews2':
              include "includes/viewnews2.php"; 
-            break;  
+            break;
+        case 'viewnews3':
+             include "includes/viewnews3.php"; 
+            break;
+         case 'viewnews4':
+             include "includes/viewnews4.php"; 
+            break;        
         case 'HK':
              include "includes/agencylisthk.php"; 
             break;

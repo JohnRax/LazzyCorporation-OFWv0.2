@@ -42,11 +42,26 @@
             include "includes-candidate/dashboard.php"; 
                 break;
         case 'searchfindjob':
-               include "includes-candidate/search-job.php"; 
+            include "includes-candidate/search-job.php"; 
                break;
         case 'appliedjobs':
-               include "includes-candidate/applied-jobs.php"; 
+            include "includes-candidate/applied-jobs.php"; 
                break;
+        case 'news':
+            include "includes-candidate/news.php"; 
+                break;
+        case 'viewnews':
+            include "includes-candidate/viewnews.php"; 
+                break; 
+        case 'viewnews2':
+            include "includes-candidate/viewnews2.php"; 
+                break;
+        case 'viewnews3':
+            include "includes-candidate/viewnews3.php"; 
+                break;
+        case 'viewnews4':
+            include "includes-candidate/viewnews4.php"; 
+                break;
         case 'logout':
                include "includes-candidate/logout.php"; 
                break;

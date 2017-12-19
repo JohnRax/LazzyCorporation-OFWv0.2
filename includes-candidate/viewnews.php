@@ -37,7 +37,7 @@
                                                     <h3><a>How Many Filipinos in Qatar?</a></h3>
                                                 </div>
                                                 <div>
-                                                    <small><i><b>&nbsp;&nbsp;&nbsp; Date Posted:</b> December 13, 2017</i><b>&nbsp;&nbsp;&nbsp; Author:</b> Jacob Aristain</small>
+                                                    <small><i><b>&nbsp;&nbsp;&nbsp; Date Posted:</b> December 13, 2017</i><b>&nbsp;&nbsp;&nbsp; Author:</b></small>
                                                 </div><br>
                                                 <img alt="" class="img-thumbnail" src="assets/img/news/qatar_building.png" style="height:400px; width: 500px">
                                             </td>
