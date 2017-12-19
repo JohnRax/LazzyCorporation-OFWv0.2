@@ -263,7 +263,7 @@
                                                             
                                                             <option value="Filipino" <?php if($result['up_nationality']=="Filipino")echo "selected"; ?>>Filipino</option>
                                                             <option value="Chinese" <?php if($result['up_nationality']=="Chinese")echo "selected"; ?>>Chinese</option>
-                                                            <option value="Hongkongese" <?php if($result['up_nationality']=="Hongkongese")echo "selected"; ?>>Hongkongese</option>
+                                                            <option value="Japanese" <?php if($result['up_nationality']=="Japanese")echo "selected"; ?>>Japanese</option>
                                                             <option value="Indian" <?php if($result['up_nationality']=="Indian")echo "selected"; ?>>Indian</option>
                                                             <option value="Indonesian" <?php if($result['up_nationality']=="Indonesian")echo "selected"; ?>>Indonesian</option>
                                                             <option value="Sri Lankan" <?php if($result['up_nationality']=="Sri Lankan")echo "selected"; ?>>Sri Lankan</option>

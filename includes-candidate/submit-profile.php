@@ -161,7 +161,7 @@
         {
          
             echo"<script>
-                    alert('Complete! Your profile is under approval. Thank you');
+                    alert('Your profile has been submitted. Thank you');
                     location.href = 'index-candidate.php';
                 </script>";
         }
@@ -229,7 +229,7 @@
                                                             
                                                             <option value="Filipino">Filipino</option>
                                                             <option value="Chinese">Chinese</option>
-                                                            <option value="Hongkongese">Hongkongese</option>
+                                                            <option value="Japanese">Japanese</option>
                                                             <option value="Indian">Indian</option>
                                                             <option value="Indonesian">Indonesian</option>
                                                             <option value="Sri Lankan">Sri Lankan</option>

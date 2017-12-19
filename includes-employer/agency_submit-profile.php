@@ -175,7 +175,7 @@
         {
          
             echo"<script>
-                    alert('Complete! Thank you');
+                    alert('Your profile has been submitted. Thank you');
                     location.href = 'index-employer.php?source=addnew';
                 </script>";
         }
@@ -265,7 +265,7 @@
                                                             
                                                             <option value="Filipino">Filipino</option>
                                                             <option value="Chinese">Chinese</option>
-                                                            <option value="Hongkongese">Hongkongese</option>
+                                                            <option value="Japanese">Japanese</option>
                                                             <option value="Indian">Indian</option>
                                                             <option value="Indonesian">Indonesian</option>
                                                             <option value="Sri Lankan">Sri Lankan</option>

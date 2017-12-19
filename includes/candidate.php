@@ -80,7 +80,7 @@
                    
             
                 
-               $query.=" LIMIT ".$start.",". $paging.'0';
+               $query.=" group by b.u_id LIMIT ".$start.",". $paging.'0';
                $show_profile_stmt=$connection->prepare($query);
                $show_profile_stmt->execute(array(':status'=>'Approved'));
                // for debugging echo $query;
