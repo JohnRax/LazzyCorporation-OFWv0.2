@@ -62,6 +62,12 @@
         case 'viewnews4':
             include "includes-candidate/viewnews4.php"; 
                 break;
+        case 'viewnews5':
+            include "includes-candidate/viewnews5.php"; 
+                break;
+        case 'viewnews6':
+            include "includes-candidate/viewnews6.php"; 
+                break;
         case 'logout':
                include "includes-candidate/logout.php"; 
                break;

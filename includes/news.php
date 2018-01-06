@@ -33,7 +33,65 @@
                                 <div class="proerty-th">
                                     <table class="display table-condensed table dt-responsive responsive-display">
                                         <tr>
-                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title="Click to View Profile"><img alt="" class="img-thumbnail" src="assets/img/news/china.jpg"style="height: 300px; width: 790px;"></td>
+                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title=""><img alt="" class="img-thumbnail" src="assets/img/news/red cross.jpg"style="height: 300px; width: 700px;"></td>
+                                            <td>
+                                                <div style="color: black">
+                                                     <div>
+                                                        <h3><a href="index.php?source=viewnews6">Red Cross launches web platform for OFWs, migrant workers</a></h3>
+                                                    </div>
+                                                    <div>
+                                                        <i>The Philippine Red Cross launched on Monday its first ever web application to help Overseas Filipino Workers and Filipinos planning to migrate to other countries.</i>
+                                                    </div>
+                                                    <div>
+                                                        <button class="navbar-btn nav-button" onclick="location.href='index.php?source=viewnews6'" style="height: 30px; font-size: 17px; border-radius:10px; line-height: 10px;">Read More</button>
+                                                    </div>
+                                                    <div>
+                                                        <small><i><b>Date Posted:</b> November 27, 2017</i></small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 clear">
+                        <div class="proerty-th" id="list-type">
+                            <div class="row" id="chckSize">
+                                <div class="proerty-th">
+                                    <table class="display table-condensed table dt-responsive responsive-display">
+                                        <tr>
+                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title=""><img alt="" class="img-thumbnail" src="assets/img/news/stranded.jpg"style="height: 300px; width: 930px;"></td>
+                                            <td>
+                                                <div style="color: black">
+                                                     <div>
+                                                        <h3><a href="index.php?source=viewnews5">Stranded in HK, OFWs may yet book trip home</a></h3>
+                                                    </div>
+                                                    <div>
+                                                        <i>The Philippine government will advance the payment for the round-trip airfare of about a thousand overseas Filipino workers (OFWs) in Hong Kong who were duped by a travel agency into paying for invalid plane tickets.</i>
+                                                    </div>
+                                                    <div>
+                                                        <button class="navbar-btn nav-button" onclick="location.href='index.php?source=viewnews5'" style="height: 30px; font-size: 17px; border-radius:10px; line-height: 10px;">Read More</button>
+                                                    </div>
+                                                    <div>
+                                                        <small><i><b>Date Posted:</b> December 23, 2017</i></small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 clear">
+                        <div class="proerty-th" id="list-type">
+                            <div class="row" id="chckSize">
+                                <div class="proerty-th">
+                                    <table class="display table-condensed table dt-responsive responsive-display">
+                                        <tr>
+                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title=""><img alt="" class="img-thumbnail" src="assets/img/news/china.jpg"style="height: 300px; width: 790px;"></td>
                                             <td>
                                                 <div style="color: black">
                                                      <div>
@@ -56,14 +114,13 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="col-md-12 clear">
                         <div class="proerty-th" id="list-type">
                             <div class="row" id="chckSize">
                                 <div class="proerty-th">
                                     <table class="display table-condensed table dt-responsive responsive-display">
                                         <tr>
-                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title="Click to View Profile"><img alt="" class="img-thumbnail" src="assets/img/news/nurse.jpg"style="height: 300px; width: 1180px;"></td>
+                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title=""><img alt="" class="img-thumbnail" src="assets/img/news/nurse.jpg"style="height: 300px; width: 1180px;"></td>
                                             <td>
                                                 <div style="color: black">
                                                     <div>
@@ -92,7 +149,7 @@
                                 <div class="proerty-th">
                                     <table class="display table-condensed table dt-responsive responsive-display">
                                         <tr>
-                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title="Click to View Profile"><img alt="" class="img-thumbnail" src="assets/img/news/qatar_building.png" style="height: 300px; width: 1180px;"></td>
+                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title=""><img alt="" class="img-thumbnail" src="assets/img/news/qatar_building.png" style="height: 300px; width: 1180px;"></td>
                                             <td>
                                                 <div style="color: black">
                                                     <div>
@@ -121,7 +178,7 @@
                                 <div class="proerty-th">
                                     <table class="display table-condensed table dt-responsive responsive-display">
                                         <tr>
-                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title="Click to View Profile"><img alt="" class="img-thumbnail"  src="assets/img/news/passport.png"style="height: 300px; width: 1400px;"></td>
+                                            <td class='propertyIMG' onclick="window.open('index/job-page.php?id=&lt;?php echo $result1['j_id']; ?&gt;')" title=""><img alt="" class="img-thumbnail"  src="assets/img/news/passport.png"style="height: 300px; width: 1400px;"></td>
                                             <td>
                                                 <div style="color: black">
                                                     <div>
