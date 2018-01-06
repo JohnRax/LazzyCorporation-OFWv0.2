@@ -39,6 +39,7 @@
                         $user->redirect('index.php?source=loginandregister&joined');
                      }
                  }
+                 echo $details_query;
             }
         catch(PDOExeception $e)
         {
